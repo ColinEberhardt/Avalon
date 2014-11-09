@@ -13,24 +13,34 @@ import Foundation
   var sourceProperty = ""
   var converter: ValueConverter?
   var mode = BindingMode.OneWay
+  var disposables = [Disposable]()
   
-  var disposable: Disposable?
-  
-  init(source: String, destination: String) {
+  public init(source: String, destination: String) {
     self.destinationProperty = destination
     self.sourceProperty = source
   }
   
-  init(source: String, destination: String, mode: BindingMode) {
+  public init(source: String, destination: String, mode: BindingMode) {
     self.destinationProperty = destination
     self.sourceProperty = source
     self.mode = mode
   }
   
-  init(source: String, destination: String, converter: ValueConverter) {
+  public init(source: String, destination: String, converter: ValueConverter) {
     self.destinationProperty = destination
     self.sourceProperty = source
     self.converter = converter
+  }
+  
+  func addDisposable(disposable: Disposable) {
+    disposables.append(disposable)
+  }
+  
+  func disposeAll() {
+    for disposable in disposables {
+      disposable.dispose()
+    }
+    disposables.removeAll(keepCapacity: false)
   }
   
   class func fromBindable(bindable: Bindable) -> Binding? {

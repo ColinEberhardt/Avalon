@@ -24,23 +24,6 @@ class AddressViewModel: NSObject {
 
 class AvalonTests: XCTestCase {
   
-  func test_kvoBinding() {
-    
-    let source = PersonViewModel()
-    source.name = "Phil"
-    let destination = PersonViewModel()
-    
-    // create the binding
-    let binding = KVOBinding(source: source, sourceKeyPath: "name", destination: destination, destinationKeyPath: "name")
-    
-    // check the initial value is copied
-    XCTAssertEqual(destination.name, "Phil")
-    
-    // update source and verify propagation
-    source.name = "Frank"
-    XCTAssertEqual(destination.name, "Frank")
-  }
-  
   func test_bindingContext_isAppliedToViewHierarchy() {
     
     // create a view and a bound label

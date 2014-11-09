@@ -15,7 +15,7 @@ private var bindingAssociationKey: UInt8 = 1
 
 extension UIView {
   
-  var bindingContext: AnyObject? {
+  public var bindingContext: AnyObject? {
     get {
       return objc_getAssociatedObject(self, &bindingContentAssociationKey)
     }
@@ -53,14 +53,12 @@ extension UIView {
   func bindSourceToDestination(view: UIView, viewModel: AnyObject, binding: Binding) {
     
     // dispose of any prior bindings
-    if let disposable = binding.disposable {
-      disposable.dispose()
-    }
+    binding.disposeAll()
     
     // create the new binding
-    let kvoBinding = KVOBinding(source: viewModel as NSObject, sourceKeyPath: binding.sourceProperty,
-      destination: view, destinationKeyPath: binding.destinationProperty, converter: binding.converter)
-    binding.disposable = kvoBinding
+    let kvoBinding = KVOBinding(source: viewModel as NSObject,
+      destination: view, binding: binding)
+    binding.addDisposable(kvoBinding)
   }
   
   func updateOnValueChanged(control: UIControl, viewModel: AnyObject,
@@ -82,7 +80,13 @@ extension UIView {
     
     // unfortunately most UIKit controls are not KVO compliant, so we have to use taregt-action
     // in order to handle updates and relay the change back to the model
-    
+    if let slider = view as? UISlider {
+      let controlBinding = ControlBinding(source: viewModel as NSObject,
+        destination: slider,
+        valueExtractor: { () in slider.value },
+        binding: binding)
+      binding.addDisposable(controlBinding)
+    }
     
     // TODO: disposal of bindings
   /*  if let textField = view as? UITextField {

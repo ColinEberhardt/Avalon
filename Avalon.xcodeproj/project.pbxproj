@@ -29,6 +29,8 @@
 		3C5477721A0FEAE600C80A3C /* ValueConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775D1A0FDA4C00C80A3C /* ValueConverter.swift */; };
 		3C5477731A0FEAE600C80A3C /* BindingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775E1A0FDA4C00C80A3C /* BindingMode.swift */; };
 		3C5477741A0FEB0200C80A3C /* KVOBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477541A0FB2D800C80A3C /* KVOBinding.swift */; };
+		3C5477B21A1007A500C80A3C /* ControlBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477B11A1007A500C80A3C /* ControlBinding.swift */; };
+		3C5477B31A1007A500C80A3C /* ControlBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477B11A1007A500C80A3C /* ControlBinding.swift */; };
 		3CEE10351A0F5A40002C66E3 /* Avalon.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CEE10341A0F5A40002C66E3 /* Avalon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3CEE103B1A0F5A40002C66E3 /* Avalon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CEE102F1A0F5A3F002C66E3 /* Avalon.framework */; };
 		3CEE10421A0F5A40002C66E3 /* AvalonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEE10411A0F5A40002C66E3 /* AvalonTests.swift */; };
@@ -57,6 +59,7 @@
 		3C54775D1A0FDA4C00C80A3C /* ValueConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueConverter.swift; sourceTree = "<group>"; };
 		3C54775E1A0FDA4C00C80A3C /* BindingMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindingMode.swift; sourceTree = "<group>"; };
 		3C5477681A0FDDDF00C80A3C /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
+		3C5477B11A1007A500C80A3C /* ControlBinding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlBinding.swift; sourceTree = "<group>"; };
 		3CEE102F1A0F5A3F002C66E3 /* Avalon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Avalon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CEE10331A0F5A40002C66E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CEE10341A0F5A40002C66E3 /* Avalon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Avalon.h; sourceTree = "<group>"; };
@@ -120,6 +123,7 @@
 				3CEE10321A0F5A40002C66E3 /* Supporting Files */,
 				3CEE104B1A0F5A5D002C66E3 /* AvalonHelloWorld.swift */,
 				3C5477541A0FB2D800C80A3C /* KVOBinding.swift */,
+				3C5477B11A1007A500C80A3C /* ControlBinding.swift */,
 			);
 			path = Avalon;
 			sourceTree = "<group>";
@@ -264,6 +268,7 @@
 				3C5477661A0FDA4C00C80A3C /* ValueConverter.swift in Sources */,
 				3C5477631A0FDA4C00C80A3C /* Binding.swift in Sources */,
 				3C5477671A0FDA4C00C80A3C /* BindingMode.swift in Sources */,
+				3C5477B21A1007A500C80A3C /* ControlBinding.swift in Sources */,
 				3C5477651A0FDA4C00C80A3C /* Command.swift in Sources */,
 				3C5477551A0FB2D800C80A3C /* KVOBinding.swift in Sources */,
 				3CEE104C1A0F5A5D002C66E3 /* AvalonHelloWorld.swift in Sources */,
@@ -283,6 +288,7 @@
 				3C54776F1A0FEAE600C80A3C /* Binding.swift in Sources */,
 				3C5477741A0FEB0200C80A3C /* KVOBinding.swift in Sources */,
 				3C5477731A0FEAE600C80A3C /* BindingMode.swift in Sources */,
+				3C5477B31A1007A500C80A3C /* ControlBinding.swift in Sources */,
 				3C5477711A0FEAE600C80A3C /* Command.swift in Sources */,
 				3CEE10421A0F5A40002C66E3 /* AvalonTests.swift in Sources */,
 				3C54776A1A0FEAE600C80A3C /* Disposable.swift in Sources */,

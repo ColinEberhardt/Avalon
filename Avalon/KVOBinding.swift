@@ -13,44 +13,34 @@ class KVOBinding: NSObject, Disposable {
   
   private var isSubscribed = true
   private let destination: NSObject, source: NSObject
-  private let destinationKeyPath: String, sourceKeyPath: String
-  private let converter: ValueConverter?
+  private let binding: Binding
   
-  init(source: NSObject, sourceKeyPath: String, destination: NSObject,
-    destinationKeyPath: String, converter: ValueConverter?) {
+  init(source: NSObject, destination: NSObject, binding: Binding) {
     
-    self.converter = converter
     self.destination = destination
     self.source = source
-    self.destinationKeyPath = destinationKeyPath
-    self.sourceKeyPath = sourceKeyPath
+    self.binding = binding
     
     super.init()
     
     // subscribe for changes
-    source.addObserver(self, forKeyPath: sourceKeyPath, options: NSKeyValueObservingOptions.New, context: nil)
+    source.addObserver(self, forKeyPath: binding.sourceProperty, options: NSKeyValueObservingOptions.New, context: nil)
     
     // copy initial value
-    let initialValue: AnyObject? = source.valueForKeyPath(sourceKeyPath)
-    destination.setValue(convertValue(initialValue), forKeyPath: destinationKeyPath)
-  }
-  
-  convenience init(source: NSObject, sourceKeyPath: String, destination: NSObject,
-    destinationKeyPath: String) {
-    self.init(source: source, sourceKeyPath: sourceKeyPath, destination: destination,
-      destinationKeyPath: destinationKeyPath, converter: nil)
+    let initialValue: AnyObject? = source.valueForKeyPath(binding.sourceProperty)
+    destination.setValue(convertValue(initialValue), forKeyPath: binding.destinationProperty)
   }
   
   override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject,
     change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
     
     let newValue: AnyObject = change[NSKeyValueChangeNewKey]!
-    destination.setValue(convertValue(newValue), forKeyPath: destinationKeyPath)
+    destination.setValue(convertValue(newValue), forKeyPath: binding.destinationProperty)
   }
   
-  func convertValue(value: AnyObject?) -> AnyObject? {
-    if value != nil && converter != nil {
-      return converter!.convert(value!)
+  private func convertValue(value: AnyObject?) -> AnyObject? {
+    if value != nil && binding.converter != nil {
+      return binding.converter!.convert(value!)
     } else {
       return value
     }
@@ -58,7 +48,7 @@ class KVOBinding: NSObject, Disposable {
   
   func dispose() {
     if isSubscribed {
-      source.removeObserver(self, forKeyPath: sourceKeyPath)
+      source.removeObserver(self, forKeyPath: binding.sourceProperty)
       isSubscribed = false
     }
   }
