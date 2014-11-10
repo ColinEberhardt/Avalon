@@ -14,6 +14,7 @@ class PersonViewModel: NSObject {
   dynamic var name = "Bob"
   let surname = "Eggbert"
   let age = 22
+  var height = 0.3
   dynamic var isFemale = true
   dynamic var address = AddressViewModel()
 }
@@ -222,6 +223,38 @@ class AvalonTests: XCTestCase {
     
   }
   
+  func test_binding_twoWayToSlider() {
+    
+    // create a bound slider
+    let slider = UISlider()
+    slider.bindings = [Binding(source: "height", destination: "value", mode: .TwoWay)]
+    
+    // add a view model
+    let viewModel = PersonViewModel()
+    slider.bindingContext = viewModel
+    
+    // check initial state
+    XCTAssertEqual(slider.value, Float(0.3))
+    
+    // update the slider
+    slider.value = Float(0.5)
+    
+    // fire the action
+    fireUpdateForControlBinding(slider)
+    
+    // check initial state
+    XCTAssertEqual(viewModel.height, 0.5)
+  }
+  
+  // locates the ControlBinding instance and invokes its update function. This
+  // should be possible via sendActionsForControlEvents, but for some reaosn
+  // that is not working
+  private func fireUpdateForControlBinding(control: UIControl) {
+    let binding = control.bindings![0]
+    let cb = binding.disposables.filter({ ($0 as? ControlBindingConnector) != nil })
+    let controlBinding = cb[0] as ControlBindingConnector
+    controlBinding.valueChanged()
+  }
   
   class AgeToString: ValueConverter {
     override func convert(sourceValue: AnyObject) -> AnyObject {

@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 
 private var bindingContentAssociationKey: UInt8 = 0
-private var bindingAssociationKey: UInt8 = 1
+
 
 extension UIView {
   
@@ -27,16 +27,6 @@ extension UIView {
       }
     }
   }
-  
-  var bindings: [Binding]? {
-    get {
-      return objc_getAssociatedObject(self, &bindingAssociationKey) as? [Binding]
-    }
-    set(newValue) {
-      objc_setAssociatedObject(self, &bindingAssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
-    }
-  }
-  
   
   // combines the bindings array with any bindings from the designer
   func bindingsForView(view: UIView) -> [Binding] {
@@ -56,56 +46,27 @@ extension UIView {
     binding.disposeAll()
     
     // create the new binding
-    let kvoBinding = KVOBinding(source: viewModel as NSObject,
+    let kvoBinding = KVOBindingConnector(source: viewModel as NSObject,
       destination: view, binding: binding)
     binding.addDisposable(kvoBinding)
   }
   
-  func updateOnValueChanged(control: UIControl, viewModel: AnyObject,
-                    binding: Binding, valueProperty: String, valueExtractor: ()->(AnyObject)) {
-  /*  if binding.destinationProperty == valueProperty {
-      control
-        .rac_signalForControlEvents(UIControlEvents.ValueChanged)
-        .map {
-          (next) -> AnyObject! in
-          return valueExtractor()
-        }
-        .setKeyPath(binding.sourceProperty, onObject: viewModel as NSObject)
-    } else {
-      println("ERROR: destination property does not support two-way binding");
-    }*/
-  }
   
   func bindDestinationToSource(view: UIView, viewModel: AnyObject, binding: Binding) {
     
-    // unfortunately most UIKit controls are not KVO compliant, so we have to use taregt-action
+    // unfortunately most UIKit controls are not KVO compliant, so we have to use target-action
     // in order to handle updates and relay the change back to the model
     if let slider = view as? UISlider {
-      let controlBinding = ControlBinding(source: viewModel as NSObject,
-        destination: slider,
-        valueExtractor: { () in slider.value },
-        binding: binding)
-      binding.addDisposable(controlBinding)
-    }
-    
-    // TODO: disposal of bindings
-  /*  if let textField = view as? UITextField {
-      if binding.destinationProperty == "text" {
-        textField
-          .rac_textSignal()
-          .setKeyPath(binding.sourceProperty, onObject: viewModel as NSObject)
-      } else {
-        println("ERROR: destination property does not support two-way binding");
+      if let controlBinding = SliderConnector(source: viewModel as NSObject, slider: slider, binding: binding) {
+        binding.addDisposable(controlBinding)
       }
-    } else if let slider = view as? UISlider {
-      updateOnValueChanged(slider, viewModel: viewModel, binding: binding,
-        valueProperty: "value", valueExtractor: { () in slider.value })
     } else if let segmentedControl = view as? UISegmentedControl {
-      updateOnValueChanged(segmentedControl, viewModel: viewModel, binding: binding,
-        valueProperty: "selectedSegmentIndex", valueExtractor: { () in segmentedControl.selectedSegmentIndex })
+      if let controlBinding = SegmentedControlConnector(source: viewModel as NSObject, segmentedControl: segmentedControl, binding: binding) {
+        binding.addDisposable(controlBinding)
+      }
     } else {
-      println("ERROR: destination view does not support two-way binding");
-    }*/
+      println("ERROR: destination view \(view) does not support two-way binding, with binding \(binding)");
+    }
   }
   
   func contextBindingForView(view: UIView) -> Binding? {

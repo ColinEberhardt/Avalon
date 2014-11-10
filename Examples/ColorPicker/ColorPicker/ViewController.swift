@@ -11,10 +11,12 @@ import Avalon
 
 class ViewController: UIViewController {
 
+  @IBOutlet weak var colorModesSelector: UISegmentedControl!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    let bindings = [Binding(source: "colorModes", destination: "segments"),
+    colorModesSelector.bindings = [Binding(source: "colorModes", destination: "segments"),
       Binding(source: "selectedSegmentIndex", destination: "selectedSegmentIndex", mode: .TwoWay)]
     
     self.view.bindingContext = ColorPickerViewModel()

@@ -8,6 +8,15 @@
 
 import Foundation
 
-public enum BindingMode {
+public enum BindingMode: Printable {
   case OneWay, TwoWay
+  
+  public var description: String {
+    switch self {
+    case .OneWay:
+      return "OneWay"
+    case .TwoWay:
+      return "TwoWay"
+    }
+  }
 }

@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C5477551A0FB2D800C80A3C /* KVOBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477541A0FB2D800C80A3C /* KVOBinding.swift */; };
-		3C54775F1A0FDA4C00C80A3C /* UIView+BindingContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477561A0FDA4C00C80A3C /* UIView+BindingContext.swift */; };
-		3C5477601A0FDA4C00C80A3C /* UISegmentedControl+Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477571A0FDA4C00C80A3C /* UISegmentedControl+Binding.swift */; };
-		3C5477611A0FDA4C00C80A3C /* UIButton+Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477581A0FDA4C00C80A3C /* UIButton+Command.swift */; };
-		3C5477621A0FDA4C00C80A3C /* UIView+Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477591A0FDA4C00C80A3C /* UIView+Bindable.swift */; };
 		3C5477631A0FDA4C00C80A3C /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775A1A0FDA4C00C80A3C /* Binding.swift */; };
 		3C5477641A0FDA4C00C80A3C /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775B1A0FDA4C00C80A3C /* Bindable.swift */; };
 		3C5477651A0FDA4C00C80A3C /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775C1A0FDA4C00C80A3C /* Command.swift */; };
@@ -19,22 +14,30 @@
 		3C5477671A0FDA4C00C80A3C /* BindingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775E1A0FDA4C00C80A3C /* BindingMode.swift */; };
 		3C5477691A0FDDDF00C80A3C /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477681A0FDDDF00C80A3C /* Disposable.swift */; };
 		3C54776A1A0FEAE600C80A3C /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477681A0FDDDF00C80A3C /* Disposable.swift */; };
-		3C54776B1A0FEAE600C80A3C /* UIView+BindingContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477561A0FDA4C00C80A3C /* UIView+BindingContext.swift */; };
-		3C54776C1A0FEAE600C80A3C /* UISegmentedControl+Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477571A0FDA4C00C80A3C /* UISegmentedControl+Binding.swift */; };
-		3C54776D1A0FEAE600C80A3C /* UIButton+Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477581A0FDA4C00C80A3C /* UIButton+Command.swift */; };
-		3C54776E1A0FEAE600C80A3C /* UIView+Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477591A0FDA4C00C80A3C /* UIView+Bindable.swift */; };
 		3C54776F1A0FEAE600C80A3C /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775A1A0FDA4C00C80A3C /* Binding.swift */; };
 		3C5477701A0FEAE600C80A3C /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775B1A0FDA4C00C80A3C /* Bindable.swift */; };
 		3C5477711A0FEAE600C80A3C /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775C1A0FDA4C00C80A3C /* Command.swift */; };
 		3C5477721A0FEAE600C80A3C /* ValueConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775D1A0FDA4C00C80A3C /* ValueConverter.swift */; };
 		3C5477731A0FEAE600C80A3C /* BindingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775E1A0FDA4C00C80A3C /* BindingMode.swift */; };
-		3C5477741A0FEB0200C80A3C /* KVOBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477541A0FB2D800C80A3C /* KVOBinding.swift */; };
-		3C5477B21A1007A500C80A3C /* ControlBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477B11A1007A500C80A3C /* ControlBinding.swift */; };
-		3C5477B31A1007A500C80A3C /* ControlBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477B11A1007A500C80A3C /* ControlBinding.swift */; };
+		3C5477C01A11227600C80A3C /* ControlBindingConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477BC1A11227600C80A3C /* ControlBindingConnector.swift */; };
+		3C5477C11A11227600C80A3C /* KVOBindingConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477BD1A11227600C80A3C /* KVOBindingConnector.swift */; };
+		3C5477C21A11227600C80A3C /* SegmentedControlConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477BE1A11227600C80A3C /* SegmentedControlConnector.swift */; };
+		3C5477C31A11227600C80A3C /* SliderConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477BF1A11227600C80A3C /* SliderConnector.swift */; };
+		3C5477C91A1122AA00C80A3C /* UIButton+Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C51A1122AA00C80A3C /* UIButton+Command.swift */; };
+		3C5477CA1A1122AA00C80A3C /* UISegmentedControl+Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C61A1122AA00C80A3C /* UISegmentedControl+Binding.swift */; };
+		3C5477CB1A1122AA00C80A3C /* UIView+Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C71A1122AA00C80A3C /* UIView+Bindable.swift */; };
+		3C5477CC1A1122AA00C80A3C /* UIView+BindingContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C81A1122AA00C80A3C /* UIView+BindingContext.swift */; };
+		3C5477CD1A11232900C80A3C /* UIButton+Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C51A1122AA00C80A3C /* UIButton+Command.swift */; };
+		3C5477CE1A11232900C80A3C /* UISegmentedControl+Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C61A1122AA00C80A3C /* UISegmentedControl+Binding.swift */; };
+		3C5477CF1A11232900C80A3C /* UIView+Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C71A1122AA00C80A3C /* UIView+Bindable.swift */; };
+		3C5477D01A11232900C80A3C /* UIView+BindingContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C81A1122AA00C80A3C /* UIView+BindingContext.swift */; };
+		3C5477D11A11232E00C80A3C /* ControlBindingConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477BC1A11227600C80A3C /* ControlBindingConnector.swift */; };
+		3C5477D21A11232E00C80A3C /* KVOBindingConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477BD1A11227600C80A3C /* KVOBindingConnector.swift */; };
+		3C5477D31A11232E00C80A3C /* SegmentedControlConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477BE1A11227600C80A3C /* SegmentedControlConnector.swift */; };
+		3C5477D41A11232E00C80A3C /* SliderConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477BF1A11227600C80A3C /* SliderConnector.swift */; };
 		3CEE10351A0F5A40002C66E3 /* Avalon.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CEE10341A0F5A40002C66E3 /* Avalon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3CEE103B1A0F5A40002C66E3 /* Avalon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CEE102F1A0F5A3F002C66E3 /* Avalon.framework */; };
 		3CEE10421A0F5A40002C66E3 /* AvalonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEE10411A0F5A40002C66E3 /* AvalonTests.swift */; };
-		3CEE104C1A0F5A5D002C66E3 /* AvalonHelloWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEE104B1A0F5A5D002C66E3 /* AvalonHelloWorld.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,25 +51,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3C5477541A0FB2D800C80A3C /* KVOBinding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVOBinding.swift; sourceTree = "<group>"; };
-		3C5477561A0FDA4C00C80A3C /* UIView+BindingContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+BindingContext.swift"; sourceTree = "<group>"; };
-		3C5477571A0FDA4C00C80A3C /* UISegmentedControl+Binding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Binding.swift"; sourceTree = "<group>"; };
-		3C5477581A0FDA4C00C80A3C /* UIButton+Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Command.swift"; sourceTree = "<group>"; };
-		3C5477591A0FDA4C00C80A3C /* UIView+Bindable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Bindable.swift"; sourceTree = "<group>"; };
 		3C54775A1A0FDA4C00C80A3C /* Binding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		3C54775B1A0FDA4C00C80A3C /* Bindable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		3C54775C1A0FDA4C00C80A3C /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		3C54775D1A0FDA4C00C80A3C /* ValueConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueConverter.swift; sourceTree = "<group>"; };
 		3C54775E1A0FDA4C00C80A3C /* BindingMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindingMode.swift; sourceTree = "<group>"; };
 		3C5477681A0FDDDF00C80A3C /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
-		3C5477B11A1007A500C80A3C /* ControlBinding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlBinding.swift; sourceTree = "<group>"; };
+		3C5477BC1A11227600C80A3C /* ControlBindingConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlBindingConnector.swift; sourceTree = "<group>"; };
+		3C5477BD1A11227600C80A3C /* KVOBindingConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVOBindingConnector.swift; sourceTree = "<group>"; };
+		3C5477BE1A11227600C80A3C /* SegmentedControlConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControlConnector.swift; sourceTree = "<group>"; };
+		3C5477BF1A11227600C80A3C /* SliderConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderConnector.swift; sourceTree = "<group>"; };
+		3C5477C51A1122AA00C80A3C /* UIButton+Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Command.swift"; sourceTree = "<group>"; };
+		3C5477C61A1122AA00C80A3C /* UISegmentedControl+Binding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Binding.swift"; sourceTree = "<group>"; };
+		3C5477C71A1122AA00C80A3C /* UIView+Bindable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Bindable.swift"; sourceTree = "<group>"; };
+		3C5477C81A1122AA00C80A3C /* UIView+BindingContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+BindingContext.swift"; sourceTree = "<group>"; };
 		3CEE102F1A0F5A3F002C66E3 /* Avalon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Avalon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CEE10331A0F5A40002C66E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CEE10341A0F5A40002C66E3 /* Avalon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Avalon.h; sourceTree = "<group>"; };
 		3CEE103A1A0F5A40002C66E3 /* AvalonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AvalonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CEE10401A0F5A40002C66E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CEE10411A0F5A40002C66E3 /* AvalonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvalonTests.swift; sourceTree = "<group>"; };
-		3CEE104B1A0F5A5D002C66E3 /* AvalonHelloWorld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvalonHelloWorld.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C5477BB1A11227600C80A3C /* BindingConnector */ = {
+			isa = PBXGroup;
+			children = (
+				3C5477BC1A11227600C80A3C /* ControlBindingConnector.swift */,
+				3C5477BD1A11227600C80A3C /* KVOBindingConnector.swift */,
+				3C5477BE1A11227600C80A3C /* SegmentedControlConnector.swift */,
+				3C5477BF1A11227600C80A3C /* SliderConnector.swift */,
+			);
+			path = BindingConnector;
+			sourceTree = "<group>";
+		};
+		3C5477C41A1122AA00C80A3C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3C5477C51A1122AA00C80A3C /* UIButton+Command.swift */,
+				3C5477C61A1122AA00C80A3C /* UISegmentedControl+Binding.swift */,
+				3C5477C71A1122AA00C80A3C /* UIView+Bindable.swift */,
+				3C5477C81A1122AA00C80A3C /* UIView+BindingContext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		3CEE10251A0F5A3F002C66E3 = {
 			isa = PBXGroup;
 			children = (
@@ -109,21 +135,16 @@
 		3CEE10311A0F5A3F002C66E3 /* Avalon */ = {
 			isa = PBXGroup;
 			children = (
+				3C5477C41A1122AA00C80A3C /* Extensions */,
+				3C5477BB1A11227600C80A3C /* BindingConnector */,
+				3CEE10321A0F5A40002C66E3 /* Supporting Files */,
 				3C5477681A0FDDDF00C80A3C /* Disposable.swift */,
-				3C5477561A0FDA4C00C80A3C /* UIView+BindingContext.swift */,
-				3C5477571A0FDA4C00C80A3C /* UISegmentedControl+Binding.swift */,
-				3C5477581A0FDA4C00C80A3C /* UIButton+Command.swift */,
-				3C5477591A0FDA4C00C80A3C /* UIView+Bindable.swift */,
 				3C54775A1A0FDA4C00C80A3C /* Binding.swift */,
 				3C54775B1A0FDA4C00C80A3C /* Bindable.swift */,
 				3C54775C1A0FDA4C00C80A3C /* Command.swift */,
 				3C54775D1A0FDA4C00C80A3C /* ValueConverter.swift */,
 				3C54775E1A0FDA4C00C80A3C /* BindingMode.swift */,
 				3CEE10341A0F5A40002C66E3 /* Avalon.h */,
-				3CEE10321A0F5A40002C66E3 /* Supporting Files */,
-				3CEE104B1A0F5A5D002C66E3 /* AvalonHelloWorld.swift */,
-				3C5477541A0FB2D800C80A3C /* KVOBinding.swift */,
-				3C5477B11A1007A500C80A3C /* ControlBinding.swift */,
 			);
 			path = Avalon;
 			sourceTree = "<group>";
@@ -260,19 +281,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C5477601A0FDA4C00C80A3C /* UISegmentedControl+Binding.swift in Sources */,
+				3C5477CA1A1122AA00C80A3C /* UISegmentedControl+Binding.swift in Sources */,
 				3C5477691A0FDDDF00C80A3C /* Disposable.swift in Sources */,
-				3C5477621A0FDA4C00C80A3C /* UIView+Bindable.swift in Sources */,
+				3C5477C31A11227600C80A3C /* SliderConnector.swift in Sources */,
+				3C5477C11A11227600C80A3C /* KVOBindingConnector.swift in Sources */,
+				3C5477C01A11227600C80A3C /* ControlBindingConnector.swift in Sources */,
+				3C5477C91A1122AA00C80A3C /* UIButton+Command.swift in Sources */,
 				3C5477641A0FDA4C00C80A3C /* Bindable.swift in Sources */,
-				3C54775F1A0FDA4C00C80A3C /* UIView+BindingContext.swift in Sources */,
 				3C5477661A0FDA4C00C80A3C /* ValueConverter.swift in Sources */,
+				3C5477CC1A1122AA00C80A3C /* UIView+BindingContext.swift in Sources */,
 				3C5477631A0FDA4C00C80A3C /* Binding.swift in Sources */,
+				3C5477CB1A1122AA00C80A3C /* UIView+Bindable.swift in Sources */,
+				3C5477C21A11227600C80A3C /* SegmentedControlConnector.swift in Sources */,
 				3C5477671A0FDA4C00C80A3C /* BindingMode.swift in Sources */,
-				3C5477B21A1007A500C80A3C /* ControlBinding.swift in Sources */,
 				3C5477651A0FDA4C00C80A3C /* Command.swift in Sources */,
-				3C5477551A0FB2D800C80A3C /* KVOBinding.swift in Sources */,
-				3CEE104C1A0F5A5D002C66E3 /* AvalonHelloWorld.swift in Sources */,
-				3C5477611A0FDA4C00C80A3C /* UIButton+Command.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,19 +302,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C54776C1A0FEAE600C80A3C /* UISegmentedControl+Binding.swift in Sources */,
-				3C54776E1A0FEAE600C80A3C /* UIView+Bindable.swift in Sources */,
+				3C5477D21A11232E00C80A3C /* KVOBindingConnector.swift in Sources */,
 				3C5477701A0FEAE600C80A3C /* Bindable.swift in Sources */,
-				3C54776B1A0FEAE600C80A3C /* UIView+BindingContext.swift in Sources */,
 				3C5477721A0FEAE600C80A3C /* ValueConverter.swift in Sources */,
 				3C54776F1A0FEAE600C80A3C /* Binding.swift in Sources */,
-				3C5477741A0FEB0200C80A3C /* KVOBinding.swift in Sources */,
 				3C5477731A0FEAE600C80A3C /* BindingMode.swift in Sources */,
-				3C5477B31A1007A500C80A3C /* ControlBinding.swift in Sources */,
 				3C5477711A0FEAE600C80A3C /* Command.swift in Sources */,
+				3C5477CD1A11232900C80A3C /* UIButton+Command.swift in Sources */,
+				3C5477CE1A11232900C80A3C /* UISegmentedControl+Binding.swift in Sources */,
+				3C5477D31A11232E00C80A3C /* SegmentedControlConnector.swift in Sources */,
+				3C5477CF1A11232900C80A3C /* UIView+Bindable.swift in Sources */,
 				3CEE10421A0F5A40002C66E3 /* AvalonTests.swift in Sources */,
+				3C5477D01A11232900C80A3C /* UIView+BindingContext.swift in Sources */,
+				3C5477D41A11232E00C80A3C /* SliderConnector.swift in Sources */,
 				3C54776A1A0FEAE600C80A3C /* Disposable.swift in Sources */,
-				3C54776D1A0FEAE600C80A3C /* UIButton+Command.swift in Sources */,
+				3C5477D11A11232E00C80A3C /* ControlBindingConnector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

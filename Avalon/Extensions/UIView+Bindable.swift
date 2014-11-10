@@ -10,6 +10,7 @@ import ObjectiveC
 import Foundation
 import UIKit
 
+private var bindingAssociationKey: UInt8 = 1
 private var sourceAssociationKey: UInt8 = 2
 private var destinationAssociationKey: UInt8 = 3
 private var converterAssociationKey: UInt8 = 4
@@ -57,6 +58,17 @@ extension UIView {
     }
   }
   
+  public var bindings: [Binding]? {
+    get {
+      return objc_getAssociatedObject(self, &bindingAssociationKey) as? [Binding]
+    }
+    set(newValue) {
+      objc_setAssociatedObject(self, &bindingAssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
+    }
+  }
+  
+  // take the publicly exposed binding components and construct
+  // a binding instance
   var binding: Binding? {
     if self.source != "" && self.destination != "" {
       
@@ -66,7 +78,7 @@ extension UIView {
       // add a converter
       if self.converter != "" {
         let converterClass = NSClassFromString(self.converter) as NSObject.Type
-        binding.converter = converterClass() as ValueConverter
+        binding.converter = converterClass() as? ValueConverter
       }
       
       if self.mode == "TwoWay" {

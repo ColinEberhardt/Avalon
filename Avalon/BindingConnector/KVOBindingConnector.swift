@@ -9,7 +9,7 @@
 import Foundation
 
 // binds a property on the source object to a property on the destination
-class KVOBinding: NSObject, Disposable {
+class KVOBindingConnector: NSObject, Disposable {
   
   private var isSubscribed = true
   private let destination: NSObject, source: NSObject

@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc public class Binding {
+@objc public class Binding: Printable {
   var destinationProperty = ""
   var sourceProperty = ""
   var converter: ValueConverter?
@@ -63,5 +63,10 @@ import Foundation
     } else {
       return nil
     }
+  }
+  
+  public var description: String {
+    
+    return "<Avalon.Binding sourceProperty = \(sourceProperty); destinationProperty = \(destinationProperty); mode = \(mode); converter = \(converter)"
   }
 }

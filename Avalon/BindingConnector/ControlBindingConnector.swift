@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 // binds a property on the source object to a property on the destination
-class ControlBinding: NSObject, Disposable {
+class ControlBindingConnector: NSObject, Disposable {
   
   private var isSubscribed = true
   private let destination: UIControl, source: NSObject
@@ -31,7 +31,7 @@ class ControlBinding: NSObject, Disposable {
   }
   
   
-  func valueChanged() {
+  public func valueChanged() {
       let value: AnyObject = valueExtractor()
       source.setValue(value, forKeyPath: binding.sourceProperty)
   }

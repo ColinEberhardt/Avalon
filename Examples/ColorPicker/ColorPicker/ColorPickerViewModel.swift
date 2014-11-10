@@ -33,6 +33,11 @@ class ColorPickerViewModel: NSObject {
   
   dynamic var selectedSegmentIndex: Int = 0 {
     didSet {
+      if selectedSegmentIndex == 1 {
+        convertToHSB()
+      } else {
+        convertToRGB()
+      }
       updateColor()
     }
   }
@@ -50,6 +55,28 @@ class ColorPickerViewModel: NSObject {
   override init() {
     super.init()
     updateColor()
+  }
+  
+  private func convertToHSB() {
+    var hue: CGFloat = 0.0
+    var saturation: CGFloat = 0.0
+    var brightness: CGFloat = 0.0
+    var alpha :CGFloat = 0.0
+    color.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+    red = Double(hue)
+    green = Double(saturation)
+    blue = Double(brightness)
+  }
+  
+  private func convertToRGB() {
+    var red: CGFloat = 0.0
+    var green: CGFloat = 0.0
+    var blue: CGFloat = 0.0
+    var alpha :CGFloat = 0.0
+    color.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+    self.red = Double(red)
+    self.green = Double(green)
+    self.blue = Double(blue)
   }
   
 }
