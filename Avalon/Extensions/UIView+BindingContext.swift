@@ -15,9 +15,9 @@ private var bindingContentAssociationKey: UInt8 = 0
 
 extension UIView {
   
-  public var bindingContext: AnyObject? {
+  public var bindingContext: NSObject? {
     get {
-      return objc_getAssociatedObject(self, &bindingContentAssociationKey)
+      return objc_getAssociatedObject(self, &bindingContentAssociationKey) as? NSObject
     }
     set(newValue) {
       objc_setAssociatedObject(self, &bindingContentAssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
@@ -40,28 +40,28 @@ extension UIView {
     return b
   }
   
-  func bindSourceToDestination(view: UIView, viewModel: AnyObject, binding: Binding) {
+  func bindSourceToDestination(view: UIView, viewModel: NSObject, binding: Binding) {
     
     // dispose of any prior bindings
     binding.disposeAll()
     
     // create the new binding
-    let kvoBinding = KVOBindingConnector(source: viewModel as NSObject,
+    let kvoBinding = KVOBindingConnector(source: viewModel,
       destination: view, binding: binding)
     binding.addDisposable(kvoBinding)
   }
   
   
-  func bindDestinationToSource(view: UIView, viewModel: AnyObject, binding: Binding) {
+  func bindDestinationToSource(view: UIView, viewModel: NSObject, binding: Binding) {
     
     // unfortunately most UIKit controls are not KVO compliant, so we have to use target-action
     // in order to handle updates and relay the change back to the model
     if let slider = view as? UISlider {
-      if let controlBinding = SliderConnector(source: viewModel as NSObject, slider: slider, binding: binding) {
+      if let controlBinding = SliderConnector(source: viewModel, slider: slider, binding: binding) {
         binding.addDisposable(controlBinding)
       }
     } else if let segmentedControl = view as? UISegmentedControl {
-      if let controlBinding = SegmentedControlConnector(source: viewModel as NSObject, segmentedControl: segmentedControl, binding: binding) {
+      if let controlBinding = SegmentedControlConnector(source: viewModel, segmentedControl: segmentedControl, binding: binding) {
         binding.addDisposable(controlBinding)
       }
     } else {
@@ -79,7 +79,7 @@ extension UIView {
     }
   }
   
-  func bindingContextForView(view: UIView) -> AnyObject? {
+  func bindingContextForView(view: UIView) -> NSObject? {
     if let viewModel = view.bindingContext {
       return viewModel
     } else {
@@ -92,7 +92,7 @@ extension UIView {
   }
   
   // initiates the bindings associated with the given view, for the supplied view model
-  func initiateBindingsForView(view: UIView, viewModel: AnyObject, skipBindingContext: Bool) {
+  func initiateBindingsForView(view: UIView, viewModel: NSObject, skipBindingContext: Bool) {
     
     let contextBinding = contextBindingForView(view)
     
