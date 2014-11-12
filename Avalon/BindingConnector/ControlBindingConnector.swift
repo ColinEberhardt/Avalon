@@ -17,7 +17,7 @@ class ControlBindingConnector: NSObject, Disposable {
   private let binding: Binding
   private let valueExtractor: () -> AnyObject
   
-  init(source: NSObject, destination: UIControl, valueExtractor: () -> AnyObject, binding: Binding) {
+  init(source: NSObject, destination: UIControl, valueExtractor: () -> AnyObject, binding: Binding, events: UIControlEvents = .ValueChanged) {
     
       self.destination = destination
       self.source = source
@@ -27,7 +27,7 @@ class ControlBindingConnector: NSObject, Disposable {
       super.init()
       
       // subscribe for changes
-      destination.addTarget(self, action: "valueChanged", forControlEvents: UIControlEvents.ValueChanged)
+      destination.addTarget(self, action: "valueChanged", forControlEvents: events)
   }
   
   

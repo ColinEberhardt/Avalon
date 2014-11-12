@@ -6,103 +6,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             scope = "0"
             stopOnStyle = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Avalon/ControlBinding.swift"
-            timestampString = "437298179.036836"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "valueChanged()"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AvalonTests.ControlBinding.valueChanged (AvalonTests.ControlBinding)() -&gt; ()"
-                  moduleName = "AvalonTests"
-                  urlString = "file:///Users/colineberhardt/Projects/Avalon/Avalon/ControlBinding.swift"
-                  timestampString = "437297978.70688"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "100">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Avalon.ControlBinding.valueChanged (Avalon.ControlBinding)() -&gt; ()"
-                  moduleName = "Avalon"
-                  urlString = "file:///Users/colineberhardt/Projects/Avalon/Avalon/ControlBinding.swift"
-                  timestampString = "437297978.712665"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "100">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Avalon/ControlBinding.swift"
-            timestampString = "437297977.958139"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "init(source:destination:valueExtractor:binding:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AvalonTests.ControlBinding.init (AvalonTests.ControlBinding.Type)(source : ObjectiveC.NSObject, destination : ObjectiveC.UIControl, valueExtractor : () -&gt; Swift.AnyObject, binding : AvalonTests.Binding) -&gt; AvalonTests.ControlBinding"
-                  moduleName = "AvalonTests"
-                  urlString = "file:///Users/colineberhardt/Projects/Avalon/Avalon/ControlBinding.swift"
-                  timestampString = "437297978.70738"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "331">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Avalon.ControlBinding.init (Avalon.ControlBinding.Type)(source : ObjectiveC.NSObject, destination : ObjectiveC.UIControl, valueExtractor : () -&gt; Swift.AnyObject, binding : Avalon.Binding) -&gt; Avalon.ControlBinding"
-                  moduleName = "Avalon"
-                  urlString = "file:///Users/colineberhardt/Projects/Avalon/Avalon/ControlBinding.swift"
-                  timestampString = "437297978.713044"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "331">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

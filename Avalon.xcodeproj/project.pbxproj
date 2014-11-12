@@ -35,6 +35,11 @@
 		3C5477D21A11232E00C80A3C /* KVOBindingConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477BD1A11227600C80A3C /* KVOBindingConnector.swift */; };
 		3C5477D31A11232E00C80A3C /* SegmentedControlConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477BE1A11227600C80A3C /* SegmentedControlConnector.swift */; };
 		3C5477D41A11232E00C80A3C /* SliderConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477BF1A11227600C80A3C /* SliderConnector.swift */; };
+		3C5478171A11E58C00C80A3C /* TextFieldConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5478161A11E58C00C80A3C /* TextFieldConnector.swift */; };
+		3C5478181A11E58C00C80A3C /* TextFieldConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5478161A11E58C00C80A3C /* TextFieldConnector.swift */; };
+		3C54781D1A1331E200C80A3C /* KVCVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54781C1A1331E200C80A3C /* KVCVerification.swift */; };
+		3C54781E1A1334BA00C80A3C /* KVCVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54781C1A1331E200C80A3C /* KVCVerification.swift */; };
+		3C5478201A13477900C80A3C /* KVCVerificationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54781F1A13477900C80A3C /* KVCVerificationTest.swift */; };
 		3CEE10351A0F5A40002C66E3 /* Avalon.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CEE10341A0F5A40002C66E3 /* Avalon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3CEE103B1A0F5A40002C66E3 /* Avalon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CEE102F1A0F5A3F002C66E3 /* Avalon.framework */; };
 		3CEE10421A0F5A40002C66E3 /* AvalonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEE10411A0F5A40002C66E3 /* AvalonTests.swift */; };
@@ -65,6 +70,9 @@
 		3C5477C61A1122AA00C80A3C /* UISegmentedControl+Binding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Binding.swift"; sourceTree = "<group>"; };
 		3C5477C71A1122AA00C80A3C /* UIView+Bindable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Bindable.swift"; sourceTree = "<group>"; };
 		3C5477C81A1122AA00C80A3C /* UIView+BindingContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+BindingContext.swift"; sourceTree = "<group>"; };
+		3C5478161A11E58C00C80A3C /* TextFieldConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldConnector.swift; sourceTree = "<group>"; };
+		3C54781C1A1331E200C80A3C /* KVCVerification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVCVerification.swift; sourceTree = "<group>"; };
+		3C54781F1A13477900C80A3C /* KVCVerificationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVCVerificationTest.swift; sourceTree = "<group>"; };
 		3CEE102F1A0F5A3F002C66E3 /* Avalon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Avalon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CEE10331A0F5A40002C66E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CEE10341A0F5A40002C66E3 /* Avalon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Avalon.h; sourceTree = "<group>"; };
@@ -99,6 +107,8 @@
 				3C5477BD1A11227600C80A3C /* KVOBindingConnector.swift */,
 				3C5477BE1A11227600C80A3C /* SegmentedControlConnector.swift */,
 				3C5477BF1A11227600C80A3C /* SliderConnector.swift */,
+				3C5478161A11E58C00C80A3C /* TextFieldConnector.swift */,
+				3C54781C1A1331E200C80A3C /* KVCVerification.swift */,
 			);
 			path = BindingConnector;
 			sourceTree = "<group>";
@@ -162,6 +172,7 @@
 			children = (
 				3CEE10411A0F5A40002C66E3 /* AvalonTests.swift */,
 				3CEE103F1A0F5A40002C66E3 /* Supporting Files */,
+				3C54781F1A13477900C80A3C /* KVCVerificationTest.swift */,
 			);
 			path = AvalonTests;
 			sourceTree = "<group>";
@@ -288,10 +299,12 @@
 				3C5477C01A11227600C80A3C /* ControlBindingConnector.swift in Sources */,
 				3C5477C91A1122AA00C80A3C /* UIButton+Command.swift in Sources */,
 				3C5477641A0FDA4C00C80A3C /* Bindable.swift in Sources */,
+				3C54781D1A1331E200C80A3C /* KVCVerification.swift in Sources */,
 				3C5477661A0FDA4C00C80A3C /* ValueConverter.swift in Sources */,
 				3C5477CC1A1122AA00C80A3C /* UIView+BindingContext.swift in Sources */,
 				3C5477631A0FDA4C00C80A3C /* Binding.swift in Sources */,
 				3C5477CB1A1122AA00C80A3C /* UIView+Bindable.swift in Sources */,
+				3C5478171A11E58C00C80A3C /* TextFieldConnector.swift in Sources */,
 				3C5477C21A11227600C80A3C /* SegmentedControlConnector.swift in Sources */,
 				3C5477671A0FDA4C00C80A3C /* BindingMode.swift in Sources */,
 				3C5477651A0FDA4C00C80A3C /* Command.swift in Sources */,
@@ -304,11 +317,14 @@
 			files = (
 				3C5477D21A11232E00C80A3C /* KVOBindingConnector.swift in Sources */,
 				3C5477701A0FEAE600C80A3C /* Bindable.swift in Sources */,
+				3C54781E1A1334BA00C80A3C /* KVCVerification.swift in Sources */,
+				3C5478201A13477900C80A3C /* KVCVerificationTest.swift in Sources */,
 				3C5477721A0FEAE600C80A3C /* ValueConverter.swift in Sources */,
 				3C54776F1A0FEAE600C80A3C /* Binding.swift in Sources */,
 				3C5477731A0FEAE600C80A3C /* BindingMode.swift in Sources */,
 				3C5477711A0FEAE600C80A3C /* Command.swift in Sources */,
 				3C5477CD1A11232900C80A3C /* UIButton+Command.swift in Sources */,
+				3C5478181A11E58C00C80A3C /* TextFieldConnector.swift in Sources */,
 				3C5477CE1A11232900C80A3C /* UISegmentedControl+Binding.swift in Sources */,
 				3C5477D31A11232E00C80A3C /* SegmentedControlConnector.swift in Sources */,
 				3C5477CF1A11232900C80A3C /* UIView+Bindable.swift in Sources */,
@@ -466,6 +482,7 @@
 				);
 				INFOPLIST_FILE = AvalonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D TEST";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -479,6 +496,7 @@
 				);
 				INFOPLIST_FILE = AvalonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D TEST";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

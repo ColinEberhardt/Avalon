@@ -53,7 +53,7 @@ extension UIView {
   
   
   func bindDestinationToSource(view: UIView, viewModel: NSObject, binding: Binding) {
-    
+
     // unfortunately most UIKit controls are not KVO compliant, so we have to use target-action
     // in order to handle updates and relay the change back to the model
     if let slider = view as? UISlider {
@@ -62,6 +62,10 @@ extension UIView {
       }
     } else if let segmentedControl = view as? UISegmentedControl {
       if let controlBinding = SegmentedControlConnector(source: viewModel, segmentedControl: segmentedControl, binding: binding) {
+        binding.addDisposable(controlBinding)
+      }
+    } else if let textField = view as? UITextField {
+      if let controlBinding = TextFieldControlConnector(source: viewModel, textField: textField, binding: binding) {
         binding.addDisposable(controlBinding)
       }
     } else {

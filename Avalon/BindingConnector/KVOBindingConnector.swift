@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ObjectiveC
 
 // binds a property on the source object to a property on the destination
 class KVOBindingConnector: NSObject, Disposable {
@@ -28,16 +29,25 @@ class KVOBindingConnector: NSObject, Disposable {
     
     // copy initial value
     let initialValue: AnyObject? = source.valueForKeyPath(binding.sourceProperty)
-    destination.setValue(convertValue(initialValue), forKeyPath: binding.destinationProperty)
+    setValueOnDestination(initialValue)
   }
   
   override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject,
     change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
     
     let newValue: AnyObject = change[NSKeyValueChangeNewKey]!
-    destination.setValue(convertValue(newValue), forKeyPath: binding.destinationProperty)
+    setValueOnDestination(newValue)
   }
   
+  private func setValueOnDestination(value: AnyObject?) {
+    let convertedValue: AnyObject? = convertValue(value)
+    if let warnings = KVCVerification.verifyCanSetVale(convertedValue, propertyPath: binding.destinationProperty, destination: destination) {
+      println(warnings)
+    }
+    destination.setValue(convertedValue, forKeyPath: binding.destinationProperty)
+  }
+  
+    
   private func convertValue(value: AnyObject?) -> AnyObject? {
     if value != nil && binding.converter != nil {
       return binding.converter!.convert(value!)

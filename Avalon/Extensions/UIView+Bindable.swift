@@ -58,7 +58,10 @@ extension UIView {
     }
   }
   
-  public var bindings: [Binding]? {
+  // for some reason the test build fails if this property is public
+  // I need to dig into this in order to file a bug with Apple
+
+  var bindings: [Binding]? {
     get {
       return objc_getAssociatedObject(self, &bindingAssociationKey) as? [Binding]
     }
