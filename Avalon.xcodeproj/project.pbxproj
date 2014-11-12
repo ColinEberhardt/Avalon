@@ -40,6 +40,9 @@
 		3C54781D1A1331E200C80A3C /* KVCVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54781C1A1331E200C80A3C /* KVCVerification.swift */; };
 		3C54781E1A1334BA00C80A3C /* KVCVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54781C1A1331E200C80A3C /* KVCVerification.swift */; };
 		3C5478201A13477900C80A3C /* KVCVerificationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54781F1A13477900C80A3C /* KVCVerificationTest.swift */; };
+		3C5478241A137D1E00C80A3C /* NSObject+KVCWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C5478221A137D1E00C80A3C /* NSObject+KVCWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3C5478251A137D1E00C80A3C /* NSObject+KVCWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5478231A137D1E00C80A3C /* NSObject+KVCWrapper.m */; };
+		3C5478281A137F5F00C80A3C /* NSObject+KVCWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5478231A137D1E00C80A3C /* NSObject+KVCWrapper.m */; };
 		3CEE10351A0F5A40002C66E3 /* Avalon.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CEE10341A0F5A40002C66E3 /* Avalon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3CEE103B1A0F5A40002C66E3 /* Avalon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CEE102F1A0F5A3F002C66E3 /* Avalon.framework */; };
 		3CEE10421A0F5A40002C66E3 /* AvalonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEE10411A0F5A40002C66E3 /* AvalonTests.swift */; };
@@ -73,6 +76,9 @@
 		3C5478161A11E58C00C80A3C /* TextFieldConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldConnector.swift; sourceTree = "<group>"; };
 		3C54781C1A1331E200C80A3C /* KVCVerification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVCVerification.swift; sourceTree = "<group>"; };
 		3C54781F1A13477900C80A3C /* KVCVerificationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVCVerificationTest.swift; sourceTree = "<group>"; };
+		3C5478221A137D1E00C80A3C /* NSObject+KVCWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KVCWrapper.h"; sourceTree = "<group>"; };
+		3C5478231A137D1E00C80A3C /* NSObject+KVCWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVCWrapper.m"; sourceTree = "<group>"; };
+		3C5478261A137E7D00C80A3C /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		3CEE102F1A0F5A3F002C66E3 /* Avalon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Avalon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CEE10331A0F5A40002C66E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CEE10341A0F5A40002C66E3 /* Avalon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Avalon.h; sourceTree = "<group>"; };
@@ -120,6 +126,8 @@
 				3C5477C61A1122AA00C80A3C /* UISegmentedControl+Binding.swift */,
 				3C5477C71A1122AA00C80A3C /* UIView+Bindable.swift */,
 				3C5477C81A1122AA00C80A3C /* UIView+BindingContext.swift */,
+				3C5478221A137D1E00C80A3C /* NSObject+KVCWrapper.h */,
+				3C5478231A137D1E00C80A3C /* NSObject+KVCWrapper.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -155,6 +163,7 @@
 				3C54775D1A0FDA4C00C80A3C /* ValueConverter.swift */,
 				3C54775E1A0FDA4C00C80A3C /* BindingMode.swift */,
 				3CEE10341A0F5A40002C66E3 /* Avalon.h */,
+				3C5478261A137E7D00C80A3C /* BridgingHeader.h */,
 			);
 			path = Avalon;
 			sourceTree = "<group>";
@@ -193,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CEE10351A0F5A40002C66E3 /* Avalon.h in Headers */,
+				3C5478241A137D1E00C80A3C /* NSObject+KVCWrapper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C5478251A137D1E00C80A3C /* NSObject+KVCWrapper.m in Sources */,
 				3C5477CA1A1122AA00C80A3C /* UISegmentedControl+Binding.swift in Sources */,
 				3C5477691A0FDDDF00C80A3C /* Disposable.swift in Sources */,
 				3C5477C31A11227600C80A3C /* SliderConnector.swift in Sources */,
@@ -325,6 +336,7 @@
 				3C5477711A0FEAE600C80A3C /* Command.swift in Sources */,
 				3C5477CD1A11232900C80A3C /* UIButton+Command.swift in Sources */,
 				3C5478181A11E58C00C80A3C /* TextFieldConnector.swift in Sources */,
+				3C5478281A137F5F00C80A3C /* NSObject+KVCWrapper.m in Sources */,
 				3C5477CE1A11232900C80A3C /* UISegmentedControl+Binding.swift in Sources */,
 				3C5477D31A11232E00C80A3C /* SegmentedControlConnector.swift in Sources */,
 				3C5477CF1A11232900C80A3C /* UIView+Bindable.swift in Sources */,
@@ -484,6 +496,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-D TEST";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Avalon/BridgingHeader.h";
 			};
 			name = Debug;
 		};
@@ -498,6 +511,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-D TEST";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Avalon/BridgingHeader.h";
 			};
 			name = Release;
 		};

@@ -29,6 +29,9 @@ class KVOBindingConnector: NSObject, Disposable {
     
     // copy initial value
     let initialValue: AnyObject? = source.valueForKeyPath(binding.sourceProperty)
+
+    NSObjectHelper.tryGetValueForKeyPath(binding.sourceProperty, forObject: source)
+
     setValueOnDestination(initialValue)
   }
   

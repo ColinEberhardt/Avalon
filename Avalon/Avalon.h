@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "NSObject+KVCWrapper.h"
+
 //! Project version number for Avalon.
 FOUNDATION_EXPORT double AvalonVersionNumber;
 
