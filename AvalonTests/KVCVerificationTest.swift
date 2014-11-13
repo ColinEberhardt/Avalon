@@ -104,4 +104,31 @@ class KVCVerificationTest: XCTestCase {
     XCTAssertFalse(KVCVerification.verifyCanSetVale("foo", propertyPath: "selectedSegmentIndex", destination: segmentedControl) == nil)
     
   }
+  
+  func test_colourProperty() {
+    let textField = UITextField()
+    textField.textColor = UIColor.redColor()
+    
+    // check that UIColor is OK
+    textField.setValue(UIColor.greenColor(), forKey: "textColor")
+    XCTAssertEqual(UIColor.greenColor(), textField.textColor)
+    XCTAssertTrue(KVCVerification.verifyCanSetVale(UIColor.greenColor(), propertyPath: "textColor", destination: textField) == nil)
+    
+    // you can actually set the property to a string value
+    textField.setValue("fish", forKey: "textColor")
+    XCTAssertEqual("fish", textField.textColor)
+    
+    // but we should warn about this
+    XCTAssertFalse(KVCVerification.verifyCanSetVale("fish", propertyPath: "textColor", destination: textField) == nil)
+  }
+  
+  func test_booleanProperty() {
+    let textField = UITextField()
+    textField.hidden = false
+    
+    // check that a boolean is OK
+    textField.setValue(true, forKey: "hidden")
+    XCTAssertEqual(true, textField.hidden)
+    XCTAssertNil(KVCVerification.verifyCanSetVale(true, propertyPath: "hidden", destination: textField))
+  }
 }

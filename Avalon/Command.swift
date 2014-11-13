@@ -15,7 +15,7 @@ import Foundation
 @objc public class ClosureCommand: Command {
   private let action: () -> ()
   
-  init(action: () -> ()) {
+  public init(action: () -> ()) {
     self.action = action
   }
   

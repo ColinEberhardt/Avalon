@@ -23,6 +23,7 @@ class AddressViewModel: NSObject {
   dynamic var city = "Newcastle"
 }
 
+// System / integration level tests for the framework
 class AvalonTests: XCTestCase {
   
   func test_bindingContext_isAppliedToViewHierarchy() {

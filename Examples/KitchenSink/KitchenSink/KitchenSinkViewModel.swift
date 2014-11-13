@@ -22,6 +22,13 @@ import Avalon
   }
 }
 
+@objc(TapsToTitle) class TapsToTitle: ValueConverter {
+  override func convert(sourceValue: AnyObject) -> AnyObject {
+    let taps = sourceValue as Int
+    return "Button tapped \(taps) times"
+  }
+}
+
 class KitchenSinkViewModel: NSObject {
   
   dynamic var text = "foo"
@@ -29,5 +36,18 @@ class KitchenSinkViewModel: NSObject {
   dynamic var number = 0.8
   dynamic var maxNumber = 100.0
   dynamic var minNumber = 0.0
+  
+  dynamic var buttonTapCount: Int = 0
+  
+  dynamic let incrementCountCommand: Command!
+  
+  override init() {
+
+    super.init()
+    
+    incrementCountCommand = ClosureCommand {
+      self.buttonTapCount = self.buttonTapCount + 1
+    }
+  }
   
 }

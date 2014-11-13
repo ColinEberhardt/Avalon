@@ -46,9 +46,9 @@ extension UIView {
     binding.disposeAll()
     
     // create the new binding
-    let kvoBinding = KVOBindingConnector(source: viewModel,
-      destination: view, binding: binding)
-    binding.addDisposable(kvoBinding)
+    if let kvoBinding = KVOBindingConnector(source: viewModel, destination: view, binding: binding) {
+      binding.addDisposable(kvoBinding)
+    }
   }
   
   

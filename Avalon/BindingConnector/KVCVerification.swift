@@ -10,30 +10,37 @@ import Foundation
 
 public class KVCVerification {
   
-  class func verifyCanSetVale(optionalValue: AnyObject?, propertyPath: String, destination: NSObject) -> String? {
+  // determines the type of the destination property
+  class func destinationPropertyType(currentType: AnyClass, propertyPath: String) -> String? {
     
-    // determines the type if the destination property
-    func destinationPropertyType() -> String? {
-      var propertiesCount : CUnsignedInt = 0
-      let propertiesInAClass = class_copyPropertyList(destination.dynamicType, &propertiesCount)
-      for var i = 0; i < Int(propertiesCount); i++ {
-        let property = propertiesInAClass[i]
-        let propName = NSString(CString: property_getName(property), encoding: NSUTF8StringEncoding)
-        if propName! == propertyPath {
-          let propAttributes = property_getAttributes(property)
-          let typeString = String(UTF8String: propAttributes) // e.g. T@"NSString",C,N
-          let typeComponents = typeString!.componentsSeparatedByString(",")
-          return typeComponents[0]
-        }
+    var propertiesCount : CUnsignedInt = 0
+    let propertiesInAClass = class_copyPropertyList(currentType, &propertiesCount)
+    for var i = 0; i < Int(propertiesCount); i++ {
+      let property = propertiesInAClass[i]
+      let propName = NSString(CString: property_getName(property), encoding: NSUTF8StringEncoding)
+      if propName! == propertyPath {
+        let propAttributes = property_getAttributes(property)
+        let typeString = String(UTF8String: propAttributes) // e.g. T@"NSString",C,N
+        let typeComponents = typeString!.componentsSeparatedByString(",")
+        return typeComponents[0]
       }
+    }
+    
+    if let superclass = currentType.superclass() {
+      return destinationPropertyType(superclass, propertyPath: propertyPath)
+    } else {
       return nil
     }
+  }
+  
+  class func verifyCanSetVale(optionalValue: AnyObject?, propertyPath: String, destination: NSObject) -> String? {
     
     // a map of destination property types to valid value types
     let permittedTypeMap = [
       "T@\"NSString\"" : ["Swift._NSContiguousString", "__NSCFString"],
       "Tf" : ["__NSCFNumber"],
-      "Tq" : ["__NSCFNumber"]
+      "Tq" : ["__NSCFNumber"],
+      "T@\"UIColor\"" : ["UICachedDeviceRGBColor"]
     ]
     
     if let value: AnyObject = optionalValue {
@@ -41,7 +48,7 @@ public class KVCVerification {
       let valueType = NSStringFromClass(value.dynamicType)
       
       // determine the destination property type
-      if let destinationPropertyType = destinationPropertyType() {
+      if let destinationPropertyType = self.destinationPropertyType(destination.dynamicType, propertyPath: propertyPath) {
         let warningMessage = "WARNING: The value \(value) of type \(valueType) appears to be incompatible with the destination property \(propertyPath) which is of type \(destinationPropertyType)"
         
         if let permittedValueTypes = permittedTypeMap[destinationPropertyType] {

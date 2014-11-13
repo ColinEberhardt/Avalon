@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NSValueWrapper.h"
 
 @interface NSObjectHelper: NSObject
 
-+ (id)tryGetValueForKeyPath:(NSString*) keyPath forObject:(NSObject *)object;
++ (NSValueWrapper *)tryGetValueForKeyPath:(NSString *)keyPath forObject:(NSObject *)object;
+
++ (NSString *)trySetValue:(id)value forKeyPath:(NSString *)keyPath forObject:(NSObject *)object;
 
 @end
 

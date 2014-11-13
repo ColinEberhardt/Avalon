@@ -43,28 +43,6 @@ import Foundation
     disposables.removeAll(keepCapacity: false)
   }
   
-  class func fromBindable(bindable: Bindable) -> Binding? {
-    if bindable.source != "" && bindable.destination != "" {
-      
-      // create a binding
-      let binding = Binding(source: bindable.source, destination: bindable.destination)
-      
-      // add a converter
-      if bindable.converter != "" {
-        let converterClass = NSClassFromString(bindable.converter) as NSObject.Type
-        binding.converter = converterClass() as ValueConverter
-      }
-      
-      if bindable.mode == "TwoWay" {
-        binding.mode = .TwoWay
-      }
-      
-      return binding
-    } else {
-      return nil
-    }
-  }
-  
   public var description: String {
     
     return "<Avalon.Binding sourceProperty = \(sourceProperty); destinationProperty = \(destinationProperty); mode = \(mode); converter = \(converter)"

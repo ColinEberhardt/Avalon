@@ -13,12 +13,15 @@ class ViewController: UIViewController {
 
   @IBOutlet weak var slider: UISlider!
   @IBOutlet weak var label: UILabel!
+  @IBOutlet weak var button: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-  //  slider.bindings = [Binding(source: "maxNumber", destination: "maximumValue"),
-    //  Binding(source: "minNumber", destination: "minimumValue")]
+    slider.bindings = [Binding(source: "maxNumber", destination: "maximumValue"),
+      Binding(source: "minNumber", destination: "minimumValue")]
+
+    button.bindings = [Binding(source: "incrementCountCommand", destination: "command")]
     
     view.bindingContext = KitchenSinkViewModel()
     

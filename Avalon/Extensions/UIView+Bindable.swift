@@ -60,8 +60,7 @@ extension UIView {
   
   // for some reason the test build fails if this property is public
   // I need to dig into this in order to file a bug with Apple
-
-  var bindings: [Binding]? {
+  public var bindings: [Binding]? {
     get {
       return objc_getAssociatedObject(self, &bindingAssociationKey) as? [Binding]
     }
@@ -80,12 +79,19 @@ extension UIView {
       
       // add a converter
       if self.converter != "" {
-        let converterClass = NSClassFromString(self.converter) as NSObject.Type
-        binding.converter = converterClass() as? ValueConverter
+        if let converterClass = NSClassFromString(self.converter) as? NSObject.Type {
+          binding.converter = converterClass() as? ValueConverter
+        } else {
+          println("ERROR: A converter of class \(self.converter) could not be constructed.")
+        }
       }
       
       if self.mode == "TwoWay" {
         binding.mode = .TwoWay
+      } else if self.mode == "OneWay" {
+        binding.mode = .OneWay
+      } else if self.mode != "" {
+        println("ERROR: binding mode can only have values of OneWay or TwoWay, the value \(self.mode) is not permitted.")
       }
       
       return binding

@@ -13,7 +13,20 @@ private var commandAssociationKey: UInt8 = 5
 
 extension UIButton {
   
-  var command: Command? {
+  public var title: String {
+    get {
+      if let text = self.currentTitle {
+        return text
+      } else {
+        return ""
+      }
+    }
+    set(newValue) {
+      self.setTitle(newValue, forState: UIControlState.Normal)
+    }
+  }
+  
+  public var command: Command? {
     get {
       return objc_getAssociatedObject(self, &commandAssociationKey) as Command?
     }
