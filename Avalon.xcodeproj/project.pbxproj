@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3C0CB7741A138B0100364DB9 /* NSValueWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C0CB7721A138B0100364DB9 /* NSValueWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3C0CB7751A138B0100364DB9 /* NSValueWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0CB7731A138B0100364DB9 /* NSValueWrapper.m */; };
+		3C408EAF1A16B8A300D8426F /* UIActivityIndicator+Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EAE1A16B8A300D8426F /* UIActivityIndicator+Bindable.swift */; };
 		3C5477631A0FDA4C00C80A3C /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775A1A0FDA4C00C80A3C /* Binding.swift */; };
 		3C5477641A0FDA4C00C80A3C /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775B1A0FDA4C00C80A3C /* Bindable.swift */; };
 		3C5477651A0FDA4C00C80A3C /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775C1A0FDA4C00C80A3C /* Command.swift */; };
@@ -66,6 +67,7 @@
 		3C0CB7711A1387D900364DB9 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		3C0CB7721A138B0100364DB9 /* NSValueWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSValueWrapper.h; sourceTree = "<group>"; };
 		3C0CB7731A138B0100364DB9 /* NSValueWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSValueWrapper.m; sourceTree = "<group>"; };
+		3C408EAE1A16B8A300D8426F /* UIActivityIndicator+Bindable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicator+Bindable.swift"; sourceTree = "<group>"; };
 		3C54775A1A0FDA4C00C80A3C /* Binding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		3C54775B1A0FDA4C00C80A3C /* Bindable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		3C54775C1A0FDA4C00C80A3C /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				3C5478231A137D1E00C80A3C /* NSObject+KVCWrapper.m */,
 				3C0CB7721A138B0100364DB9 /* NSValueWrapper.h */,
 				3C0CB7731A138B0100364DB9 /* NSValueWrapper.m */,
+				3C408EAE1A16B8A300D8426F /* UIActivityIndicator+Bindable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				3C5477691A0FDDDF00C80A3C /* Disposable.swift in Sources */,
 				3C5477C31A11227600C80A3C /* SliderConnector.swift in Sources */,
 				3C5477C11A11227600C80A3C /* KVOBindingConnector.swift in Sources */,
+				3C408EAF1A16B8A300D8426F /* UIActivityIndicator+Bindable.swift in Sources */,
 				3C5477C01A11227600C80A3C /* ControlBindingConnector.swift in Sources */,
 				3C5477C91A1122AA00C80A3C /* UIButton+Command.swift in Sources */,
 				3C5477641A0FDA4C00C80A3C /* Bindable.swift in Sources */,

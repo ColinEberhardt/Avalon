@@ -14,7 +14,7 @@ private var segmentsAssociationKey: UInt8 = 6
 
 extension UISegmentedControl {
   
-  var segments: [String]? {
+  public var segments: [String]? {
     get {
       return objc_getAssociatedObject(self, &segmentsAssociationKey) as [String]?
     }

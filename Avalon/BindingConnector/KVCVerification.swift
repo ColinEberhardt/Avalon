@@ -26,7 +26,7 @@ public class KVCVerification {
       }
     }
     
-    if let superclass = currentType.superclass() {
+    if let superclass: AnyClass = currentType.superclass() {
       return destinationPropertyType(superclass, propertyPath: propertyPath)
     } else {
       return nil
