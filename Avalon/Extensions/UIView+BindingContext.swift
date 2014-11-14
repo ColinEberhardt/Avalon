@@ -64,6 +64,10 @@ extension UIView {
       if let controlBinding = SegmentedControlConnector(source: viewModel, segmentedControl: segmentedControl, binding: binding) {
         binding.addDisposable(controlBinding)
       }
+    } else if let switchControl = view as? UISwitch {
+      if let controlBinding = SwitchConnector(source: viewModel, switchControl: switchControl, binding: binding) {
+        binding.addDisposable(controlBinding)
+      }
     } else if let textField = view as? UITextField {
       if let controlBinding = TextFieldControlConnector(source: viewModel, textField: textField, binding: binding) {
         binding.addDisposable(controlBinding)

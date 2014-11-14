@@ -54,9 +54,9 @@ class KVOBindingConnector: NSObject, Disposable {
     let convertedValue: AnyObject? = convertValue(value)
     
     // verify that the destination property accomodates this value
-    if let warnings = KVCVerification.verifyCanSetVale(convertedValue, propertyPath: binding.destinationProperty, destination: destination) {
+    /*if let warnings = KVCVerification.verifyCanSetVale(convertedValue, propertyPath: binding.destinationProperty, destination: destination) {
       println(warnings)
-    }
+    }*/
     
     return NSObjectHelper.trySetValue(convertedValue, forKeyPath: binding.destinationProperty, forObject: destination)
   }
@@ -64,7 +64,7 @@ class KVOBindingConnector: NSObject, Disposable {
     
   private func convertValue(value: AnyObject?) -> AnyObject? {
     if value != nil && binding.converter != nil {
-      return binding.converter!.convert(value!)
+      return binding.converter!.convert(value!, binding: self.binding, viewModel: self.source)
     } else {
       return value
     }

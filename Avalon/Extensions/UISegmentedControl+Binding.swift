@@ -21,6 +21,7 @@ extension UISegmentedControl {
     set(newValue) {
       objc_setAssociatedObject(self, &segmentsAssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
       
+      // TODO: Allow this to observe changes in the segments
       removeAllSegments()
       var index = 0
       for item in newValue! {

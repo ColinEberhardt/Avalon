@@ -10,7 +10,8 @@ import Foundation
 import Avalon
 
 @objc(NumberToString) class NumberToString: ValueConverter {
-  override func convert(sourceValue: AnyObject) -> AnyObject {
+  
+  override func convert(sourceValue: AnyObject, binding: Binding, viewModel: AnyObject) -> AnyObject? {
     
     let formatter = NSNumberFormatter()
     formatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
@@ -23,9 +24,17 @@ import Avalon
 }
 
 @objc(TapsToTitle) class TapsToTitle: ValueConverter {
-  override func convert(sourceValue: AnyObject) -> AnyObject {
+  override func convert(sourceValue: AnyObject, binding: Binding, viewModel: AnyObject) -> AnyObject? {
     let taps = sourceValue as Int
     return "Button tapped \(taps) times"
+  }
+}
+
+@objc(IndexToSegmentTitle) class IndexToSegmentTitle: ValueConverter {
+  override func convert(sourceValue: AnyObject, binding: Binding, viewModel: AnyObject) -> AnyObject? {
+    let index = sourceValue as Int
+    let kitchenSink = viewModel as KitchenSinkViewModel
+    return kitchenSink.options[index]
   }
 }
 
@@ -40,6 +49,15 @@ class KitchenSinkViewModel: NSObject {
   dynamic var buttonTapCount: Int = 0
   
   dynamic let incrementCountCommand: Command!
+  
+  dynamic var selectedOption = 1
+  dynamic let options = ["one", "two", "three"]
+  
+  dynamic var boolean: Bool = true {
+    didSet {
+      println("updated")
+    }
+  }
   
   override init() {
 

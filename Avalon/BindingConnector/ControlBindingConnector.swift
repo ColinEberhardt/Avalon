@@ -31,7 +31,7 @@ class ControlBindingConnector: NSObject, Disposable {
   }
   
   
-  public func valueChanged() {
+  internal func valueChanged() {
       let value: AnyObject = valueExtractor()
       source.setValue(value, forKeyPath: binding.sourceProperty)
   }

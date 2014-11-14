@@ -11,7 +11,7 @@ import Foundation
 // subclasses NSObject and annotated @objc so that we can generate the
 // class instances from strings
 @objc public class ValueConverter: NSObject {
-  public func convert(sourceValue: AnyObject) -> AnyObject {
-    return ""
+  public func convert(sourceValue: AnyObject, binding: Binding, viewModel: AnyObject) -> AnyObject? {
+    return nil
   }
 }

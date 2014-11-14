@@ -14,6 +14,7 @@ class ViewController: UIViewController {
   @IBOutlet weak var slider: UISlider!
   @IBOutlet weak var label: UILabel!
   @IBOutlet weak var button: UIButton!
+  @IBOutlet weak var segmentedControl: UISegmentedControl!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -22,6 +23,9 @@ class ViewController: UIViewController {
       Binding(source: "minNumber", destination: "minimumValue")]
 
     button.bindings = [Binding(source: "incrementCountCommand", destination: "command")]
+    
+    segmentedControl.bindings = [Binding(source: "options", destination: "segments"),
+      Binding(source: "selectedOption", destination: "selectedSegmentIndex", mode: .TwoWay)]
     
     view.bindingContext = KitchenSinkViewModel()
     
