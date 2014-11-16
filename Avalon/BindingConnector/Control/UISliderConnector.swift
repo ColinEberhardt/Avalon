@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SliderConnector: ControlBindingConnector {
+class UISliderConnector: UIControlBindingConnector {
   
   init?(source: NSObject, slider: UISlider, binding: Binding) {
     super.init(source: source, destination: slider, valueExtractor: { slider.value }, binding: binding)

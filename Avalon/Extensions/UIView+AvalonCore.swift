@@ -57,19 +57,19 @@ extension UIView {
     // unfortunately most UIKit controls are not KVO compliant, so we have to use target-action
     // in order to handle updates and relay the change back to the model
     if let slider = view as? UISlider {
-      if let controlBinding = SliderConnector(source: viewModel, slider: slider, binding: binding) {
+      if let controlBinding = UISliderConnector(source: viewModel, slider: slider, binding: binding) {
         binding.addDisposable(controlBinding)
       }
     } else if let segmentedControl = view as? UISegmentedControl {
-      if let controlBinding = SegmentedControlConnector(source: viewModel, segmentedControl: segmentedControl, binding: binding) {
+      if let controlBinding = UISegmentedControlConnector(source: viewModel, segmentedControl: segmentedControl, binding: binding) {
         binding.addDisposable(controlBinding)
       }
     } else if let switchControl = view as? UISwitch {
-      if let controlBinding = SwitchConnector(source: viewModel, switchControl: switchControl, binding: binding) {
+      if let controlBinding = UISwitchConnector(source: viewModel, switchControl: switchControl, binding: binding) {
         binding.addDisposable(controlBinding)
       }
     } else if let textField = view as? UITextField {
-      if let controlBinding = TextFieldControlConnector(source: viewModel, textField: textField, binding: binding) {
+      if let controlBinding = UITextFieldControlConnector(source: viewModel, textField: textField, binding: binding) {
         binding.addDisposable(controlBinding)
       }
     } else {

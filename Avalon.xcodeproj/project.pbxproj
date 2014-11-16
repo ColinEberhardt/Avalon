@@ -7,9 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C0CB7741A138B0100364DB9 /* NSValueWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C0CB7721A138B0100364DB9 /* NSValueWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3C0CB7751A138B0100364DB9 /* NSValueWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0CB7731A138B0100364DB9 /* NSValueWrapper.m */; };
-		3C408EAF1A16B8A300D8426F /* UIActivityIndicator+Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EAE1A16B8A300D8426F /* UIActivityIndicator+Bindable.swift */; };
+		3C408EAF1A16B8A300D8426F /* UIActivityIndicator+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EAE1A16B8A300D8426F /* UIActivityIndicator+Avalon.swift */; };
+		3C408EB61A19268700D8426F /* NSObject+KVCWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C408EB21A19268700D8426F /* NSObject+KVCWrapper.h */; };
+		3C408EB71A19268700D8426F /* NSObject+KVCWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EB31A19268700D8426F /* NSObject+KVCWrapper.m */; };
+		3C408EB81A19268700D8426F /* NSValueWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C408EB41A19268700D8426F /* NSValueWrapper.h */; };
+		3C408EB91A19268700D8426F /* NSValueWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EB51A19268700D8426F /* NSValueWrapper.m */; };
+		3C408EC31A1926F000D8426F /* KVCVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EBB1A1926F000D8426F /* KVCVerification.swift */; };
+		3C408EC41A1926F000D8426F /* KVOBindingConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EBC1A1926F000D8426F /* KVOBindingConnector.swift */; };
+		3C408EC51A1926F000D8426F /* UIControlBindingConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EBE1A1926F000D8426F /* UIControlBindingConnector.swift */; };
+		3C408EC61A1926F000D8426F /* UISegmentedControlConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EBF1A1926F000D8426F /* UISegmentedControlConnector.swift */; };
+		3C408EC71A1926F000D8426F /* UISliderConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EC01A1926F000D8426F /* UISliderConnector.swift */; };
+		3C408EC81A1926F000D8426F /* UISwitchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EC11A1926F000D8426F /* UISwitchConnector.swift */; };
+		3C408EC91A1926F000D8426F /* UITextFieldConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EC21A1926F000D8426F /* UITextFieldConnector.swift */; };
 		3C5477631A0FDA4C00C80A3C /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775A1A0FDA4C00C80A3C /* Binding.swift */; };
 		3C5477641A0FDA4C00C80A3C /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775B1A0FDA4C00C80A3C /* Bindable.swift */; };
 		3C5477651A0FDA4C00C80A3C /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775C1A0FDA4C00C80A3C /* Command.swift */; };
@@ -22,31 +31,15 @@
 		3C5477711A0FEAE600C80A3C /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775C1A0FDA4C00C80A3C /* Command.swift */; };
 		3C5477721A0FEAE600C80A3C /* ValueConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775D1A0FDA4C00C80A3C /* ValueConverter.swift */; };
 		3C5477731A0FEAE600C80A3C /* BindingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775E1A0FDA4C00C80A3C /* BindingMode.swift */; };
-		3C5477C01A11227600C80A3C /* ControlBindingConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477BC1A11227600C80A3C /* ControlBindingConnector.swift */; };
-		3C5477C11A11227600C80A3C /* KVOBindingConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477BD1A11227600C80A3C /* KVOBindingConnector.swift */; };
-		3C5477C21A11227600C80A3C /* SegmentedControlConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477BE1A11227600C80A3C /* SegmentedControlConnector.swift */; };
-		3C5477C31A11227600C80A3C /* SliderConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477BF1A11227600C80A3C /* SliderConnector.swift */; };
-		3C5477C91A1122AA00C80A3C /* UIButton+Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C51A1122AA00C80A3C /* UIButton+Command.swift */; };
-		3C5477CA1A1122AA00C80A3C /* UISegmentedControl+Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C61A1122AA00C80A3C /* UISegmentedControl+Binding.swift */; };
-		3C5477CB1A1122AA00C80A3C /* UIView+Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C71A1122AA00C80A3C /* UIView+Bindable.swift */; };
-		3C5477CC1A1122AA00C80A3C /* UIView+BindingContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C81A1122AA00C80A3C /* UIView+BindingContext.swift */; };
-		3C5477CD1A11232900C80A3C /* UIButton+Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C51A1122AA00C80A3C /* UIButton+Command.swift */; };
-		3C5477CE1A11232900C80A3C /* UISegmentedControl+Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C61A1122AA00C80A3C /* UISegmentedControl+Binding.swift */; };
-		3C5477CF1A11232900C80A3C /* UIView+Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C71A1122AA00C80A3C /* UIView+Bindable.swift */; };
-		3C5477D01A11232900C80A3C /* UIView+BindingContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C81A1122AA00C80A3C /* UIView+BindingContext.swift */; };
-		3C5477D11A11232E00C80A3C /* ControlBindingConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477BC1A11227600C80A3C /* ControlBindingConnector.swift */; };
-		3C5477D21A11232E00C80A3C /* KVOBindingConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477BD1A11227600C80A3C /* KVOBindingConnector.swift */; };
-		3C5477D31A11232E00C80A3C /* SegmentedControlConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477BE1A11227600C80A3C /* SegmentedControlConnector.swift */; };
-		3C5477D41A11232E00C80A3C /* SliderConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477BF1A11227600C80A3C /* SliderConnector.swift */; };
-		3C5478171A11E58C00C80A3C /* TextFieldConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5478161A11E58C00C80A3C /* TextFieldConnector.swift */; };
-		3C5478181A11E58C00C80A3C /* TextFieldConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5478161A11E58C00C80A3C /* TextFieldConnector.swift */; };
-		3C54781D1A1331E200C80A3C /* KVCVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54781C1A1331E200C80A3C /* KVCVerification.swift */; };
-		3C54781E1A1334BA00C80A3C /* KVCVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54781C1A1331E200C80A3C /* KVCVerification.swift */; };
+		3C5477C91A1122AA00C80A3C /* UIButton+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C51A1122AA00C80A3C /* UIButton+Avalon.swift */; };
+		3C5477CA1A1122AA00C80A3C /* UISegmentedControl+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C61A1122AA00C80A3C /* UISegmentedControl+Avalon.swift */; };
+		3C5477CB1A1122AA00C80A3C /* UIView+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C71A1122AA00C80A3C /* UIView+Avalon.swift */; };
+		3C5477CC1A1122AA00C80A3C /* UIView+AvalonCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C81A1122AA00C80A3C /* UIView+AvalonCore.swift */; };
+		3C5477CD1A11232900C80A3C /* UIButton+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C51A1122AA00C80A3C /* UIButton+Avalon.swift */; };
+		3C5477CE1A11232900C80A3C /* UISegmentedControl+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C61A1122AA00C80A3C /* UISegmentedControl+Avalon.swift */; };
+		3C5477CF1A11232900C80A3C /* UIView+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C71A1122AA00C80A3C /* UIView+Avalon.swift */; };
+		3C5477D01A11232900C80A3C /* UIView+AvalonCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C81A1122AA00C80A3C /* UIView+AvalonCore.swift */; };
 		3C5478201A13477900C80A3C /* KVCVerificationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54781F1A13477900C80A3C /* KVCVerificationTest.swift */; };
-		3C5478241A137D1E00C80A3C /* NSObject+KVCWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C5478221A137D1E00C80A3C /* NSObject+KVCWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3C5478251A137D1E00C80A3C /* NSObject+KVCWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5478231A137D1E00C80A3C /* NSObject+KVCWrapper.m */; };
-		3C5478281A137F5F00C80A3C /* NSObject+KVCWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5478231A137D1E00C80A3C /* NSObject+KVCWrapper.m */; };
-		3C9674A31A16A5A400A70FF1 /* SwitchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9674A21A16A5A400A70FF1 /* SwitchConnector.swift */; };
 		3CA9B94B1A13915F009419FB /* KVOBindingConnectorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA9B94A1A13915F009419FB /* KVOBindingConnectorTest.swift */; };
 		3CEE10351A0F5A40002C66E3 /* Avalon.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CEE10341A0F5A40002C66E3 /* Avalon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3CEE103B1A0F5A40002C66E3 /* Avalon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CEE102F1A0F5A3F002C66E3 /* Avalon.framework */; };
@@ -65,29 +58,29 @@
 
 /* Begin PBXFileReference section */
 		3C0CB7711A1387D900364DB9 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
-		3C0CB7721A138B0100364DB9 /* NSValueWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSValueWrapper.h; sourceTree = "<group>"; };
-		3C0CB7731A138B0100364DB9 /* NSValueWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSValueWrapper.m; sourceTree = "<group>"; };
-		3C408EAE1A16B8A300D8426F /* UIActivityIndicator+Bindable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicator+Bindable.swift"; sourceTree = "<group>"; };
+		3C408EAE1A16B8A300D8426F /* UIActivityIndicator+Avalon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicator+Avalon.swift"; sourceTree = "<group>"; };
+		3C408EB21A19268700D8426F /* NSObject+KVCWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KVCWrapper.h"; sourceTree = "<group>"; };
+		3C408EB31A19268700D8426F /* NSObject+KVCWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVCWrapper.m"; sourceTree = "<group>"; };
+		3C408EB41A19268700D8426F /* NSValueWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSValueWrapper.h; sourceTree = "<group>"; };
+		3C408EB51A19268700D8426F /* NSValueWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSValueWrapper.m; sourceTree = "<group>"; };
+		3C408EBB1A1926F000D8426F /* KVCVerification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVCVerification.swift; sourceTree = "<group>"; };
+		3C408EBC1A1926F000D8426F /* KVOBindingConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVOBindingConnector.swift; sourceTree = "<group>"; };
+		3C408EBE1A1926F000D8426F /* UIControlBindingConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlBindingConnector.swift; sourceTree = "<group>"; };
+		3C408EBF1A1926F000D8426F /* UISegmentedControlConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISegmentedControlConnector.swift; sourceTree = "<group>"; };
+		3C408EC01A1926F000D8426F /* UISliderConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISliderConnector.swift; sourceTree = "<group>"; };
+		3C408EC11A1926F000D8426F /* UISwitchConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISwitchConnector.swift; sourceTree = "<group>"; };
+		3C408EC21A1926F000D8426F /* UITextFieldConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldConnector.swift; sourceTree = "<group>"; };
 		3C54775A1A0FDA4C00C80A3C /* Binding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		3C54775B1A0FDA4C00C80A3C /* Bindable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		3C54775C1A0FDA4C00C80A3C /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		3C54775D1A0FDA4C00C80A3C /* ValueConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueConverter.swift; sourceTree = "<group>"; };
 		3C54775E1A0FDA4C00C80A3C /* BindingMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindingMode.swift; sourceTree = "<group>"; };
 		3C5477681A0FDDDF00C80A3C /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
-		3C5477BC1A11227600C80A3C /* ControlBindingConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlBindingConnector.swift; sourceTree = "<group>"; };
-		3C5477BD1A11227600C80A3C /* KVOBindingConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVOBindingConnector.swift; sourceTree = "<group>"; };
-		3C5477BE1A11227600C80A3C /* SegmentedControlConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControlConnector.swift; sourceTree = "<group>"; };
-		3C5477BF1A11227600C80A3C /* SliderConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderConnector.swift; sourceTree = "<group>"; };
-		3C5477C51A1122AA00C80A3C /* UIButton+Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Command.swift"; sourceTree = "<group>"; };
-		3C5477C61A1122AA00C80A3C /* UISegmentedControl+Binding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Binding.swift"; sourceTree = "<group>"; };
-		3C5477C71A1122AA00C80A3C /* UIView+Bindable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Bindable.swift"; sourceTree = "<group>"; };
-		3C5477C81A1122AA00C80A3C /* UIView+BindingContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+BindingContext.swift"; sourceTree = "<group>"; };
-		3C5478161A11E58C00C80A3C /* TextFieldConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldConnector.swift; sourceTree = "<group>"; };
-		3C54781C1A1331E200C80A3C /* KVCVerification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVCVerification.swift; sourceTree = "<group>"; };
+		3C5477C51A1122AA00C80A3C /* UIButton+Avalon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Avalon.swift"; sourceTree = "<group>"; };
+		3C5477C61A1122AA00C80A3C /* UISegmentedControl+Avalon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Avalon.swift"; sourceTree = "<group>"; };
+		3C5477C71A1122AA00C80A3C /* UIView+Avalon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Avalon.swift"; sourceTree = "<group>"; };
+		3C5477C81A1122AA00C80A3C /* UIView+AvalonCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AvalonCore.swift"; sourceTree = "<group>"; };
 		3C54781F1A13477900C80A3C /* KVCVerificationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVCVerificationTest.swift; sourceTree = "<group>"; };
-		3C5478221A137D1E00C80A3C /* NSObject+KVCWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KVCWrapper.h"; sourceTree = "<group>"; };
-		3C5478231A137D1E00C80A3C /* NSObject+KVCWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVCWrapper.m"; sourceTree = "<group>"; };
-		3C9674A21A16A5A400A70FF1 /* SwitchConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchConnector.swift; sourceTree = "<group>"; };
 		3CA9B94A1A13915F009419FB /* KVOBindingConnectorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVOBindingConnectorTest.swift; sourceTree = "<group>"; };
 		3CEE102F1A0F5A3F002C66E3 /* Avalon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Avalon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CEE10331A0F5A40002C66E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -116,16 +109,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C408EB11A19268700D8426F /* ObjC */ = {
+			isa = PBXGroup;
+			children = (
+				3C408EB21A19268700D8426F /* NSObject+KVCWrapper.h */,
+				3C408EB31A19268700D8426F /* NSObject+KVCWrapper.m */,
+				3C408EB41A19268700D8426F /* NSValueWrapper.h */,
+				3C408EB51A19268700D8426F /* NSValueWrapper.m */,
+			);
+			path = ObjC;
+			sourceTree = "<group>";
+		};
+		3C408EBA1A1926F000D8426F /* KVO */ = {
+			isa = PBXGroup;
+			children = (
+				3C408EBB1A1926F000D8426F /* KVCVerification.swift */,
+				3C408EBC1A1926F000D8426F /* KVOBindingConnector.swift */,
+			);
+			path = KVO;
+			sourceTree = "<group>";
+		};
+		3C408EBD1A1926F000D8426F /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				3C408EBE1A1926F000D8426F /* UIControlBindingConnector.swift */,
+				3C408EBF1A1926F000D8426F /* UISegmentedControlConnector.swift */,
+				3C408EC01A1926F000D8426F /* UISliderConnector.swift */,
+				3C408EC11A1926F000D8426F /* UISwitchConnector.swift */,
+				3C408EC21A1926F000D8426F /* UITextFieldConnector.swift */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
 		3C5477BB1A11227600C80A3C /* BindingConnector */ = {
 			isa = PBXGroup;
 			children = (
-				3C5477BC1A11227600C80A3C /* ControlBindingConnector.swift */,
-				3C5477BD1A11227600C80A3C /* KVOBindingConnector.swift */,
-				3C5477BE1A11227600C80A3C /* SegmentedControlConnector.swift */,
-				3C5477BF1A11227600C80A3C /* SliderConnector.swift */,
-				3C5478161A11E58C00C80A3C /* TextFieldConnector.swift */,
-				3C54781C1A1331E200C80A3C /* KVCVerification.swift */,
-				3C9674A21A16A5A400A70FF1 /* SwitchConnector.swift */,
+				3C408EBA1A1926F000D8426F /* KVO */,
+				3C408EBD1A1926F000D8426F /* Control */,
 			);
 			path = BindingConnector;
 			sourceTree = "<group>";
@@ -133,15 +153,11 @@
 		3C5477C41A1122AA00C80A3C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				3C5477C51A1122AA00C80A3C /* UIButton+Command.swift */,
-				3C5477C61A1122AA00C80A3C /* UISegmentedControl+Binding.swift */,
-				3C5477C71A1122AA00C80A3C /* UIView+Bindable.swift */,
-				3C5477C81A1122AA00C80A3C /* UIView+BindingContext.swift */,
-				3C5478221A137D1E00C80A3C /* NSObject+KVCWrapper.h */,
-				3C5478231A137D1E00C80A3C /* NSObject+KVCWrapper.m */,
-				3C0CB7721A138B0100364DB9 /* NSValueWrapper.h */,
-				3C0CB7731A138B0100364DB9 /* NSValueWrapper.m */,
-				3C408EAE1A16B8A300D8426F /* UIActivityIndicator+Bindable.swift */,
+				3C5477C51A1122AA00C80A3C /* UIButton+Avalon.swift */,
+				3C5477C61A1122AA00C80A3C /* UISegmentedControl+Avalon.swift */,
+				3C5477C71A1122AA00C80A3C /* UIView+Avalon.swift */,
+				3C5477C81A1122AA00C80A3C /* UIView+AvalonCore.swift */,
+				3C408EAE1A16B8A300D8426F /* UIActivityIndicator+Avalon.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -167,6 +183,7 @@
 		3CEE10311A0F5A3F002C66E3 /* Avalon */ = {
 			isa = PBXGroup;
 			children = (
+				3C408EB11A19268700D8426F /* ObjC */,
 				3C5477C41A1122AA00C80A3C /* Extensions */,
 				3C5477BB1A11227600C80A3C /* BindingConnector */,
 				3CEE10321A0F5A40002C66E3 /* Supporting Files */,
@@ -217,8 +234,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CEE10351A0F5A40002C66E3 /* Avalon.h in Headers */,
-				3C5478241A137D1E00C80A3C /* NSObject+KVCWrapper.h in Headers */,
-				3C0CB7741A138B0100364DB9 /* NSValueWrapper.h in Headers */,
+				3C408EB61A19268700D8426F /* NSObject+KVCWrapper.h in Headers */,
+				3C408EB81A19268700D8426F /* NSValueWrapper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,26 +335,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C5478251A137D1E00C80A3C /* NSObject+KVCWrapper.m in Sources */,
-				3C5477CA1A1122AA00C80A3C /* UISegmentedControl+Binding.swift in Sources */,
+				3C5477CA1A1122AA00C80A3C /* UISegmentedControl+Avalon.swift in Sources */,
 				3C5477691A0FDDDF00C80A3C /* Disposable.swift in Sources */,
-				3C5477C31A11227600C80A3C /* SliderConnector.swift in Sources */,
-				3C5477C11A11227600C80A3C /* KVOBindingConnector.swift in Sources */,
-				3C408EAF1A16B8A300D8426F /* UIActivityIndicator+Bindable.swift in Sources */,
-				3C5477C01A11227600C80A3C /* ControlBindingConnector.swift in Sources */,
-				3C5477C91A1122AA00C80A3C /* UIButton+Command.swift in Sources */,
+				3C408EC71A1926F000D8426F /* UISliderConnector.swift in Sources */,
+				3C408EC41A1926F000D8426F /* KVOBindingConnector.swift in Sources */,
+				3C408EAF1A16B8A300D8426F /* UIActivityIndicator+Avalon.swift in Sources */,
+				3C5477C91A1122AA00C80A3C /* UIButton+Avalon.swift in Sources */,
 				3C5477641A0FDA4C00C80A3C /* Bindable.swift in Sources */,
-				3C54781D1A1331E200C80A3C /* KVCVerification.swift in Sources */,
+				3C408EC91A1926F000D8426F /* UITextFieldConnector.swift in Sources */,
+				3C408EC31A1926F000D8426F /* KVCVerification.swift in Sources */,
 				3C5477661A0FDA4C00C80A3C /* ValueConverter.swift in Sources */,
-				3C5477CC1A1122AA00C80A3C /* UIView+BindingContext.swift in Sources */,
+				3C408EB71A19268700D8426F /* NSObject+KVCWrapper.m in Sources */,
+				3C5477CC1A1122AA00C80A3C /* UIView+AvalonCore.swift in Sources */,
+				3C408EC81A1926F000D8426F /* UISwitchConnector.swift in Sources */,
 				3C5477631A0FDA4C00C80A3C /* Binding.swift in Sources */,
-				3C0CB7751A138B0100364DB9 /* NSValueWrapper.m in Sources */,
-				3C5477CB1A1122AA00C80A3C /* UIView+Bindable.swift in Sources */,
-				3C5478171A11E58C00C80A3C /* TextFieldConnector.swift in Sources */,
-				3C5477C21A11227600C80A3C /* SegmentedControlConnector.swift in Sources */,
+				3C5477CB1A1122AA00C80A3C /* UIView+Avalon.swift in Sources */,
 				3C5477671A0FDA4C00C80A3C /* BindingMode.swift in Sources */,
-				3C9674A31A16A5A400A70FF1 /* SwitchConnector.swift in Sources */,
+				3C408EB91A19268700D8426F /* NSValueWrapper.m in Sources */,
+				3C408EC61A1926F000D8426F /* UISegmentedControlConnector.swift in Sources */,
 				3C5477651A0FDA4C00C80A3C /* Command.swift in Sources */,
+				3C408EC51A1926F000D8426F /* UIControlBindingConnector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,26 +362,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C5477D21A11232E00C80A3C /* KVOBindingConnector.swift in Sources */,
 				3C5477701A0FEAE600C80A3C /* Bindable.swift in Sources */,
-				3C54781E1A1334BA00C80A3C /* KVCVerification.swift in Sources */,
 				3C5478201A13477900C80A3C /* KVCVerificationTest.swift in Sources */,
 				3C5477721A0FEAE600C80A3C /* ValueConverter.swift in Sources */,
 				3C54776F1A0FEAE600C80A3C /* Binding.swift in Sources */,
 				3C5477731A0FEAE600C80A3C /* BindingMode.swift in Sources */,
 				3C5477711A0FEAE600C80A3C /* Command.swift in Sources */,
-				3C5477CD1A11232900C80A3C /* UIButton+Command.swift in Sources */,
-				3C5478181A11E58C00C80A3C /* TextFieldConnector.swift in Sources */,
+				3C5477CD1A11232900C80A3C /* UIButton+Avalon.swift in Sources */,
 				3CA9B94B1A13915F009419FB /* KVOBindingConnectorTest.swift in Sources */,
-				3C5478281A137F5F00C80A3C /* NSObject+KVCWrapper.m in Sources */,
-				3C5477CE1A11232900C80A3C /* UISegmentedControl+Binding.swift in Sources */,
-				3C5477D31A11232E00C80A3C /* SegmentedControlConnector.swift in Sources */,
-				3C5477CF1A11232900C80A3C /* UIView+Bindable.swift in Sources */,
+				3C5477CE1A11232900C80A3C /* UISegmentedControl+Avalon.swift in Sources */,
+				3C5477CF1A11232900C80A3C /* UIView+Avalon.swift in Sources */,
 				3CEE10421A0F5A40002C66E3 /* AvalonTests.swift in Sources */,
-				3C5477D01A11232900C80A3C /* UIView+BindingContext.swift in Sources */,
-				3C5477D41A11232E00C80A3C /* SliderConnector.swift in Sources */,
+				3C5477D01A11232900C80A3C /* UIView+AvalonCore.swift in Sources */,
 				3C54776A1A0FEAE600C80A3C /* Disposable.swift in Sources */,
-				3C5477D11A11232E00C80A3C /* ControlBindingConnector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

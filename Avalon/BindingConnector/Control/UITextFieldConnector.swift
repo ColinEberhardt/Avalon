@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class TextFieldControlConnector: ControlBindingConnector {
+class UITextFieldControlConnector: UIControlBindingConnector {
   
   init?(source: NSObject, textField: UITextField, binding: Binding) {
     super.init(source: source, destination: textField, valueExtractor: { textField.text }, binding: binding, events: UIControlEvents.EditingChanged)

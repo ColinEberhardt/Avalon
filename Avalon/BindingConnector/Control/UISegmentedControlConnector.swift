@@ -1,5 +1,5 @@
 //
-//  SegmentedControlConnector.swift
+//  UISegmentedControlConnector.swift
 //  Avalon
 //
 //  Created by Colin Eberhardt on 10/11/2014.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SegmentedControlConnector: ControlBindingConnector {
+class UISegmentedControlConnector: UIControlBindingConnector {
   
   init?(source: NSObject, segmentedControl: UISegmentedControl, binding: Binding) {
     super.init(source: source, destination: segmentedControl, valueExtractor: { segmentedControl.selectedSegmentIndex }, binding: binding)

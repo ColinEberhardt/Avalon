@@ -1,5 +1,5 @@
 //
-//  SwitchConnector.swift
+//  UISwitchConnector.swift
 //  Avalon
 //
 //  Created by Colin Eberhardt on 14/11/2014.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SwitchConnector: ControlBindingConnector {
+class UISwitchConnector: UIControlBindingConnector {
   
   init?(source: NSObject, switchControl: UISwitch, binding: Binding) {
     super.init(source: source, destination: switchControl, valueExtractor: { switchControl.on }, binding: binding, events: UIControlEvents.ValueChanged)

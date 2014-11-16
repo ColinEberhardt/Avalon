@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 // binds a property on the source object to a property on the destination
-class ControlBindingConnector: NSObject, Disposable {
+class UIControlBindingConnector: NSObject, Disposable {
   
   private var isSubscribed = true
   private let destination: UIControl, source: NSObject

@@ -252,8 +252,8 @@ class AvalonTests: XCTestCase {
   // that is not working
   private func fireUpdateForControlBinding(control: UIControl) {
     let binding = control.bindings![0]
-    let cb = binding.disposables.filter({ ($0 as? ControlBindingConnector) != nil })
-    let controlBinding = cb[0] as ControlBindingConnector
+    let cb = binding.disposables.filter({ ($0 as? UIControlBindingConnector) != nil })
+    let controlBinding = cb[0] as UIControlBindingConnector
     controlBinding.valueChanged()
   }
   
