@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6246"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,6 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="pOf-sV-Djn">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFo-WT-chN">
                                 <rect key="frame" x="85" y="262" width="150" height="61"/>
                                 <gestureRecognizers/>
@@ -74,16 +78,23 @@
                             <constraint firstItem="fHX-FU-RfO" firstAttribute="centerX" secondItem="jY1-M7-UCM" secondAttribute="centerX" id="1pS-J6-NR5"/>
                             <constraint firstItem="dUY-QF-CDf" firstAttribute="height" secondItem="BuS-AZ-bQn" secondAttribute="height" id="37b-h5-apY"/>
                             <constraint firstItem="BuS-AZ-bQn" firstAttribute="centerX" secondItem="jY1-M7-UCM" secondAttribute="centerX" id="5dH-hE-Ee0"/>
+                            <constraint firstItem="pOf-sV-Djn" firstAttribute="leading" secondItem="1ET-rk-MGx" secondAttribute="leadingMargin" constant="-16" id="XIy-B5-ksH"/>
                             <constraint firstItem="dUY-QF-CDf" firstAttribute="centerX" secondItem="jY1-M7-UCM" secondAttribute="centerX" id="eK8-bS-ZuB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pOf-sV-Djn" secondAttribute="trailing" constant="-16" id="ePu-ib-3kI"/>
                             <constraint firstAttribute="centerX" secondItem="dUY-QF-CDf" secondAttribute="centerX" id="jvE-gm-EKV"/>
+                            <constraint firstItem="pOf-sV-Djn" firstAttribute="top" secondItem="1ET-rk-MGx" secondAttribute="topMargin" id="ksG-Zc-cL1"/>
                             <constraint firstItem="fHX-FU-RfO" firstAttribute="centerX" secondItem="jY1-M7-UCM" secondAttribute="centerX" id="pgE-k7-x6Z"/>
                             <constraint firstItem="fHX-FU-RfO" firstAttribute="top" secondItem="jY1-M7-UCM" secondAttribute="bottom" constant="-85" id="q7Z-fk-0tk"/>
                             <constraint firstItem="dUY-QF-CDf" firstAttribute="top" secondItem="aXo-4I-18N" secondAttribute="bottom" constant="26" id="q80-vl-jyL"/>
+                            <constraint firstItem="c1W-3s-wEa" firstAttribute="top" secondItem="pOf-sV-Djn" secondAttribute="bottom" id="sYc-Sb-eu9"/>
                             <constraint firstItem="BuS-AZ-bQn" firstAttribute="top" secondItem="jY1-M7-UCM" secondAttribute="bottom" constant="23" id="tOG-qg-sDM"/>
                             <constraint firstItem="dUY-QF-CDf" firstAttribute="width" secondItem="BuS-AZ-bQn" secondAttribute="width" id="vb9-dy-s5M"/>
                             <constraint firstItem="fHX-FU-RfO" firstAttribute="centerY" secondItem="jY1-M7-UCM" secondAttribute="centerY" id="xsC-hy-Svg"/>
                             <constraint firstItem="jY1-M7-UCM" firstAttribute="top" secondItem="dUY-QF-CDf" secondAttribute="bottom" constant="8" id="yhC-Wx-PeA"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="C8L-hv-lo4" appends="YES" id="2Xx-mD-9OT"/>
+                        </connections>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
@@ -91,10 +102,19 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D1u-Xu-ZGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="C8L-hv-lo4">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="source" value="tappedCommand"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="destination" value="command"/>
+                    </userDefinedRuntimeAttributes>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="636" y="-55"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background.png" width="1000" height="667"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

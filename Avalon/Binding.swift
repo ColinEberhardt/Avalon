@@ -47,4 +47,37 @@ import Foundation
     
     return "<Avalon.Binding sourceProperty = \(sourceProperty); destinationProperty = \(destinationProperty); mode = \(mode); converter = \(converter)"
   }
+  
+  // take the publicly exposed binding components and construct
+  // a binding instance
+  class func fromBindable(bindable: Bindable) -> Binding? {
+    if bindable.source != "" && bindable.destination != "" {
+      
+      // create a binding
+      let binding = Binding(source: bindable.source, destination: bindable.destination)
+      
+      // add a converter
+      if bindable.converter != "" {
+        if let converterClass = NSClassFromString(bindable.converter) as? NSObject.Type {
+          binding.converter = converterClass() as? ValueConverter
+        } else {
+          println("ERROR: A converter of class \(bindable.converter) could not be constructed.")
+        }
+      }
+      
+      if bindable.mode == "TwoWay" {
+        binding.mode = .TwoWay
+      } else if bindable.mode == "OneWay" {
+        binding.mode = .OneWay
+      } else if bindable.mode != "" {
+        println("ERROR: binding mode can only have values of OneWay or TwoWay, the value \(bindable.mode) is not permitted.")
+      }
+      
+      return binding
+    } else {
+      return nil
+    }
+  }
+
+  
 }

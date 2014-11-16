@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+import Avalon
 
 class SwiftWeatherViewModel: NSObject, CLLocationManagerDelegate {
   
@@ -18,9 +19,14 @@ class SwiftWeatherViewModel: NSObject, CLLocationManagerDelegate {
   dynamic var temperature = ""
   dynamic var location = ""
   dynamic var iconImage: UIImage?
+  dynamic let tappedCommand: Command!
   
   override init() {
     super.init()
+    
+    tappedCommand = ClosureCommand {
+      self.locationManager.startUpdatingLocation()
+    }
     
     locationManager.delegate = self
     locationManager.desiredAccuracy = kCLLocationAccuracyBest

@@ -15,8 +15,8 @@ import Foundation
   var destination: String { get set }
 
   var converter: String { get set }
-  
-  var binding: Binding? {get}
 
   var mode: String { get set }
+  
+  var bindings: [Binding]? { get set }
 }

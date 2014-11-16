@@ -29,21 +29,23 @@ extension UIView {
   }
   
   // combines the bindings array with any bindings from the designer
-  func bindingsForView(view: UIView) -> [Binding] {
+  func bindingsForBindableObject(view: Bindable) -> [Binding] {
     var b = [Binding]()
     if let viewBindings = view.bindings {
       b += viewBindings
     }
-    if let viewBinding = view.binding {
+    if let viewBinding = Binding.fromBindable(view) {
       b += [viewBinding]
     }
     return b
   }
   
-  func bindSourceToDestination(view: UIView, viewModel: NSObject, binding: Binding) {
+  func bindSourceToDestination<T: NSObject>(view: T, viewModel: NSObject, binding: Binding) {
     
     // dispose of any prior bindings
     binding.disposeAll()
+    
+    let nsObject = view as NSObject
     
     // create the new binding
     if let kvoBinding = KVOBindingConnector(source: viewModel, destination: view, binding: binding) {
@@ -78,7 +80,7 @@ extension UIView {
   }
   
   func contextBindingForView(view: UIView) -> Binding? {
-    let allBindings = bindingsForView(view)
+    let allBindings = bindingsForBindableObject(view)
     let contextBindings = allBindings.filter({ $0.destinationProperty == "bindingContext" })
     if contextBindings.count > 0 {
       return contextBindings[0]
@@ -102,6 +104,19 @@ extension UIView {
   // initiates the bindings associated with the given view, for the supplied view model
   func initiateBindingsForView(view: UIView, viewModel: NSObject, skipBindingContext: Bool) {
     
+    // TODO: Unit tests and check this works with bindingContext bindings
+    // bind the geature recognizers
+    if let gestureRecognizers = self.gestureRecognizers {
+      for maybeGestureRecognizer in gestureRecognizers {
+        if let gestureRecognizer = maybeGestureRecognizer as? UIGestureRecognizer {
+          for binding in bindingsForBindableObject(gestureRecognizer) {
+            bindSourceToDestination(gestureRecognizer, viewModel: viewModel, binding: binding)
+          }
+        }
+      }
+    }
+    
+    // does this veiw have a binding for the bindingContextProperty?
     let contextBinding = contextBindingForView(view)
     
     if contextBinding != nil && !skipBindingContext {
@@ -114,7 +129,7 @@ extension UIView {
     } else {
       
       // obtain all the bindings that need to be initialised
-      var allBindings = bindingsForView(view)
+      var allBindings = bindingsForBindableObject(view)
       if skipBindingContext {
         allBindings = allBindings.filter { $0.destinationProperty != "bindingContext" }
       }

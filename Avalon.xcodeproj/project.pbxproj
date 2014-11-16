@@ -19,6 +19,7 @@
 		3C408EC71A1926F000D8426F /* UISliderConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EC01A1926F000D8426F /* UISliderConnector.swift */; };
 		3C408EC81A1926F000D8426F /* UISwitchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EC11A1926F000D8426F /* UISwitchConnector.swift */; };
 		3C408EC91A1926F000D8426F /* UITextFieldConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EC21A1926F000D8426F /* UITextFieldConnector.swift */; };
+		3C408ECB1A19283700D8426F /* UIGestureRecognizer+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408ECA1A19283700D8426F /* UIGestureRecognizer+Avalon.swift */; };
 		3C5477631A0FDA4C00C80A3C /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775A1A0FDA4C00C80A3C /* Binding.swift */; };
 		3C5477641A0FDA4C00C80A3C /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775B1A0FDA4C00C80A3C /* Bindable.swift */; };
 		3C5477651A0FDA4C00C80A3C /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775C1A0FDA4C00C80A3C /* Command.swift */; };
@@ -70,6 +71,7 @@
 		3C408EC01A1926F000D8426F /* UISliderConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISliderConnector.swift; sourceTree = "<group>"; };
 		3C408EC11A1926F000D8426F /* UISwitchConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISwitchConnector.swift; sourceTree = "<group>"; };
 		3C408EC21A1926F000D8426F /* UITextFieldConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldConnector.swift; sourceTree = "<group>"; };
+		3C408ECA1A19283700D8426F /* UIGestureRecognizer+Avalon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIGestureRecognizer+Avalon.swift"; sourceTree = "<group>"; };
 		3C54775A1A0FDA4C00C80A3C /* Binding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		3C54775B1A0FDA4C00C80A3C /* Bindable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		3C54775C1A0FDA4C00C80A3C /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				3C5477C71A1122AA00C80A3C /* UIView+Avalon.swift */,
 				3C5477C81A1122AA00C80A3C /* UIView+AvalonCore.swift */,
 				3C408EAE1A16B8A300D8426F /* UIActivityIndicator+Avalon.swift */,
+				3C408ECA1A19283700D8426F /* UIGestureRecognizer+Avalon.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				3C408EC81A1926F000D8426F /* UISwitchConnector.swift in Sources */,
 				3C5477631A0FDA4C00C80A3C /* Binding.swift in Sources */,
 				3C5477CB1A1122AA00C80A3C /* UIView+Avalon.swift in Sources */,
+				3C408ECB1A19283700D8426F /* UIGestureRecognizer+Avalon.swift in Sources */,
 				3C5477671A0FDA4C00C80A3C /* BindingMode.swift in Sources */,
 				3C408EB91A19268700D8426F /* NSValueWrapper.m in Sources */,
 				3C408EC61A1926F000D8426F /* UISegmentedControlConnector.swift in Sources */,

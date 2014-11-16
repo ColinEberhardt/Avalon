@@ -1,23 +1,16 @@
 //
-//  UIView+Extension.swift
-//  MvvmSwift
+//  UIGestureRecognizer+Avalon.swift
+//  Avalon
 //
-//  Created by Colin Eberhardt on 04/11/2014.
+//  Created by Colin Eberhardt on 16/11/2014.
 //  Copyright (c) 2014 Colin Eberhardt. All rights reserved.
 //
 
-import ObjectiveC
 import Foundation
-import UIKit
 
-// TODO: tidy up these keys
-var bindingAssociationKey: UInt8 = 1
-var sourceAssociationKey: UInt8 = 2
-var destinationAssociationKey: UInt8 = 3
-var converterAssociationKey: UInt8 = 4
-var modeAssociationKey: UInt8 = 5
+private var command2AssociationKey: UInt8 = 6
 
-extension UIView: Bindable {
+extension UIGestureRecognizer: Bindable {
   
   @IBInspectable public var source: String {
     get {
@@ -54,7 +47,7 @@ extension UIView: Bindable {
       let value: AnyObject! = objc_getAssociatedObject(self, &modeAssociationKey)
       return value != nil ? value as String : ""
     }
-  set(newValue) {
+    set(newValue) {
       objc_setAssociatedObject(self, &modeAssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
     }
   }
@@ -69,5 +62,23 @@ extension UIView: Bindable {
       objc_setAssociatedObject(self, &bindingAssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
     }
   }
+  
+  public var command: Command? {
+    get {
+      return objc_getAssociatedObject(self, &command2AssociationKey) as Command?
+    }
+    set(newValue) {
+      objc_setAssociatedObject(self, &command2AssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
+      
+      // TODO: Ensure this is a one-time subscription
+      self.addTarget(self, action: "gestureFired")
+    }
+  }
+  
+  func gestureFired() {
+    if let buttonCommand = command {
+      buttonCommand.execute()
+    }
+  }
+  
 }
-
