@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 // binds a property on the source object to a property on the destination
-class UIControlBindingConnector: NSObject, Disposable {
+public class UIControlBindingConnector: NSObject, Disposable {
   
   private var isSubscribed = true
   private let destination: UIControl, source: NSObject
@@ -31,12 +31,12 @@ class UIControlBindingConnector: NSObject, Disposable {
   }
   
   
-  internal func valueChanged() {
+  public func valueChanged() {
       let value: AnyObject = valueExtractor()
       source.setValue(value, forKeyPath: binding.sourceProperty)
   }
   
-  func dispose() {
+  public func dispose() {
     if isSubscribed {
       destination.removeTarget(self, action: "valueChanged", forControlEvents: UIControlEvents.ValueChanged)
       isSubscribed = false

@@ -13,13 +13,13 @@ import ObjectiveC
 // this class also ensures some sanity checks are performed
 // 1. That the source property can be read
 // 2. That the destination property is compatible with values emitted by the source
-class KVOBindingConnector: NSObject, Disposable {
+public class KVOBindingConnector: NSObject, Disposable {
   
   private var isSubscribed = true
   private let destination: NSObject, source: NSObject
   private let binding: Binding
   
-  init?(source: NSObject, destination: NSObject, binding: Binding) {
+  public init?(source: NSObject, destination: NSObject, binding: Binding) {
     
     self.destination = destination
     self.source = source
@@ -43,7 +43,7 @@ class KVOBindingConnector: NSObject, Disposable {
     }
   }
   
-  override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject,
+  override public func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject,
     change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
     
     let newValue: AnyObject = change[NSKeyValueChangeNewKey]!
@@ -70,7 +70,7 @@ class KVOBindingConnector: NSObject, Disposable {
     }
   }
   
-  func dispose() {
+  public func dispose() {
     if isSubscribed {
       source.removeObserver(self, forKeyPath: binding.sourceProperty)
       isSubscribed = false

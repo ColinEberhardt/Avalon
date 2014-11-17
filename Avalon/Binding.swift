@@ -9,11 +9,11 @@
 import Foundation
 
 @objc public class Binding: Printable {
-  var destinationProperty = ""
-  var sourceProperty = ""
-  var converter: ValueConverter?
-  var mode = BindingMode.OneWay
-  var disposables = [Disposable]()
+  public var destinationProperty = ""
+  public var sourceProperty = ""
+  public var converter: ValueConverter?
+  public var mode = BindingMode.OneWay
+  public var disposables = [Disposable]()
   
   public init(source: String, destination: String) {
     self.destinationProperty = destination

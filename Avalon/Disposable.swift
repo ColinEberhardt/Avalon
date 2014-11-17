@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol Disposable {
+public protocol Disposable {
   func dispose()
 }

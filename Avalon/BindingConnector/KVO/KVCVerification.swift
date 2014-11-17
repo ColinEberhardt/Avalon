@@ -33,7 +33,7 @@ public class KVCVerification {
     }
   }
   
-  class func verifyCanSetVale(optionalValue: AnyObject?, propertyPath: String, destination: NSObject) -> String? {
+  public class func verifyCanSetVale(optionalValue: AnyObject?, propertyPath: String, destination: NSObject) -> String? {
     
     // a map of destination property types to valid value types
     let permittedTypeMap = [
