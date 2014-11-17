@@ -38,6 +38,13 @@ import Avalon
   }
 }
 
+@objc(DateToString) class DateToString: ValueConverter {
+  override func convert(sourceValue: AnyObject, binding: Binding, viewModel: AnyObject) -> AnyObject? {
+    let date = sourceValue as NSDate
+    return date.description
+  }
+}
+
 class KitchenSinkViewModel: NSObject {
   
   dynamic var text = "foo"
@@ -45,6 +52,8 @@ class KitchenSinkViewModel: NSObject {
   dynamic var number = 1.0
   dynamic var maxNumber = 100.0
   dynamic var minNumber = 0.0
+  
+  dynamic var date = NSDate()
   
   dynamic var progress = 0.4
   

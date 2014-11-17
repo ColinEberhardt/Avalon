@@ -62,6 +62,7 @@ extension UIView {
       (UISwitch.self, "on", .ValueChanged, { control in (control as UISwitch).on }),
       (UITextField.self, "text", .EditingChanged, { control in (control as UITextField).text }),
       (UIStepper.self, "value", .ValueChanged, { control in (control as UIStepper).value }),
+      (UIDatePicker.self, "date", .ValueChanged, { control in (control as UIDatePicker).date }),
     ]
     
     if let control = view as? UIControl {
