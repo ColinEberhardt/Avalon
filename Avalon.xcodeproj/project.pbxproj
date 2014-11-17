@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3C408EAF1A16B8A300D8426F /* UIActivityIndicator+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EAE1A16B8A300D8426F /* UIActivityIndicator+Avalon.swift */; };
-		3C408EB61A19268700D8426F /* NSObject+KVCWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C408EB21A19268700D8426F /* NSObject+KVCWrapper.h */; };
+		3C408EB61A19268700D8426F /* NSObject+KVCWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C408EB21A19268700D8426F /* NSObject+KVCWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3C408EB71A19268700D8426F /* NSObject+KVCWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EB31A19268700D8426F /* NSObject+KVCWrapper.m */; };
-		3C408EB81A19268700D8426F /* NSValueWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C408EB41A19268700D8426F /* NSValueWrapper.h */; };
+		3C408EB81A19268700D8426F /* NSValueWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C408EB41A19268700D8426F /* NSValueWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3C408EB91A19268700D8426F /* NSValueWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EB51A19268700D8426F /* NSValueWrapper.m */; };
 		3C408EC31A1926F000D8426F /* KVCVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EBB1A1926F000D8426F /* KVCVerification.swift */; };
 		3C408EC41A1926F000D8426F /* KVOBindingConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EBC1A1926F000D8426F /* KVOBindingConnector.swift */; };
