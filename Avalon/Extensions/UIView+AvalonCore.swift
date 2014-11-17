@@ -50,29 +50,36 @@ extension UIView {
     }
   }
   
-  
   func bindDestinationToSource(view: UIView, viewModel: NSObject, binding: Binding) {
 
     // unfortunately most UIKit controls are not KVO compliant, so we have to use target-action
     // in order to handle updates and relay the change back to the model
-    if let slider = view as? UISlider {
-      if let controlBinding = UISliderConnector(source: viewModel, slider: slider, binding: binding) {
-        binding.addDisposable(controlBinding)
+    
+    
+    let connectors: [(AnyClass, String, UIControlEvents, UIControl -> AnyObject)] = [
+      (UISlider.self, "value", .ValueChanged, { control in (control as UISlider).value }),
+      (UISegmentedControl.self, "selectedSegmentIndex", .ValueChanged, { control in (control as UISegmentedControl).selectedSegmentIndex }),
+      (UISwitch.self, "on", .ValueChanged, { control in (control as UISwitch).on }),
+      (UITextField.self, "text", .EditingChanged, { control in (control as UITextField).text }),
+      (UIStepper.self, "value", .ValueChanged, { control in (control as UIStepper).value }),
+    ]
+    
+    if let control = view as? UIControl {
+      for connector in connectors {
+        if control.dynamicType === connector.0 {
+          
+          if binding.destinationProperty != connector.1 {
+            ErrorSink.instance.logEvent("ERROR: view \(view) does not support two-way binding, with binding \(binding)")
+          } else {
+            let connector =  UIControlBindingConnector(source: viewModel, destination: control, valueExtractor: { connector.3(control) }, binding: binding, events: connector.2)
+            binding.addDisposable(connector)
+            return
+          }
+        }
       }
-    } else if let segmentedControl = view as? UISegmentedControl {
-      if let controlBinding = UISegmentedControlConnector(source: viewModel, segmentedControl: segmentedControl, binding: binding) {
-        binding.addDisposable(controlBinding)
-      }
-    } else if let switchControl = view as? UISwitch {
-      if let controlBinding = UISwitchConnector(source: viewModel, switchControl: switchControl, binding: binding) {
-        binding.addDisposable(controlBinding)
-      }
-    } else if let textField = view as? UITextField {
-      if let controlBinding = UITextFieldControlConnector(source: viewModel, textField: textField, binding: binding) {
-        binding.addDisposable(controlBinding)
-      }
+      ErrorSink.instance.logEvent("ERROR: view \(view) does not support two-way binding, with binding \(binding)")
     } else {
-      ErrorSink.instance.logEvent("ERROR: destination view \(view) does not support two-way binding, with binding \(binding)");
+      ErrorSink.instance.logEvent("ERROR: view \(view) is not a UIControl subclass hence does not support two-way binding, with binding \(binding)")
     }
   }
   

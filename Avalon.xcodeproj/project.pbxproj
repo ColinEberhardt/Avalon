@@ -15,10 +15,6 @@
 		3C408EC31A1926F000D8426F /* KVCVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EBB1A1926F000D8426F /* KVCVerification.swift */; };
 		3C408EC41A1926F000D8426F /* KVOBindingConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EBC1A1926F000D8426F /* KVOBindingConnector.swift */; };
 		3C408EC51A1926F000D8426F /* UIControlBindingConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EBE1A1926F000D8426F /* UIControlBindingConnector.swift */; };
-		3C408EC61A1926F000D8426F /* UISegmentedControlConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EBF1A1926F000D8426F /* UISegmentedControlConnector.swift */; };
-		3C408EC71A1926F000D8426F /* UISliderConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EC01A1926F000D8426F /* UISliderConnector.swift */; };
-		3C408EC81A1926F000D8426F /* UISwitchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EC11A1926F000D8426F /* UISwitchConnector.swift */; };
-		3C408EC91A1926F000D8426F /* UITextFieldConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EC21A1926F000D8426F /* UITextFieldConnector.swift */; };
 		3C408ECB1A19283700D8426F /* UIGestureRecognizer+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408ECA1A19283700D8426F /* UIGestureRecognizer+Avalon.swift */; };
 		3C5477631A0FDA4C00C80A3C /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775A1A0FDA4C00C80A3C /* Binding.swift */; };
 		3C5477641A0FDA4C00C80A3C /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775B1A0FDA4C00C80A3C /* Bindable.swift */; };
@@ -44,10 +40,6 @@
 		3C408EBB1A1926F000D8426F /* KVCVerification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVCVerification.swift; sourceTree = "<group>"; };
 		3C408EBC1A1926F000D8426F /* KVOBindingConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVOBindingConnector.swift; sourceTree = "<group>"; };
 		3C408EBE1A1926F000D8426F /* UIControlBindingConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlBindingConnector.swift; sourceTree = "<group>"; };
-		3C408EBF1A1926F000D8426F /* UISegmentedControlConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISegmentedControlConnector.swift; sourceTree = "<group>"; };
-		3C408EC01A1926F000D8426F /* UISliderConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISliderConnector.swift; sourceTree = "<group>"; };
-		3C408EC11A1926F000D8426F /* UISwitchConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISwitchConnector.swift; sourceTree = "<group>"; };
-		3C408EC21A1926F000D8426F /* UITextFieldConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldConnector.swift; sourceTree = "<group>"; };
 		3C408ECA1A19283700D8426F /* UIGestureRecognizer+Avalon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIGestureRecognizer+Avalon.swift"; sourceTree = "<group>"; };
 		3C54775A1A0FDA4C00C80A3C /* Binding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		3C54775B1A0FDA4C00C80A3C /* Bindable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
@@ -101,10 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				3C408EBE1A1926F000D8426F /* UIControlBindingConnector.swift */,
-				3C408EBF1A1926F000D8426F /* UISegmentedControlConnector.swift */,
-				3C408EC01A1926F000D8426F /* UISliderConnector.swift */,
-				3C408EC11A1926F000D8426F /* UISwitchConnector.swift */,
-				3C408EC21A1926F000D8426F /* UITextFieldConnector.swift */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -259,23 +247,19 @@
 				3CDD6C141A1A4A21003020AA /* AssociatedPropertyKeys.swift in Sources */,
 				3C5477CA1A1122AA00C80A3C /* UISegmentedControl+Avalon.swift in Sources */,
 				3C5477691A0FDDDF00C80A3C /* Disposable.swift in Sources */,
-				3C408EC71A1926F000D8426F /* UISliderConnector.swift in Sources */,
 				3C408EC41A1926F000D8426F /* KVOBindingConnector.swift in Sources */,
 				3C408EAF1A16B8A300D8426F /* UIActivityIndicator+Avalon.swift in Sources */,
 				3C5477C91A1122AA00C80A3C /* UIButton+Avalon.swift in Sources */,
 				3C5477641A0FDA4C00C80A3C /* Bindable.swift in Sources */,
-				3C408EC91A1926F000D8426F /* UITextFieldConnector.swift in Sources */,
 				3C408EC31A1926F000D8426F /* KVCVerification.swift in Sources */,
 				3C5477661A0FDA4C00C80A3C /* ValueConverter.swift in Sources */,
 				3C408EB71A19268700D8426F /* NSObject+KVCWrapper.m in Sources */,
 				3C5477CC1A1122AA00C80A3C /* UIView+AvalonCore.swift in Sources */,
-				3C408EC81A1926F000D8426F /* UISwitchConnector.swift in Sources */,
 				3C5477631A0FDA4C00C80A3C /* Binding.swift in Sources */,
 				3C5477CB1A1122AA00C80A3C /* UIView+Avalon.swift in Sources */,
 				3C408ECB1A19283700D8426F /* UIGestureRecognizer+Avalon.swift in Sources */,
 				3C5477671A0FDA4C00C80A3C /* BindingMode.swift in Sources */,
 				3C408EB91A19268700D8426F /* NSValueWrapper.m in Sources */,
-				3C408EC61A1926F000D8426F /* UISegmentedControlConnector.swift in Sources */,
 				3C5477651A0FDA4C00C80A3C /* Command.swift in Sources */,
 				3C408EC51A1926F000D8426F /* UIControlBindingConnector.swift in Sources */,
 			);

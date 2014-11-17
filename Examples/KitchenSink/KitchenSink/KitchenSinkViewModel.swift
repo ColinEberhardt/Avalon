@@ -42,9 +42,11 @@ class KitchenSinkViewModel: NSObject {
   
   dynamic var text = "foo"
   
-  dynamic var number = 0.8
+  dynamic var number = 1.0
   dynamic var maxNumber = 100.0
   dynamic var minNumber = 0.0
+  
+  dynamic var progress = 0.4
   
   dynamic var buttonTapCount: Int = 0
   
