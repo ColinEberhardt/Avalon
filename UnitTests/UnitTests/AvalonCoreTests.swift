@@ -24,7 +24,7 @@ class AddressViewModel: NSObject {
 }
 
 // System / integration level tests for the framework
-class AvalonTests: XCTestCase {
+class AvalonCoreTests: XCTestCase {
   
   func test_bindingContext_isAppliedToViewHierarchy() {
     

@@ -15,7 +15,7 @@ class UISwitchConnector: UIControlBindingConnector {
     super.init(source: source, destination: switchControl, valueExtractor: { switchControl.on }, binding: binding, events: UIControlEvents.ValueChanged)
     
     if binding.destinationProperty != "on" {
-      println("ERROR: view \(switchControl) does not support two-way binding, with binding \(binding)");
+      ErrorSink.instance.logEvent("ERROR: view \(switchControl) does not support two-way binding, with binding \(binding)");
       return nil
     }
   }

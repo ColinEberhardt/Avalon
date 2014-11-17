@@ -75,7 +75,7 @@ extension UIView {
         binding.addDisposable(controlBinding)
       }
     } else {
-      println("ERROR: destination view \(view) does not support two-way binding, with binding \(binding)");
+      ErrorSink.instance.logEvent("ERROR: destination view \(view) does not support two-way binding, with binding \(binding)");
     }
   }
   

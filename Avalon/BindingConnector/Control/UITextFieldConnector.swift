@@ -15,7 +15,7 @@ class UITextFieldControlConnector: UIControlBindingConnector {
     super.init(source: source, destination: textField, valueExtractor: { textField.text }, binding: binding, events: UIControlEvents.EditingChanged)
     
     if binding.destinationProperty != "text" {
-      println("ERROR: view \(textField) does not support two-way binding, with binding \(binding)");
+      ErrorSink.instance.logEvent("ERROR: view \(textField) does not support two-way binding, with binding \(binding)");
       return nil
     }
   }

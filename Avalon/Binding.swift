@@ -61,7 +61,7 @@ import Foundation
         if let converterClass = NSClassFromString(bindable.converter) as? NSObject.Type {
           binding.converter = converterClass() as? ValueConverter
         } else {
-          println("ERROR: A converter of class \(bindable.converter) could not be constructed.")
+          ErrorSink.instance.logEvent("ERROR: A converter of class \(bindable.converter) could not be constructed.")
         }
       }
       
@@ -70,7 +70,7 @@ import Foundation
       } else if bindable.mode == "OneWay" {
         binding.mode = .OneWay
       } else if bindable.mode != "" {
-        println("ERROR: binding mode can only have values of OneWay or TwoWay, the value \(bindable.mode) is not permitted.")
+        ErrorSink.instance.logEvent("ERROR: binding mode can only have values of OneWay or TwoWay, the value \(bindable.mode) is not permitted.")
       }
       
       return binding

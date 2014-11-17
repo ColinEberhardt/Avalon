@@ -15,7 +15,7 @@ class UISliderConnector: UIControlBindingConnector {
     super.init(source: source, destination: slider, valueExtractor: { slider.value }, binding: binding)
     
     if binding.destinationProperty != "value" {
-      println("ERROR: view \(slider) does not support two-way binding, with binding \(binding)");
+      ErrorSink.instance.logEvent("ERROR: view \(slider) does not support two-way binding, with binding \(binding)");
       return nil
     }
   }

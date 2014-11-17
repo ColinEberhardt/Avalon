@@ -33,11 +33,11 @@ public class KVOBindingConnector: NSObject, Disposable {
     // copy initial value - verifying that the source property path is valid
     let wrappedResults: NSValueWrapper =  NSObjectHelper.tryGetValueForKeyPath(binding.sourceProperty, forObject: source)
     if let exception = wrappedResults.exception {
-      println("ERROR: Unable to get value from source \(source) for binding \(binding)")
+      ErrorSink.instance.logEvent("ERROR: Unable to get value from source \(source) for binding \(binding)")
       return nil
     } else {
       if let error = setValueOnDestination(wrappedResults.propertyValue) {
-        println("ERROR: Unable to set value \(wrappedResults.propertyValue) on destination \(destination) with binding \(binding)")
+        ErrorSink.instance.logEvent("ERROR: Unable to set value \(wrappedResults.propertyValue) on destination \(destination) with binding \(binding)")
         return nil
       }
     }
@@ -55,7 +55,7 @@ public class KVOBindingConnector: NSObject, Disposable {
     
     // verify that the destination property accomodates this value
     /*if let warnings = KVCVerification.verifyCanSetVale(convertedValue, propertyPath: binding.destinationProperty, destination: destination) {
-      println(warnings)
+      ErrorSink.instance.logEvent(warnings)
     }*/
     
     return NSObjectHelper.trySetValue(convertedValue, forKeyPath: binding.destinationProperty, forObject: destination)

@@ -15,7 +15,7 @@ class UISegmentedControlConnector: UIControlBindingConnector {
     super.init(source: source, destination: segmentedControl, valueExtractor: { segmentedControl.selectedSegmentIndex }, binding: binding)
     
     if binding.destinationProperty != "selectedSegmentIndex" {
-      println("ERROR: view \(segmentedControl) does not support two-way binding, with binding \(binding)");
+      ErrorSink.instance.logEvent("ERROR: view \(segmentedControl) does not support two-way binding, with binding \(binding)");
       return nil
     }
   }

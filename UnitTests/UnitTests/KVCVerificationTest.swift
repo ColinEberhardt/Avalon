@@ -124,6 +124,10 @@ class KVCVerificationTest: XCTestCase {
   
   func test_booleanProperty() {
     let textField = UITextField()
+    
+    // TODO: Unfortunately the 'hidden' property of UIView is not a real property. Instead it is a pair of 
+    // methods wrapped as a property. As a result the KVCVerification class is likely to throw up too many
+    // false warnings to be worthwhile.
     textField.hidden = false
     
     // check that a boolean is OK

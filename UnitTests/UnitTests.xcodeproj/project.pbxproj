@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3C859ED21A19E561001BA43F /* Avalon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C23716E1A19E3E800C28D27 /* Avalon.framework */; };
-		3C859EE81A19E72D001BA43F /* AvalonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C859EE31A19E72D001BA43F /* AvalonTests.swift */; };
+		3C859EE81A19E72D001BA43F /* AvalonCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C859EE31A19E72D001BA43F /* AvalonCoreTests.swift */; };
 		3C859EE91A19E72D001BA43F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C859EE41A19E72D001BA43F /* Info.plist */; };
 		3C859EEA1A19E72D001BA43F /* KVCVerificationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C859EE51A19E72D001BA43F /* KVCVerificationTest.swift */; };
 		3C859EEB1A19E72D001BA43F /* KVOBindingConnectorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C859EE61A19E72D001BA43F /* KVOBindingConnectorTest.swift */; };
-		3C859EEC1A19E72D001BA43F /* UnitTestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C859EE71A19E72D001BA43F /* UnitTestsTests.swift */; };
+		3C859EF01A1A26A3001BA43F /* UIControlBindingConnectorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C859EEF1A1A26A3001BA43F /* UIControlBindingConnectorTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,23 +23,16 @@
 			remoteGlobalIDString = 3CEE102F1A0F5A3F002C66E3;
 			remoteInfo = Avalon;
 		};
-		3C23716F1A19E3E800C28D27 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3C2371681A19E3E700C28D27 /* Avalon.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3CEE103A1A0F5A40002C66E3;
-			remoteInfo = AvalonTests;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3C2371581A19E3DD00C28D27 /* UnitTestsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTestsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C2371681A19E3E700C28D27 /* Avalon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Avalon.xcodeproj; path = ../Avalon.xcodeproj; sourceTree = "<group>"; };
-		3C859EE31A19E72D001BA43F /* AvalonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvalonTests.swift; sourceTree = "<group>"; };
+		3C859EE31A19E72D001BA43F /* AvalonCoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvalonCoreTests.swift; sourceTree = "<group>"; };
 		3C859EE41A19E72D001BA43F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C859EE51A19E72D001BA43F /* KVCVerificationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVCVerificationTest.swift; sourceTree = "<group>"; };
 		3C859EE61A19E72D001BA43F /* KVOBindingConnectorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVOBindingConnectorTest.swift; sourceTree = "<group>"; };
-		3C859EE71A19E72D001BA43F /* UnitTestsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTestsTests.swift; sourceTree = "<group>"; };
+		3C859EEF1A1A26A3001BA43F /* UIControlBindingConnectorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlBindingConnectorTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +50,8 @@
 		3C23713A1A19E3DD00C28D27 = {
 			isa = PBXGroup;
 			children = (
-				3C859EE21A19E72D001BA43F /* UnitTests */,
 				3C2371681A19E3E700C28D27 /* Avalon.xcodeproj */,
+				3C859EE21A19E72D001BA43F /* UnitTests */,
 				3C2371441A19E3DD00C28D27 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -75,7 +68,6 @@
 			isa = PBXGroup;
 			children = (
 				3C23716E1A19E3E800C28D27 /* Avalon.framework */,
-				3C2371701A19E3E800C28D27 /* AvalonTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,11 +75,11 @@
 		3C859EE21A19E72D001BA43F /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				3C859EE31A19E72D001BA43F /* AvalonTests.swift */,
+				3C859EE31A19E72D001BA43F /* AvalonCoreTests.swift */,
 				3C859EE41A19E72D001BA43F /* Info.plist */,
 				3C859EE51A19E72D001BA43F /* KVCVerificationTest.swift */,
 				3C859EE61A19E72D001BA43F /* KVOBindingConnectorTest.swift */,
-				3C859EE71A19E72D001BA43F /* UnitTestsTests.swift */,
+				3C859EEF1A1A26A3001BA43F /* UIControlBindingConnectorTest.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -159,13 +151,6 @@
 			remoteRef = 3C23716D1A19E3E800C28D27 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3C2371701A19E3E800C28D27 /* AvalonTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = AvalonTests.xctest;
-			remoteRef = 3C23716F1A19E3E800C28D27 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -184,10 +169,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C859EE81A19E72D001BA43F /* AvalonTests.swift in Sources */,
-				3C859EEC1A19E72D001BA43F /* UnitTestsTests.swift in Sources */,
+				3C859EE81A19E72D001BA43F /* AvalonCoreTests.swift in Sources */,
 				3C859EEB1A19E72D001BA43F /* KVOBindingConnectorTest.swift in Sources */,
 				3C859EEA1A19E72D001BA43F /* KVCVerificationTest.swift in Sources */,
+				3C859EF01A1A26A3001BA43F /* UIControlBindingConnectorTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

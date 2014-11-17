@@ -17,7 +17,7 @@ public class UIControlBindingConnector: NSObject, Disposable {
   private let binding: Binding
   private let valueExtractor: () -> AnyObject
   
-  init(source: NSObject, destination: UIControl, valueExtractor: () -> AnyObject, binding: Binding, events: UIControlEvents = .ValueChanged) {
+  public init(source: NSObject, destination: UIControl, valueExtractor: () -> AnyObject, binding: Binding, events: UIControlEvents = .ValueChanged) {
     
       self.destination = destination
       self.source = source
@@ -30,10 +30,14 @@ public class UIControlBindingConnector: NSObject, Disposable {
       destination.addTarget(self, action: "valueChanged", forControlEvents: events)
   }
   
-  
+  // TODO: Only made public for unit tests. It should be possible to fire this using target-action
   public func valueChanged() {
-      let value: AnyObject = valueExtractor()
-      source.setValue(value, forKeyPath: binding.sourceProperty)
+    let value: AnyObject = valueExtractor()
+  
+    let maybeFailureMessage = NSObjectHelper.trySetValue(value, forKeyPath: binding.sourceProperty, forObject: source)
+    if let failureMessage = maybeFailureMessage {
+      ErrorSink.instance.logEvent("ERROR: Unable to set value \(value) on destination \(source) with binding \(binding)")
+    }
   }
   
   public func dispose() {

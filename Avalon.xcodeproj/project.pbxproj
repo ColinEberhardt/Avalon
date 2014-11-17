@@ -26,39 +26,15 @@
 		3C5477661A0FDA4C00C80A3C /* ValueConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775D1A0FDA4C00C80A3C /* ValueConverter.swift */; };
 		3C5477671A0FDA4C00C80A3C /* BindingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775E1A0FDA4C00C80A3C /* BindingMode.swift */; };
 		3C5477691A0FDDDF00C80A3C /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477681A0FDDDF00C80A3C /* Disposable.swift */; };
-		3C54776A1A0FEAE600C80A3C /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477681A0FDDDF00C80A3C /* Disposable.swift */; };
-		3C54776F1A0FEAE600C80A3C /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775A1A0FDA4C00C80A3C /* Binding.swift */; };
-		3C5477701A0FEAE600C80A3C /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775B1A0FDA4C00C80A3C /* Bindable.swift */; };
-		3C5477711A0FEAE600C80A3C /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775C1A0FDA4C00C80A3C /* Command.swift */; };
-		3C5477721A0FEAE600C80A3C /* ValueConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775D1A0FDA4C00C80A3C /* ValueConverter.swift */; };
-		3C5477731A0FEAE600C80A3C /* BindingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775E1A0FDA4C00C80A3C /* BindingMode.swift */; };
 		3C5477C91A1122AA00C80A3C /* UIButton+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C51A1122AA00C80A3C /* UIButton+Avalon.swift */; };
 		3C5477CA1A1122AA00C80A3C /* UISegmentedControl+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C61A1122AA00C80A3C /* UISegmentedControl+Avalon.swift */; };
 		3C5477CB1A1122AA00C80A3C /* UIView+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C71A1122AA00C80A3C /* UIView+Avalon.swift */; };
 		3C5477CC1A1122AA00C80A3C /* UIView+AvalonCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C81A1122AA00C80A3C /* UIView+AvalonCore.swift */; };
-		3C5477CD1A11232900C80A3C /* UIButton+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C51A1122AA00C80A3C /* UIButton+Avalon.swift */; };
-		3C5477CE1A11232900C80A3C /* UISegmentedControl+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C61A1122AA00C80A3C /* UISegmentedControl+Avalon.swift */; };
-		3C5477CF1A11232900C80A3C /* UIView+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C71A1122AA00C80A3C /* UIView+Avalon.swift */; };
-		3C5477D01A11232900C80A3C /* UIView+AvalonCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C81A1122AA00C80A3C /* UIView+AvalonCore.swift */; };
-		3C5478201A13477900C80A3C /* KVCVerificationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54781F1A13477900C80A3C /* KVCVerificationTest.swift */; };
-		3CA9B94B1A13915F009419FB /* KVOBindingConnectorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA9B94A1A13915F009419FB /* KVOBindingConnectorTest.swift */; };
+		3C859EF21A1A42D7001BA43F /* ErrorSink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C859EF11A1A42D7001BA43F /* ErrorSink.swift */; };
 		3CEE10351A0F5A40002C66E3 /* Avalon.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CEE10341A0F5A40002C66E3 /* Avalon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3CEE103B1A0F5A40002C66E3 /* Avalon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CEE102F1A0F5A3F002C66E3 /* Avalon.framework */; };
-		3CEE10421A0F5A40002C66E3 /* AvalonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEE10411A0F5A40002C66E3 /* AvalonTests.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		3CEE103C1A0F5A40002C66E3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3CEE10261A0F5A3F002C66E3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3CEE102E1A0F5A3F002C66E3;
-			remoteInfo = Avalon;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		3C0CB7711A1387D900364DB9 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		3C408EAE1A16B8A300D8426F /* UIActivityIndicator+Avalon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicator+Avalon.swift"; sourceTree = "<group>"; };
 		3C408EB21A19268700D8426F /* NSObject+KVCWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KVCWrapper.h"; sourceTree = "<group>"; };
 		3C408EB31A19268700D8426F /* NSObject+KVCWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVCWrapper.m"; sourceTree = "<group>"; };
@@ -82,14 +58,10 @@
 		3C5477C61A1122AA00C80A3C /* UISegmentedControl+Avalon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Avalon.swift"; sourceTree = "<group>"; };
 		3C5477C71A1122AA00C80A3C /* UIView+Avalon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Avalon.swift"; sourceTree = "<group>"; };
 		3C5477C81A1122AA00C80A3C /* UIView+AvalonCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AvalonCore.swift"; sourceTree = "<group>"; };
-		3C54781F1A13477900C80A3C /* KVCVerificationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVCVerificationTest.swift; sourceTree = "<group>"; };
-		3CA9B94A1A13915F009419FB /* KVOBindingConnectorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVOBindingConnectorTest.swift; sourceTree = "<group>"; };
+		3C859EF11A1A42D7001BA43F /* ErrorSink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorSink.swift; sourceTree = "<group>"; };
 		3CEE102F1A0F5A3F002C66E3 /* Avalon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Avalon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CEE10331A0F5A40002C66E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CEE10341A0F5A40002C66E3 /* Avalon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Avalon.h; sourceTree = "<group>"; };
-		3CEE103A1A0F5A40002C66E3 /* AvalonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AvalonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3CEE10401A0F5A40002C66E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3CEE10411A0F5A40002C66E3 /* AvalonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvalonTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,14 +69,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3CEE10371A0F5A40002C66E3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3CEE103B1A0F5A40002C66E3 /* Avalon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				3CEE10311A0F5A3F002C66E3 /* Avalon */,
-				3CEE103E1A0F5A40002C66E3 /* AvalonTests */,
 				3CEE10301A0F5A3F002C66E3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -178,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				3CEE102F1A0F5A3F002C66E3 /* Avalon.framework */,
-				3CEE103A1A0F5A40002C66E3 /* AvalonTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,6 +159,7 @@
 				3C54775D1A0FDA4C00C80A3C /* ValueConverter.swift */,
 				3C54775E1A0FDA4C00C80A3C /* BindingMode.swift */,
 				3CEE10341A0F5A40002C66E3 /* Avalon.h */,
+				3C859EF11A1A42D7001BA43F /* ErrorSink.swift */,
 			);
 			path = Avalon;
 			sourceTree = "<group>";
@@ -205,26 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				3CEE10331A0F5A40002C66E3 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		3CEE103E1A0F5A40002C66E3 /* AvalonTests */ = {
-			isa = PBXGroup;
-			children = (
-				3CEE10411A0F5A40002C66E3 /* AvalonTests.swift */,
-				3CEE103F1A0F5A40002C66E3 /* Supporting Files */,
-				3C54781F1A13477900C80A3C /* KVCVerificationTest.swift */,
-				3C0CB7711A1387D900364DB9 /* BridgingHeader.h */,
-				3CA9B94A1A13915F009419FB /* KVOBindingConnectorTest.swift */,
-			);
-			path = AvalonTests;
-			sourceTree = "<group>";
-		};
-		3CEE103F1A0F5A40002C66E3 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				3CEE10401A0F5A40002C66E3 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -263,24 +206,6 @@
 			productReference = 3CEE102F1A0F5A3F002C66E3 /* Avalon.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		3CEE10391A0F5A40002C66E3 /* AvalonTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3CEE10481A0F5A40002C66E3 /* Build configuration list for PBXNativeTarget "AvalonTests" */;
-			buildPhases = (
-				3CEE10361A0F5A40002C66E3 /* Sources */,
-				3CEE10371A0F5A40002C66E3 /* Frameworks */,
-				3CEE10381A0F5A40002C66E3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3CEE103D1A0F5A40002C66E3 /* PBXTargetDependency */,
-			);
-			name = AvalonTests;
-			productName = AvalonTests;
-			productReference = 3CEE103A1A0F5A40002C66E3 /* AvalonTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -291,9 +216,6 @@
 				ORGANIZATIONNAME = "Colin Eberhardt";
 				TargetAttributes = {
 					3CEE102E1A0F5A3F002C66E3 = {
-						CreatedOnToolsVersion = 6.1;
-					};
-					3CEE10391A0F5A40002C66E3 = {
 						CreatedOnToolsVersion = 6.1;
 					};
 				};
@@ -311,20 +233,12 @@
 			projectRoot = "";
 			targets = (
 				3CEE102E1A0F5A3F002C66E3 /* Avalon */,
-				3CEE10391A0F5A40002C66E3 /* AvalonTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3CEE102D1A0F5A3F002C66E3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3CEE10381A0F5A40002C66E3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -338,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C859EF21A1A42D7001BA43F /* ErrorSink.swift in Sources */,
 				3C5477CA1A1122AA00C80A3C /* UISegmentedControl+Avalon.swift in Sources */,
 				3C5477691A0FDDDF00C80A3C /* Disposable.swift in Sources */,
 				3C408EC71A1926F000D8426F /* UISliderConnector.swift in Sources */,
@@ -362,35 +277,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3CEE10361A0F5A40002C66E3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3C5477701A0FEAE600C80A3C /* Bindable.swift in Sources */,
-				3C5478201A13477900C80A3C /* KVCVerificationTest.swift in Sources */,
-				3C5477721A0FEAE600C80A3C /* ValueConverter.swift in Sources */,
-				3C54776F1A0FEAE600C80A3C /* Binding.swift in Sources */,
-				3C5477731A0FEAE600C80A3C /* BindingMode.swift in Sources */,
-				3C5477711A0FEAE600C80A3C /* Command.swift in Sources */,
-				3C5477CD1A11232900C80A3C /* UIButton+Avalon.swift in Sources */,
-				3CA9B94B1A13915F009419FB /* KVOBindingConnectorTest.swift in Sources */,
-				3C5477CE1A11232900C80A3C /* UISegmentedControl+Avalon.swift in Sources */,
-				3C5477CF1A11232900C80A3C /* UIView+Avalon.swift in Sources */,
-				3CEE10421A0F5A40002C66E3 /* AvalonTests.swift in Sources */,
-				3C5477D01A11232900C80A3C /* UIView+AvalonCore.swift in Sources */,
-				3C54776A1A0FEAE600C80A3C /* Disposable.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		3CEE103D1A0F5A40002C66E3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3CEE102E1A0F5A3F002C66E3 /* Avalon */;
-			targetProxy = 3CEE103C1A0F5A40002C66E3 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		3CEE10431A0F5A40002C66E3 /* Debug */ = {
@@ -515,40 +402,6 @@
 			};
 			name = Release;
 		};
-		3CEE10491A0F5A40002C66E3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = AvalonTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-D TEST";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/AvalonTests/BridgingHeader.h";
-			};
-			name = Debug;
-		};
-		3CEE104A1A0F5A40002C66E3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = AvalonTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-D TEST";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/AvalonTests/BridgingHeader.h";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -566,15 +419,6 @@
 			buildConfigurations = (
 				3CEE10461A0F5A40002C66E3 /* Debug */,
 				3CEE10471A0F5A40002C66E3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3CEE10481A0F5A40002C66E3 /* Build configuration list for PBXNativeTarget "AvalonTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3CEE10491A0F5A40002C66E3 /* Debug */,
-				3CEE104A1A0F5A40002C66E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
