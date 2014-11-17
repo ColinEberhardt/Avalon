@@ -10,17 +10,14 @@ import ObjectiveC
 import Foundation
 import UIKit
 
-private var bindingContentAssociationKey: UInt8 = 0
-
-
 extension UIView {
   
   public var bindingContext: NSObject? {
     get {
-      return objc_getAssociatedObject(self, &bindingContentAssociationKey) as? NSObject
+      return objc_getAssociatedObject(self, &bindingContextAssociationKey) as? NSObject
     }
     set(newValue) {
-      objc_setAssociatedObject(self, &bindingContentAssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
+      objc_setAssociatedObject(self, &bindingContextAssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
       
       if let viewModel = bindingContext {
         initiateBindingsForView(self, viewModel: viewModel, skipBindingContext: true)

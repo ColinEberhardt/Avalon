@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 
-private var animatingAssociationKey: UInt8 = 7
-
 extension UIActivityIndicatorView {
   
   public var animating: Bool {

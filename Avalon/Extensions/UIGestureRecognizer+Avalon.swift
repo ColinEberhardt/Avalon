@@ -8,8 +8,6 @@
 
 import Foundation
 
-private var command2AssociationKey: UInt8 = 6
-
 extension UIGestureRecognizer: Bindable {
   
   @IBInspectable public var source: String {
@@ -65,10 +63,10 @@ extension UIGestureRecognizer: Bindable {
   
   public var command: Command? {
     get {
-      return objc_getAssociatedObject(self, &command2AssociationKey) as Command?
+      return objc_getAssociatedObject(self, &commandAssociationKey) as Command?
     }
     set(newValue) {
-      objc_setAssociatedObject(self, &command2AssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
+      objc_setAssociatedObject(self, &commandAssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
       
       // TODO: Ensure this is a one-time subscription
       self.addTarget(self, action: "gestureFired")

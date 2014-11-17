@@ -75,6 +75,10 @@ import Foundation
       
       return binding
     } else {
+      if bindable.source != "" || bindable.destination != "" ||
+        bindable.converter != "" || bindable.mode != "" {
+        ErrorSink.instance.logEvent("ERROR: bindings must have both a source and destination property.")
+      }
       return nil
     }
   }

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-private var commandAssociationKey: UInt8 = 5
+
 
 extension UIButton {
   

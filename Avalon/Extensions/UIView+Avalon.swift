@@ -10,13 +10,6 @@ import ObjectiveC
 import Foundation
 import UIKit
 
-// TODO: tidy up these keys
-var bindingAssociationKey: UInt8 = 1
-var sourceAssociationKey: UInt8 = 2
-var destinationAssociationKey: UInt8 = 3
-var converterAssociationKey: UInt8 = 4
-var modeAssociationKey: UInt8 = 5
-
 extension UIView: Bindable {
   
   @IBInspectable public var source: String {

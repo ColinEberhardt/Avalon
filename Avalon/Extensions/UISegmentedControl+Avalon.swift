@@ -9,9 +9,6 @@
 import Foundation
 import UIKit
 
-
-private var segmentsAssociationKey: UInt8 = 6
-
 extension UISegmentedControl {
   
   public var segments: [String]? {
