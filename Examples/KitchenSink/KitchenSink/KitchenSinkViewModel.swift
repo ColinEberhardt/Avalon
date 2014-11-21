@@ -64,6 +64,8 @@ class KitchenSinkViewModel: NSObject {
   dynamic var selectedOption = 1
   dynamic let options = ["one", "two", "three"]
   
+  dynamic var strings = [String]()
+  
   dynamic var boolean: Bool = true {
     didSet {
       println("updated")
@@ -73,6 +75,10 @@ class KitchenSinkViewModel: NSObject {
   override init() {
 
     super.init()
+    
+    for i in 0..<100 {
+      strings.append("item #\(i)")
+    }
     
     incrementCountCommand = ClosureCommand {
       self.buttonTapCount = self.buttonTapCount + 1

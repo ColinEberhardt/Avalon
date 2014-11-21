@@ -47,7 +47,7 @@ extension UIView: Bindable {
       let value: AnyObject! = objc_getAssociatedObject(self, &modeAssociationKey)
       return value != nil ? value as String : ""
     }
-  set(newValue) {
+    set(newValue) {
       objc_setAssociatedObject(self, &modeAssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
     }
   }

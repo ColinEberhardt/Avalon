@@ -17,17 +17,22 @@ public class UIControlBindingConnector: NSObject, Disposable {
   private let binding: Binding
   private let valueExtractor: () -> AnyObject
   
-  public init(source: NSObject, destination: UIControl, valueExtractor: () -> AnyObject, binding: Binding, events: UIControlEvents = .ValueChanged) {
+  public init?(source: NSObject, destination: UIControl, valueExtractor: () -> AnyObject, binding: Binding, events: UIControlEvents = .ValueChanged) {
     
-      self.destination = destination
-      self.source = source
-      self.valueExtractor = valueExtractor
-      self.binding = binding
-      
-      super.init()
-      
+    self.destination = destination
+    self.source = source
+    self.valueExtractor = valueExtractor
+    self.binding = binding
+    
+    super.init()
+    
+    if binding.sourceProperty == "." {
+      ErrorSink.instance.logEvent("ERROR: Two way binding does not support the dot syntax, with binding \(binding)")
+      return nil
+    } else {
       // subscribe for changes
       destination.addTarget(self, action: "valueChanged", forControlEvents: events)
+    }
   }
   
   // TODO: Only made public for unit tests. It should be possible to fire this using target-action

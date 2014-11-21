@@ -72,8 +72,10 @@ extension UIView {
           if binding.destinationProperty != connector.1 {
             ErrorSink.instance.logEvent("ERROR: view \(view) does not support two-way binding, with binding \(binding)")
           } else {
-            let connector =  UIControlBindingConnector(source: viewModel, destination: control, valueExtractor: { connector.3(control) }, binding: binding, events: connector.2)
-            binding.addDisposable(connector)
+            let maybeConnector =  UIControlBindingConnector(source: viewModel, destination: control, valueExtractor: { connector.3(control) }, binding: binding, events: connector.2)
+            if let connector = maybeConnector {
+              binding.addDisposable(connector)
+            }
             return
           }
         }

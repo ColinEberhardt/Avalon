@@ -27,20 +27,31 @@ public class KVOBindingConnector: NSObject, Disposable {
     
     super.init()
     
-    // subscribe for changes
-    source.addObserver(self, forKeyPath: binding.sourceProperty, options: NSKeyValueObservingOptions.New, context: nil)
-    
-    // copy initial value - verifying that the source property path is valid
-    let wrappedResults: NSValueWrapper =  NSObjectHelper.tryGetValueForKeyPath(binding.sourceProperty, forObject: source)
-    if let exception = wrappedResults.exception {
-      ErrorSink.instance.logEvent("ERROR: Unable to get value from source \(source) for binding \(binding)")
-      return nil
+    if binding.sourceProperty != "." {
+      
+      // subscribe for changes
+      source.addObserver(self, forKeyPath: binding.sourceProperty,
+          options: NSKeyValueObservingOptions.New, context: nil)
+      
+      // copy initial value - verifying that the source property path is valid
+      let wrappedResults: NSValueWrapper =  NSObjectHelper.tryGetValueForKeyPath(binding.sourceProperty, forObject: source)
+      if let exception = wrappedResults.exception {
+        ErrorSink.instance.logEvent("ERROR: Unable to get value from source \(source) for binding \(binding)")
+        return nil
+      } else {
+        if let error = setValueOnDestination(wrappedResults.propertyValue) {
+          ErrorSink.instance.logEvent("ERROR: Unable to set value \(wrappedResults.propertyValue) on destination \(destination) with binding \(binding)")
+          return nil
+        }
+      }
     } else {
-      if let error = setValueOnDestination(wrappedResults.propertyValue) {
-        ErrorSink.instance.logEvent("ERROR: Unable to set value \(wrappedResults.propertyValue) on destination \(destination) with binding \(binding)")
+      if let error = setValueOnDestination(source) {
+        ErrorSink.instance.logEvent("ERROR: Unable to set value \(source) on destination \(destination) with binding \(binding)")
         return nil
       }
     }
+    
+    
   }
   
   override public func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject,
@@ -71,7 +82,7 @@ public class KVOBindingConnector: NSObject, Disposable {
   }
   
   public func dispose() {
-    if isSubscribed {
+    if isSubscribed && binding.sourceProperty != "." {
       source.removeObserver(self, forKeyPath: binding.sourceProperty)
       isSubscribed = false
     }

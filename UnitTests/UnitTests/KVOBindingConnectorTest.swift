@@ -31,27 +31,20 @@ class KVOBindingConnectorTest: XCTestCase {
     XCTAssertEqual(textField.text!, "Bill")
   }
   
-  func test_propertyChange_propagatesToDestination() {
+  func test_dotBinding() {
     
     // create source and destination objects
-    var person = PersonViewModel()
-    person.name = "Bill"
+    var model = "hello"
     let textField = UITextField()
     
     // create the binding that defines the property paths
-    let binding = Binding(source: "name", destination: "text")
+    let binding = Binding(source: ".", destination: "text")
     
     // create the connector
-    let connector = KVOBindingConnector(source: person, destination: textField, binding: binding)
+    let connector = KVOBindingConnector(source: model, destination: textField, binding: binding)
     
     // verify
-    XCTAssertEqual(textField.text!, "Bill")
-    
-    // updated suorce
-    person.name = "Gary"
-    
-    // verify propagation
-    XCTAssertEqual(textField.text!, "Gary")
+    XCTAssertEqual(textField.text!, "hello")
   }
   
   func test_sourceProperty_failsIfInvalid() {

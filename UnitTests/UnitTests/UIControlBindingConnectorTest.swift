@@ -26,7 +26,7 @@ class UIControlBindingConnectorTest: XCTestCase {
     let binding = Binding(source: "isFemale", destination: "on")
     
     // create the connector
-    let connector = UIControlBindingConnector(source: person, destination: switchControl, valueExtractor: { switchControl.on }, binding: binding)
+    let connector = UIControlBindingConnector(source: person, destination: switchControl, valueExtractor: { switchControl.on }, binding: binding)!
     
     // verify initial state
     XCTAssertTrue(switchControl.on)
@@ -37,6 +37,30 @@ class UIControlBindingConnectorTest: XCTestCase {
     connector.valueChanged()
     
     XCTAssertFalse(person.isFemale)
+  }
+  
+  func test_prohibitsDotBinding() {
+    
+    var error: String = ""
+    func errorReporter(event: String) {
+      error = event
+    }
+    ErrorSink.instance.setSink(errorReporter)
+    
+    // create source and destination objects
+    var value = true
+    let switchControl = UISwitch()
+    switchControl.on = true
+    
+    // create the binding that defines the property paths
+    let binding = Binding(source: ".", destination: "on")
+    
+    // create the connector
+    let connector = UIControlBindingConnector(source: value, destination: switchControl, valueExtractor: { switchControl.on }, binding: binding)
+    
+    // verify an error was logged
+    let range = error.rangeOfString("ERROR")
+    XCTAssertTrue(range != nil)
   }
   
   func test_failsIfIncompatibleType() {
@@ -63,7 +87,7 @@ class UIControlBindingConnectorTest: XCTestCase {
     let binding = Binding(source: "not-a-property", destination: "on")
     
     // create the connector
-    let connector = UIControlBindingConnector(source: person, destination: switchControl, valueExtractor: { switchControl.on }, binding: binding)
+    let connector = UIControlBindingConnector(source: person, destination: switchControl, valueExtractor: { switchControl.on }, binding: binding)!
     
     // verify initial state
     XCTAssertTrue(switchControl.on)

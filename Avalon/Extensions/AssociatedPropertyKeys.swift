@@ -17,3 +17,4 @@ var modeAssociationKey: UInt8 = 5
 var commandAssociationKey: UInt8 = 6
 var segmentsAssociationKey: UInt8 = 7
 var animatingAssociationKey: UInt8 = 8
+var itemsAssociationKey: UInt8 = 9
