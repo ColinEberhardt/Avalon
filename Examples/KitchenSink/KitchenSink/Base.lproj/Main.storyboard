@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LXp-B3-Ffy">
@@ -173,12 +173,36 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="destination" value="items"/>
                                 </userDefinedRuntimeAttributes>
                             </tableView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kf2-qv-GBA">
+                                <rect key="frame" x="36" y="575" width="179" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="source" value="searchCommand"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="destination" value="searchCommand"/>
+                                </userDefinedRuntimeAttributes>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VwI-8d-9Ga">
+                                <rect key="frame" x="36" y="537" width="106" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="source" value="searchText"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="destination" value="text"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="button" destination="UaU-Cj-8La" id="HOt-vv-JbZ"/>
                         <outlet property="label" destination="lj8-a1-Id6" id="Iio-Wf-mR1"/>
+                        <outlet property="searchBar" destination="kf2-qv-GBA" id="3Ei-lW-3si"/>
                         <outlet property="segmentedControl" destination="Ipe-yw-UMG" id="KWK-wU-kjF"/>
                         <outlet property="slider" destination="47C-o1-aty" id="h9q-oa-1lt"/>
                     </connections>

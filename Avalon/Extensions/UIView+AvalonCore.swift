@@ -72,17 +72,32 @@ extension UIView {
           if binding.destinationProperty != connector.1 {
             ErrorSink.instance.logEvent("ERROR: view \(view) does not support two-way binding, with binding \(binding)")
           } else {
-            let maybeConnector =  UIControlBindingConnector(source: viewModel, destination: control, valueExtractor: { connector.3(control) }, binding: binding, events: connector.2)
+            let maybeConnector = UIControlBindingConnector(source: viewModel, destination: control, valueExtractor: { connector.3(control) }, binding: binding, events: connector.2)
             if let connector = maybeConnector {
               binding.addDisposable(connector)
+              return
             }
-            return
           }
         }
       }
       ErrorSink.instance.logEvent("ERROR: view \(view) does not support two-way binding, with binding \(binding)")
     } else {
-      ErrorSink.instance.logEvent("ERROR: view \(view) is not a UIControl subclass hence does not support two-way binding, with binding \(binding)")
+      
+      // try binding non UIControl instances
+      if let searchBar = view as? UISearchBar {
+        if binding.destinationProperty != "text" {
+          ErrorSink.instance.logEvent("ERROR: view \(view) does not support two-way binding, with binding \(binding)")
+        } else {
+          //TODO: add converter support & setter failure
+          searchBar.searchBarDelegate.textChangedObserver = {
+            (text: String) in
+            NSObjectHelper.trySetValue(text, forKeyPath: binding.sourceProperty, forObject: viewModel)
+            return
+          }
+        }
+      } else {
+        ErrorSink.instance.logEvent("ERROR: view \(view) does not support two-way binding, with binding \(binding)")
+      }
     }
   }
   

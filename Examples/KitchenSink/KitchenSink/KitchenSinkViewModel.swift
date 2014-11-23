@@ -61,6 +61,9 @@ class KitchenSinkViewModel: NSObject {
   
   dynamic let incrementCountCommand: Command!
   
+  dynamic var searchText = "search"
+  dynamic let searchCommand: Command!
+  
   dynamic var selectedOption = 1
   dynamic let options = ["one", "two", "three"]
   
@@ -82,6 +85,10 @@ class KitchenSinkViewModel: NSObject {
     
     incrementCountCommand = ClosureCommand {
       self.buttonTapCount = self.buttonTapCount + 1
+    }
+    
+    searchCommand = ClosureCommand {
+      println("search!!!!!")
     }
   }
   

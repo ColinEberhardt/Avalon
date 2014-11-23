@@ -30,6 +30,7 @@
 		3CDD6C141A1A4A21003020AA /* AssociatedPropertyKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDD6C131A1A4A21003020AA /* AssociatedPropertyKeys.swift */; };
 		3CDD6C1B1A1AA469003020AA /* UITableView+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDD6C1A1A1AA469003020AA /* UITableView+Avalon.swift */; };
 		3CEE10351A0F5A40002C66E3 /* Avalon.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CEE10341A0F5A40002C66E3 /* Avalon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3CF998C21A1F93B7004DC5F0 /* UISearchBar+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF998C11A1F93B7004DC5F0 /* UISearchBar+Avalon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		3CEE102F1A0F5A3F002C66E3 /* Avalon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Avalon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CEE10331A0F5A40002C66E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CEE10341A0F5A40002C66E3 /* Avalon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Avalon.h; sourceTree = "<group>"; };
+		3CF998C11A1F93B7004DC5F0 /* UISearchBar+Avalon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Avalon.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				3C408EAE1A16B8A300D8426F /* UIActivityIndicator+Avalon.swift */,
 				3C408ECA1A19283700D8426F /* UIGestureRecognizer+Avalon.swift */,
 				3CDD6C1A1A1AA469003020AA /* UITableView+Avalon.swift */,
+				3CF998C11A1F93B7004DC5F0 /* UISearchBar+Avalon.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				3C5477631A0FDA4C00C80A3C /* Binding.swift in Sources */,
 				3C5477CB1A1122AA00C80A3C /* UIView+Avalon.swift in Sources */,
 				3C408ECB1A19283700D8426F /* UIGestureRecognizer+Avalon.swift in Sources */,
+				3CF998C21A1F93B7004DC5F0 /* UISearchBar+Avalon.swift in Sources */,
 				3C5477671A0FDA4C00C80A3C /* BindingMode.swift in Sources */,
 				3C408EB91A19268700D8426F /* NSValueWrapper.m in Sources */,
 				3C5477651A0FDA4C00C80A3C /* Command.swift in Sources */,

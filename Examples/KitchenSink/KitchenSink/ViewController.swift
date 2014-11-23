@@ -15,6 +15,7 @@ class ViewController: UIViewController {
   @IBOutlet weak var label: UILabel!
   @IBOutlet weak var button: UIButton!
   @IBOutlet weak var segmentedControl: UISegmentedControl!
+  @IBOutlet weak var searchBar: UISearchBar!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -27,6 +28,9 @@ class ViewController: UIViewController {
     segmentedControl.bindings = [Binding(source: "options", destination: "segments"),
       Binding(source: "selectedOption", destination: "selectedSegmentIndex", mode: .TwoWay)]
     
+    searchBar.bindings = [Binding(source: "searchText", destination: "text", mode: .TwoWay)]
+    
+   
     view.bindingContext = KitchenSinkViewModel()
     
   }
