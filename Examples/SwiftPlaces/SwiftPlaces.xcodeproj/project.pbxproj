@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3C84F28F1A2296C4001A1B56 /* Avalon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C84F28E1A2296B8001A1B56 /* Avalon.framework */; };
+		3CB9CE3A1A27A00700CE6757 /* PlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB9CE391A27A00700CE6757 /* PlaceViewModel.swift */; };
+		3CB9CE3E1A27AF0A00CE6757 /* LocationToStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB9CE3D1A27AF0A00CE6757 /* LocationToStringConverter.swift */; };
+		3CB9CE401A27B1FB00CE6757 /* WeatherToStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB9CE3F1A27B1FB00CE6757 /* WeatherToStringConverter.swift */; };
+		3CD77AF11A272C3700CDE1A9 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD77AF01A272C3700CDE1A9 /* SearchViewModel.swift */; };
 		D04AAF2A1986B28C00E5D7F8 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AAF281986B28C00E5D7F8 /* PlaceViewController.swift */; };
 		D059A6921986BF85002D0A1E /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = D059A6911986BF85002D0A1E /* Weather.swift */; };
-		D059A6941986C8CC002D0A1E /* WeatherFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D059A6931986C8CC002D0A1E /* WeatherFormatter.swift */; };
-		D059A6971986C9BB002D0A1E /* PlaceFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D059A6961986C9BB002D0A1E /* PlaceFormatter.swift */; };
 		D07E67891986E3170018E1C1 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07E67881986E3170018E1C1 /* GCD.swift */; };
 		D07E678F1987102D0018E1C1 /* UISearchBar+ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07E678E1987102D0018E1C1 /* UISearchBar+ErrorMessage.swift */; };
 		D07E67931987570D0018E1C1 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07E67921987570D0018E1C1 /* JSON.swift */; };
@@ -24,7 +26,6 @@
 		D0AF20471982CF710031AF1E /* URLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AF20461982CF710031AF1E /* URLFactory.swift */; };
 		D0AF204B198459910031AF1E /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AF204A198459910031AF1E /* Place.swift */; };
 		D0AF20501984616D0031AF1E /* Model Builders.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AF204F1984616D0031AF1E /* Model Builders.m */; };
-		D0AF20521984E0240031AF1E /* PlaceDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AF20511984E0240031AF1E /* PlaceDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,10 +40,12 @@
 
 /* Begin PBXFileReference section */
 		3C84F2891A2296B8001A1B56 /* Avalon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Avalon.xcodeproj; path = ../../Avalon.xcodeproj; sourceTree = "<group>"; };
+		3CB9CE391A27A00700CE6757 /* PlaceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewModel.swift; sourceTree = "<group>"; };
+		3CB9CE3D1A27AF0A00CE6757 /* LocationToStringConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationToStringConverter.swift; sourceTree = "<group>"; };
+		3CB9CE3F1A27B1FB00CE6757 /* WeatherToStringConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherToStringConverter.swift; sourceTree = "<group>"; };
+		3CD77AF01A272C3700CDE1A9 /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		D04AAF281986B28C00E5D7F8 /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 		D059A6911986BF85002D0A1E /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
-		D059A6931986C8CC002D0A1E /* WeatherFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherFormatter.swift; sourceTree = "<group>"; };
-		D059A6961986C9BB002D0A1E /* PlaceFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceFormatter.swift; sourceTree = "<group>"; };
 		D07E67881986E3170018E1C1 /* GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
 		D07E678E1987102D0018E1C1 /* UISearchBar+ErrorMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISearchBar+ErrorMessage.swift"; sourceTree = "<group>"; };
 		D07E67921987570D0018E1C1 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
@@ -59,7 +62,6 @@
 		D0AF204D1984616D0031AF1E /* SwiftPlaces-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftPlaces-Bridging-Header.h"; sourceTree = "<group>"; };
 		D0AF204E1984616D0031AF1E /* Model Builders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Model Builders.h"; sourceTree = "<group>"; };
 		D0AF204F1984616D0031AF1E /* Model Builders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Model Builders.m"; sourceTree = "<group>"; };
-		D0AF20511984E0240031AF1E /* PlaceDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,25 +84,26 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		3CD77AEE1A272C2C00CDE1A9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3CD77AF01A272C3700CDE1A9 /* SearchViewModel.swift */,
+				3CB9CE391A27A00700CE6757 /* PlaceViewModel.swift */,
+				3CB9CE3D1A27AF0A00CE6757 /* LocationToStringConverter.swift */,
+				3CB9CE3F1A27B1FB00CE6757 /* WeatherToStringConverter.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		D04F58B41985E46400A398FF /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				D0AF20281982CBFA0031AF1E /* Main.storyboard */,
-				D0AF20511984E0240031AF1E /* PlaceDataSource.swift */,
 				D04AAF281986B28C00E5D7F8 /* PlaceViewController.swift */,
 				D0AF20261982CBFA0031AF1E /* SearchViewController.swift */,
 				D07E678E1987102D0018E1C1 /* UISearchBar+ErrorMessage.swift */,
 			);
 			name = UI;
-			sourceTree = "<group>";
-		};
-		D059A6951986C8D3002D0A1E /* Formatting */ = {
-			isa = PBXGroup;
-			children = (
-				D059A6961986C9BB002D0A1E /* PlaceFormatter.swift */,
-				D059A6931986C8CC002D0A1E /* WeatherFormatter.swift */,
-			);
-			name = Formatting;
 			sourceTree = "<group>";
 		};
 		D0AF20161982CBFA0031AF1E = {
@@ -124,8 +127,8 @@
 		D0AF20211982CBFA0031AF1E /* SwiftPlaces */ = {
 			isa = PBXGroup;
 			children = (
+				3CD77AEE1A272C2C00CDE1A9 /* ViewModel */,
 				D0AF202B1982CBFA0031AF1E /* Images.xcassets */,
-				D059A6951986C8D3002D0A1E /* Formatting */,
 				D0AF2049198459820031AF1E /* Model */,
 				D0AF20481982DE700031AF1E /* Networking */,
 				D04F58B41985E46400A398FF /* UI */,
@@ -252,21 +255,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0AF20521984E0240031AF1E /* PlaceDataSource.swift in Sources */,
 				D07E67891986E3170018E1C1 /* GCD.swift in Sources */,
+				3CD77AF11A272C3700CDE1A9 /* SearchViewModel.swift in Sources */,
 				D0AF20421982CD630031AF1E /* JSONService.swift in Sources */,
 				D0AF20471982CF710031AF1E /* URLFactory.swift in Sources */,
 				D04AAF2A1986B28C00E5D7F8 /* PlaceViewController.swift in Sources */,
-				D059A6941986C8CC002D0A1E /* WeatherFormatter.swift in Sources */,
+				3CB9CE401A27B1FB00CE6757 /* WeatherToStringConverter.swift in Sources */,
 				D059A6921986BF85002D0A1E /* Weather.swift in Sources */,
 				D0AF20441982CDC80031AF1E /* Operators.swift in Sources */,
 				D0AF204B198459910031AF1E /* Place.swift in Sources */,
-				D059A6971986C9BB002D0A1E /* PlaceFormatter.swift in Sources */,
+				3CB9CE3A1A27A00700CE6757 /* PlaceViewModel.swift in Sources */,
 				D0AF20501984616D0031AF1E /* Model Builders.m in Sources */,
 				D0AF20271982CBFA0031AF1E /* SearchViewController.swift in Sources */,
 				D07E678F1987102D0018E1C1 /* UISearchBar+ErrorMessage.swift in Sources */,
 				D0AF20251982CBFA0031AF1E /* AppDelegate.swift in Sources */,
 				D07E67931987570D0018E1C1 /* JSON.swift in Sources */,
+				3CB9CE3E1A27AF0A00CE6757 /* LocationToStringConverter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

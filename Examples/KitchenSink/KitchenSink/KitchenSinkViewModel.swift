@@ -11,7 +11,7 @@ import Avalon
 
 @objc(NumberToString) class NumberToString: ValueConverter {
   
-  override func convert(sourceValue: AnyObject, binding: Binding, viewModel: AnyObject) -> AnyObject? {
+  override func convert(sourceValue: AnyObject?, binding: Binding, viewModel: AnyObject) -> AnyObject? {
     
     let formatter = NSNumberFormatter()
     formatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
@@ -24,14 +24,14 @@ import Avalon
 }
 
 @objc(TapsToTitle) class TapsToTitle: ValueConverter {
-  override func convert(sourceValue: AnyObject, binding: Binding, viewModel: AnyObject) -> AnyObject? {
+  override func convert(sourceValue: AnyObject?, binding: Binding, viewModel: AnyObject) -> AnyObject? {
     let taps = sourceValue as Int
     return "Button tapped \(taps) times"
   }
 }
 
 @objc(IndexToSegmentTitle) class IndexToSegmentTitle: ValueConverter {
-  override func convert(sourceValue: AnyObject, binding: Binding, viewModel: AnyObject) -> AnyObject? {
+  override func convert(sourceValue: AnyObject?, binding: Binding, viewModel: AnyObject) -> AnyObject? {
     let index = sourceValue as Int
     let kitchenSink = viewModel as KitchenSinkViewModel
     return kitchenSink.options[index]
@@ -39,7 +39,7 @@ import Avalon
 }
 
 @objc(DateToString) class DateToString: ValueConverter {
-  override func convert(sourceValue: AnyObject, binding: Binding, viewModel: AnyObject) -> AnyObject? {
+  override func convert(sourceValue: AnyObject?, binding: Binding, viewModel: AnyObject) -> AnyObject? {
     let date = sourceValue as NSDate
     return date.description
   }

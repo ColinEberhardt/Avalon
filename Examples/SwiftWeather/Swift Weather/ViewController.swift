@@ -11,7 +11,7 @@ import Avalon
 
 class BoolInvertConverter: ValueConverter {
   // TODO: Can value converters be implemented via closures?
-  override func convert(sourceValue: AnyObject, binding: Binding, viewModel: AnyObject) -> AnyObject? {
+  override func convert(sourceValue: AnyObject?, binding: Binding, viewModel: AnyObject) -> AnyObject? {
     return !(sourceValue as Bool)
   }
 }

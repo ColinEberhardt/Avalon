@@ -46,6 +46,8 @@ private class TableViewSource: NSObject, UITableViewDataSource, UITableViewDeleg
     tableView.dataSource = self
     // TODO: provide delegate forwarding so that the user can still use this controls delegate
     tableView.delegate = self
+    
+    tableView.reloadData()
   }
   
   // MARK: - UITableViewDataSource

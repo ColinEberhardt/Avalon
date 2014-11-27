@@ -74,8 +74,8 @@ public class KVOBindingConnector: NSObject, Disposable {
   
     
   private func convertValue(value: AnyObject?) -> AnyObject? {
-    if value != nil && binding.converter != nil {
-      return binding.converter!.convert(value!, binding: self.binding, viewModel: self.source)
+    if binding.converter != nil {
+      return binding.converter!.convert(value, binding: self.binding, viewModel: self.source)
     } else {
       return value
     }
