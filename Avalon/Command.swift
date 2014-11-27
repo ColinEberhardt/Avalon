@@ -12,7 +12,7 @@ import Foundation
   func execute()
 }
 
-@objc public class ClosureCommand: Command {
+public class ClosureCommand: Command {
   private let action: () -> ()
   
   public init(action: () -> ()) {
@@ -23,3 +23,21 @@ import Foundation
     action()
   }
 }
+
+@objc public protocol DataCommand {
+  func execute(data: AnyObject)
+}
+
+public class ClosureDataCommand: DataCommand {
+  private let action: AnyObject -> ()
+  
+  public init(action: AnyObject -> ()) {
+    self.action = action
+  }
+  
+  public func execute(data: AnyObject) {
+    // TODO: use generics to perform the rquired cast?
+    action(data)
+  }
+}
+

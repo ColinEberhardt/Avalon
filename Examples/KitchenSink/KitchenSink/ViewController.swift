@@ -16,6 +16,7 @@ class ViewController: UIViewController {
   @IBOutlet weak var button: UIButton!
   @IBOutlet weak var segmentedControl: UISegmentedControl!
   @IBOutlet weak var searchBar: UISearchBar!
+  @IBOutlet weak var tableView: UITableView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -30,6 +31,7 @@ class ViewController: UIViewController {
     
     searchBar.bindings = [Binding(source: "searchText", destination: "text", mode: .TwoWay)]
     
+    tableView.bindings = [Binding(source: "stringSelectedCommand", destination: "selectionCommand")]
    
     view.bindingContext = KitchenSinkViewModel()
     

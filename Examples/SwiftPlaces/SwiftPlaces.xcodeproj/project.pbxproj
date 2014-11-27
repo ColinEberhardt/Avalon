@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C84F28F1A2296C4001A1B56 /* Avalon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C84F28E1A2296B8001A1B56 /* Avalon.framework */; };
 		D04AAF2A1986B28C00E5D7F8 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AAF281986B28C00E5D7F8 /* PlaceViewController.swift */; };
 		D059A6921986BF85002D0A1E /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = D059A6911986BF85002D0A1E /* Weather.swift */; };
 		D059A6941986C8CC002D0A1E /* WeatherFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D059A6931986C8CC002D0A1E /* WeatherFormatter.swift */; };
@@ -26,7 +27,18 @@
 		D0AF20521984E0240031AF1E /* PlaceDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AF20511984E0240031AF1E /* PlaceDataSource.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3C84F28D1A2296B8001A1B56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C84F2891A2296B8001A1B56 /* Avalon.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3CEE102F1A0F5A3F002C66E3;
+			remoteInfo = Avalon;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		3C84F2891A2296B8001A1B56 /* Avalon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Avalon.xcodeproj; path = ../../Avalon.xcodeproj; sourceTree = "<group>"; };
 		D04AAF281986B28C00E5D7F8 /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 		D059A6911986BF85002D0A1E /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		D059A6931986C8CC002D0A1E /* WeatherFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherFormatter.swift; sourceTree = "<group>"; };
@@ -55,12 +67,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C84F28F1A2296C4001A1B56 /* Avalon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C84F28A1A2296B8001A1B56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3C84F28E1A2296B8001A1B56 /* Avalon.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		D04F58B41985E46400A398FF /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +106,7 @@
 		D0AF20161982CBFA0031AF1E = {
 			isa = PBXGroup;
 			children = (
+				3C84F2891A2296B8001A1B56 /* Avalon.xcodeproj */,
 				D0AF20211982CBFA0031AF1E /* SwiftPlaces */,
 				D0AF20201982CBFA0031AF1E /* Products */,
 				D0AF20221982CBFA0031AF1E /* Supporting Files */,
@@ -190,12 +212,28 @@
 			mainGroup = D0AF20161982CBFA0031AF1E;
 			productRefGroup = D0AF20201982CBFA0031AF1E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3C84F28A1A2296B8001A1B56 /* Products */;
+					ProjectRef = 3C84F2891A2296B8001A1B56 /* Avalon.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				D0AF201E1982CBFA0031AF1E /* SwiftPlaces */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3C84F28E1A2296B8001A1B56 /* Avalon.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Avalon.framework;
+			remoteRef = 3C84F28D1A2296B8001A1B56 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D0AF201D1982CBFA0031AF1E /* Resources */ = {

@@ -11,6 +11,8 @@ import UIKit
 
 class ColorPickerViewModel: NSObject {
   
+  //MARK: - properties
+  
   dynamic let colorModes = ["RGB", "HSL"]
   
   dynamic var red: Double = 0.2 {
@@ -44,18 +46,24 @@ class ColorPickerViewModel: NSObject {
   
   dynamic var color: UIColor = UIColor.whiteColor()
   
-  func updateColor() {
+  //MARK: - initialization
+  
+  override init() {
+    super.init()
+    updateColor()
+  }
+  
+  //MARK: - private functions
+  
+  
+  private func updateColor() {
     if selectedSegmentIndex == 0 {
       color = UIColor(red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha: 1.0)
     } else {
       color = UIColor(hue: CGFloat(red), saturation: CGFloat(green), brightness: CGFloat(blue), alpha: 1.0)
     }
   }
-  
-  override init() {
-    super.init()
-    updateColor()
-  }
+
   
   private func convertToHSB() {
     var hue: CGFloat = 0.0

@@ -12,6 +12,7 @@ import Foundation
 // class instances from strings
 @objc public class ValueConverter: NSObject {
   // TODO: This needs a simpler signature
+  // TODO: Handle two-way value conversion
   public func convert(sourceValue: AnyObject, binding: Binding, viewModel: AnyObject) -> AnyObject? {
     return nil
   }

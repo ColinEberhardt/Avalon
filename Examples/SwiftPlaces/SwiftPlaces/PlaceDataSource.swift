@@ -31,7 +31,7 @@ class PlaceDataSource: NSObject, UITableViewDataSource
         cell = tv.dequeueReusableCellWithIdentifier("") as? UITableViewCell
             ?? UITableViewCell(style: .Default, reuseIdentifier: ""),
         place = places[indexPath.row]
-        cell.textLabel!.text = place.name
+        cell.textLabel.text = place.name
         return cell
     }
     

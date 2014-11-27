@@ -68,6 +68,7 @@ class KitchenSinkViewModel: NSObject {
   dynamic let options = ["one", "two", "three"]
   
   dynamic var strings = [String]()
+  dynamic let stringSelectedCommand: DataCommand!
   
   dynamic var boolean: Bool = true {
     didSet {
@@ -89,6 +90,11 @@ class KitchenSinkViewModel: NSObject {
     
     searchCommand = ClosureCommand {
       println("search!!!!!")
+    }
+    
+    stringSelectedCommand = ClosureDataCommand {
+      (selectedItem: AnyObject) in
+      println(selectedItem)
     }
   }
   

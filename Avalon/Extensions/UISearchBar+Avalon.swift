@@ -25,6 +25,7 @@ extension UISearchBar {
     get {
       let  delegate = objc_getAssociatedObject(self, &searchBarDelegateAssociationKey) as? UISearchBarDelegateImpl
       
+      // TODO: provide delegate forwarding so that the user can still use this controls delegate
       if delegate == nil {
         let delegateImpl = UISearchBarDelegateImpl(searchBar: self)
         self.searchBarDelegate = delegateImpl
