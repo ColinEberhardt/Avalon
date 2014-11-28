@@ -42,22 +42,34 @@ class SearchViewController: UIViewController
     viewModel = SearchViewModel()
     view.bindingContext = viewModel
     
-    viewModel.addEventHandler(SearchViewModel.Events.SearchExecuting) {
+    viewModel.searchExecutingEvent += {
       self.searchBar.resignFirstResponder()
       return
     }
     
-    viewModel.addEventHandler(SearchViewModel.Events.InvalidPostcode) {
+    viewModel.searchErrorEvent += {
+      errorData in
+      let title = "Error"
+      let msg   = errorData.error?.localizedDescription ?? "An error occurred."
+      let alert = UIAlertController(title: title, message: msg, preferredStyle: .Alert)
+      
+      alert.addAction(UIAlertAction( title: "OK", style: .Default, handler: { _ in
+        self.dismissViewControllerAnimated(true, completion: nil)
+      }))
+      
+      self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    viewModel.invalidPostcodeEvent += {
       let image = UIImage(named: "ErrorColor")
       self.searchBar.showErrorMessage("Numbers only!", backgroundImage: image)
     }
     
-    viewModel.addPropertyObserver("selectedPlace") {
-      if let place = self.viewModel.selectedPlace {
-        let placeVC = self.storyboard!.instantiateViewControllerWithIdentifier("PlaceViewController") as PlaceViewController
-        placeVC.place = place
-        self.showDetailViewController(placeVC, sender: self)
-      }
+    viewModel.placeSelectedEvent += {
+      placeEventData in
+      let placeVC = self.storyboard!.instantiateViewControllerWithIdentifier("PlaceViewController") as PlaceViewController
+      placeVC.place = placeEventData.place
+      self.showDetailViewController(placeVC, sender: self)
     }
     
     viewModel.addPropertyObserver("isSearching") {

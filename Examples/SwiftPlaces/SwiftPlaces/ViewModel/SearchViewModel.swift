@@ -11,10 +11,22 @@ import Avalon
 
 class SearchViewModel: ViewModelBase {
   
-  struct Events {
-    static let SearchExecuting = "searchExecuted"
-    static let InvalidPostcode = "invalidPostcode"
+  struct SearchErrorEventData {
+    let statusCode: Int
+    let error: NSError?
   }
+  
+  struct PlaceSelectedEventData {
+    let place: Place
+  }
+  
+  let searchExecutingEvent = EmptyEvent()
+  
+  let invalidPostcodeEvent = EmptyEvent()
+  
+  let searchErrorEvent = Event<SearchErrorEventData>()
+  
+  let placeSelectedEvent = Event<PlaceSelectedEventData>()
   
   dynamic var searchText = ""
   
@@ -22,12 +34,10 @@ class SearchViewModel: ViewModelBase {
   
   dynamic var isSearching = false
   
-  dynamic var selectedPlace: Place?
-  
   dynamic lazy var placeSelectedCommand: DataCommand = {
     ClosureDataCommand {
       selectedPlace in
-      self.selectedPlace = (selectedPlace as Place)
+      self.placeSelectedEvent.raiseEvent(PlaceSelectedEventData(place: selectedPlace as Place))
     }
   }()
   
@@ -41,9 +51,9 @@ class SearchViewModel: ViewModelBase {
           NSCharacterSet.whitespaceCharacterSet())
       
       if self.performSearchForPostalCode(postCode) {
-        self.raiseEvent(Events.SearchExecuting)
+        self.searchExecutingEvent.raiseEvent()
       } else {
-        self.raiseEvent(Events.InvalidPostcode)
+        self.invalidPostcodeEvent.raiseEvent()
       }
     }
   }()
@@ -84,23 +94,6 @@ class SearchViewModel: ViewModelBase {
   
   private func onFailure(statusCode: Int, error: NSError?)
   {
-    println("HTTP status code \(statusCode)")
-    
-    /*let
-    title = "Error",
-    msg   = error?.localizedDescription ?? "An error occurred.",
-    alert = UIAlertController(
-      title: title,
-      message: msg,
-      preferredStyle: .Alert)
-    
-    alert.addAction(UIAlertAction(
-      title: "OK",
-      style: .Default,
-      handler: { _ in
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }))
-    
-    presentViewController(alert, animated: true, completion: nil)*/
+    searchErrorEvent.raiseEvent(SearchErrorEventData(statusCode: statusCode, error: error))
   }
 }
