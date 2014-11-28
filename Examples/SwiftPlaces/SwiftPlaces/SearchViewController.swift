@@ -22,17 +22,16 @@ class SearchViewController: UIViewController
 
     navigationItem.title = "Search"
     
-    // Allow the primary and detail views to show simultaneously.
+    // Configure the UI
     splitViewController!.preferredDisplayMode = .AllVisible
     
-    // Show an "empty view" on the right-hand side, only on an iPad.
     if UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad
     {
       let emptyVC = storyboard!.instantiateViewControllerWithIdentifier("EmptyPlaceViewController") as UIViewController
       splitViewController!.showDetailViewController(emptyVC, sender: self)
     }
     
-    
+    // bind the controls to the view model
     searchBar.bindings = [Binding(source: "searchText", destination: "text", mode: .TwoWay),
       Binding(source: "searchCommand", destination: "searchCommand")]
     
@@ -42,6 +41,7 @@ class SearchViewController: UIViewController
     viewModel = SearchViewModel()
     view.bindingContext = viewModel
     
+    // handle events form the view model
     viewModel.searchExecutingEvent += {
       self.searchBar.resignFirstResponder()
       return
