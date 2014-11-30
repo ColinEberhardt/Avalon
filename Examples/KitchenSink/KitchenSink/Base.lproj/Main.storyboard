@@ -181,8 +181,8 @@
                                     <string>Title</string>
                                 </scopeButtonTitles>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="source" value="searchCommand"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="destination" value="searchCommand"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="source" value="searchAction"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="destination" value="searchAction"/>
                                 </userDefinedRuntimeAttributes>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VwI-8d-9Ga">

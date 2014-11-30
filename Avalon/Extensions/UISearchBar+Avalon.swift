@@ -11,13 +11,12 @@ import UIKit
 extension UISearchBar {
   
   
-  public var searchCommand: Command? {
+  public var searchAction: Action? {
     get {
-      return objc_getAssociatedObject(self, &commandAssociationKey) as Command?
+      return objc_getAssociatedObject(self, &actionAssociationKey) as Action?
     }
     set(newValue) {
-      
-      objc_setAssociatedObject(self, &commandAssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
+      objc_setAssociatedObject(self, &actionAssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
     }
   }
   
@@ -55,7 +54,7 @@ class UISearchBarDelegateImpl: NSObject, UISearchBarDelegate {
   }
   
   func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-    searchBar.searchCommand?.execute()
+    searchBar.searchAction?.execute()
   }
   
   func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {

@@ -18,7 +18,7 @@
 		3C408ECB1A19283700D8426F /* UIGestureRecognizer+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408ECA1A19283700D8426F /* UIGestureRecognizer+Avalon.swift */; };
 		3C5477631A0FDA4C00C80A3C /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775A1A0FDA4C00C80A3C /* Binding.swift */; };
 		3C5477641A0FDA4C00C80A3C /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775B1A0FDA4C00C80A3C /* Bindable.swift */; };
-		3C5477651A0FDA4C00C80A3C /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775C1A0FDA4C00C80A3C /* Command.swift */; };
+		3C5477651A0FDA4C00C80A3C /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775C1A0FDA4C00C80A3C /* Action.swift */; };
 		3C5477661A0FDA4C00C80A3C /* ValueConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775D1A0FDA4C00C80A3C /* ValueConverter.swift */; };
 		3C5477671A0FDA4C00C80A3C /* BindingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775E1A0FDA4C00C80A3C /* BindingMode.swift */; };
 		3C5477691A0FDDDF00C80A3C /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477681A0FDDDF00C80A3C /* Disposable.swift */; };
@@ -47,7 +47,7 @@
 		3C408ECA1A19283700D8426F /* UIGestureRecognizer+Avalon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIGestureRecognizer+Avalon.swift"; sourceTree = "<group>"; };
 		3C54775A1A0FDA4C00C80A3C /* Binding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		3C54775B1A0FDA4C00C80A3C /* Bindable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
-		3C54775C1A0FDA4C00C80A3C /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		3C54775C1A0FDA4C00C80A3C /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		3C54775D1A0FDA4C00C80A3C /* ValueConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueConverter.swift; sourceTree = "<group>"; };
 		3C54775E1A0FDA4C00C80A3C /* BindingMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindingMode.swift; sourceTree = "<group>"; };
 		3C5477681A0FDDDF00C80A3C /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
@@ -156,7 +156,7 @@
 				3C5477681A0FDDDF00C80A3C /* Disposable.swift */,
 				3C54775A1A0FDA4C00C80A3C /* Binding.swift */,
 				3C54775B1A0FDA4C00C80A3C /* Bindable.swift */,
-				3C54775C1A0FDA4C00C80A3C /* Command.swift */,
+				3C54775C1A0FDA4C00C80A3C /* Action.swift */,
 				3C54775D1A0FDA4C00C80A3C /* ValueConverter.swift */,
 				3C54775E1A0FDA4C00C80A3C /* BindingMode.swift */,
 				3CEE10341A0F5A40002C66E3 /* Avalon.h */,
@@ -276,7 +276,7 @@
 				3CF998C21A1F93B7004DC5F0 /* UISearchBar+Avalon.swift in Sources */,
 				3C5477671A0FDA4C00C80A3C /* BindingMode.swift in Sources */,
 				3C408EB91A19268700D8426F /* NSValueWrapper.m in Sources */,
-				3C5477651A0FDA4C00C80A3C /* Command.swift in Sources */,
+				3C5477651A0FDA4C00C80A3C /* Action.swift in Sources */,
 				3C408EC51A1926F000D8426F /* UIControlBindingConnector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

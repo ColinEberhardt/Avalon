@@ -61,12 +61,12 @@ extension UIGestureRecognizer: Bindable {
     }
   }
   
-  public var command: Command? {
+  public var action: Action? {
     get {
-      return objc_getAssociatedObject(self, &commandAssociationKey) as Command?
+      return objc_getAssociatedObject(self, &actionAssociationKey) as Action?
     }
     set(newValue) {
-      objc_setAssociatedObject(self, &commandAssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
+      objc_setAssociatedObject(self, &actionAssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
       
       // TODO: Ensure this is a one-time subscription
       self.addTarget(self, action: "gestureFired")
@@ -74,8 +74,8 @@ extension UIGestureRecognizer: Bindable {
   }
   
   func gestureFired() {
-    if let buttonCommand = command {
-      buttonCommand.execute()
+    if let buttonAction = action {
+      buttonAction.execute()
     }
   }
   

@@ -33,10 +33,10 @@ class SearchViewController: UIViewController
     
     // bind the controls to the view model
     searchBar.bindings = [Binding(source: "searchText", destination: "text", mode: .TwoWay),
-      Binding(source: "searchCommand", destination: "searchCommand")]
+      Binding(source: "searchAction", destination: "searchAction")]
     
     tableView.bindings = [Binding(source: "places", destination: "items"),
-      Binding(source: "placeSelectedCommand", destination: "selectionCommand")]
+      Binding(source: "placeSelectedAction", destination: "selectionAction")]
     
     viewModel = SearchViewModel()
     view.bindingContext = viewModel

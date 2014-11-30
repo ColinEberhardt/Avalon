@@ -34,15 +34,15 @@ class SearchViewModel: ViewModelBase {
   
   dynamic var isSearching = false
   
-  dynamic lazy var placeSelectedCommand: DataCommand = {
-    ClosureDataCommand {
+  dynamic lazy var placeSelectedAction: DataAction = {
+    ClosureDataAction {
       selectedPlace in
       self.placeSelectedEvent.raiseEvent(PlaceSelectedEventData(place: selectedPlace as Place))
     }
   }()
   
-  dynamic lazy var searchCommand: Command = {
-    ClosureCommand {
+  dynamic lazy var searchAction: Action = {
+    ClosureAction {
       
       self.isSearching = true
       

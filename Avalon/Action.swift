@@ -8,11 +8,11 @@
 
 import Foundation
 
-@objc public protocol Command {
+@objc public protocol Action {
   func execute()
 }
 
-public class ClosureCommand: Command {
+public class ClosureAction: Action {
   private let action: () -> ()
   
   public init(action: () -> ()) {
@@ -24,11 +24,11 @@ public class ClosureCommand: Command {
   }
 }
 
-@objc public protocol DataCommand {
+@objc public protocol DataAction {
   func execute(data: AnyObject)
 }
 
-public class ClosureDataCommand: DataCommand {
+public class ClosureDataAction: DataAction {
   private let action: AnyObject -> ()
   
   public init(action: AnyObject -> ()) {

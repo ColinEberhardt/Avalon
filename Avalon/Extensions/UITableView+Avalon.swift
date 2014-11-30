@@ -22,12 +22,12 @@ extension UITableView {
     }
   }
   
-  public var selectionCommand: DataCommand? {
+  public var selectionAction: DataAction? {
     get {
-      return objc_getAssociatedObject(self, &commandAssociationKey) as DataCommand?
+      return objc_getAssociatedObject(self, &actionAssociationKey) as DataAction?
     }
     set(newValue) {
-      objc_setAssociatedObject(self, &commandAssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
+      objc_setAssociatedObject(self, &actionAssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
     }
   }
 }
@@ -70,8 +70,8 @@ private class TableViewSource: NSObject, UITableViewDataSource, UITableViewDeleg
   
   private func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     let selectedItem: AnyObject = items[indexPath.row]
-    if let command = tableView.selectionCommand {
-      command.execute(selectedItem)
+    if let action = tableView.selectionAction {
+      action.execute(selectedItem)
     }
   }
 }

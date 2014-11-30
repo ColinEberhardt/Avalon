@@ -5,20 +5,20 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>F8CFBD2A-0347-4351-81FB-D821487834A0</string>
+	<string>56BFBC6C-10BF-4B7D-9A1F-97713E1ADA39</string>
 	<key>IDESourceControlProjectName</key>
-	<string>SwiftPlaces</string>
+	<string>Swift Weather</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>FEA276130293DFC33479F0D76190B5E9EC5E1725</key>
 		<string>https://github.com/ColinEberhardt/Avalon.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Examples/SwiftPlaces/SwiftPlaces.xcodeproj</string>
+	<string>Examples/SwiftWeather/Swift Weather.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>FEA276130293DFC33479F0D76190B5E9EC5E1725</key>
-		<string>../../../..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/ColinEberhardt/Avalon.git</string>

@@ -19,12 +19,12 @@ class SwiftWeatherViewModel: NSObject, CLLocationManagerDelegate {
   dynamic var temperature = ""
   dynamic var location = ""
   dynamic var iconImage: UIImage?
-  dynamic let tappedCommand: Command!
+  dynamic let tappedAction: Action!
   
   override init() {
     super.init()
     
-    tappedCommand = ClosureCommand {
+    tappedAction = ClosureAction {
       self.locationManager.startUpdatingLocation()
     }
     

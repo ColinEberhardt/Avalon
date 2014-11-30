@@ -104,8 +104,8 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D1u-Xu-ZGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="C8L-hv-lo4">
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="source" value="tappedCommand"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="destination" value="command"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="source" value="tappedAction"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="destination" value="action"/>
                     </userDefinedRuntimeAttributes>
                 </tapGestureRecognizer>
             </objects>

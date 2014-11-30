@@ -24,14 +24,14 @@ class ViewController: UIViewController {
     slider.bindings = [Binding(source: "maxNumber", destination: "maximumValue"),
       Binding(source: "minNumber", destination: "minimumValue")]
 
-    button.bindings = [Binding(source: "incrementCountCommand", destination: "command")]
+    button.bindings = [Binding(source: "incrementCountAction", destination: "Action")]
     
     segmentedControl.bindings = [Binding(source: "options", destination: "segments"),
       Binding(source: "selectedOption", destination: "selectedSegmentIndex", mode: .TwoWay)]
     
     searchBar.bindings = [Binding(source: "searchText", destination: "text", mode: .TwoWay)]
     
-    tableView.bindings = [Binding(source: "stringSelectedCommand", destination: "selectionCommand")]
+    tableView.bindings = [Binding(source: "stringSelectedAction", destination: "selectionAction")]
    
     view.bindingContext = KitchenSinkViewModel()
     

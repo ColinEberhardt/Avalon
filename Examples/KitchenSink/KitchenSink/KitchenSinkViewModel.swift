@@ -59,16 +59,16 @@ class KitchenSinkViewModel: NSObject {
   
   dynamic var buttonTapCount: Int = 0
   
-  dynamic let incrementCountCommand: Command!
+  dynamic let incrementCountAction: Action!
   
   dynamic var searchText = "search"
-  dynamic let searchCommand: Command!
+  dynamic let searchAction: Action!
   
   dynamic var selectedOption = 1
   dynamic let options = ["one", "two", "three"]
   
   dynamic var strings = [String]()
-  dynamic let stringSelectedCommand: DataCommand!
+  dynamic let stringSelectedAction: DataAction!
   
   dynamic var boolean: Bool = true {
     didSet {
@@ -84,15 +84,15 @@ class KitchenSinkViewModel: NSObject {
       strings.append("item #\(i)")
     }
     
-    incrementCountCommand = ClosureCommand {
+    incrementCountAction = ClosureAction {
       self.buttonTapCount = self.buttonTapCount + 1
     }
     
-    searchCommand = ClosureCommand {
+    searchAction = ClosureAction {
       println("search!!!!!")
     }
     
-    stringSelectedCommand = ClosureDataCommand {
+    stringSelectedAction = ClosureDataAction {
       (selectedItem: AnyObject) in
       println(selectedItem)
     }
