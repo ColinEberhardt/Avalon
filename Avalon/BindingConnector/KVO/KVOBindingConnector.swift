@@ -27,6 +27,10 @@ public class KVOBindingConnector: NSObject, Disposable {
     
     super.init()
     
+    func logError(value: AnyObject?) {
+      ErrorSink.instance.logEvent("ERROR: Unable to set value \(value) on destination \(destination) with binding \(binding) - does the property \(binding.destinationProperty) exist on the destination?")
+    }
+    
     if binding.sourceProperty != "." {
       
       // subscribe for changes
@@ -40,13 +44,13 @@ public class KVOBindingConnector: NSObject, Disposable {
         return nil
       } else {
         if let error = setValueOnDestination(wrappedResults.propertyValue) {
-          ErrorSink.instance.logEvent("ERROR: Unable to set value \(wrappedResults.propertyValue) on destination \(destination) with binding \(binding)")
+          logError(wrappedResults.propertyValue)
           return nil
         }
       }
     } else {
       if let error = setValueOnDestination(source) {
-        ErrorSink.instance.logEvent("ERROR: Unable to set value \(source) on destination \(destination) with binding \(binding)")
+        logError(source)
         return nil
       }
     }

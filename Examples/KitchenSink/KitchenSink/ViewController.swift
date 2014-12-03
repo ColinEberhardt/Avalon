@@ -24,7 +24,9 @@ class ViewController: UIViewController {
     slider.bindings = [Binding(source: "maxNumber", destination: "maximumValue"),
       Binding(source: "minNumber", destination: "minimumValue")]
 
-    button.bindings = [Binding(source: "incrementCountAction", destination: "Action")]
+    button.bindings = [ "incrementCountAction" >| "Action" ]
+    
+    label.bindings = ["number" >| NumberToString() >| "text"]
     
     segmentedControl.bindings = [Binding(source: "options", destination: "segments"),
       Binding(source: "selectedOption", destination: "selectedSegmentIndex", mode: .TwoWay)]
