@@ -247,6 +247,18 @@ class AvalonCoreTests: XCTestCase {
     XCTAssertEqual(viewModel.height, 0.5)
   }
   
+  func test_binding_twoWayDoesNotSupportDotSyntaxForSource() {
+    AssertLogsError("ERROR: Two way binding does not support the dot syntax") {
+      // create a bound slider
+      let slider = UISlider()
+      slider.bindings = [Binding(source: ".", destination: "value", mode: .TwoWay)]
+      
+      // add a view model
+      let viewModel = 45.0
+      slider.bindingContext = viewModel
+    }
+  }
+  
   // locates the ControlBinding instance and invokes its update function. This
   // should be possible via sendActionsForControlEvents, but for some reaosn
   // that is not working

@@ -13,6 +13,7 @@
 		3CA0DA361A2EFACB009CCB08 /* KVOBindingConnectorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA0DA321A2EFACB009CCB08 /* KVOBindingConnectorTest.swift */; };
 		3CA0DA371A2EFACB009CCB08 /* UIControlBindingConnectorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA0DA331A2EFACB009CCB08 /* UIControlBindingConnectorTest.swift */; };
 		3CA0DA391A2EFECE009CCB08 /* CustomOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA0DA381A2EFECE009CCB08 /* CustomOperators.swift */; };
+		3CA0DA3F1A2F8473009CCB08 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA0DA3E1A2F8473009CCB08 /* TestUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		3CA0DA321A2EFACB009CCB08 /* KVOBindingConnectorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVOBindingConnectorTest.swift; sourceTree = "<group>"; };
 		3CA0DA331A2EFACB009CCB08 /* UIControlBindingConnectorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlBindingConnectorTest.swift; sourceTree = "<group>"; };
 		3CA0DA381A2EFECE009CCB08 /* CustomOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOperators.swift; sourceTree = "<group>"; };
+		3CA0DA3E1A2F8473009CCB08 /* TestUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				3CA0DA331A2EFACB009CCB08 /* UIControlBindingConnectorTest.swift */,
 				3CA0DA1D1A2EFA3B009CCB08 /* Supporting Files */,
 				3CA0DA381A2EFECE009CCB08 /* CustomOperators.swift */,
+				3CA0DA3E1A2F8473009CCB08 /* TestUtils.swift */,
 			);
 			path = UnitTestsTests;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CA0DA391A2EFECE009CCB08 /* CustomOperators.swift in Sources */,
+				3CA0DA3F1A2F8473009CCB08 /* TestUtils.swift in Sources */,
 				3CA0DA341A2EFACB009CCB08 /* AvalonCoreTests.swift in Sources */,
 				3CA0DA361A2EFACB009CCB08 /* KVOBindingConnectorTest.swift in Sources */,
 				3CA0DA351A2EFACB009CCB08 /* KVCVerificationTest.swift in Sources */,
@@ -321,6 +325,7 @@
 				3CA0DA281A2EFA3B009CCB08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -28,7 +28,7 @@ public class KVOBindingConnector: NSObject, Disposable {
     super.init()
     
     func logError(value: AnyObject?) {
-      ErrorSink.instance.logEvent("ERROR: Unable to set value \(value) on destination \(destination) with binding \(binding) - does the property \(binding.destinationProperty) exist on the destination?")
+      ErrorSink.instance.logEvent("ERROR: Unable to set value on destination \(destination) with binding \(binding) - does the property \(binding.destinationProperty) exist on the destination?")
     }
     
     if binding.sourceProperty != "." {

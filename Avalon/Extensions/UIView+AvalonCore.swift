@@ -53,37 +53,18 @@ extension UIView {
   func bindDestinationToSource(view: UIView, viewModel: NSObject, binding: Binding) {
 
     // unfortunately most UIKit controls are not KVO compliant, so we have to use target-action
-    // in order to handle updates and relay the change back to the model
+    // and a variety of ther techniques in order to handle updates and relay the change back to the model
     
     
-    let connectors: [(AnyClass, String, UIControlEvents, UIControl -> AnyObject)] = [
-      (UISlider.self, "value", .ValueChanged, { control in (control as UISlider).value }),
-      (UISegmentedControl.self, "selectedSegmentIndex", .ValueChanged, { control in (control as UISegmentedControl).selectedSegmentIndex }),
-      (UISwitch.self, "on", .ValueChanged, { control in (control as UISwitch).on }),
-      (UITextField.self, "text", .EditingChanged, { control in (control as UITextField).text }),
-      (UIStepper.self, "value", .ValueChanged, { control in (control as UIStepper).value }),
-      (UIDatePicker.self, "date", .ValueChanged, { control in (control as UIDatePicker).date }),
-    ]
-    
-    if let control = view as? UIControl {
-      for connector in connectors {
-        if control.dynamicType === connector.0 {
-          
-          if binding.destinationProperty != connector.1 {
-            ErrorSink.instance.logEvent("ERROR: view \(view) does not support two-way binding, with binding \(binding)")
-          } else {
-            let maybeConnector = UIControlBindingConnector(source: viewModel, destination: control, valueExtractor: { connector.3(control) }, binding: binding, events: connector.2)
-            if let connector = maybeConnector {
-              binding.addDisposable(connector)
-              return
-            }
-          }
-        }
-      }
-      ErrorSink.instance.logEvent("ERROR: view \(view) does not support two-way binding, with binding \(binding)")
+    if binding.sourceProperty == "." {
+      ErrorSink.instance.logEvent("ERROR: Two way binding does not support the dot syntax, with binding \(binding)")
+      
+    } else if let control = view as? UIControl {
+      bindDestinationToSourceForControl(control, viewModel: viewModel, binding: binding)
+      
     } else {
       
-      // try binding non UIControl instances
+      // this is not a UIControl subclass, so try and bind using other mechanisms
       if let searchBar = view as? UISearchBar {
         if binding.destinationProperty != "text" {
           ErrorSink.instance.logEvent("ERROR: view \(view) does not support two-way binding, with binding \(binding)")
@@ -99,6 +80,35 @@ extension UIView {
         ErrorSink.instance.logEvent("ERROR: view \(view) does not support two-way binding, with binding \(binding)")
       }
     }
+  }
+  
+  func bindDestinationToSourceForControl(control: UIControl, viewModel: NSObject, binding: Binding) {
+    
+    
+    // UIControl subclasses all support target-action pattern so can be
+    // bound in a generic fashion via UIControlBindingConnector
+    let connectors: [(AnyClass, String, UIControlEvents, UIControl -> AnyObject)] = [
+      (UISlider.self, "value", .ValueChanged, { control in (control as UISlider).value }),
+      (UISegmentedControl.self, "selectedSegmentIndex", .ValueChanged, { control in (control as UISegmentedControl).selectedSegmentIndex }),
+      (UISwitch.self, "on", .ValueChanged, { control in (control as UISwitch).on }),
+      (UITextField.self, "text", .EditingChanged, { control in (control as UITextField).text }),
+      (UIStepper.self, "value", .ValueChanged, { control in (control as UIStepper).value }),
+      (UIDatePicker.self, "date", .ValueChanged, { control in (control as UIDatePicker).date }),
+    ]
+    
+    for connector in connectors {
+      if control.dynamicType === connector.0 {
+        
+        if binding.destinationProperty != connector.1 {
+          ErrorSink.instance.logEvent("ERROR: view \(control) does not support two-way binding, with binding \(binding)")
+        } else {
+          let connector = UIControlBindingConnector(source: viewModel, destination: control, valueExtractor: { connector.3(control) }, binding: binding, events: connector.2)
+          binding.addDisposable(connector)
+          return
+        }
+      }
+    }
+    ErrorSink.instance.logEvent("ERROR: view \(control) does not support two-way binding, with binding \(binding)")
   }
   
   func contextBindingForView(view: UIView) -> Binding? {
