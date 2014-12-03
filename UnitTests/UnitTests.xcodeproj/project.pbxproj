@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C859ED21A19E561001BA43F /* Avalon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C23716E1A19E3E800C28D27 /* Avalon.framework */; };
-		3C859EE81A19E72D001BA43F /* AvalonCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C859EE31A19E72D001BA43F /* AvalonCoreTests.swift */; };
-		3C859EE91A19E72D001BA43F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C859EE41A19E72D001BA43F /* Info.plist */; };
-		3C859EEA1A19E72D001BA43F /* KVCVerificationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C859EE51A19E72D001BA43F /* KVCVerificationTest.swift */; };
-		3C859EEB1A19E72D001BA43F /* KVOBindingConnectorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C859EE61A19E72D001BA43F /* KVOBindingConnectorTest.swift */; };
-		3C859EF01A1A26A3001BA43F /* UIControlBindingConnectorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C859EEF1A1A26A3001BA43F /* UIControlBindingConnectorTest.swift */; };
+		3CA0DA2F1A2EFAA1009CCB08 /* Avalon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CA0DA2E1A2EFA99009CCB08 /* Avalon.framework */; };
+		3CA0DA341A2EFACB009CCB08 /* AvalonCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA0DA301A2EFACB009CCB08 /* AvalonCoreTests.swift */; };
+		3CA0DA351A2EFACB009CCB08 /* KVCVerificationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA0DA311A2EFACB009CCB08 /* KVCVerificationTest.swift */; };
+		3CA0DA361A2EFACB009CCB08 /* KVOBindingConnectorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA0DA321A2EFACB009CCB08 /* KVOBindingConnectorTest.swift */; };
+		3CA0DA371A2EFACB009CCB08 /* UIControlBindingConnectorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA0DA331A2EFACB009CCB08 /* UIControlBindingConnectorTest.swift */; };
+		3CA0DA391A2EFECE009CCB08 /* CustomOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA0DA381A2EFECE009CCB08 /* CustomOperators.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3C23716D1A19E3E800C28D27 /* PBXContainerItemProxy */ = {
+		3CA0DA2D1A2EFA99009CCB08 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3C2371681A19E3E700C28D27 /* Avalon.xcodeproj */;
+			containerPortal = 3CA0DA291A2EFA99009CCB08 /* Avalon.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 3CEE102F1A0F5A3F002C66E3;
 			remoteInfo = Avalon;
@@ -26,74 +26,84 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3C2371581A19E3DD00C28D27 /* UnitTestsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTestsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C2371681A19E3E700C28D27 /* Avalon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Avalon.xcodeproj; path = ../Avalon.xcodeproj; sourceTree = "<group>"; };
-		3C859EE31A19E72D001BA43F /* AvalonCoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvalonCoreTests.swift; sourceTree = "<group>"; };
-		3C859EE41A19E72D001BA43F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3C859EE51A19E72D001BA43F /* KVCVerificationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVCVerificationTest.swift; sourceTree = "<group>"; };
-		3C859EE61A19E72D001BA43F /* KVOBindingConnectorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVOBindingConnectorTest.swift; sourceTree = "<group>"; };
-		3C859EEF1A1A26A3001BA43F /* UIControlBindingConnectorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlBindingConnectorTest.swift; sourceTree = "<group>"; };
+		3CA0DA191A2EFA3B009CCB08 /* UnitTestsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTestsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CA0DA1E1A2EFA3B009CCB08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3CA0DA291A2EFA99009CCB08 /* Avalon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Avalon.xcodeproj; path = ../Avalon.xcodeproj; sourceTree = "<group>"; };
+		3CA0DA301A2EFACB009CCB08 /* AvalonCoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvalonCoreTests.swift; sourceTree = "<group>"; };
+		3CA0DA311A2EFACB009CCB08 /* KVCVerificationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVCVerificationTest.swift; sourceTree = "<group>"; };
+		3CA0DA321A2EFACB009CCB08 /* KVOBindingConnectorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVOBindingConnectorTest.swift; sourceTree = "<group>"; };
+		3CA0DA331A2EFACB009CCB08 /* UIControlBindingConnectorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlBindingConnectorTest.swift; sourceTree = "<group>"; };
+		3CA0DA381A2EFECE009CCB08 /* CustomOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOperators.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3C2371551A19E3DD00C28D27 /* Frameworks */ = {
+		3CA0DA161A2EFA3B009CCB08 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C859ED21A19E561001BA43F /* Avalon.framework in Frameworks */,
+				3CA0DA2F1A2EFAA1009CCB08 /* Avalon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3C23713A1A19E3DD00C28D27 = {
+		3CA0D9FB1A2EFA3A009CCB08 = {
 			isa = PBXGroup;
 			children = (
-				3C2371681A19E3E700C28D27 /* Avalon.xcodeproj */,
-				3C859EE21A19E72D001BA43F /* UnitTests */,
-				3C2371441A19E3DD00C28D27 /* Products */,
+				3CA0DA291A2EFA99009CCB08 /* Avalon.xcodeproj */,
+				3CA0DA1C1A2EFA3B009CCB08 /* UnitTestsTests */,
+				3CA0DA051A2EFA3B009CCB08 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		3C2371441A19E3DD00C28D27 /* Products */ = {
+		3CA0DA051A2EFA3B009CCB08 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3C2371581A19E3DD00C28D27 /* UnitTestsTests.xctest */,
+				3CA0DA191A2EFA3B009CCB08 /* UnitTestsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3C2371691A19E3E700C28D27 /* Products */ = {
+		3CA0DA1C1A2EFA3B009CCB08 /* UnitTestsTests */ = {
 			isa = PBXGroup;
 			children = (
-				3C23716E1A19E3E800C28D27 /* Avalon.framework */,
+				3CA0DA301A2EFACB009CCB08 /* AvalonCoreTests.swift */,
+				3CA0DA311A2EFACB009CCB08 /* KVCVerificationTest.swift */,
+				3CA0DA321A2EFACB009CCB08 /* KVOBindingConnectorTest.swift */,
+				3CA0DA331A2EFACB009CCB08 /* UIControlBindingConnectorTest.swift */,
+				3CA0DA1D1A2EFA3B009CCB08 /* Supporting Files */,
+				3CA0DA381A2EFECE009CCB08 /* CustomOperators.swift */,
 			);
-			name = Products;
+			path = UnitTestsTests;
 			sourceTree = "<group>";
 		};
-		3C859EE21A19E72D001BA43F /* UnitTests */ = {
+		3CA0DA1D1A2EFA3B009CCB08 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3C859EE31A19E72D001BA43F /* AvalonCoreTests.swift */,
-				3C859EE41A19E72D001BA43F /* Info.plist */,
-				3C859EE51A19E72D001BA43F /* KVCVerificationTest.swift */,
-				3C859EE61A19E72D001BA43F /* KVOBindingConnectorTest.swift */,
-				3C859EEF1A1A26A3001BA43F /* UIControlBindingConnectorTest.swift */,
+				3CA0DA1E1A2EFA3B009CCB08 /* Info.plist */,
 			);
-			path = UnitTests;
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3CA0DA2A1A2EFA99009CCB08 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3CA0DA2E1A2EFA99009CCB08 /* Avalon.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3C2371571A19E3DD00C28D27 /* UnitTestsTests */ = {
+		3CA0DA181A2EFA3B009CCB08 /* UnitTestsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3C2371651A19E3DD00C28D27 /* Build configuration list for PBXNativeTarget "UnitTestsTests" */;
+			buildConfigurationList = 3CA0DA261A2EFA3B009CCB08 /* Build configuration list for PBXNativeTarget "UnitTestsTests" */;
 			buildPhases = (
-				3C2371541A19E3DD00C28D27 /* Sources */,
-				3C2371551A19E3DD00C28D27 /* Frameworks */,
-				3C2371561A19E3DD00C28D27 /* Resources */,
+				3CA0DA151A2EFA3B009CCB08 /* Sources */,
+				3CA0DA161A2EFA3B009CCB08 /* Frameworks */,
+				3CA0DA171A2EFA3B009CCB08 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -101,25 +111,25 @@
 			);
 			name = UnitTestsTests;
 			productName = UnitTestsTests;
-			productReference = 3C2371581A19E3DD00C28D27 /* UnitTestsTests.xctest */;
+			productReference = 3CA0DA191A2EFA3B009CCB08 /* UnitTestsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		3C23713B1A19E3DD00C28D27 /* Project object */ = {
+		3CA0D9FC1A2EFA3B009CCB08 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Colin Eberhardt";
 				TargetAttributes = {
-					3C2371571A19E3DD00C28D27 = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = 3C2371421A19E3DD00C28D27;
+					3CA0DA181A2EFA3B009CCB08 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 3CA0DA031A2EFA3B009CCB08;
 					};
 				};
 			};
-			buildConfigurationList = 3C23713E1A19E3DD00C28D27 /* Build configuration list for PBXProject "UnitTests" */;
+			buildConfigurationList = 3CA0D9FF1A2EFA3B009CCB08 /* Build configuration list for PBXProject "UnitTests" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -127,59 +137,59 @@
 				en,
 				Base,
 			);
-			mainGroup = 3C23713A1A19E3DD00C28D27;
-			productRefGroup = 3C2371441A19E3DD00C28D27 /* Products */;
+			mainGroup = 3CA0D9FB1A2EFA3A009CCB08;
+			productRefGroup = 3CA0DA051A2EFA3B009CCB08 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 3C2371691A19E3E700C28D27 /* Products */;
-					ProjectRef = 3C2371681A19E3E700C28D27 /* Avalon.xcodeproj */;
+					ProductGroup = 3CA0DA2A1A2EFA99009CCB08 /* Products */;
+					ProjectRef = 3CA0DA291A2EFA99009CCB08 /* Avalon.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
-				3C2371571A19E3DD00C28D27 /* UnitTestsTests */,
+				3CA0DA181A2EFA3B009CCB08 /* UnitTestsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		3C23716E1A19E3E800C28D27 /* Avalon.framework */ = {
+		3CA0DA2E1A2EFA99009CCB08 /* Avalon.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Avalon.framework;
-			remoteRef = 3C23716D1A19E3E800C28D27 /* PBXContainerItemProxy */;
+			remoteRef = 3CA0DA2D1A2EFA99009CCB08 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3C2371561A19E3DD00C28D27 /* Resources */ = {
+		3CA0DA171A2EFA3B009CCB08 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C859EE91A19E72D001BA43F /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3C2371541A19E3DD00C28D27 /* Sources */ = {
+		3CA0DA151A2EFA3B009CCB08 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C859EE81A19E72D001BA43F /* AvalonCoreTests.swift in Sources */,
-				3C859EEB1A19E72D001BA43F /* KVOBindingConnectorTest.swift in Sources */,
-				3C859EEA1A19E72D001BA43F /* KVCVerificationTest.swift in Sources */,
-				3C859EF01A1A26A3001BA43F /* UIControlBindingConnectorTest.swift in Sources */,
+				3CA0DA391A2EFECE009CCB08 /* CustomOperators.swift in Sources */,
+				3CA0DA341A2EFACB009CCB08 /* AvalonCoreTests.swift in Sources */,
+				3CA0DA361A2EFACB009CCB08 /* KVOBindingConnectorTest.swift in Sources */,
+				3CA0DA351A2EFACB009CCB08 /* KVCVerificationTest.swift in Sources */,
+				3CA0DA371A2EFACB009CCB08 /* UIControlBindingConnectorTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		3C2371601A19E3DD00C28D27 /* Debug */ = {
+		3CA0DA211A2EFA3B009CCB08 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -222,7 +232,7 @@
 			};
 			name = Debug;
 		};
-		3C2371611A19E3DD00C28D27 /* Release */ = {
+		3CA0DA221A2EFA3B009CCB08 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -258,7 +268,7 @@
 			};
 			name = Release;
 		};
-		3C2371661A19E3DD00C28D27 /* Debug */ = {
+		3CA0DA271A2EFA3B009CCB08 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -270,14 +280,14 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = UnitTests/Info.plist;
+				INFOPLIST_FILE = UnitTestsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UnitTests.app/UnitTests";
 			};
 			name = Debug;
 		};
-		3C2371671A19E3DD00C28D27 /* Release */ = {
+		3CA0DA281A2EFA3B009CCB08 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -285,7 +295,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = UnitTests/Info.plist;
+				INFOPLIST_FILE = UnitTestsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UnitTests.app/UnitTests";
@@ -295,25 +305,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3C23713E1A19E3DD00C28D27 /* Build configuration list for PBXProject "UnitTests" */ = {
+		3CA0D9FF1A2EFA3B009CCB08 /* Build configuration list for PBXProject "UnitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3C2371601A19E3DD00C28D27 /* Debug */,
-				3C2371611A19E3DD00C28D27 /* Release */,
+				3CA0DA211A2EFA3B009CCB08 /* Debug */,
+				3CA0DA221A2EFA3B009CCB08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3C2371651A19E3DD00C28D27 /* Build configuration list for PBXNativeTarget "UnitTestsTests" */ = {
+		3CA0DA261A2EFA3B009CCB08 /* Build configuration list for PBXNativeTarget "UnitTestsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3C2371661A19E3DD00C28D27 /* Debug */,
-				3C2371671A19E3DD00C28D27 /* Release */,
+				3CA0DA271A2EFA3B009CCB08 /* Debug */,
+				3CA0DA281A2EFA3B009CCB08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 3C23713B1A19E3DD00C28D27 /* Project object */;
+	rootObject = 3CA0D9FC1A2EFA3B009CCB08 /* Project object */;
 }

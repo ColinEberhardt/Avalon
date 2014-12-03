@@ -28,6 +28,8 @@ public func >| (partial: PartialBinding, destination: String) -> Binding {
   return Binding(source: partial.source, destination: destination, converter: partial.converter)
 }
 
+// a structure that is used to support the creation of bindings with converters
+// e.g. "foo" >| ValueConverter() >| "bar"
 public struct PartialBinding {
   let source: String
   let converter: ValueConverter

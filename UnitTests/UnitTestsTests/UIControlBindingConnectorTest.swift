@@ -63,7 +63,7 @@ class UIControlBindingConnectorTest: XCTestCase {
     XCTAssertTrue(range != nil)
   }
   
-  func test_failsIfIncompatibleType() {
+  func failing_test_failsIfIncompatibleType() {
     // unfortunately this cannot be implemented, the KVC setValue method is very forgiving
     // instead we rely on KVCVerification, which tries its best to warn of comatibility issues
     XCTAssertTrue(false)

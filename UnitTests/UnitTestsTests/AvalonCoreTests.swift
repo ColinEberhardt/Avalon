@@ -258,7 +258,7 @@ class AvalonCoreTests: XCTestCase {
   }
   
   class AgeToString: ValueConverter {
-    override func convert(sourceValue: AnyObject, binding: Binding, viewModel: AnyObject) -> AnyObject? {
+    override func convert(sourceValue: AnyObject?, binding: Binding, viewModel: AnyObject) -> AnyObject? {
       let age: Int = sourceValue as Int
       return String(age)
     }
