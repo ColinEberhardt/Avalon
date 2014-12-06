@@ -31,7 +31,11 @@ class ViewController: UIViewController {
     segmentedControl.bindings = [Binding(source: "options", destination: "segments"),
       Binding(source: "selectedOption", destination: "selectedSegmentIndex", mode: .TwoWay)]
     
-    searchBar.bindings = [Binding(source: "searchText", destination: "text", mode: .TwoWay)]
+    searchBar.bindings = [Binding(source: "searchText", destination: "text", mode: .TwoWay),
+      Binding(source:"searchPlaceholder", destination:"placeholder"),
+      Binding(source: "options", destination: "scopeButtonTitles"),
+      Binding(source: "selectedOption", destination: "selectedScopeButtonIndex", mode: .TwoWay)
+    ]
     
     tableView.bindings = [Binding(source: "stringSelectedAction", destination: "selectionAction")]
    

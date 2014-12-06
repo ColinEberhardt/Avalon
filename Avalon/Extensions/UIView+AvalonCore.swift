@@ -66,15 +66,22 @@ extension UIView {
       
       // this is not a UIControl subclass, so try and bind using other mechanisms
       if let searchBar = view as? UISearchBar {
-        if binding.destinationProperty != "text" {
-          ErrorSink.instance.logEvent("ERROR: view \(view) does not support two-way binding, with binding \(binding)")
-        } else {
+        if binding.destinationProperty == "text" {
           //TODO: add converter support & setter failure
           searchBar.searchBarDelegate.textChangedObserver = {
             (text: String) in
             NSObjectHelper.trySetValue(text, forKeyPath: binding.sourceProperty, forObject: viewModel)
             return
           }
+        } else if binding.destinationProperty == "selectedScopeButtonIndex" {
+          //TODO: add converter support & setter failure
+          searchBar.searchBarDelegate.scopeButtonIndexChanged = {
+            (index: Int) in
+            NSObjectHelper.trySetValue(index, forKeyPath: binding.sourceProperty, forObject: viewModel)
+            return
+          }
+        } else {
+          ErrorSink.instance.logEvent("ERROR: view \(view) does not support two-way binding, with binding \(binding)")
         }
       } else {
         ErrorSink.instance.logEvent("ERROR: view \(view) does not support two-way binding, with binding \(binding)")

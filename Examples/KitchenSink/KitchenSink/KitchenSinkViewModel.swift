@@ -62,6 +62,7 @@ class KitchenSinkViewModel: NSObject {
   dynamic let incrementCountAction: Action!
   
   dynamic var searchText = "search"
+  dynamic var searchPlaceholder = "search here!"
   dynamic let searchAction: Action!
   
   dynamic var selectedOption = 1
@@ -89,7 +90,7 @@ class KitchenSinkViewModel: NSObject {
     }
     
     searchAction = ClosureAction {
-      println("search!!!!!")
+      println("search button clicked")
     }
     
     stringSelectedAction = ClosureDataAction {

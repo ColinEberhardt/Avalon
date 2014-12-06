@@ -13,10 +13,37 @@ extension UISearchBar {
   
   public var searchAction: Action? {
     get {
-      return objc_getAssociatedObject(self, &AssociationKey.action) as Action?
+      return objc_getAssociatedObject(self, &AssociationKey.searchAction) as Action?
     }
     set(newValue) {
-      objc_setAssociatedObject(self, &AssociationKey.action, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
+      objc_setAssociatedObject(self, &AssociationKey.searchAction, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
+    }
+  }
+  
+  public var cancelAction: Action? {
+    get {
+      return objc_getAssociatedObject(self, &AssociationKey.cancelAction) as Action?
+    }
+    set(newValue) {
+      objc_setAssociatedObject(self, &AssociationKey.cancelAction, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
+    }
+  }
+  
+  public var resultsListButtonAction: Action? {
+    get {
+      return objc_getAssociatedObject(self, &AssociationKey.resultsListButtonAction) as Action?
+    }
+    set(newValue) {
+      objc_setAssociatedObject(self, &AssociationKey.resultsListButtonAction, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
+    }
+  }
+  
+  public var bookmarkButtonAction: Action? {
+    get {
+      return objc_getAssociatedObject(self, &AssociationKey.bookmarkButtonAction) as Action?
+    }
+    set(newValue) {
+      objc_setAssociatedObject(self, &AssociationKey.bookmarkButtonAction, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
     }
   }
   
@@ -37,13 +64,20 @@ extension UISearchBar {
       objc_setAssociatedObject(self, &AssociationKey.searchBarDelegate, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
     }
   }
-  
 }
 
+// a delegate implementation, used to detect button clicks
+// and text change
 class UISearchBarDelegateImpl: NSObject, UISearchBarDelegate {
   private let searchBar: UISearchBar
   
+  // an observer that is invoked when text changes, this is used
+  // to support two-way binding
   var textChangedObserver: (String->())?
+  
+  // an observer that is invoked when the selected scope button changes, this is used
+  // to support two-way binding
+  var scopeButtonIndexChanged: (Int->())?
   
   init(searchBar: UISearchBar) {
     self.searchBar = searchBar
@@ -53,13 +87,27 @@ class UISearchBarDelegateImpl: NSObject, UISearchBarDelegate {
     searchBar.delegate = self
   }
   
+  func searchBarResultsListButtonClicked(searchBar: UISearchBar) {
+    searchBar.resultsListButtonAction?.execute()
+  }
+  
+  func searchBarBookmarkButtonClicked(searchBar: UISearchBar) {
+    searchBar.bookmarkButtonAction?.execute()
+  }
+  
+  func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+    searchBar.cancelAction?.execute()
+  }
+  
   func searchBarSearchButtonClicked(searchBar: UISearchBar) {
     searchBar.searchAction?.execute()
   }
   
+  func searchBar(searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+    scopeButtonIndexChanged?(selectedScope)
+  }
+  
   func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-    if let observer = textChangedObserver {
-      observer(searchBar.text)
-    }
+    textChangedObserver?(searchBar.text)
   }
 }
