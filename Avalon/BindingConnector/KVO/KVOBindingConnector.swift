@@ -38,7 +38,7 @@ public class KVOBindingConnector: NSObject, Disposable {
           options: NSKeyValueObservingOptions.New, context: nil)
       
       // copy initial value - verifying that the source property path is valid
-      let wrappedResults: NSValueWrapper =  NSObjectHelper.tryGetValueForKeyPath(binding.sourceProperty, forObject: source)
+      let wrappedResults: AVValueWrapper =  NSObjectHelper.tryGetValueForKeyPath(binding.sourceProperty, forObject: source)
       if let exception = wrappedResults.exception {
         ErrorSink.instance.logEvent("ERROR: Unable to get value from source \(source) for binding \(binding)")
         return nil

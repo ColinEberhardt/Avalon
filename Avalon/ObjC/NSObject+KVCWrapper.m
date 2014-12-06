@@ -10,8 +10,8 @@
 
 @implementation NSObjectHelper
 
-+ (NSValueWrapper *)tryGetValueForKeyPath:(NSString*) keyPath forObject:(NSObject *)object {
-  NSValueWrapper *result = [NSValueWrapper new];
++ (AVValueWrapper *)tryGetValueForKeyPath:(NSString*) keyPath forObject:(NSObject *)object {
+  AVValueWrapper *result = [AVValueWrapper new];
   @try {
     result.propertyValue = [object valueForKeyPath: keyPath];
   }

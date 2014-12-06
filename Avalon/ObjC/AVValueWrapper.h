@@ -1,5 +1,5 @@
 //
-//  NSValueWrapper.h
+//  AVValueWrapper.h
 //  Avalon
 //
 //  Created by Colin Eberhardt on 12/11/2014.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSValueWrapper: NSObject
+@interface AVValueWrapper: NSObject
 
 @property id propertyValue;
 @property NSString *exception;

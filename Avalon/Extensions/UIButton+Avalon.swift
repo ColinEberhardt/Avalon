@@ -11,12 +11,6 @@ import UIKit
 
 extension UIButton {
   
-  func override_didMoveToWindow() {
-    // perform a one-time subscription to the tager action for the button
-    self.addTarget(self, action: "tapped", forControlEvents: UIControlEvents.TouchUpInside)
-    self.override_didMoveToWindow()
-  }
-  
   public var title: String {
     get {
       if let text = self.currentTitle {
@@ -36,6 +30,10 @@ extension UIButton {
     }
     set(newValue) {
       objc_setAssociatedObject(self, &AssociationKey.action, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
+      
+      // this will get called each time an action is set, but the addTarget implementation ensures
+      // that each action is only added once, so repeated calls are ignored
+      self.addTarget(self, action: "tapped", forControlEvents: UIControlEvents.TouchUpInside)
     }
   }
   
