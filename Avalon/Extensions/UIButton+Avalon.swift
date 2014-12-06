@@ -32,10 +32,10 @@ extension UIButton {
   
   public var action: Action? {
     get {
-      return objc_getAssociatedObject(self, &actionAssociationKey) as Action?
+      return objc_getAssociatedObject(self, &AssociationKey.action) as Action?
     }
     set(newValue) {
-      objc_setAssociatedObject(self, &actionAssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
+      objc_setAssociatedObject(self, &AssociationKey.action, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
     }
   }
   

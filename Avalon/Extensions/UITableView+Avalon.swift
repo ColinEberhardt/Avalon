@@ -13,21 +13,21 @@ extension UITableView {
   
   public var items: [NSObject] {
     get {
-      let source = objc_getAssociatedObject(self, &itemsAssociationKey) as? TableViewSource
+      let source = objc_getAssociatedObject(self, &AssociationKey.items) as? TableViewSource
       return source != nil ? source!.items : [NSObject]()
     }
     set(newValue) {
       let source = TableViewSource(tableView: self, items: newValue)
-      objc_setAssociatedObject(self, &itemsAssociationKey, source, UInt(OBJC_ASSOCIATION_RETAIN))
+      objc_setAssociatedObject(self, &AssociationKey.items, source, UInt(OBJC_ASSOCIATION_RETAIN))
     }
   }
   
   public var selectionAction: DataAction? {
     get {
-      return objc_getAssociatedObject(self, &actionAssociationKey) as DataAction?
+      return objc_getAssociatedObject(self, &AssociationKey.action) as DataAction?
     }
     set(newValue) {
-      objc_setAssociatedObject(self, &actionAssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
+      objc_setAssociatedObject(self, &AssociationKey.action, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
     }
   }
 }

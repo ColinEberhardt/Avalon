@@ -14,10 +14,10 @@ extension UIView {
   
   public var bindingContext: NSObject? {
     get {
-      return objc_getAssociatedObject(self, &bindingContextAssociationKey) as? NSObject
+      return objc_getAssociatedObject(self, &AssociationKey.bindingContext) as? NSObject
     }
     set(newValue) {
-      objc_setAssociatedObject(self, &bindingContextAssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
+      objc_setAssociatedObject(self, &AssociationKey.bindingContext, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
       
       if let viewModel = bindingContext {
         initiateBindingsForView(self, viewModel: viewModel, skipBindingContext: true)

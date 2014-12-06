@@ -12,41 +12,41 @@ extension UIGestureRecognizer: Bindable {
   
   @IBInspectable public var source: String {
     get {
-      let value: AnyObject! = objc_getAssociatedObject(self, &sourceAssociationKey)
+      let value: AnyObject! = objc_getAssociatedObject(self, &AssociationKey.source)
       return value != nil ? value as String : ""
     }
     set(newValue) {
-      objc_setAssociatedObject(self, &sourceAssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
+      objc_setAssociatedObject(self, &AssociationKey.source, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
     }
   }
   
   @IBInspectable public var destination: String {
     get {
-      let value: AnyObject! = objc_getAssociatedObject(self, &destinationAssociationKey)
+      let value: AnyObject! = objc_getAssociatedObject(self, &AssociationKey.destination)
       return value != nil ? value as String : ""
     }
     set(newValue) {
-      objc_setAssociatedObject(self, &destinationAssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
+      objc_setAssociatedObject(self, &AssociationKey.destination, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
     }
   }
   
   @IBInspectable public var converter: String {
     get {
-      let value: AnyObject! = objc_getAssociatedObject(self, &converterAssociationKey)
+      let value: AnyObject! = objc_getAssociatedObject(self, &AssociationKey.converter)
       return value != nil ? value as String : ""
     }
     set(newValue) {
-      objc_setAssociatedObject(self, &converterAssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
+      objc_setAssociatedObject(self, &AssociationKey.converter, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
     }
   }
   
   @IBInspectable public var mode: String {
     get {
-      let value: AnyObject! = objc_getAssociatedObject(self, &modeAssociationKey)
+      let value: AnyObject! = objc_getAssociatedObject(self, &AssociationKey.mode)
       return value != nil ? value as String : ""
     }
     set(newValue) {
-      objc_setAssociatedObject(self, &modeAssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
+      objc_setAssociatedObject(self, &AssociationKey.mode, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
     }
   }
   
@@ -54,19 +54,19 @@ extension UIGestureRecognizer: Bindable {
   // I need to dig into this in order to file a bug with Apple
   public var bindings: [Binding]? {
     get {
-      return objc_getAssociatedObject(self, &bindingAssociationKey) as? [Binding]
+      return objc_getAssociatedObject(self, &AssociationKey.binding) as? [Binding]
     }
     set(newValue) {
-      objc_setAssociatedObject(self, &bindingAssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
+      objc_setAssociatedObject(self, &AssociationKey.binding, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
     }
   }
   
   public var action: Action? {
     get {
-      return objc_getAssociatedObject(self, &actionAssociationKey) as Action?
+      return objc_getAssociatedObject(self, &AssociationKey.action) as Action?
     }
     set(newValue) {
-      objc_setAssociatedObject(self, &actionAssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
+      objc_setAssociatedObject(self, &AssociationKey.action, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
       
       // TODO: Ensure this is a one-time subscription
       self.addTarget(self, action: "gestureFired")

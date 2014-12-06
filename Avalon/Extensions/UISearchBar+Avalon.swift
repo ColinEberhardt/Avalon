@@ -13,16 +13,16 @@ extension UISearchBar {
   
   public var searchAction: Action? {
     get {
-      return objc_getAssociatedObject(self, &actionAssociationKey) as Action?
+      return objc_getAssociatedObject(self, &AssociationKey.action) as Action?
     }
     set(newValue) {
-      objc_setAssociatedObject(self, &actionAssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
+      objc_setAssociatedObject(self, &AssociationKey.action, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
     }
   }
   
   var searchBarDelegate: UISearchBarDelegateImpl {
     get {
-      let  delegate = objc_getAssociatedObject(self, &searchBarDelegateAssociationKey) as? UISearchBarDelegateImpl
+      let  delegate = objc_getAssociatedObject(self, &AssociationKey.searchBarDelegate) as? UISearchBarDelegateImpl
       
       // TODO: provide delegate forwarding so that the user can still use this controls delegate
       if delegate == nil {
@@ -34,7 +34,7 @@ extension UISearchBar {
       }
     }
     set(newValue) {
-      objc_setAssociatedObject(self, &searchBarDelegateAssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
+      objc_setAssociatedObject(self, &AssociationKey.searchBarDelegate, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
     }
   }
   

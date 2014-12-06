@@ -13,10 +13,10 @@ extension UISegmentedControl {
   
   public var segments: [String]? {
     get {
-      return objc_getAssociatedObject(self, &segmentsAssociationKey) as [String]?
+      return objc_getAssociatedObject(self, &AssociationKey.segments) as [String]?
     }
     set(newValue) {
-      objc_setAssociatedObject(self, &segmentsAssociationKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
+      objc_setAssociatedObject(self, &AssociationKey.segments, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
       
       // TODO: Allow this to observe changes in the segments
       removeAllSegments()
