@@ -8,7 +8,7 @@
 
 import UIKit
 
-// MARK:- Public API - Add actions
+// MARK:- Public API 
 // These user interactions would be detected via the delegate. By converting
 // them into actions they can be bound to the view model.
 extension UISearchBar {

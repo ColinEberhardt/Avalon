@@ -8,10 +8,13 @@
 
 import Foundation
 
+/// Defines an action, typically an invocable view model property.
 @objc public protocol Action {
+  /// Invokes the action
   func execute()
 }
 
+/// An action that is defined by a closure supplied to the initializer
 public class ClosureAction: Action {
   private let action: () -> ()
   
@@ -24,10 +27,13 @@ public class ClosureAction: Action {
   }
 }
 
+/// Defines an action that conveys data
 @objc public protocol DataAction {
+  /// Invokes the action, with the supplied data
   func execute(data: AnyObject)
 }
 
+/// An action that is defined by a closure supplied to the initializer
 public class ClosureDataAction: DataAction {
   private let action: AnyObject -> ()
   

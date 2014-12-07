@@ -8,8 +8,16 @@
 
 import Foundation
 
+/// Describes the direction the data flows in a binding
 public enum BindingMode: Printable {
-  case OneWay, TwoWay
+  
+  /// A one way binding updates the destination property when the source property changes. It does
+  /// *not* updates the source if the destination changes.
+  case OneWay
+  
+  /// A two way binding propagates changes in both directions, from source to destination and
+  /// destination to source.
+  case TwoWay
   
   public var description: String {
     switch self {

@@ -9,8 +9,10 @@
 import Foundation
 import UIKit
 
+// MARK:- Public API
 extension UISegmentedControl {
   
+  /// An bindable array of strings that represent the segment titles
   public var segments: [String]? {
     get {
       return objc_getAssociatedObject(self, &AssociationKey.segments) as [String]?
