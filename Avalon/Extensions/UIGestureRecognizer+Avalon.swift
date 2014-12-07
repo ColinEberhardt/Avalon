@@ -50,8 +50,6 @@ extension UIGestureRecognizer: Bindable {
     }
   }
   
-  // for some reason the test build fails if this property is public
-  // I need to dig into this in order to file a bug with Apple
   public var bindings: [Binding]? {
     get {
       return objc_getAssociatedObject(self, &AssociationKey.binding) as? [Binding]

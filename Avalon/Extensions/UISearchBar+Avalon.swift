@@ -62,51 +62,33 @@ extension UISearchBar {
   
   // the delegate that is used to provide the public action
   var searchBarDelegate: UISearchBarDelegateImpl {
-    get {
-      let  delegate = objc_getAssociatedObject(self, &AssociationKey.searchBarDelegate) as? UISearchBarDelegateImpl
-      
-      if delegate == nil {
-        let delegateImpl = UISearchBarDelegateImpl(searchBar: self)
-        objc_setAssociatedObject(self, &AssociationKey.searchBarDelegate, delegateImpl, UInt(OBJC_ASSOCIATION_RETAIN))
-        return delegateImpl
-      } else {
-        return delegate!
-      }
+    return lazyAssociatedProperty(self, &AssociationKey.searchBarDelegate) {
+      return UISearchBarDelegateImpl(searchBar: self)
     }
   }
   
   // a multiplexer that provides forwarding
   var delegateMultiplexer: AVDelegateMultiplexer {
-    get {
-      var multiplexer = objc_getAssociatedObject(self, &AssociationKey.delegateProxy) as? AVDelegateMultiplexer
-      
-      if multiplexer == nil {
-        multiplexer = AVDelegateMultiplexer()
-        self.override_setDelegate(multiplexer!)
-        objc_setAssociatedObject(self, &AssociationKey.delegateProxy, multiplexer, UInt(OBJC_ASSOCIATION_RETAIN))
-      }
-      return multiplexer!
+    return lazyAssociatedProperty(self, &AssociationKey.delegateProxy) {
+      let multiplexer = AVDelegateMultiplexer()
+      self.override_setDelegate(multiplexer)
+      return multiplexer
     }
   }
   
   // the swizzled delegate API methods
   func override_setDelegate(delegate: AnyObject) {
-    let multiplex = delegateMultiplexer
-    multiplex.delegate = delegate
+    delegateMultiplexer.delegate = delegate
   }
   func override_delegate() -> UISearchBarDelegate? {
-    return delegateMultiplexer.delegate as UISearchBarDelegate?
+    // don't invoke delegateMultiplexer getter in order to check for nil, this
+    // can cause a circular invocation
+    if objc_getAssociatedObject(self, &AssociationKey.delegateProxy) == nil {
+      return nil
+    } else {
+      return delegateMultiplexer.delegate as UISearchBarDelegate?
+    }
   }
-}
-
-func lazyAssociatedProperty<T>(host: AnyObject, key: UnsafePointer<Void>, factory: ()->T) -> T {
-  var associatedProperty = objc_getAssociatedObject(self, key) as? T
-  
-  if associatedProperty == nil {
-    associatedProperty = factory()
-    objc_setAssociatedObject(self, key, associatedProperty, UInt(OBJC_ASSOCIATION_RETAIN))
-  }
-  return associatedProperty!
 }
 
 // a delegate implementation, used to detect button clicks
