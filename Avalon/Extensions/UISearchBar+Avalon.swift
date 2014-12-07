@@ -69,7 +69,7 @@ extension UISearchBar {
   
   // a multiplexer that provides forwarding
   var delegateMultiplexer: AVDelegateMultiplexer {
-    return lazyAssociatedProperty(self, &AssociationKey.delegateProxy) {
+    return lazyAssociatedProperty(self, &AssociationKey.delegateMultiplex) {
       let multiplexer = AVDelegateMultiplexer()
       self.override_setDelegate(multiplexer)
       return multiplexer
@@ -83,7 +83,7 @@ extension UISearchBar {
   func override_delegate() -> UISearchBarDelegate? {
     // don't invoke delegateMultiplexer getter in order to check for nil, this
     // can cause a circular invocation
-    if objc_getAssociatedObject(self, &AssociationKey.delegateProxy) == nil {
+    if objc_getAssociatedObject(self, &AssociationKey.delegateMultiplex) == nil {
       return nil
     } else {
       return delegateMultiplexer.delegate as UISearchBarDelegate?
