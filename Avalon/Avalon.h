@@ -10,6 +10,8 @@
 
 #import "NSObject+KVCWrapper.h"
 #import "AVValueWrapper.h"
+#import "AVSwizzle.h"
+#import "AVDelegateMultiplexer.h"
 
 //! Project version number for Avalon.
 FOUNDATION_EXPORT double AvalonVersionNumber;

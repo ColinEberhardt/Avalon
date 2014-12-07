@@ -67,25 +67,28 @@ extension UIView {
       // this is not a UIControl subclass, so try and bind using other mechanisms
       if let searchBar = view as? UISearchBar {
         if binding.destinationProperty == "text" {
-          //TODO: add converter support & setter failure
-          searchBar.searchBarDelegate.textChangedObserver = {
-            (text: String) in
-            NSObjectHelper.trySetValue(text, forKeyPath: binding.sourceProperty, forObject: viewModel)
-            return
-          }
+          searchBar.searchBarDelegate.textChangedObserver =
+            createValueChangeBinding(binding, viewModel: viewModel)
         } else if binding.destinationProperty == "selectedScopeButtonIndex" {
-          //TODO: add converter support & setter failure
-          searchBar.searchBarDelegate.scopeButtonIndexChanged = {
-            (index: Int) in
-            NSObjectHelper.trySetValue(index, forKeyPath: binding.sourceProperty, forObject: viewModel)
-            return
-          }
+          searchBar.searchBarDelegate.scopeButtonIndexChanged =
+            createValueChangeBinding(binding, viewModel: viewModel)
         } else {
           ErrorSink.instance.logEvent("ERROR: view \(view) does not support two-way binding, with binding \(binding)")
         }
       } else {
         ErrorSink.instance.logEvent("ERROR: view \(view) does not support two-way binding, with binding \(binding)")
       }
+    }
+  }
+  
+  // creates a function which is invoked via a controls delegate. This function ensures
+  // that the source property of the bidning is updated with the new value.
+  func createValueChangeBinding(binding: Binding, viewModel: NSObject) -> (AnyObject) ->() {
+    return {
+      //TODO: add converter support & setter failure
+      (value: AnyObject) in
+      NSObjectHelper.trySetValue(value, forKeyPath: binding.sourceProperty, forObject: viewModel)
+      return
     }
   }
   

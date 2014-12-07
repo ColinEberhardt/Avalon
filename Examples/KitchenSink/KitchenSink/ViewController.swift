@@ -9,7 +9,7 @@
 import UIKit
 import Avalon
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UISearchBarDelegate {
 
   @IBOutlet weak var slider: UISlider!
   @IBOutlet weak var label: UILabel!
@@ -41,6 +41,14 @@ class ViewController: UIViewController {
    
     view.bindingContext = KitchenSinkViewModel()
     
+    // test delegaet forwarding
+    searchBar.delegate = self
+    
+    println(searchBar.delegate)
+  }
+  
+  func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+    println(searchText)
   }
 
 }

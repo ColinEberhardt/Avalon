@@ -25,4 +25,5 @@ struct AssociationKey {
   static var cancelAction: UInt8 = 13
   static var resultsListButtonAction: UInt8 = 14
   static var bookmarkButtonAction: UInt8 = 15
+  static var delegateProxy: UInt8 = 16
 }
