@@ -6,15 +6,13 @@
 //  Copyright (c) 2014 Colin Eberhardt. All rights reserved.
 //
 
-import Foundation
-
 import UIKit
 import XCTest
 import Avalon
 
-class Custom2OperatorTest: XCTestCase {
+class ButtonTest: XCTestCase {
 
-  func test_actionOblyInvokedOnce() {
+  func test_actionOnlyInvokedOnce() {
     
     var invocations = 0
     let actionOne = ClosureAction {

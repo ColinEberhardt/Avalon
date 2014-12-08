@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3C444F831A32F3D600F72591 /* UIButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C444F821A32F3D600F72591 /* UIButtonTests.swift */; };
+		3CA7B4AD1A3594B300C389BA /* EventTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA7B4AC1A3594B300C389BA /* EventTest.swift */; };
 		3CE0CFAB1A32EF6100BA9EDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE0CFAA1A32EF6100BA9EDA /* AppDelegate.swift */; };
 		3CE0CFAD1A32EF6100BA9EDA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE0CFAC1A32EF6100BA9EDA /* ViewController.swift */; };
 		3CE0CFB01A32EF6100BA9EDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CE0CFAE1A32EF6100BA9EDA /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		3C444F821A32F3D600F72591 /* UIButtonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonTests.swift; sourceTree = "<group>"; };
+		3CA7B4AC1A3594B300C389BA /* EventTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTest.swift; sourceTree = "<group>"; };
 		3CE0CFA51A32EF6100BA9EDA /* UnitTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CE0CFA91A32EF6100BA9EDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CE0CFAA1A32EF6100BA9EDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				3CE0CFD61A32EFF800BA9EDA /* UIControlBindingConnectorTest.swift */,
 				3CE0CFBE1A32EF6100BA9EDA /* Supporting Files */,
 				3C444F821A32F3D600F72591 /* UIButtonTests.swift */,
+				3CA7B4AC1A3594B300C389BA /* EventTest.swift */,
 			);
 			path = UnitTestsTests;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				3CE0CFDB1A32EFF800BA9EDA /* TestUtils.swift in Sources */,
 				3C444F831A32F3D600F72591 /* UIButtonTests.swift in Sources */,
 				3CE0CFD71A32EFF800BA9EDA /* AvalonCoreTests.swift in Sources */,
+				3CA7B4AD1A3594B300C389BA /* EventTest.swift in Sources */,
 				3CE0CFD81A32EFF800BA9EDA /* CustomOperators.swift in Sources */,
 				3CE0CFD91A32EFF800BA9EDA /* KVCVerificationTest.swift in Sources */,
 				3CE0CFDC1A32EFF800BA9EDA /* UIControlBindingConnectorTest.swift in Sources */,
