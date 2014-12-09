@@ -24,9 +24,9 @@ class SearchViewModel : ViewModelBase {
     let track: Track
   }
   
-  let searchExecutingEvent = EmptyEvent()
-  let searchErrorEvent = Event<SearchErrorEventData>()
-  let trackSelectedEvent = Event<TrackSelectedEventData>()
+  let searchExecutingEvent = Event()
+  let searchErrorEvent = DataEvent<SearchErrorEventData>()
+  let trackSelectedEvent = DataEvent<TrackSelectedEventData>()
   
   dynamic var searchString = ""
   dynamic var tracks = [Track]()
