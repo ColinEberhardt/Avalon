@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2229571C1A36914700E2AFE3 /* ImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2229571B1A36914700E2AFE3 /* ImageViewExtensions.swift */; };
 		22D3D8C91A33EEBF008DC6FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3D8C81A33EEBF008DC6FD /* AppDelegate.swift */; };
 		22D3D8CB1A33EEBF008DC6FD /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3D8CA1A33EEBF008DC6FD /* MasterViewController.swift */; };
 		22D3D8CD1A33EEBF008DC6FD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3D8CC1A33EEBF008DC6FD /* DetailViewController.swift */; };
@@ -60,6 +61,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2229571B1A36914700E2AFE3 /* ImageViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewExtensions.swift; sourceTree = "<group>"; };
 		22D3D8C31A33EEBF008DC6FD /* iTunesDirectory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesDirectory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D3D8C71A33EEBF008DC6FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22D3D8C81A33EEBF008DC6FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				22D3D8D11A33EEBF008DC6FD /* Images.xcassets */,
 				22D3D8D31A33EEBF008DC6FD /* LaunchScreen.xib */,
 				22D3D8C61A33EEBF008DC6FD /* Supporting Files */,
+				2229571B1A36914700E2AFE3 /* ImageViewExtensions.swift */,
 			);
 			path = iTunesDirectory;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				22D3D8CB1A33EEBF008DC6FD /* MasterViewController.swift in Sources */,
 				22D3D8C91A33EEBF008DC6FD /* AppDelegate.swift in Sources */,
 				22D3D8FA1A33F2F4008DC6FD /* Track.swift in Sources */,
+				2229571C1A36914700E2AFE3 /* ImageViewExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
