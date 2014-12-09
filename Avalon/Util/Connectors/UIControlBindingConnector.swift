@@ -34,7 +34,7 @@ public class UIControlBindingConnector: NSObject, Disposable {
   public func valueChanged() {
     let value: AnyObject = valueExtractor()
   
-    let maybeFailureMessage = NSObjectHelper.trySetValue(value, forKeyPath: binding.sourceProperty, forObject: source)
+    let maybeFailureMessage = AVKeyValueObservingHelper.trySetValue(value, forKeyPath: binding.sourceProperty, forObject: source)
     if let failureMessage = maybeFailureMessage {
       ErrorSink.instance.logEvent("ERROR: Unable to set value on destination \(source) with binding \(binding)")
     }

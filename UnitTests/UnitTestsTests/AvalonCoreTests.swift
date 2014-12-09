@@ -17,10 +17,15 @@ class PersonViewModel: NSObject {
   var height = 0.3
   dynamic var isFemale = true
   dynamic var address = AddressViewModel()
+  var badProperty = NonNSObject()
 }
 
 class AddressViewModel: NSObject {
   dynamic var city = "Newcastle"
+}
+
+class NonNSObject {
+  var foo = "bar"
 }
 
 // System / integration level tests for the framework
@@ -116,95 +121,6 @@ class AvalonCoreTests: XCTestCase {
     
     // verify state
     XCTAssertEqual(label.text!, "Eggbert")
-  }
-  
-  func test_binding_supportsConstantProperties() {
-    
-    // create a bound label
-    let label = UILabel()
-    label.bindings = [Binding(source: "surname", destination: "text")]
-    
-    // add a view model
-    let viewModel = PersonViewModel()
-    label.bindingContext = viewModel
-    
-    // verify state
-    XCTAssertEqual(label.text!, "Eggbert")
-  }
-  
-  func test_binding_updatesDestinationOnSourceChange() {
-    
-    // create a bound label
-    let label = UILabel()
-    label.bindings = [Binding(source: "name", destination: "text")]
-    
-    // add a view model
-    let viewModel = PersonViewModel()
-    label.bindingContext = viewModel
-    
-    // verify initial state
-    XCTAssertEqual(label.text!, "Bob")
-    
-    // mutate
-    viewModel.name = "Frank"
-    
-    XCTAssertEqual(label.text!, "Frank")
-  }
-  
-  func test_binding_supportsSourcePropertyPaths() {
-    
-    // create a bound label
-    let label = UILabel()
-    label.bindings = [Binding(source: "address.city", destination: "text")]
-    
-    // add a view model
-    let viewModel = PersonViewModel()
-    label.bindingContext = viewModel
-    
-    // verify
-    XCTAssertEqual(label.text!, "Newcastle")
-  }
-  
-  func test_binding_propertyPathSupportsUpdatedOfTarget() {
-    
-    // create a bound label
-    let label = UILabel()
-    label.bindings = [Binding(source: "address.city", destination: "text")]
-    
-    // add a view model
-    let viewModel = PersonViewModel()
-    label.bindingContext = viewModel
-    
-    // verify
-    XCTAssertEqual(label.text!, "Newcastle")
-    
-    // mutate
-    viewModel.address.city = "Leeds"
-    
-    // verify
-    XCTAssertEqual(label.text!, "Leeds")
-  }
-  
-  func test_binding_propertyPathSupportsUpdatedInPropertyChain() {
-    
-    // create a bound label
-    let label = UILabel()
-    label.bindings = [Binding(source: "address.city", destination: "text")]
-    
-    // add a view model
-    let viewModel = PersonViewModel()
-    label.bindingContext = viewModel
-    
-    // verify
-    XCTAssertEqual(label.text!, "Newcastle")
-    
-    // mutate
-    let newAddress = AddressViewModel()
-    newAddress.city = "Leeds"
-    viewModel.address = newAddress
-    
-    // verify
-    XCTAssertEqual(label.text!, "Leeds")
   }
   
   func test_binding_multipleProperties() {

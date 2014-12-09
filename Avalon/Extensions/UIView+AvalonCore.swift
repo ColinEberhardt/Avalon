@@ -87,7 +87,7 @@ extension UIView {
     return {
       //TODO: add converter support & setter failure
       (value: AnyObject) in
-      NSObjectHelper.trySetValue(value, forKeyPath: binding.sourceProperty, forObject: viewModel)
+      AVKeyValueObservingHelper.trySetValue(value, forKeyPath: binding.sourceProperty, forObject: viewModel)
       return
     }
   }

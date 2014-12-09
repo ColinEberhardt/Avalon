@@ -6,9 +6,21 @@
 //  Copyright (c) 2014 Colin Eberhardt. All rights reserved.
 //
 
-#import "NSObject+KVCWrapper.h"
+#import "AVKeyValueObservingHelper.h"
 
-@implementation NSObjectHelper
+@implementation AVKeyValueObservingHelper
+
++ (AVExceptionWrapper *)addObserver:(NSObject *)anObserver forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(void *)context forObject:(NSObject *)object {
+  AVExceptionWrapper *result;
+  @try {
+    [object addObserver:anObserver forKeyPath:keyPath options:options context:context];
+  }
+  @catch (NSException *exception) {
+    result = [AVExceptionWrapper new];
+    result.exception = exception.name;
+  }
+  return result;
+}
 
 + (AVValueWrapper *)tryGetValueForKeyPath:(NSString*) keyPath forObject:(NSObject *)object {
   AVValueWrapper *result = [AVValueWrapper new];

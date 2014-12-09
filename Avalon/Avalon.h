@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-#import "NSObject+KVCWrapper.h"
+#import "AVKeyValueObservingHelper.h"
 #import "AVValueWrapper.h"
+#import "AVExceptionWrapper.h"
 #import "AVSwizzle.h"
 #import "AVDelegateMultiplexer.h"
 

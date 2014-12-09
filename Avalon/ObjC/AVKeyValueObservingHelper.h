@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "AVValueWrapper.h"
+#import "AVExceptionWrapper.h"
 
-@interface NSObjectHelper: NSObject
+@interface AVKeyValueObservingHelper: NSObject
+
++ (AVExceptionWrapper *) addObserver:(NSObject *)anObserver forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(void *)context forObject:(NSObject *)object;
 
 + (AVValueWrapper *)tryGetValueForKeyPath:(NSString *)keyPath forObject:(NSObject *)object;
 

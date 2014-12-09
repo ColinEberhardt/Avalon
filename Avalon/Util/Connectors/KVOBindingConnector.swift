@@ -9,13 +9,13 @@
 import Foundation
 import ObjectiveC
 
-// binds a property on the source object to a property on the destination
+// Binds a property on the source object to a property on the destination
 // this class also ensures some sanity checks are performed
 // 1. That the source property can be read
 // 2. That the destination property is compatible with values emitted by the source
 public class KVOBindingConnector: NSObject, Disposable {
   
-  private var isSubscribed = true
+  private var isSubscribed = false
   private let destination: NSObject, source: NSObject
   private let binding: Binding
   
@@ -34,13 +34,20 @@ public class KVOBindingConnector: NSObject, Disposable {
     if binding.sourceProperty != "." {
       
       // subscribe for changes
-      source.addObserver(self, forKeyPath: binding.sourceProperty,
-          options: NSKeyValueObservingOptions.New, context: nil)
+      let subscriptionResult = AVKeyValueObservingHelper.addObserver(self, forKeyPath: binding.sourceProperty, options: NSKeyValueObservingOptions.New, context: nil, forObject: source)
+     
+      if subscriptionResult != nil {
+        ErrorSink.instance.logEvent("ERROR: Unable to add an observer to the source \(source) for binding \(binding) due to expception \(subscriptionResult.exception)")
+        return nil
+      }
+      
+      // record the fact that KVO has been succesfully set up
+      isSubscribed = true
       
       // copy initial value - verifying that the source property path is valid
-      let wrappedResults: AVValueWrapper =  NSObjectHelper.tryGetValueForKeyPath(binding.sourceProperty, forObject: source)
+      let wrappedResults: AVValueWrapper =  AVKeyValueObservingHelper.tryGetValueForKeyPath(binding.sourceProperty, forObject: source)
       if let exception = wrappedResults.exception {
-        ErrorSink.instance.logEvent("ERROR: Unable to get value from source \(source) for binding \(binding)")
+        ErrorSink.instance.logEvent("ERROR: Unable to get value from source \(source) for binding \(binding) due to exception \(exception)")
         return nil
       } else {
         if let error = setValueOnDestination(wrappedResults.propertyValue) {
@@ -55,7 +62,7 @@ public class KVOBindingConnector: NSObject, Disposable {
       }
     }
     
-    
+
   }
   
   override public func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject,
@@ -73,7 +80,7 @@ public class KVOBindingConnector: NSObject, Disposable {
       ErrorSink.instance.logEvent(warnings)
     }*/
     
-    return NSObjectHelper.trySetValue(convertedValue, forKeyPath: binding.destinationProperty, forObject: destination)
+    return AVKeyValueObservingHelper.trySetValue(convertedValue, forKeyPath: binding.destinationProperty, forObject: destination)
   }
   
     

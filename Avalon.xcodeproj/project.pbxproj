@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		3C408EAF1A16B8A300D8426F /* UIActivityIndicator+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EAE1A16B8A300D8426F /* UIActivityIndicator+Avalon.swift */; };
-		3C408EB61A19268700D8426F /* NSObject+KVCWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C408EB21A19268700D8426F /* NSObject+KVCWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3C408EB71A19268700D8426F /* NSObject+KVCWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EB31A19268700D8426F /* NSObject+KVCWrapper.m */; };
+		3C408EB61A19268700D8426F /* AVKeyValueObservingHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C408EB21A19268700D8426F /* AVKeyValueObservingHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3C408EB71A19268700D8426F /* AVKeyValueObservingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EB31A19268700D8426F /* AVKeyValueObservingHelper.m */; };
 		3C408EB81A19268700D8426F /* AVValueWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C408EB41A19268700D8426F /* AVValueWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3C408EB91A19268700D8426F /* AVValueWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C408EB51A19268700D8426F /* AVValueWrapper.m */; };
 		3C408ECB1A19283700D8426F /* UIGestureRecognizer+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408ECA1A19283700D8426F /* UIGestureRecognizer+Avalon.swift */; };
+		3C42AE751A37639600FB2AEE /* AVExceptionWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C42AE731A37639600FB2AEE /* AVExceptionWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3C42AE761A37639600FB2AEE /* AVExceptionWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C42AE741A37639600FB2AEE /* AVExceptionWrapper.m */; };
 		3C444F8B1A34408300F72591 /* KVCVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C444F881A34408300F72591 /* KVCVerification.swift */; };
 		3C444F8C1A34408300F72591 /* KVOBindingConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C444F891A34408300F72591 /* KVOBindingConnector.swift */; };
 		3C444F8D1A34408300F72591 /* UIControlBindingConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C444F8A1A34408300F72591 /* UIControlBindingConnector.swift */; };
@@ -44,11 +46,13 @@
 
 /* Begin PBXFileReference section */
 		3C408EAE1A16B8A300D8426F /* UIActivityIndicator+Avalon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicator+Avalon.swift"; sourceTree = "<group>"; };
-		3C408EB21A19268700D8426F /* NSObject+KVCWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KVCWrapper.h"; sourceTree = "<group>"; };
-		3C408EB31A19268700D8426F /* NSObject+KVCWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVCWrapper.m"; sourceTree = "<group>"; };
+		3C408EB21A19268700D8426F /* AVKeyValueObservingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVKeyValueObservingHelper.h; sourceTree = "<group>"; };
+		3C408EB31A19268700D8426F /* AVKeyValueObservingHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVKeyValueObservingHelper.m; sourceTree = "<group>"; };
 		3C408EB41A19268700D8426F /* AVValueWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVValueWrapper.h; sourceTree = "<group>"; };
 		3C408EB51A19268700D8426F /* AVValueWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVValueWrapper.m; sourceTree = "<group>"; };
 		3C408ECA1A19283700D8426F /* UIGestureRecognizer+Avalon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIGestureRecognizer+Avalon.swift"; sourceTree = "<group>"; };
+		3C42AE731A37639600FB2AEE /* AVExceptionWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVExceptionWrapper.h; sourceTree = "<group>"; };
+		3C42AE741A37639600FB2AEE /* AVExceptionWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVExceptionWrapper.m; sourceTree = "<group>"; };
 		3C444F881A34408300F72591 /* KVCVerification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVCVerification.swift; sourceTree = "<group>"; };
 		3C444F891A34408300F72591 /* KVOBindingConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVOBindingConnector.swift; sourceTree = "<group>"; };
 		3C444F8A1A34408300F72591 /* UIControlBindingConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlBindingConnector.swift; sourceTree = "<group>"; };
@@ -94,14 +98,16 @@
 		3C408EB11A19268700D8426F /* ObjC */ = {
 			isa = PBXGroup;
 			children = (
-				3C408EB21A19268700D8426F /* NSObject+KVCWrapper.h */,
-				3C408EB31A19268700D8426F /* NSObject+KVCWrapper.m */,
+				3C408EB21A19268700D8426F /* AVKeyValueObservingHelper.h */,
+				3C408EB31A19268700D8426F /* AVKeyValueObservingHelper.m */,
 				3C408EB41A19268700D8426F /* AVValueWrapper.h */,
 				3C408EB51A19268700D8426F /* AVValueWrapper.m */,
 				3CCB555B1A2FC6E100631420 /* AVSwizzle.h */,
 				3CCB555C1A2FC6E100631420 /* AVSwizzle.m */,
 				3C444F901A34455000F72591 /* AVDelegateMultiplexer.h */,
 				3C444F911A34455000F72591 /* AVDelegateMultiplexer.m */,
+				3C42AE731A37639600FB2AEE /* AVExceptionWrapper.h */,
+				3C42AE741A37639600FB2AEE /* AVExceptionWrapper.m */,
 			);
 			path = ObjC;
 			sourceTree = "<group>";
@@ -196,8 +202,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CCB555D1A2FC6E100631420 /* AVSwizzle.h in Headers */,
+				3C42AE751A37639600FB2AEE /* AVExceptionWrapper.h in Headers */,
 				3CEE10351A0F5A40002C66E3 /* Avalon.h in Headers */,
-				3C408EB61A19268700D8426F /* NSObject+KVCWrapper.h in Headers */,
+				3C408EB61A19268700D8426F /* AVKeyValueObservingHelper.h in Headers */,
 				3C444F921A34455000F72591 /* AVDelegateMultiplexer.h in Headers */,
 				3C408EB81A19268700D8426F /* AVValueWrapper.h in Headers */,
 			);
@@ -273,6 +280,7 @@
 				3C444F8D1A34408300F72591 /* UIControlBindingConnector.swift in Sources */,
 				3C859EF21A1A42D7001BA43F /* ErrorSink.swift in Sources */,
 				3CDD6C141A1A4A21003020AA /* AssociatedPropertyKeys.swift in Sources */,
+				3C42AE761A37639600FB2AEE /* AVExceptionWrapper.m in Sources */,
 				3C444F931A34455000F72591 /* AVDelegateMultiplexer.m in Sources */,
 				3C444F8C1A34408300F72591 /* KVOBindingConnector.swift in Sources */,
 				3C5477CA1A1122AA00C80A3C /* UISegmentedControl+Avalon.swift in Sources */,
@@ -287,7 +295,7 @@
 				3CA0D9F81A2EF638009CCB08 /* CustomOperators.swift in Sources */,
 				3C5477661A0FDA4C00C80A3C /* ValueConverter.swift in Sources */,
 				3CB9CE381A279A9700CE6757 /* ViewModelBase.swift in Sources */,
-				3C408EB71A19268700D8426F /* NSObject+KVCWrapper.m in Sources */,
+				3C408EB71A19268700D8426F /* AVKeyValueObservingHelper.m in Sources */,
 				3C5477CC1A1122AA00C80A3C /* UIView+AvalonCore.swift in Sources */,
 				3CDB57431A34485B001DD726 /* AvalonBootstrap.swift in Sources */,
 				3C5477631A0FDA4C00C80A3C /* Binding.swift in Sources */,
