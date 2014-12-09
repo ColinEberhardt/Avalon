@@ -14,6 +14,11 @@
 		22D3D8D21A33EEBF008DC6FD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22D3D8D11A33EEBF008DC6FD /* Images.xcassets */; };
 		22D3D8D51A33EEBF008DC6FD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22D3D8D31A33EEBF008DC6FD /* LaunchScreen.xib */; };
 		22D3D8E11A33EEBF008DC6FD /* iTunesDirectoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3D8E01A33EEBF008DC6FD /* iTunesDirectoryTests.swift */; };
+		22D3D8F01A33EF56008DC6FD /* Avalon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D3D8EF1A33EF34008DC6FD /* Avalon.framework */; };
+		22D3D8F21A33EF5C008DC6FD /* Avalon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 22D3D8EF1A33EF34008DC6FD /* Avalon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		22D3D8FA1A33F2F4008DC6FD /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3D8F91A33F2F4008DC6FD /* Track.swift */; };
+		22D3D8FC1A33F420008DC6FD /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3D8FB1A33F420008DC6FD /* SearchViewModel.swift */; };
+		22D3D8FE1A33F42B008DC6FD /* TrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3D8FD1A33F42B008DC6FD /* TrackViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,7 +29,35 @@
 			remoteGlobalIDString = 22D3D8C21A33EEBF008DC6FD;
 			remoteInfo = iTunesDirectory;
 		};
+		22D3D8EE1A33EF34008DC6FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22D3D8EA1A33EF34008DC6FD /* Avalon.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3CEE102F1A0F5A3F002C66E3;
+			remoteInfo = Avalon;
+		};
+		22D3D8F31A33EF5C008DC6FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22D3D8EA1A33EF34008DC6FD /* Avalon.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 3CEE102E1A0F5A3F002C66E3;
+			remoteInfo = Avalon;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		22D3D8F51A33EF5C008DC6FD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				22D3D8F21A33EF5C008DC6FD /* Avalon.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		22D3D8C31A33EEBF008DC6FD /* iTunesDirectory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesDirectory.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +71,10 @@
 		22D3D8DA1A33EEBF008DC6FD /* iTunesDirectoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesDirectoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D3D8DF1A33EEBF008DC6FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22D3D8E01A33EEBF008DC6FD /* iTunesDirectoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesDirectoryTests.swift; sourceTree = "<group>"; };
+		22D3D8EA1A33EF34008DC6FD /* Avalon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Avalon.xcodeproj; path = ../../Avalon.xcodeproj; sourceTree = "<group>"; };
+		22D3D8F91A33F2F4008DC6FD /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		22D3D8FB1A33F420008DC6FD /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		22D3D8FD1A33F42B008DC6FD /* TrackViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22D3D8F01A33EF56008DC6FD /* Avalon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +99,7 @@
 		22D3D8BA1A33EEBF008DC6FD = {
 			isa = PBXGroup;
 			children = (
+				22D3D8EA1A33EF34008DC6FD /* Avalon.xcodeproj */,
 				22D3D8C51A33EEBF008DC6FD /* iTunesDirectory */,
 				22D3D8DD1A33EEBF008DC6FD /* iTunesDirectoryTests */,
 				22D3D8C41A33EEBF008DC6FD /* Products */,
@@ -79,6 +118,8 @@
 		22D3D8C51A33EEBF008DC6FD /* iTunesDirectory */ = {
 			isa = PBXGroup;
 			children = (
+				22D3D8F81A33EFB8008DC6FD /* ViewModel */,
+				22D3D8F71A33EFB2008DC6FD /* Model */,
 				22D3D8C81A33EEBF008DC6FD /* AppDelegate.swift */,
 				22D3D8CA1A33EEBF008DC6FD /* MasterViewController.swift */,
 				22D3D8CC1A33EEBF008DC6FD /* DetailViewController.swift */,
@@ -115,6 +156,31 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		22D3D8EB1A33EF34008DC6FD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22D3D8EF1A33EF34008DC6FD /* Avalon.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22D3D8F71A33EFB2008DC6FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				22D3D8F91A33F2F4008DC6FD /* Track.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		22D3D8F81A33EFB8008DC6FD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				22D3D8FB1A33F420008DC6FD /* SearchViewModel.swift */,
+				22D3D8FD1A33F42B008DC6FD /* TrackViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -125,10 +191,12 @@
 				22D3D8BF1A33EEBF008DC6FD /* Sources */,
 				22D3D8C01A33EEBF008DC6FD /* Frameworks */,
 				22D3D8C11A33EEBF008DC6FD /* Resources */,
+				22D3D8F51A33EF5C008DC6FD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				22D3D8F41A33EF5C008DC6FD /* PBXTargetDependency */,
 			);
 			name = iTunesDirectory;
 			productName = iTunesDirectory;
@@ -182,6 +250,12 @@
 			mainGroup = 22D3D8BA1A33EEBF008DC6FD;
 			productRefGroup = 22D3D8C41A33EEBF008DC6FD /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 22D3D8EB1A33EF34008DC6FD /* Products */;
+					ProjectRef = 22D3D8EA1A33EF34008DC6FD /* Avalon.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				22D3D8C21A33EEBF008DC6FD /* iTunesDirectory */,
@@ -189,6 +263,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		22D3D8EF1A33EF34008DC6FD /* Avalon.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Avalon.framework;
+			remoteRef = 22D3D8EE1A33EF34008DC6FD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		22D3D8C11A33EEBF008DC6FD /* Resources */ = {
@@ -215,9 +299,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22D3D8FE1A33F42B008DC6FD /* TrackViewModel.swift in Sources */,
 				22D3D8CD1A33EEBF008DC6FD /* DetailViewController.swift in Sources */,
+				22D3D8FC1A33F420008DC6FD /* SearchViewModel.swift in Sources */,
 				22D3D8CB1A33EEBF008DC6FD /* MasterViewController.swift in Sources */,
 				22D3D8C91A33EEBF008DC6FD /* AppDelegate.swift in Sources */,
+				22D3D8FA1A33F2F4008DC6FD /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +323,11 @@
 			isa = PBXTargetDependency;
 			target = 22D3D8C21A33EEBF008DC6FD /* iTunesDirectory */;
 			targetProxy = 22D3D8DB1A33EEBF008DC6FD /* PBXContainerItemProxy */;
+		};
+		22D3D8F41A33EF5C008DC6FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Avalon;
+			targetProxy = 22D3D8F31A33EF5C008DC6FD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -342,6 +434,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = iTunesDirectory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -352,6 +445,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = iTunesDirectory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -411,6 +505,7 @@
 				22D3D8E61A33EEBF008DC6FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22D3D8E71A33EEBF008DC6FD /* Build configuration list for PBXNativeTarget "iTunesDirectoryTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +514,7 @@
 				22D3D8E91A33EEBF008DC6FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
