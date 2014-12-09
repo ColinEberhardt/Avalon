@@ -45,8 +45,11 @@ extension UITableView {
   // for this reason the switch occurs when didMoveToWindow is invoked.
   func override_didMoveToWindow() {
     // replace the delegate with the multiplexer
-    delegateMultiplexer.delegate = self.delegate
-    self.delegate = delegateMultiplexer
+    if delegate !== delegateMultiplexer {
+      delegateMultiplexer.delegate = delegate
+      self.delegate = delegateMultiplexer
+    }
+    
     
     tableViewInitialized = true
     
