@@ -10,9 +10,10 @@ import Foundation
 
 public typealias EventHandler = () -> ()
 
-// Adds very crude property and event observation
-// TODO: Make these observers multicast
+
 public class ViewModelBase: NSObject {
+  // Adds very crude property and event observation
+  // TODO: Make these observers multicast
 
   private var kvoHandlers = [String:EventHandler]()
   

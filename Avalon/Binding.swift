@@ -8,11 +8,28 @@
 
 import Foundation
 
+/// Defines a binding between a view model property and a corresonding property on a UI control.
+///
+/// The view model is considered the source and the UI control is the destination. The source
+/// for a binding is determined from the value of the bindingContext on the UIControl that this
+/// binding is associated with.
 @objc public class Binding: Printable {
+  
+  /// The name of the property on this UI control that will be the destination for the binding.
   public var destinationProperty = ""
+  
+  /// The name of the property on the source view model (i.e. the binding context), that
+  /// will be used by the binding.
   public var sourceProperty = ""
+  
+  /// An (optional) converter for this binding.
   public var converter: ValueConverter?
+  
+  /// The mode of this binding
   public var mode = BindingMode.OneWay
+  
+  // an array of items that should be disposed when this binding is
+  // detached from a UI control.
   public var disposables = [Disposable]()
   
   public init(source: String, destination: String) {
@@ -44,11 +61,10 @@ import Foundation
   }
   
   public var description: String {
-    
     return "<Avalon.Binding sourceProperty = \(sourceProperty); destinationProperty = \(destinationProperty); mode = \(mode); converter = \(converter)"
   }
   
-  // take the publicly exposed binding components and construct
+  // takes the publicly exposed binding components and constructs
   // a binding instance
   class func fromBindable(bindable: Bindable) -> Binding? {
     if bindable.source != "" && bindable.destination != "" {

@@ -9,8 +9,10 @@
 import Foundation
 import UIKit
 
+// MARK:- Public API 
 extension UIButton {
   
+  /// An bindable button title property
   public var title: String {
     get {
       if let text = self.currentTitle {
@@ -24,6 +26,7 @@ extension UIButton {
     }
   }
   
+  /// An action that is invoked when the button is tapped
   public var action: Action? {
     get {
       return objc_getAssociatedObject(self, &AssociationKey.action) as Action?

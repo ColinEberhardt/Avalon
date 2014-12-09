@@ -9,48 +9,59 @@
 import Foundation
 import Avalon
 
-public class EmptyEvent {
-  typealias Handler = () -> ()
+/// An event provides a mechanism for raising notifications. Multiple function
+/// handlers can be added, with each being invoked when the event is raised.
+public class Event {
+  public typealias Handler = () -> ()
   
   private var handlers = [Handler]()
   
   public init() {
   }
   
+  /// Raises the event, invoking all handlers
   public func raiseEvent() {
     for handler in handlers {
       handler()
     }
   }
   
-  func addHandler(handler: Handler) {
+  /// Adds the given handler
+  public func addHandler(handler: Handler) {
     handlers.append(handler)
   }
 }
 
-public class Event<T> {
-  typealias Handler = T -> ()
+/// An event provides a mechanism for raising notifications, together with some
+/// associated data. Multiple function handlers can be added, with each being invoked,
+/// with the event data, when the event is raised.
+public class DataEvent<T> {
+  public typealias Handler = T -> ()
   
   private var handlers = [Handler]()
   
   public init() {
   }
   
+  /// Raises the event, invoking all handlers
   public func raiseEvent(data: T) {
     for handler in handlers {
       handler(data)
     }
   }
   
-  func addHandler(handler: Handler) {
+  /// Adds the given handler
+  public func addHandler(handler: Handler) {
     handlers.append(handler)
   }
 }
 
-public func += <T> (left: Event<T>, right: T -> ()) {
+/// Adds a handler to an event
+public func += <T> (left: DataEvent<T>, right: T -> ()) {
   left.addHandler(right)
 }
 
-public func += (left: EmptyEvent, right: () -> ()) {
+/// Adds a handler to an event
+public func += (left: Event, right: () -> ()) {
   left.addHandler(right)
 }

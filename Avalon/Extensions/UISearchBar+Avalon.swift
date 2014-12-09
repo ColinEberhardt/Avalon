@@ -8,9 +8,12 @@
 
 import UIKit
 
+// MARK:- Public API 
+// These user interactions would be detected via the delegate. By converting
+// them into actions they can be bound to the view model.
 extension UISearchBar {
   
-  
+  /// An action that is invoked when the search button is clicked
   public var searchAction: Action? {
     get {
       return objc_getAssociatedObject(self, &AssociationKey.searchAction) as Action?
@@ -20,6 +23,7 @@ extension UISearchBar {
     }
   }
   
+  /// An action that is invoked when the cancel button is clicked
   public var cancelAction: Action? {
     get {
       return objc_getAssociatedObject(self, &AssociationKey.cancelAction) as Action?
@@ -29,6 +33,7 @@ extension UISearchBar {
     }
   }
   
+  /// An action that is invoked when the results list button is clicked
   public var resultsListButtonAction: Action? {
     get {
       return objc_getAssociatedObject(self, &AssociationKey.resultsListButtonAction) as Action?
@@ -38,6 +43,7 @@ extension UISearchBar {
     }
   }
   
+  /// An action that is invoked when the bookmark button is clicked
   public var bookmarkButtonAction: Action? {
     get {
       return objc_getAssociatedObject(self, &AssociationKey.bookmarkButtonAction) as Action?
@@ -46,22 +52,41 @@ extension UISearchBar {
       objc_setAssociatedObject(self, &AssociationKey.bookmarkButtonAction, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
     }
   }
+}
+
+// MARK: Private - add delegate handling
+// In order to suport the various actions on the public API, a search bar delegate
+// handler is added. This extensions provides access to the delegate, together
+// with a forwarding mechanism so that the user can still add their own delegate.
+extension UISearchBar {
   
+  // the delegate that is used to provide the public action
   var searchBarDelegate: UISearchBarDelegateImpl {
-    get {
-      let  delegate = objc_getAssociatedObject(self, &AssociationKey.searchBarDelegate) as? UISearchBarDelegateImpl
-      
-      // TODO: provide delegate forwarding so that the user can still use this controls delegate
-      if delegate == nil {
-        let delegateImpl = UISearchBarDelegateImpl(searchBar: self)
-        self.searchBarDelegate = delegateImpl
-        return delegateImpl
-      } else {
-        return delegate!
-      }
+    return lazyAssociatedProperty(self, &AssociationKey.searchBarDelegate) {
+      return UISearchBarDelegateImpl(searchBar: self)
     }
-    set(newValue) {
-      objc_setAssociatedObject(self, &AssociationKey.searchBarDelegate, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
+  }
+  
+  // a multiplexer that provides forwarding
+  var delegateMultiplexer: AVDelegateMultiplexer {
+    return lazyAssociatedProperty(self, &AssociationKey.delegateMultiplex) {
+      let multiplexer = AVDelegateMultiplexer()
+      self.override_setDelegate(multiplexer)
+      return multiplexer
+    }
+  }
+  
+  // the swizzled delegate API methods
+  func override_setDelegate(delegate: AnyObject) {
+    delegateMultiplexer.delegate = delegate
+  }
+  func override_delegate() -> UISearchBarDelegate? {
+    // don't invoke delegateMultiplexer getter in order to check for nil, this
+    // can cause a circular invocation
+    if objc_getAssociatedObject(self, &AssociationKey.delegateMultiplex) == nil {
+      return nil
+    } else {
+      return delegateMultiplexer.delegate as UISearchBarDelegate?
     }
   }
 }
@@ -73,18 +98,18 @@ class UISearchBarDelegateImpl: NSObject, UISearchBarDelegate {
   
   // an observer that is invoked when text changes, this is used
   // to support two-way binding
-  var textChangedObserver: (String->())?
+  var textChangedObserver: (AnyObject->())?
   
   // an observer that is invoked when the selected scope button changes, this is used
   // to support two-way binding
-  var scopeButtonIndexChanged: (Int->())?
+  var scopeButtonIndexChanged: (AnyObject->())?
   
   init(searchBar: UISearchBar) {
     self.searchBar = searchBar
 
     super.init()
     
-    searchBar.delegate = self
+    searchBar.delegateMultiplexer.proxiedDelegate = self
   }
   
   func searchBarResultsListButtonClicked(searchBar: UISearchBar) {

@@ -9,7 +9,8 @@
 import UIKit
 import Avalon
 
-class ViewController: UIViewController {
+
+class ViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate {
 
   @IBOutlet weak var slider: UISlider!
   @IBOutlet weak var label: UILabel!
@@ -41,6 +42,25 @@ class ViewController: UIViewController {
    
     view.bindingContext = KitchenSinkViewModel()
     
+    // test delegate forwarding
+    searchBar.delegate = self
+    tableView.delegate = self
+  }
+  
+  func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+    println(searchText)
+  }
+  
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    println("selected row \(indexPath)")
+  }
+  
+  func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    println("de-selected row \(indexPath)")
+  }
+  
+  func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+    println("drag")
   }
 
 }
