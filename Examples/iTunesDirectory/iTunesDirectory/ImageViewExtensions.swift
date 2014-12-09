@@ -63,7 +63,6 @@ extension UIImageView {
           }
           
           dispatch_async(dispatch_get_main_queue()) {
-            println("\(url) finished: \(image)")
             self.image = image
             self.setNeedsDisplay()
           }

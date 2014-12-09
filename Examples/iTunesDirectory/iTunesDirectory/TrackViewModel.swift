@@ -7,3 +7,16 @@
 //
 
 import Foundation
+import Avalon
+
+
+class TrackViewModel: ViewModelBase {
+  
+  dynamic let track: Track
+  
+  init(track: Track) {
+    self.track = track
+    super.init()
+  }
+  
+}

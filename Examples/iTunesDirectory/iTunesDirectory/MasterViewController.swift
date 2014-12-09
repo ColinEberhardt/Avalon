@@ -50,7 +50,10 @@ class MasterViewController: UITableViewController {
     
     viewModel.trackSelectedEvent += {
       trackEventData in
-      println(trackEventData)
+      let trackVC =
+      self.storyboard!.instantiateViewControllerWithIdentifier("DetailViewController") as DetailViewController
+      trackVC.track = trackEventData.track
+      self.showDetailViewController(trackVC, sender: self)
     }
     
     viewModel.addPropertyObserver("isSearching") {
