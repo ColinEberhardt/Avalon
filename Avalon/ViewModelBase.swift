@@ -12,6 +12,11 @@ public typealias EventHandler = () -> ()
 
 
 public class ViewModelBase: NSObject {
+  
+  struct Context {
+    static var kvoContext: UInt8 = 1
+  }
+  
   // Adds very crude property and event observation
   // TODO: Make these observers multicast
 
@@ -20,15 +25,20 @@ public class ViewModelBase: NSObject {
   public func addPropertyObserver(propertyName: String, handler: EventHandler) {
     
     self.addObserver(self, forKeyPath: propertyName,
-      options: NSKeyValueObservingOptions.New, context: nil)
+      options: NSKeyValueObservingOptions.New, context: &Context.kvoContext)
 
     kvoHandlers[propertyName] = handler
   }
   
   override public func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject,
     change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
-    if let handler = kvoHandlers[keyPath] {
-      handler()
+      
+    if context == &Context.kvoContext {
+      if let handler = kvoHandlers[keyPath] {
+        handler()
+      }
+    } else {
+      super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
     }
   }
 }

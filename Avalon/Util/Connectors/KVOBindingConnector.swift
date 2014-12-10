@@ -15,6 +15,10 @@ import ObjectiveC
 // 2. That the destination property is compatible with values emitted by the source
 public class KVOBindingConnector: NSObject, Disposable {
   
+  struct Context {
+    static var kvoContext: UInt8 = 1
+  }
+  
   private var isSubscribed = false
   private let destination: NSObject, source: NSObject
   private let binding: Binding
@@ -34,7 +38,7 @@ public class KVOBindingConnector: NSObject, Disposable {
     if binding.sourceProperty != "." {
       
       // subscribe for changes
-      let subscriptionResult = AVKeyValueObservingHelper.addObserver(self, forKeyPath: binding.sourceProperty, options: NSKeyValueObservingOptions.New, context: nil, forObject: source)
+      let subscriptionResult = AVKeyValueObservingHelper.addObserver(self, forKeyPath: binding.sourceProperty, options: NSKeyValueObservingOptions.New, context: &Context.kvoContext, forObject: source)
      
       if subscriptionResult != nil {
         ErrorSink.instance.logEvent("ERROR: Unable to add an observer to the source \(source) for binding \(binding) due to expception \(subscriptionResult.exception)")
@@ -68,8 +72,13 @@ public class KVOBindingConnector: NSObject, Disposable {
   override public func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject,
     change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
     
-    let newValue: AnyObject = change[NSKeyValueChangeNewKey]!
-    setValueOnDestination(newValue)
+    if context == &Context.kvoContext {
+      let newValue: AnyObject = change[NSKeyValueChangeNewKey]!
+      setValueOnDestination(newValue)
+    } else {
+      super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
+    }
+    
   }
   
   private func setValueOnDestination(value: AnyObject?) -> String? {
