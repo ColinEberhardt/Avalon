@@ -34,13 +34,49 @@ extension UIPickerView {
 
 // MARK:- Private API 
 extension UIPickerView {
-  
+  // an accessor for the source that is both the delegate and datasource of the picker view
   var pickerViewSource: PickerViewSource {
     return lazyAssociatedProperty(self, &AssociationKey.tableViewSource) {
       return PickerViewSource(pickerView: self)
     }
   }
+}
+
+// MARK:- Delegate forwarding.
+extension UIPickerView {
+  // subclasses AVDelegateMultiplexer to adopt the UIPickerViewDelegate protocol
+  class PickerViewDelegateMultiplexer: AVDelegateMultiplexer, UIPickerViewDelegate {
+  }
   
+  override func replaceDelegateWithMultiplexer() {
+    // replace the delegate with the multiplexer
+    delegateMultiplexer.delegate = self.delegate
+    self.delegate = delegateMultiplexer
+  }
+  
+  // a multiplexer that provides forwarding
+  var delegateMultiplexer: PickerViewDelegateMultiplexer {
+    return lazyAssociatedProperty(self, &AssociationKey.delegateMultiplex) {
+      return PickerViewDelegateMultiplexer()
+    }
+  }
+  
+  func override_setDelegate(delegate: AnyObject) {
+    if !viewInitialized {
+      self.override_setDelegate(delegate)
+    } else {
+      delegateMultiplexer.delegate = delegate
+    }
+  }
+  func override_delegate() -> UIPickerViewDelegate? {
+    if !viewInitialized {
+      return self.override_delegate()
+    } else {
+      // Regardless of what delegate the user specified, we must return the multiplexer
+      // as the delegate value. Otherwise the table view will not invoke methods on the multiplexer.
+      return delegateMultiplexer
+    }
+  }
 }
 
 
@@ -74,7 +110,7 @@ class PickerViewSource: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
     
     super.init()
     
-    pickerView.delegate = self
+    pickerView.delegateMultiplexer.proxiedDelegate = self
     pickerView.dataSource = self
   }
   

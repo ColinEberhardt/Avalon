@@ -54,10 +54,8 @@ extension UISearchBar {
   }
 }
 
-// MARK: Private - add delegate handling
-// In order to suport the various actions on the public API, a search bar delegate
-// handler is added. This extensions provides access to the delegate, together
-// with a forwarding mechanism so that the user can still add their own delegate.
+
+// MARK:- Private API
 extension UISearchBar {
   
   // the delegate that is used to provide the public action
@@ -66,27 +64,41 @@ extension UISearchBar {
       return UISearchBarDelegateImpl(searchBar: self)
     }
   }
+}
+
+// MARK:- Delegate forwarding.
+extension UISearchBar {
+  // subclasses AVDelegateMultiplexer to adopt the UISearchBarDelegate protocol
+  class SearchBarDelegateMultiplexer: AVDelegateMultiplexer, UISearchBarDelegate {
+  }
+  
+  override func replaceDelegateWithMultiplexer() {
+    // replace the delegate with the multiplexer
+    delegateMultiplexer.delegate = self.delegate
+    self.delegate = delegateMultiplexer
+  }
   
   // a multiplexer that provides forwarding
-  var delegateMultiplexer: AVDelegateMultiplexer {
+  var delegateMultiplexer: SearchBarDelegateMultiplexer {
     return lazyAssociatedProperty(self, &AssociationKey.delegateMultiplex) {
-      let multiplexer = AVDelegateMultiplexer()
-      self.override_setDelegate(multiplexer)
-      return multiplexer
+      return SearchBarDelegateMultiplexer()
     }
   }
   
-  // the swizzled delegate API methods
   func override_setDelegate(delegate: AnyObject) {
-    delegateMultiplexer.delegate = delegate
+    if !viewInitialized {
+      self.override_setDelegate(delegate)
+    } else {
+      delegateMultiplexer.delegate = delegate
+    }
   }
   func override_delegate() -> UISearchBarDelegate? {
-    // don't invoke delegateMultiplexer getter in order to check for nil, this
-    // can cause a circular invocation
-    if objc_getAssociatedObject(self, &AssociationKey.delegateMultiplex) == nil {
-      return nil
+    if !viewInitialized {
+      return self.override_delegate()
     } else {
-      return delegateMultiplexer.delegate as UISearchBarDelegate?
+      // Regardless of what delegate the user specified, we must return the multiplexer
+      // as the delegate value. Otherwise the table view will not invoke methods on the multiplexer.
+      return delegateMultiplexer
     }
   }
 }

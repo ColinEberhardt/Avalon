@@ -37,28 +37,24 @@ extension UITableView {
 
 // MARK:- Private API
 extension UITableView {
-  
-  // subclasses AVDelegateMultiplexer to adopt the UITableViewDelegate protocol
-  class TableViewDelegateMultiplexer: AVDelegateMultiplexer, UITableViewDelegate {
-  }
-
-  
+  // an accessor for the source that implemented both the delegate and datasource
   var tableViewSource: TableViewSource {
     return lazyAssociatedProperty(self, &AssociationKey.tableViewSource) {
       return TableViewSource(tableView: self)
     }
   }
+}
+
+// MARK:- Delegate forwarding.
+extension UITableView {
+  // subclasses AVDelegateMultiplexer to adopt the UITableViewDelegate protocol
+  class TableViewDelegateMultiplexer: AVDelegateMultiplexer, UITableViewDelegate {
+  }
   
-  // funny things happen if the delegate is switched before the table view renders
-  // for this reason the switch occurs when didMoveToWindow is invoked.
-  func override_didMoveToWindow() {
+  override func replaceDelegateWithMultiplexer() {
     // replace the delegate with the multiplexer
     delegateMultiplexer.delegate = self.delegate
     self.delegate = delegateMultiplexer
-    
-    tableViewInitialized = true
-    
-    self.override_didMoveToWindow()
   }
   
   // a multiplexer that provides forwarding
@@ -68,29 +64,15 @@ extension UITableView {
     }
   }
   
-  // an associated boolean property that is set to true when didMoveToWindow occurs
-  var tableViewInitialized: Bool {
-    get {
-      let tableViewInitialized = objc_getAssociatedObject(self, &AssociationKey.tableViewInitialized) as Bool?
-      if let tableViewInitialized = tableViewInitialized {
-        return tableViewInitialized
-      }
-      return false
-    }
-    set(newValue) {
-      objc_setAssociatedObject(self, &AssociationKey.tableViewInitialized, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
-    }
-  }
-  
   func override_setDelegate(delegate: AnyObject) {
-    if !tableViewInitialized {
+    if !viewInitialized {
       self.override_setDelegate(delegate)
     } else {
       delegateMultiplexer.delegate = delegate
     }
   }
   func override_delegate() -> UITableViewDelegate? {
-    if !tableViewInitialized {
+    if !viewInitialized {
       return self.override_delegate()
     } else {
       // Regardless of what delegate the user specified, we must return the multiplexer

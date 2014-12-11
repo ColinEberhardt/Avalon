@@ -27,6 +27,6 @@ struct AssociationKey {
   static var bookmarkButtonAction: UInt8 = 15
   static var delegateMultiplex: UInt8 = 16
   static var delegate: UInt8 = 17
-  static var tableViewInitialized: UInt8 = 17
+  static var viewInitialized: UInt8 = 17
   static var options: UInt8 = 18
 }

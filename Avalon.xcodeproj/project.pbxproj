@@ -32,6 +32,7 @@
 		3C5477CB1A1122AA00C80A3C /* UIView+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C71A1122AA00C80A3C /* UIView+Avalon.swift */; };
 		3C5477CC1A1122AA00C80A3C /* UIView+AvalonCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C81A1122AA00C80A3C /* UIView+AvalonCore.swift */; };
 		3C859EF21A1A42D7001BA43F /* ErrorSink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C859EF11A1A42D7001BA43F /* ErrorSink.swift */; };
+		3C8AFE791A398AFB00E5D1AD /* UIView+DelegateMulticast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8AFE781A398AFB00E5D1AD /* UIView+DelegateMulticast.swift */; };
 		3CA0D9F81A2EF638009CCB08 /* CustomOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA0D9F71A2EF638009CCB08 /* CustomOperators.swift */; };
 		3CB9CE381A279A9700CE6757 /* ViewModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB9CE371A279A9700CE6757 /* ViewModelBase.swift */; };
 		3CB9CE4D1A27C16F00CE6757 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB9CE4C1A27C16F00CE6757 /* Event.swift */; };
@@ -71,6 +72,7 @@
 		3C5477C71A1122AA00C80A3C /* UIView+Avalon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Avalon.swift"; sourceTree = "<group>"; };
 		3C5477C81A1122AA00C80A3C /* UIView+AvalonCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AvalonCore.swift"; sourceTree = "<group>"; };
 		3C859EF11A1A42D7001BA43F /* ErrorSink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorSink.swift; sourceTree = "<group>"; };
+		3C8AFE781A398AFB00E5D1AD /* UIView+DelegateMulticast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+DelegateMulticast.swift"; sourceTree = "<group>"; };
 		3CA0D9F71A2EF638009CCB08 /* CustomOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOperators.swift; sourceTree = "<group>"; };
 		3CB9CE371A279A9700CE6757 /* ViewModelBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelBase.swift; sourceTree = "<group>"; };
 		3CB9CE4C1A27C16F00CE6757 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				3C5477C51A1122AA00C80A3C /* UIButton+Avalon.swift */,
 				3C5477C61A1122AA00C80A3C /* UISegmentedControl+Avalon.swift */,
 				3C5477C71A1122AA00C80A3C /* UIView+Avalon.swift */,
+				3C8AFE781A398AFB00E5D1AD /* UIView+DelegateMulticast.swift */,
 				3C5477C81A1122AA00C80A3C /* UIView+AvalonCore.swift */,
 				3C408EAE1A16B8A300D8426F /* UIActivityIndicator+Avalon.swift */,
 				3C408ECA1A19283700D8426F /* UIGestureRecognizer+Avalon.swift */,
@@ -289,6 +292,7 @@
 				3C5477CA1A1122AA00C80A3C /* UISegmentedControl+Avalon.swift in Sources */,
 				3C5477691A0FDDDF00C80A3C /* Disposable.swift in Sources */,
 				3C408EAF1A16B8A300D8426F /* UIActivityIndicator+Avalon.swift in Sources */,
+				3C8AFE791A398AFB00E5D1AD /* UIView+DelegateMulticast.swift in Sources */,
 				3C5477C91A1122AA00C80A3C /* UIButton+Avalon.swift in Sources */,
 				3C5477641A0FDA4C00C80A3C /* Bindable.swift in Sources */,
 				3CB9CE4D1A27C16F00CE6757 /* Event.swift in Sources */,

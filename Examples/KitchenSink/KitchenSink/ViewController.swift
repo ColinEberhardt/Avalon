@@ -10,7 +10,7 @@ import UIKit
 import Avalon
 
 
-class ViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate {
+class ViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UIPickerViewDelegate {
 
   @IBOutlet weak var slider: UISlider!
   @IBOutlet weak var label: UILabel!
@@ -48,6 +48,7 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate
     // test delegate forwarding
     searchBar.delegate = self
     tableView.delegate = self
+    pickerView.delegate = self
   }
   
   func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
@@ -66,5 +67,8 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate
     println("drag")
   }
 
+  func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    println("selected row \(row)")
+  }
 }
 

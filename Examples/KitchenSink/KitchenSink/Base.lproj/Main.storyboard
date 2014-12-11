@@ -172,7 +172,42 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="destination" value="text"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eOr-KB-7IS">
+                                <rect key="frame" x="36" y="649" width="157" height="162"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="source" value="options"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="destination" value="items"/>
+                                </userDefinedRuntimeAttributes>
+                            </pickerView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="01L-gE-FEW">
+                                <rect key="frame" x="283" y="339" width="272" height="169"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="converter" value="NamedImageToUIImage"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="destination" value="image"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="source" value="imageName"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="boF-U3-RuO">
+                                <rect key="frame" x="301" y="516" width="272" height="169"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="converter" value="URLStringToUIImage"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="destination" value="image"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="source" value="imageUrl"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mj3-Bk-Cb6">
+                                <rect key="frame" x="36" y="833" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="source" value="text"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="destination" value="text"/>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="57V-Sd-hTS">
+                                <rect key="frame" x="301" y="716" width="352" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="bv6-3l-y5l">
@@ -200,29 +235,6 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="destination" value="items"/>
                                 </userDefinedRuntimeAttributes>
                             </tableView>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eOr-KB-7IS">
-                                <rect key="frame" x="36" y="649" width="157" height="162"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="source" value="options"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="destination" value="items"/>
-                                </userDefinedRuntimeAttributes>
-                            </pickerView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="01L-gE-FEW">
-                                <rect key="frame" x="283" y="339" width="272" height="169"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="converter" value="NamedImageToUIImage"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="destination" value="image"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="source" value="imageName"/>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="boF-U3-RuO">
-                                <rect key="frame" x="301" y="516" width="272" height="169"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="converter" value="URLStringToUIImage"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="destination" value="image"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="source" value="imageUrl"/>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>

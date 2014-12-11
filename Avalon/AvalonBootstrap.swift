@@ -17,6 +17,8 @@ import Foundation
     // delegate method swizzling in order to multiplex calls
     AVSwizzle.swizzleClass(UITableView.self, method: "setDelegate:")
     AVSwizzle.swizzleClass(UITableView.self, method: "delegate")
-    AVSwizzle.swizzleClass(UITableView.self, method: "didMoveToWindow")
+    
+    
+    AVSwizzle.swizzleClass(UIView.self, method: "didMoveToWindow")
   }
 }

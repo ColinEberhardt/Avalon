@@ -10,6 +10,7 @@ import ObjectiveC
 import Foundation
 import UIKit
 
+// MARK:- Public API
 extension UIView: Bindable {
   
   @IBInspectable public var source: String {
