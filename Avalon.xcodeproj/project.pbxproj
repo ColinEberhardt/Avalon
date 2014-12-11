@@ -15,6 +15,7 @@
 		3C408ECB1A19283700D8426F /* UIGestureRecognizer+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C408ECA1A19283700D8426F /* UIGestureRecognizer+Avalon.swift */; };
 		3C42AE751A37639600FB2AEE /* AVExceptionWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C42AE731A37639600FB2AEE /* AVExceptionWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3C42AE761A37639600FB2AEE /* AVExceptionWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C42AE741A37639600FB2AEE /* AVExceptionWrapper.m */; };
+		3C42AE7A1A38CE4400FB2AEE /* UIPickerView+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C42AE791A38CE4400FB2AEE /* UIPickerView+Avalon.swift */; };
 		3C444F8B1A34408300F72591 /* KVCVerification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C444F881A34408300F72591 /* KVCVerification.swift */; };
 		3C444F8C1A34408300F72591 /* KVOBindingConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C444F891A34408300F72591 /* KVOBindingConnector.swift */; };
 		3C444F8D1A34408300F72591 /* UIControlBindingConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C444F8A1A34408300F72591 /* UIControlBindingConnector.swift */; };
@@ -53,6 +54,7 @@
 		3C408ECA1A19283700D8426F /* UIGestureRecognizer+Avalon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIGestureRecognizer+Avalon.swift"; sourceTree = "<group>"; };
 		3C42AE731A37639600FB2AEE /* AVExceptionWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVExceptionWrapper.h; sourceTree = "<group>"; };
 		3C42AE741A37639600FB2AEE /* AVExceptionWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVExceptionWrapper.m; sourceTree = "<group>"; };
+		3C42AE791A38CE4400FB2AEE /* UIPickerView+Avalon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIPickerView+Avalon.swift"; sourceTree = "<group>"; };
 		3C444F881A34408300F72591 /* KVCVerification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVCVerification.swift; sourceTree = "<group>"; };
 		3C444F891A34408300F72591 /* KVOBindingConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVOBindingConnector.swift; sourceTree = "<group>"; };
 		3C444F8A1A34408300F72591 /* UIControlBindingConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlBindingConnector.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				3C408ECA1A19283700D8426F /* UIGestureRecognizer+Avalon.swift */,
 				3CDD6C1A1A1AA469003020AA /* UITableView+Avalon.swift */,
 				3CF998C11A1F93B7004DC5F0 /* UISearchBar+Avalon.swift */,
+				3C42AE791A38CE4400FB2AEE /* UIPickerView+Avalon.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				3C408EB91A19268700D8426F /* AVValueWrapper.m in Sources */,
 				3CDB57451A349723001DD726 /* AssociatedPropertyHelper.swift in Sources */,
 				3C5477651A0FDA4C00C80A3C /* Action.swift in Sources */,
+				3C42AE7A1A38CE4400FB2AEE /* UIPickerView+Avalon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

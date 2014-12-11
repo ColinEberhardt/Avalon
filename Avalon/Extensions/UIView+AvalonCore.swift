@@ -75,14 +75,22 @@ extension UIView {
         } else {
           ErrorSink.instance.logEvent("ERROR: view \(view) does not support two-way binding, with binding \(binding)")
         }
+      } else if let pickerView = view as? UIPickerView {
+        if binding.destinationProperty == "selectedItemIndex" {
+          pickerView.pickerViewSource.selectionChangedObserver =
+            createValueChangeBinding(binding, viewModel: viewModel)
+        } else {
+          ErrorSink.instance.logEvent("ERROR: view \(view) does not support two-way binding, with binding \(binding)")
+        }
       } else {
         ErrorSink.instance.logEvent("ERROR: view \(view) does not support two-way binding, with binding \(binding)")
       }
     }
   }
   
+  
   // creates a function which is invoked via a controls delegate. This function ensures
-  // that the source property of the bidning is updated with the new value.
+  // that the source property of the binding is updated with the new value.
   func createValueChangeBinding(binding: Binding, viewModel: NSObject) -> (AnyObject) ->() {
     return {
       //TODO: add converter support & setter failure
@@ -92,11 +100,10 @@ extension UIView {
     }
   }
   
+  // UIControl subclasses all support target-action pattern so can be
+  // bound in a generic fashion via UIControlBindingConnector
   func bindDestinationToSourceForControl(control: UIControl, viewModel: NSObject, binding: Binding) {
     
-    
-    // UIControl subclasses all support target-action pattern so can be
-    // bound in a generic fashion via UIControlBindingConnector
     let connectors: [(AnyClass, String, UIControlEvents, UIControl -> AnyObject)] = [
       (UISlider.self, "value", .ValueChanged, { control in (control as UISlider).value }),
       (UISegmentedControl.self, "selectedSegmentIndex", .ValueChanged, { control in (control as UISegmentedControl).selectedSegmentIndex }),

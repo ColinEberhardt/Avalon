@@ -59,6 +59,7 @@ extension UIGestureRecognizer: Bindable {
     }
   }
   
+  /// An action which is executed when the gesture occurs
   public var action: Action? {
     get {
       return objc_getAssociatedObject(self, &AssociationKey.action) as Action?

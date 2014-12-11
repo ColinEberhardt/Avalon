@@ -9,8 +9,10 @@
 import Foundation
 import UIKit
 
+// MARK:- Public API
 extension UITableView {
   
+  /// A bindable array of objects to render within the table view
   public var items: [NSObject] {
     get {
       return tableViewSource.items
@@ -20,6 +22,8 @@ extension UITableView {
     }
   }
   
+  /// An action which is executed when an item is selected. The data associated with this
+  /// action is the newly selected item.
   public var selectionAction: DataAction? {
     get {
       return objc_getAssociatedObject(self, &AssociationKey.action) as DataAction?
@@ -30,11 +34,15 @@ extension UITableView {
   }
 }
 
-// subclasses AVDelegateMultiplexer to adopt the UITableViewDelegate protocol
-class TableViewDelegateMultiplexer: AVDelegateMultiplexer, UITableViewDelegate {
-}
 
+// MARK:- Private API
 extension UITableView {
+  
+  // subclasses AVDelegateMultiplexer to adopt the UITableViewDelegate protocol
+  class TableViewDelegateMultiplexer: AVDelegateMultiplexer, UITableViewDelegate {
+  }
+
+  
   var tableViewSource: TableViewSource {
     return lazyAssociatedProperty(self, &AssociationKey.tableViewSource) {
       return TableViewSource(tableView: self)

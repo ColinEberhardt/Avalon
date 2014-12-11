@@ -18,6 +18,7 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate
   @IBOutlet weak var segmentedControl: UISegmentedControl!
   @IBOutlet weak var searchBar: UISearchBar!
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var pickerView: UIPickerView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -39,6 +40,8 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate
     ]
     
     tableView.bindings = [Binding(source: "stringSelectedAction", destination: "selectionAction")]
+    
+    pickerView.bindings = ["selectedOption" |<>| "selectedItemIndex"]
    
     view.bindingContext = KitchenSinkViewModel()
     

@@ -11,6 +11,7 @@ import UIKit
 
 extension UIActivityIndicatorView {
   
+  /// An bindable animating property
   public var animating: Bool {
     get {
       return self.isAnimating()
