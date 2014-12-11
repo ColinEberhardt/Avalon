@@ -23,6 +23,25 @@ import Avalon
   }
 }
 
+@objc(URLStringToUIImage) class URLStringToUIImage: ValueConverter {
+  override func convert(sourceValue: AnyObject?, binding: Binding, viewModel: AnyObject) -> AnyObject? {
+    let imageUrl = sourceValue as String
+    if let url = NSURL(string: imageUrl) {
+      if let data = NSData(contentsOfURL: url) {
+        return UIImage(data: data)
+      }
+    }
+    return nil
+  }
+}
+
+@objc(NamedImageToUIImage) class NamedImageToUIImage: ValueConverter {
+  override func convert(sourceValue: AnyObject?, binding: Binding, viewModel: AnyObject) -> AnyObject? {
+    let imageName = sourceValue as String
+    return UIImage(named: imageName)
+  }
+}
+
 @objc(TapsToTitle) class TapsToTitle: ValueConverter {
   override func convert(sourceValue: AnyObject?, binding: Binding, viewModel: AnyObject) -> AnyObject? {
     let taps = sourceValue as Int
@@ -60,6 +79,10 @@ class KitchenSinkViewModel: NSObject {
   dynamic var buttonTapCount: Int = 0
   
   dynamic let incrementCountAction: Action!
+  
+  dynamic let imageUrl = "http://www.scottlogic.com/blog/hpowell/assets/featured/functional.jpg"
+  
+  dynamic let imageName = "Avalon"
   
   dynamic var searchText = "search"
   dynamic var searchPlaceholder = "search here!"

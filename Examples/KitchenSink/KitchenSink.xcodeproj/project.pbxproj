@@ -15,6 +15,7 @@
 		3C5477FE1A11E2B000C80A3C /* KitchenSinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477FD1A11E2B000C80A3C /* KitchenSinkTests.swift */; };
 		3C5478101A11E2C600C80A3C /* Avalon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C54780D1A11E2BC00C80A3C /* Avalon.framework */; };
 		3C5478121A11E30000C80A3C /* KitchenSinkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5478111A11E30000C80A3C /* KitchenSinkViewModel.swift */; };
+		3C8AFE741A39717700E5D1AD /* Avalon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C8AFE731A39717700E5D1AD /* Avalon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,13 +33,6 @@
 			remoteGlobalIDString = 3CEE102F1A0F5A3F002C66E3;
 			remoteInfo = Avalon;
 		};
-		3C54780E1A11E2BC00C80A3C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3C5478071A11E2BC00C80A3C /* Avalon.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3CEE103A1A0F5A40002C66E3;
-			remoteInfo = AvalonTests;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +48,7 @@
 		3C5477FD1A11E2B000C80A3C /* KitchenSinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenSinkTests.swift; sourceTree = "<group>"; };
 		3C5478071A11E2BC00C80A3C /* Avalon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Avalon.xcodeproj; path = ../../Avalon.xcodeproj; sourceTree = "<group>"; };
 		3C5478111A11E30000C80A3C /* KitchenSinkViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitchenSinkViewModel.swift; sourceTree = "<group>"; };
+		3C8AFE731A39717700E5D1AD /* Avalon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avalon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +92,7 @@
 		3C5477E41A11E2B000C80A3C /* KitchenSink */ = {
 			isa = PBXGroup;
 			children = (
+				3C8AFE731A39717700E5D1AD /* Avalon.png */,
 				3C5477E71A11E2B000C80A3C /* AppDelegate.swift */,
 				3C5477E91A11E2B000C80A3C /* ViewController.swift */,
 				3C5477EB1A11E2B000C80A3C /* Main.storyboard */,
@@ -137,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				3C54780D1A11E2BC00C80A3C /* Avalon.framework */,
-				3C54780F1A11E2BC00C80A3C /* AvalonTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -231,13 +226,6 @@
 			remoteRef = 3C54780C1A11E2BC00C80A3C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3C54780F1A11E2BC00C80A3C /* AvalonTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = AvalonTests.xctest;
-			remoteRef = 3C54780E1A11E2BC00C80A3C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -247,6 +235,7 @@
 			files = (
 				3C5477ED1A11E2B000C80A3C /* Main.storyboard in Resources */,
 				3C5477F21A11E2B000C80A3C /* LaunchScreen.xib in Resources */,
+				3C8AFE741A39717700E5D1AD /* Avalon.png in Resources */,
 				3C5477EF1A11E2B000C80A3C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -207,6 +207,22 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="destination" value="items"/>
                                 </userDefinedRuntimeAttributes>
                             </pickerView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="01L-gE-FEW">
+                                <rect key="frame" x="283" y="339" width="272" height="169"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="converter" value="NamedImageToUIImage"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="destination" value="image"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="source" value="imageName"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="boF-U3-RuO">
+                                <rect key="frame" x="301" y="516" width="272" height="169"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="converter" value="URLStringToUIImage"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="destination" value="image"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="source" value="imageUrl"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
