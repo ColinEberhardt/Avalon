@@ -54,38 +54,37 @@ extension UIView {
 
     // unfortunately most UIKit controls are not KVO compliant, so we have to use target-action
     // and a variety of ther techniques in order to handle updates and relay the change back to the model
-    
-    
+
     if binding.sourceProperty == "." {
       ErrorSink.instance.logEvent("ERROR: Two way binding does not support the dot syntax, with binding \(binding)")
-      
     } else if let control = view as? UIControl {
       bindDestinationToSourceForControl(control, viewModel: viewModel, binding: binding)
-      
     } else {
-      
-      // this is not a UIControl subclass, so try and bind using other mechanisms
-      if let searchBar = view as? UISearchBar {
-        if binding.destinationProperty == "text" {
-          searchBar.searchBarDelegate.textChangedObserver =
-            createValueChangeBinding(binding, viewModel: viewModel)
-        } else if binding.destinationProperty == "selectedScopeButtonIndex" {
-          searchBar.searchBarDelegate.scopeButtonIndexChanged =
-            createValueChangeBinding(binding, viewModel: viewModel)
-        } else {
-          ErrorSink.instance.logEvent("ERROR: view \(view) does not support two-way binding, with binding \(binding)")
-        }
-      } else if let pickerView = view as? UIPickerView {
-        if binding.destinationProperty == "selectedItemIndex" {
-          pickerView.pickerViewSource.selectionChangedObserver =
-            createValueChangeBinding(binding, viewModel: viewModel)
-        } else {
-          ErrorSink.instance.logEvent("ERROR: view \(view) does not support two-way binding, with binding \(binding)")
-        }
-      } else {
-        ErrorSink.instance.logEvent("ERROR: view \(view) does not support two-way binding, with binding \(binding)")
+      bindDestinationToSourceForUIView(view, viewModel: viewModel, binding: binding)
+    }
+  }
+  
+  // UIView subclasses all use delegate methods to inform of updates. The Avalon extensions
+  // to these controls add delegate implementations that have 'observer' functions associated
+  // with them. This function adds handlers for the required observer function, with the
+  // handler updating the respective source property via KVC
+  func bindDestinationToSourceForUIView(view: UIView, viewModel: NSObject, binding: Binding) {
+    
+    let connectors: [(AnyClass, String, ((AnyObject) ->()) -> ())] = [
+      (UISearchBar.self, "text", { binding in (view as UISearchBar).searchBarDelegate.textChangedObserver = binding }),
+      (UISearchBar.self, "selectedScopeButtonIndex", { binding in (view as UISearchBar).searchBarDelegate.scopeButtonIndexChanged = binding }),
+      (UIPickerView.self, "selectedItemIndex", { binding in (view as UIPickerView).pickerViewSource.selectionChangedObserver = binding }),
+      (UITextView.self, "text", { binding in (view as UITextView).textViewDelegate.textChangedObserver = binding })
+    ]
+    
+    for connector in connectors {
+      if view.dynamicType === connector.0 && binding.destinationProperty == connector.1 {
+        connector.2(createValueChangeBinding(binding, viewModel: viewModel))
+        return
       }
     }
+    
+    ErrorSink.instance.logEvent("ERROR: view \(view) does not support two-way binding, with binding \(binding)")
   }
   
   

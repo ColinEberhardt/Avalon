@@ -204,6 +204,7 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="source" value="text"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="destination" value="text"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="mode" value="TwoWay"/>
                                 </userDefinedRuntimeAttributes>
                             </textView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="57V-Sd-hTS">
