@@ -13,11 +13,11 @@ import Avalon
 class ObservableArrayTest: XCTestCase {
   
   var array: [String]!
-  var observableArray: ObservableArray<String>!
+  var observableArray: ObservableArray!
   
   override func setUp() {
     array = [String]()
-    observableArray = ObservableArray<String>()
+    observableArray = ObservableArray()
   }
   
   func test_append() {
@@ -38,7 +38,7 @@ class ObservableArrayTest: XCTestCase {
     XCTAssertNil(observableArray.first)
     array.append("1")
     observableArray.append("1")
-    XCTAssertEqual(array.first!, observableArray.first!)
+    XCTAssertEqual(array.first!, observableArray.first! as String)
   }
   
   func test_last() {
@@ -46,14 +46,7 @@ class ObservableArrayTest: XCTestCase {
     XCTAssertNil(observableArray.last)
     array.append("1")
     observableArray.append("1")
-    XCTAssertEqual(array.last!, observableArray.last!)
-  }
-  
-  func test_capacity() {
-    XCTAssertEqual(array.capacity, observableArray.capacity)
-    array.append("1")
-    observableArray.append("1")
-    XCTAssertEqual(array.capacity, observableArray.capacity)
+    XCTAssertEqual(array.last!, observableArray.last! as String)
   }
   
   func test_isEmpty() {
@@ -67,7 +60,7 @@ class ObservableArrayTest: XCTestCase {
     observableArray = ["one", "two"]
     array = ["one", "two"]
     
-    XCTAssertEqual("two", observableArray.removeLast())
+    XCTAssertEqual("two", observableArray.removeLast() as String)
     XCTAssertEqual("two", array.removeLast())
     assert()
   }
@@ -104,8 +97,8 @@ class ObservableArrayTest: XCTestCase {
     var arrayGen = array.generate()
     var observableArrayGen = observableArray.generate()
     while let arrayItem = arrayGen.next() {
-      if let observableArrayItem = observableArrayGen.next() {
-        XCTAssertEqual(arrayItem, observableArrayItem)
+      if let observableArrayItem: AnyObject = observableArrayGen.next() {
+        XCTAssertEqual(arrayItem, observableArrayItem as String)
       } else {
         XCTAssertTrue(false)
       }

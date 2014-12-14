@@ -60,11 +60,11 @@ class ObservableArrayNotificationsTest: XCTestCase, ObservableArrayDelegate {
     XCTAssertEqual(1, itemAddedNotification!.1)
   }
   
-  func didAddItem(item: Any, atIndex: Int, array: Any) {
-    itemAddedNotification = (item as String, atIndex)
+  func didAddItem(item: AnyObject, atIndex index: Int, inArray array: ObservableArray) {
+    itemAddedNotification = (item as String, index)
   }
   
-  func didRemoveItem(item: Any, atIndex: Int, array: Any) {
-    itemRemovedNotification = (item as String, atIndex)
+  func didRemoveItem(item: AnyObject, atIndex index: Int, inArray array: ObservableArray) {
+    itemRemovedNotification = (item as String, index)
   }
 }

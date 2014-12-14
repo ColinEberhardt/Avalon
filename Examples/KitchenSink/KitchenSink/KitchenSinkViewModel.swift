@@ -91,6 +91,8 @@ class KitchenSinkViewModel: NSObject {
   dynamic var selectedOption = 1
   dynamic let options = ["one", "two", "three"]
   
+  dynamic var observableOptions: ObservableArray = ["one", "two", "three"]
+  
   dynamic var strings = [String]()
   dynamic let stringSelectedAction: DataAction!
   
@@ -114,6 +116,7 @@ class KitchenSinkViewModel: NSObject {
     
     searchAction = ClosureAction {
       println("search button clicked")
+      self.observableOptions.append("foo")
     }
     
     stringSelectedAction = ClosureDataAction {

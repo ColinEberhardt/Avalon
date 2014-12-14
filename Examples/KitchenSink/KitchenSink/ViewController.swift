@@ -30,7 +30,7 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate
     
     label.bindings = ["number" >| NumberToString() >| "text"]
     
-    segmentedControl.bindings = [Binding(source: "options", destination: "segments"),
+    segmentedControl.bindings = [Binding(source: "observableOptions", destination: "segments"),
       Binding(source: "selectedOption", destination: "selectedSegmentIndex", mode: .TwoWay)]
     
     searchBar.bindings = [Binding(source: "searchText", destination: "text", mode: .TwoWay),

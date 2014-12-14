@@ -9,12 +9,12 @@
 import Foundation
 
 /// A delegate for receiving notifications
-public protocol ObservableArrayDelegate {
+@objc public protocol ObservableArrayDelegate {
   
   /// Is invoked when an item is added to an ObservableArray
-  func didAddItem(item: Any, atIndex: Int, array: Any)
+  optional func didAddItem(item: AnyObject, atIndex index: Int, inArray array: ObservableArray)
 
   /// Is invoked when an item is removed from an ObservableArray
-  func didRemoveItem(item: Any, atIndex: Int, array: Any)
+  optional func didRemoveItem(item: AnyObject, atIndex index: Int, inArray array: ObservableArray)
 
 }

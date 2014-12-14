@@ -10,15 +10,21 @@ import Foundation
 
 /// An array implementation that informs its delegate of any mutating
 /// operations that have been performed on the array.
-public struct ObservableArray<T> {
+@objc public class ObservableArray: ArrayLiteralConvertible {
   
-  var backingArray: [T]
-  
+  var backingArray: [AnyObject]
+ 
   /// A delegate that receives notifications whenever the array is mutated
-  public var delegate: ObservableArrayDelegate?
+  public weak var delegate: ObservableArrayDelegate?
   
-  public init() {
-    backingArray = [T]()
+  public  init() {
+    backingArray = [AnyObject]()
+  }
+ 
+  /// Create an instance containing `elements`.
+  public convenience required init(arrayLiteral elements: AnyObject...) {
+    self.init()
+    backingArray = Array(elements)
   }
   
   /// How many elements the Array stores
@@ -37,43 +43,41 @@ public struct ObservableArray<T> {
   }
   
   /// The first element, or `nil` if the array is empty
-  public var first: T? {
+  public var first: AnyObject? {
     return backingArray.first
   }
   
   /// The last element, or `nil` if the array is empty
-  public var last: T? {
+  public var last: AnyObject? {
     return backingArray.last
   }
   
   /// Append newElement to the Array
-  public mutating func append(newElement: T) {
+  public func append(newElement: AnyObject) {
     backingArray.append(newElement)
-    delegate?.didAddItem(newElement, atIndex: count - 1, array: self)
+    delegate?.didAddItem?(newElement, atIndex: count - 1, inArray: self)
   }
   
   /// Remove an element from the end of the Array
-  public mutating func removeLast() -> T {
-    let result = backingArray.removeLast()
-    delegate?.didRemoveItem(result, atIndex: count, array: self)
+  public func removeLast() -> AnyObject {
+    let result: AnyObject = backingArray.removeLast()
+    delegate?.didRemoveItem?(result, atIndex: count, inArray: self)
     return result
   }
   
   /// Insert `newElement` at index `i`.
-  public mutating func insert(newElement: T, atIndex i: Int) {
+  public func insert(newElement: AnyObject, atIndex i: Int) {
     backingArray.insert(newElement, atIndex: i)
-    delegate?.didAddItem(newElement, atIndex: i, array: self)
+    delegate?.didAddItem?(newElement, atIndex: i, inArray: self)
   }
   
   /// Remove and return the element at index `i`
-  public mutating func removeAtIndex(index: Int) -> T {
-    let result = backingArray.removeAtIndex(index)
-    delegate?.didRemoveItem(result, atIndex: index, array: self)
+  public func removeAtIndex(index: Int) -> AnyObject {
+    let result: AnyObject = backingArray.removeAtIndex(index)
+    delegate?.didRemoveItem?(result, atIndex: index, inArray: self)
     return result
   }
 
-
-  
   
   /*
 
@@ -144,19 +148,11 @@ func filter(includeElement: (T) -> Bool) -> [T]
 */
 }
 
-extension ObservableArray : ArrayLiteralConvertible {
-  
-  /// Create an instance containing `elements`.
-  public init(arrayLiteral elements: T...) {
-    backingArray = Array(elements)
-  }
-}
-
 extension ObservableArray: SequenceType {
   
-  typealias Generator = IndexingGenerator<Array<T>>
+  typealias Generator = IndexingGenerator<Array<AnyObject>>
   
-  public func generate() -> IndexingGenerator<Array<T>> {
+  public func generate() -> IndexingGenerator<Array<AnyObject>> {
     return backingArray.generate()
   }
 }

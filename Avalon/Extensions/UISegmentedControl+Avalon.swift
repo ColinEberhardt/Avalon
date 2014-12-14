@@ -10,23 +10,55 @@ import Foundation
 import UIKit
 
 // MARK:- Public API
-extension UISegmentedControl {
+extension UISegmentedControl: ObservableArrayDelegate {
   
   /// An bindable array of strings that represent the segment titles
-  public var segments: [String]? {
+  public var segments: AnyObject? {
     get {
-      return objc_getAssociatedObject(self, &AssociationKey.segments) as [String]?
+      return objc_getAssociatedObject(self, &AssociationKey.segments)
     }
     set(newValue) {
+      
+      let oldValue: AnyObject? = segments
+      
       objc_setAssociatedObject(self, &AssociationKey.segments, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
       
-      // TODO: Allow this to observe changes in the segments
-      removeAllSegments()
-      var index = 0
-      for item in newValue! {
-        insertSegmentWithTitle(item, atIndex: index, animated: false)
-        index++
+      if let segments = newValue as? [String] {
+        removeAllSegments()
+        var index = 0
+        for item in segments {
+          insertSegmentWithTitle(item, atIndex: index, animated: false)
+          index++
+        }
+      } else if let segments = newValue as? ObservableArray {
+        
+        segments.delegate = self
+        
+        removeAllSegments()
+        var index = 0
+        for item in segments {
+          if let item = item as? String {
+            insertSegmentWithTitle(item, atIndex: index, animated: false)
+            index++
+          }
+        }
+      }
+      
+      if let oldObservableArray = oldValue as? ObservableArray {
+        if oldObservableArray.delegate === self {
+          oldObservableArray.delegate = nil
+        }
       }
     }
+  }
+  
+  public func didAddItem(item: AnyObject, atIndex index: Int, inArray array: ObservableArray) {
+    if let item = item as? String {
+      insertSegmentWithTitle(item, atIndex: index, animated: true)
+    }
+  }
+  
+  public func didRemoveItem(item: AnyObject, atIndex index: Int, inArray array: ObservableArray) {
+    removeSegmentAtIndex(index, animated: true)
   }
 }
