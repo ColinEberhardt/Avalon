@@ -32,6 +32,8 @@
 		3C5477CB1A1122AA00C80A3C /* UIView+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C71A1122AA00C80A3C /* UIView+Avalon.swift */; };
 		3C5477CC1A1122AA00C80A3C /* UIView+AvalonCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C81A1122AA00C80A3C /* UIView+AvalonCore.swift */; };
 		3C859EF21A1A42D7001BA43F /* ErrorSink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C859EF11A1A42D7001BA43F /* ErrorSink.swift */; };
+		3C865DCB1A3AC47D00D775C8 /* ObservableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C865DCA1A3AC47D00D775C8 /* ObservableArray.swift */; };
+		3C865DD11A3C800A00D775C8 /* ObservableArrayDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C865DD01A3C800A00D775C8 /* ObservableArrayDelegate.swift */; };
 		3C8AFE791A398AFB00E5D1AD /* UIView+DelegateMulticast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8AFE781A398AFB00E5D1AD /* UIView+DelegateMulticast.swift */; };
 		3C8AFE7B1A39FEEF00E5D1AD /* UITextView+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8AFE7A1A39FEEF00E5D1AD /* UITextView+Avalon.swift */; };
 		3CA0D9F81A2EF638009CCB08 /* CustomOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA0D9F71A2EF638009CCB08 /* CustomOperators.swift */; };
@@ -73,6 +75,8 @@
 		3C5477C71A1122AA00C80A3C /* UIView+Avalon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Avalon.swift"; sourceTree = "<group>"; };
 		3C5477C81A1122AA00C80A3C /* UIView+AvalonCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AvalonCore.swift"; sourceTree = "<group>"; };
 		3C859EF11A1A42D7001BA43F /* ErrorSink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorSink.swift; sourceTree = "<group>"; };
+		3C865DCA1A3AC47D00D775C8 /* ObservableArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableArray.swift; sourceTree = "<group>"; };
+		3C865DD01A3C800A00D775C8 /* ObservableArrayDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableArrayDelegate.swift; sourceTree = "<group>"; };
 		3C8AFE781A398AFB00E5D1AD /* UIView+DelegateMulticast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+DelegateMulticast.swift"; sourceTree = "<group>"; };
 		3C8AFE7A1A39FEEF00E5D1AD /* UITextView+Avalon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Avalon.swift"; sourceTree = "<group>"; };
 		3CA0D9F71A2EF638009CCB08 /* CustomOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOperators.swift; sourceTree = "<group>"; };
@@ -186,11 +190,13 @@
 				3C54775D1A0FDA4C00C80A3C /* ValueConverter.swift */,
 				3C54775E1A0FDA4C00C80A3C /* BindingMode.swift */,
 				3CEE10341A0F5A40002C66E3 /* Avalon.h */,
-				3C859EF11A1A42D7001BA43F /* ErrorSink.swift */,
 				3CB9CE371A279A9700CE6757 /* ViewModelBase.swift */,
 				3CB9CE4C1A27C16F00CE6757 /* Event.swift */,
 				3CA0D9F71A2EF638009CCB08 /* CustomOperators.swift */,
+				3C859EF11A1A42D7001BA43F /* ErrorSink.swift */,
 				3CDB57421A34485B001DD726 /* AvalonBootstrap.swift */,
+				3C865DCA1A3AC47D00D775C8 /* ObservableArray.swift */,
+				3C865DD01A3C800A00D775C8 /* ObservableArrayDelegate.swift */,
 			);
 			path = Avalon;
 			sourceTree = "<group>";
@@ -287,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C444F8D1A34408300F72591 /* UIControlBindingConnector.swift in Sources */,
+				3C865DD11A3C800A00D775C8 /* ObservableArrayDelegate.swift in Sources */,
 				3C859EF21A1A42D7001BA43F /* ErrorSink.swift in Sources */,
 				3CDD6C141A1A4A21003020AA /* AssociatedPropertyKeys.swift in Sources */,
 				3C42AE761A37639600FB2AEE /* AVExceptionWrapper.m in Sources */,
@@ -316,6 +323,7 @@
 				3C408EB91A19268700D8426F /* AVValueWrapper.m in Sources */,
 				3C8AFE7B1A39FEEF00E5D1AD /* UITextView+Avalon.swift in Sources */,
 				3CDB57451A349723001DD726 /* AssociatedPropertyHelper.swift in Sources */,
+				3C865DCB1A3AC47D00D775C8 /* ObservableArray.swift in Sources */,
 				3C5477651A0FDA4C00C80A3C /* Action.swift in Sources */,
 				3C42AE7A1A38CE4400FB2AEE /* UIPickerView+Avalon.swift in Sources */,
 			);
