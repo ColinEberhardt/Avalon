@@ -26,11 +26,11 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate
     slider.bindings = [Binding(source: "maxNumber", destination: "maximumValue"),
       Binding(source: "minNumber", destination: "minimumValue")]
 
-    button.bindings = [ "incrementCountAction" >| "Action" ]
+    button.bindings = [ "incrementCountAction" >| "action" ]
     
     label.bindings = ["number" >| NumberToString() >| "text"]
     
-    segmentedControl.bindings = [Binding(source: "observableOptions", destination: "segments"),
+    segmentedControl.bindings = [Binding(source: "options", destination: "segments"),
       Binding(source: "selectedOption", destination: "selectedSegmentIndex", mode: .TwoWay)]
     
     searchBar.bindings = [Binding(source: "searchText", destination: "text", mode: .TwoWay),

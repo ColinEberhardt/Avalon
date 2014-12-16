@@ -77,7 +77,6 @@ import Foundation
     delegate?.didRemoveItem?(result, atIndex: index, inArray: self)
     return result
   }
-
   
   /*
 
