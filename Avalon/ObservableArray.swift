@@ -10,6 +10,11 @@ import Foundation
 
 /// An array implementation that informs its delegate of any mutating
 /// operations that have been performed on the array.
+
+// In order for a Swift array to be used as an associated property, i(e.g. TableView items) it has
+// to be bridged to an NSObject subclass. Fortunately Swift does this automagically by bridging to
+// NSArray. Unfortunately there is no magic bridging support for our own types, as a result the
+// ObservableArray cannot be a struct (which sucks). 
 @objc public class ObservableArray: ArrayLiteralConvertible {
   
   var backingArray: [AnyObject]
@@ -76,6 +81,12 @@ import Foundation
     let result: AnyObject = backingArray.removeAtIndex(index)
     delegate?.didRemoveItem?(result, atIndex: index, inArray: self)
     return result
+  }
+  
+  public subscript (i: Int) -> AnyObject {
+    get {
+      return backingArray[i]
+    }
   }
   
   /*
