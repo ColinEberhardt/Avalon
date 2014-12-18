@@ -33,12 +33,12 @@
 		3C5477CC1A1122AA00C80A3C /* UIView+AvalonCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C81A1122AA00C80A3C /* UIView+AvalonCore.swift */; };
 		3C859EF21A1A42D7001BA43F /* ErrorSink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C859EF11A1A42D7001BA43F /* ErrorSink.swift */; };
 		3C865DCB1A3AC47D00D775C8 /* ObservableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C865DCA1A3AC47D00D775C8 /* ObservableArray.swift */; };
-		3C865DD11A3C800A00D775C8 /* ObservableArrayDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C865DD01A3C800A00D775C8 /* ObservableArrayDelegate.swift */; };
 		3C8AFE791A398AFB00E5D1AD /* UIView+DelegateMulticast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8AFE781A398AFB00E5D1AD /* UIView+DelegateMulticast.swift */; };
 		3C8AFE7B1A39FEEF00E5D1AD /* UITextView+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8AFE7A1A39FEEF00E5D1AD /* UITextView+Avalon.swift */; };
 		3CA0D9F81A2EF638009CCB08 /* CustomOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA0D9F71A2EF638009CCB08 /* CustomOperators.swift */; };
 		3CB9CE381A279A9700CE6757 /* ViewModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB9CE371A279A9700CE6757 /* ViewModelBase.swift */; };
 		3CB9CE4D1A27C16F00CE6757 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB9CE4C1A27C16F00CE6757 /* Event.swift */; };
+		3CBA41F51A42C86E00E03F6C /* ArrayFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA41F41A42C86E00E03F6C /* ArrayFacade.swift */; };
 		3CCB555D1A2FC6E100631420 /* AVSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CCB555B1A2FC6E100631420 /* AVSwizzle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3CCB555E1A2FC6E100631420 /* AVSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCB555C1A2FC6E100631420 /* AVSwizzle.m */; };
 		3CDB57431A34485B001DD726 /* AvalonBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDB57421A34485B001DD726 /* AvalonBootstrap.swift */; };
@@ -76,12 +76,12 @@
 		3C5477C81A1122AA00C80A3C /* UIView+AvalonCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AvalonCore.swift"; sourceTree = "<group>"; };
 		3C859EF11A1A42D7001BA43F /* ErrorSink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorSink.swift; sourceTree = "<group>"; };
 		3C865DCA1A3AC47D00D775C8 /* ObservableArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableArray.swift; sourceTree = "<group>"; };
-		3C865DD01A3C800A00D775C8 /* ObservableArrayDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableArrayDelegate.swift; sourceTree = "<group>"; };
 		3C8AFE781A398AFB00E5D1AD /* UIView+DelegateMulticast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+DelegateMulticast.swift"; sourceTree = "<group>"; };
 		3C8AFE7A1A39FEEF00E5D1AD /* UITextView+Avalon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Avalon.swift"; sourceTree = "<group>"; };
 		3CA0D9F71A2EF638009CCB08 /* CustomOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOperators.swift; sourceTree = "<group>"; };
 		3CB9CE371A279A9700CE6757 /* ViewModelBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelBase.swift; sourceTree = "<group>"; };
 		3CB9CE4C1A27C16F00CE6757 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		3CBA41F41A42C86E00E03F6C /* ArrayFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayFacade.swift; sourceTree = "<group>"; };
 		3CCB555B1A2FC6E100631420 /* AVSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVSwizzle.h; sourceTree = "<group>"; };
 		3CCB555C1A2FC6E100631420 /* AVSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVSwizzle.m; sourceTree = "<group>"; };
 		3CDB57421A34485B001DD726 /* AvalonBootstrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvalonBootstrap.swift; sourceTree = "<group>"; };
@@ -127,6 +127,7 @@
 			children = (
 				3C444F871A34408300F72591 /* Connectors */,
 				3CDB57441A349723001DD726 /* AssociatedPropertyHelper.swift */,
+				3CBA41F41A42C86E00E03F6C /* ArrayFacade.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -196,7 +197,6 @@
 				3C859EF11A1A42D7001BA43F /* ErrorSink.swift */,
 				3CDB57421A34485B001DD726 /* AvalonBootstrap.swift */,
 				3C865DCA1A3AC47D00D775C8 /* ObservableArray.swift */,
-				3C865DD01A3C800A00D775C8 /* ObservableArrayDelegate.swift */,
 			);
 			path = Avalon;
 			sourceTree = "<group>";
@@ -293,13 +293,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C444F8D1A34408300F72591 /* UIControlBindingConnector.swift in Sources */,
-				3C865DD11A3C800A00D775C8 /* ObservableArrayDelegate.swift in Sources */,
 				3C859EF21A1A42D7001BA43F /* ErrorSink.swift in Sources */,
 				3CDD6C141A1A4A21003020AA /* AssociatedPropertyKeys.swift in Sources */,
 				3C42AE761A37639600FB2AEE /* AVExceptionWrapper.m in Sources */,
 				3C444F931A34455000F72591 /* AVDelegateMultiplexer.m in Sources */,
 				3C444F8C1A34408300F72591 /* KVOBindingConnector.swift in Sources */,
 				3C5477CA1A1122AA00C80A3C /* UISegmentedControl+Avalon.swift in Sources */,
+				3CBA41F51A42C86E00E03F6C /* ArrayFacade.swift in Sources */,
 				3C5477691A0FDDDF00C80A3C /* Disposable.swift in Sources */,
 				3C408EAF1A16B8A300D8426F /* UIActivityIndicator+Avalon.swift in Sources */,
 				3C8AFE791A398AFB00E5D1AD /* UIView+DelegateMulticast.swift in Sources */,

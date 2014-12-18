@@ -8,19 +8,25 @@
 
 import Foundation
 
+/// Describes updates to an ObservableArray
+public enum ArrayUpdateType {
+  case ItemAdded(Int, AnyObject)
+  case ItemRemoved(Int, AnyObject)
+}
+
 /// An array implementation that informs its delegate of any mutating
 /// operations that have been performed on the array.
-
-// In order for a Swift array to be used as an associated property, i(e.g. TableView items) it has
-// to be bridged to an NSObject subclass. Fortunately Swift does this automagically by bridging to
-// NSArray. Unfortunately there is no magic bridging support for our own types, as a result the
-// ObservableArray cannot be a struct (which sucks). 
 @objc public class ObservableArray: ArrayLiteralConvertible {
+  
+  // In order for a Swift array to be used as an associated property, i(e.g. TableView items) it has
+  // to be bridged to an NSObject subclass. Fortunately Swift does this automagically by bridging to
+  // NSArray. Unfortunately there is no magic bridging support for our own types, as a result the
+  // ObservableArray cannot be a struct (which sucks).
   
   var backingArray: [AnyObject]
  
   /// A delegate that receives notifications whenever the array is mutated
-  public weak var delegate: ObservableArrayDelegate?
+  public let arrayChangedEvent = DataEvent<ArrayUpdateType>()
   
   public  init() {
     backingArray = [AnyObject]()
@@ -60,26 +66,26 @@ import Foundation
   /// Append newElement to the Array
   public func append(newElement: AnyObject) {
     backingArray.append(newElement)
-    delegate?.didAddItem?(newElement, atIndex: count - 1, inArray: self)
+    arrayChangedEvent.raiseEvent(.ItemAdded(self.count - 1, newElement))
   }
   
   /// Remove an element from the end of the Array
   public func removeLast() -> AnyObject {
     let result: AnyObject = backingArray.removeLast()
-    delegate?.didRemoveItem?(result, atIndex: count, inArray: self)
+    arrayChangedEvent.raiseEvent(.ItemRemoved(self.count, result))
     return result
   }
   
   /// Insert `newElement` at index `i`.
   public func insert(newElement: AnyObject, atIndex i: Int) {
     backingArray.insert(newElement, atIndex: i)
-    delegate?.didAddItem?(newElement, atIndex: i, inArray: self)
+    arrayChangedEvent.raiseEvent(.ItemAdded(i, newElement))
   }
   
   /// Remove and return the element at index `i`
   public func removeAtIndex(index: Int) -> AnyObject {
     let result: AnyObject = backingArray.removeAtIndex(index)
-    delegate?.didRemoveItem?(result, atIndex: index, inArray: self)
+    arrayChangedEvent.raiseEvent(.ItemRemoved(index, result))
     return result
   }
   

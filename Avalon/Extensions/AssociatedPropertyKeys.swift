@@ -16,7 +16,6 @@ struct AssociationKey {
   static var converter: UInt8 = 4
   static var mode: UInt8 = 5
   static var action: UInt8 = 6
-  static var segments: UInt8 = 7
   static var animating: UInt8 = 8
   static var tableViewSource: UInt8 = 9
   static var searchCommand: UInt8 = 10
