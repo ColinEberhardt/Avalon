@@ -69,12 +69,11 @@ class SearchViewModel: ViewModelBase {
       JSONService
         .GET(url)
         .success {
-          json in {self.makePlaces(json)} ~> {
-            self.places = $0
-            self.isSearching = false
-          }
+          json in
+          self.places = self.makePlaces(json)
+          self.isSearching = false
         }
-        .failure(onFailure, queue: NSOperationQueue.mainQueue())
+        .failure(onFailure)
       return true
     } else {
       return false

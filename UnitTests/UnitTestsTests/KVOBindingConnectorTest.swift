@@ -182,7 +182,7 @@ class KVOBindingConnectorTest: XCTestCase {
   }
   
   func test_destinationProperty_failsIfInvalidPropertyPath() {
-    AssertLogsError("ERROR: Unable to set value on destination") {
+    AssertLogsError("ERROR: Unable to set value") {
       // create source and destination objects
       var person = PersonViewModel()
       person.name = "Bill"

@@ -56,8 +56,10 @@ public class DataEvent<T> {
   
   /// Raises the event, invoking all handlers
   public func raiseEvent(data: T) {
-    for handler in handlers {
-      handler.invoke(data)
+    executeOnMainThread {
+      for handler in self.handlers {
+        handler.invoke(data)
+      }
     }
   }
   

@@ -22,7 +22,6 @@
 		D0AF202A1982CBFA0031AF1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0AF20281982CBFA0031AF1E /* Main.storyboard */; };
 		D0AF202C1982CBFA0031AF1E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0AF202B1982CBFA0031AF1E /* Images.xcassets */; };
 		D0AF20421982CD630031AF1E /* JSONService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AF20411982CD630031AF1E /* JSONService.swift */; };
-		D0AF20441982CDC80031AF1E /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AF20431982CDC80031AF1E /* Operators.swift */; };
 		D0AF20471982CF710031AF1E /* URLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AF20461982CF710031AF1E /* URLFactory.swift */; };
 		D0AF204B198459910031AF1E /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AF204A198459910031AF1E /* Place.swift */; };
 		D0AF20501984616D0031AF1E /* Model Builders.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AF204F1984616D0031AF1E /* Model Builders.m */; };
@@ -56,7 +55,6 @@
 		D0AF20291982CBFA0031AF1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0AF202B1982CBFA0031AF1E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D0AF20411982CD630031AF1E /* JSONService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONService.swift; sourceTree = "<group>"; };
-		D0AF20431982CDC80031AF1E /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		D0AF20461982CF710031AF1E /* URLFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLFactory.swift; sourceTree = "<group>"; };
 		D0AF204A198459910031AF1E /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		D0AF204D1984616D0031AF1E /* SwiftPlaces-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftPlaces-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -135,7 +133,6 @@
 				D0AF20241982CBFA0031AF1E /* AppDelegate.swift */,
 				D07E67881986E3170018E1C1 /* GCD.swift */,
 				D07E67921987570D0018E1C1 /* JSON.swift */,
-				D0AF20431982CDC80031AF1E /* Operators.swift */,
 				D0AF204D1984616D0031AF1E /* SwiftPlaces-Bridging-Header.h */,
 			);
 			path = SwiftPlaces;
@@ -262,7 +259,6 @@
 				D04AAF2A1986B28C00E5D7F8 /* PlaceViewController.swift in Sources */,
 				3CB9CE401A27B1FB00CE6757 /* WeatherToStringConverter.swift in Sources */,
 				D059A6921986BF85002D0A1E /* Weather.swift in Sources */,
-				D0AF20441982CDC80031AF1E /* Operators.swift in Sources */,
 				D0AF204B198459910031AF1E /* Place.swift in Sources */,
 				3CB9CE3A1A27A00700CE6757 /* PlaceViewModel.swift in Sources */,
 				D0AF20501984616D0031AF1E /* Model Builders.m in Sources */,

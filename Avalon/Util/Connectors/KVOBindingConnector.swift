@@ -31,9 +31,7 @@ public class KVOBindingConnector: NSObject, Disposable {
     
     super.init()
     
-    func logError(value: AnyObject?) {
-      ErrorSink.instance.logEvent("ERROR: Unable to set value on destination \(destination) with binding \(binding) - does the property \(binding.destinationProperty) exist on the destination?")
-    }
+
     
     if binding.sourceProperty != "." {
       
@@ -65,8 +63,10 @@ public class KVOBindingConnector: NSObject, Disposable {
         return nil
       }
     }
-    
-
+  }
+  
+  private func logError(value: AnyObject?) {
+    ErrorSink.instance.logEvent("ERROR: Unable to set value \(value) on destination \(destination) with binding \(binding) - does the property \(binding.destinationProperty) exist on the destination?")
   }
   
   override public func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject,
@@ -89,7 +89,28 @@ public class KVOBindingConnector: NSObject, Disposable {
       ErrorSink.instance.logEvent(warnings)
     }*/
     
-    return AVKeyValueObservingHelper.trySetValue(convertedValue, forKeyPath: binding.destinationProperty, forObject: destination)
+    // check whether we are executing on the main thread
+    /*if !NSThread.isMainThread() {
+      // if not, marshall the update to the binding destination onto the UI thread
+      NSOperationQueue.mainQueue().addOperationWithBlock {
+        // unfortunately this will not return any KVO errors
+        AVKeyValueObservingHelper.trySetValue(convertedValue, forKeyPath: self.binding.destinationProperty, forObject: self.destination)
+        self.logError(value)
+        return
+      }
+      return nil
+    } else {
+      return AVKeyValueObservingHelper.trySetValue(convertedValue, forKeyPath: binding.destinationProperty, forObject: destination)
+    }*/
+    
+    return executeOnMainThread {
+      () -> String? in
+      let result = AVKeyValueObservingHelper.trySetValue(convertedValue, forKeyPath: self.binding.destinationProperty, forObject: self.destination)
+      if result == nil {
+        self.logError(value)
+      }
+      return result
+    }
   }
   
     

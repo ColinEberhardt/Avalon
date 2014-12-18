@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-// binds a property on the source object to a property on the destination
+// binds a UIControl so that value changes are propagated back to the source
+// in TwoWay binding scenarios
 public class UIControlBindingConnector: NSObject, Disposable {
   
   private var isSubscribed = true

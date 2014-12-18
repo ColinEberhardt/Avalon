@@ -29,8 +29,8 @@ class PlaceViewModel: ViewModelBase {
     
     JSONService
       .GET(url)
-      .success{json in { BuildWeatherFromJSON(json)} ~> {self.weather = $0 }}
-      .failure(onFailure, queue: NSOperationQueue.mainQueue())
+      .success{json in self.weather = BuildWeatherFromJSON(json)}
+      .failure(onFailure)
   }
   
   private func onFailure(statusCode: Int, error: NSError?)
