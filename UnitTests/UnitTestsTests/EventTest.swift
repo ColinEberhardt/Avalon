@@ -16,6 +16,10 @@ class EventTest: XCTestCase {
   
   var stringOne = "", stringTwo = ""
   
+  override func setUp() {
+    reset()
+  }
+  
   func reset() {
     handlerOneInvoked = false
     handlerTwoInvoked = false
@@ -41,7 +45,7 @@ class EventTest: XCTestCase {
   func test_event_addHandler() {
     // add a single handler
     let event = Event()
-    event.addHandler(handlerOne)
+    event.addHandler(self, handler: EventTest.handlerOne)
     
     // raise
     event.raiseEvent()
@@ -52,7 +56,7 @@ class EventTest: XCTestCase {
     
     // add the other handler, using operator
     reset()
-    event += handlerTwo
+    event.addHandler(self, handler: EventTest.handlerTwo)
     
     // raise
     event.raiseEvent()
@@ -62,10 +66,84 @@ class EventTest: XCTestCase {
     XCTAssertTrue(handlerTwoInvoked)
   }
   
+  func test_event_removeHandler() {
+    // add both handlers
+    let event = Event()
+    let handleOne = event.addHandler(self, handler: EventTest.handlerOne)
+    let handlerTwo = event.addHandler(self, handler: EventTest.handlerTwo)
+    
+    // raise
+    event.raiseEvent()
+    
+    // assert
+    XCTAssertTrue(handlerOneInvoked)
+    XCTAssertTrue(handlerTwoInvoked)
+    
+    // remove one
+    handleOne.dispose()
+    
+    // raise
+    reset()
+    event.raiseEvent()
+    
+    // assert
+    XCTAssertFalse(handlerOneInvoked)
+    XCTAssertTrue(handlerTwoInvoked)
+    
+    // remove the other
+    handlerTwo.dispose()
+    
+    // raise
+    reset()
+    event.raiseEvent()
+    
+    // assert
+    XCTAssertFalse(handlerOneInvoked)
+    XCTAssertFalse(handlerTwoInvoked)
+  }
+  
+  func test_dataEvent_removeHandler() {
+    // add both handlers
+    let event = DataEvent<String>()
+    let handleOne = event.addHandler(self, handler: EventTest.dataHandlerOne)
+    let handlerTwo = event.addHandler(self, handler: EventTest.dataHandlerTwo)
+    
+    // raise
+    event.raiseEvent("fish")
+    
+    // assert
+    XCTAssertEqual("fish", stringOne)
+    XCTAssertEqual("fish", stringTwo)
+
+    
+    // remove one
+    handleOne.dispose()
+    
+    // raise
+    reset()
+    event.raiseEvent("cat")
+    
+    // assert
+    XCTAssertEqual("", stringOne)
+    XCTAssertEqual("cat", stringTwo)
+    
+    // remove the other
+    handlerTwo.dispose()
+    
+    // raise
+    reset()
+    event.raiseEvent("dog")
+    
+    // assert
+    XCTAssertEqual("", stringOne)
+    XCTAssertEqual("", stringTwo)
+  }
+  
+  
   func test_dataEvent_addHandler() {
     // add a single handler
     let event = DataEvent<String>()
-    event.addHandler(dataHandlerOne)
+    event.addHandler(self, handler: EventTest.dataHandlerOne)
     
     // raise
     event.raiseEvent("fish")
@@ -76,7 +154,7 @@ class EventTest: XCTestCase {
     
     // add the other handler, using operator
     reset()
-    event += dataHandlerTwo
+    event.addHandler(self, handler: EventTest.dataHandlerTwo)
     
     // raise
     event.raiseEvent("fish")

@@ -9,24 +9,24 @@
 import Foundation
 import Avalon
 
+struct SearchErrorEventData {
+  let statusCode: Int
+  let error: NSError?
+}
+
+struct PlaceSelectedEventData {
+  let place: Place
+}
+
 class SearchViewModel: ViewModelBase {
   
-  struct SearchErrorEventData {
-    let statusCode: Int
-    let error: NSError?
-  }
+  let searchExecutingEvent = Event()
   
-  struct PlaceSelectedEventData {
-    let place: Place
-  }
+  let invalidPostcodeEvent = Event()
   
-  let searchExecutingEvent = EmptyEvent()
+  let searchErrorEvent = DataEvent<SearchErrorEventData>()
   
-  let invalidPostcodeEvent = EmptyEvent()
-  
-  let searchErrorEvent = Event<SearchErrorEventData>()
-  
-  let placeSelectedEvent = Event<PlaceSelectedEventData>()
+  let placeSelectedEvent = DataEvent<PlaceSelectedEventData>()
   
   dynamic var searchText = ""
   

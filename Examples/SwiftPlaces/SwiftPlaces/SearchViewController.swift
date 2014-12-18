@@ -42,39 +42,42 @@ class SearchViewController: UIViewController
     view.bindingContext = viewModel
     
     // handle events form the view model
-    viewModel.searchExecutingEvent += {
-      self.searchBar.resignFirstResponder()
-      return
-    }
-    
-    viewModel.searchErrorEvent += {
-      errorData in
-      let title = "Error"
-      let msg   = errorData.error?.localizedDescription ?? "An error occurred."
-      let alert = UIAlertController(title: title, message: msg, preferredStyle: .Alert)
-      
-      alert.addAction(UIAlertAction( title: "OK", style: .Default, handler: { _ in
-        self.dismissViewControllerAnimated(true, completion: nil)
-      }))
-      
-      self.presentViewController(alert, animated: true, completion: nil)
-    }
-    
-    viewModel.invalidPostcodeEvent += {
-      let image = UIImage(named: "ErrorColor")
-      self.searchBar.showErrorMessage("Numbers only!", backgroundImage: image)
-    }
-    
-    viewModel.placeSelectedEvent += {
-      placeEventData in
-      let placeVC = self.storyboard!.instantiateViewControllerWithIdentifier("PlaceViewController") as PlaceViewController
-      placeVC.place = placeEventData.place
-      self.showDetailViewController(placeVC, sender: self)
-    }
+    viewModel.searchExecutingEvent.addHandler(self, SearchViewController.hideKeyboard)
+    viewModel.searchErrorEvent.addHandler(self, SearchViewController.showAlert)
+    viewModel.invalidPostcodeEvent.addHandler(self, SearchViewController.showTextInputError)
+    viewModel.placeSelectedEvent.addHandler(self, SearchViewController.navigateToPlaceViewController)
     
     viewModel.addPropertyObserver("isSearching") {
       UIApplication.sharedApplication().networkActivityIndicatorVisible =
         self.viewModel.isSearching
     }
+  }
+  
+  func navigateToPlaceViewController(placeEventData: PlaceSelectedEventData) {
+    let placeVC = self.storyboard!.instantiateViewControllerWithIdentifier("PlaceViewController") as PlaceViewController
+    placeVC.place = placeEventData.place
+    self.showDetailViewController(placeVC, sender: self)
+  }
+  
+  func showTextInputError() {
+    let image = UIImage(named: "ErrorColor")
+    searchBar.showErrorMessage("Numbers only!", backgroundImage: image)
+  }
+  
+  func hideKeyboard() {
+    searchBar.resignFirstResponder()
+    return
+  }
+  
+  func showAlert(errorData: SearchErrorEventData) {
+    let title = "Error"
+    let msg   = errorData.error?.localizedDescription ?? "An error occurred."
+    let alert = UIAlertController(title: title, message: msg, preferredStyle: .Alert)
+    
+    alert.addAction(UIAlertAction( title: "OK", style: .Default, handler: { _ in
+      self.dismissViewControllerAnimated(true, completion: nil)
+    }))
+    
+    presentViewController(alert, animated: true, completion: nil)
   }
 }

@@ -300,11 +300,22 @@
                                             <segue destination="wND-K4-ZqC" kind="push" id="Ebv-AS-hzW"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="rWQ-SW-QMw">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="rWQ-SW-QMw">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rWQ-SW-QMw" id="DMn-uJ-WrC">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Memory Leak Test" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXJ-cS-DOl">
+                                                    <rect key="frame" x="19" y="12" width="227" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="sAG-k4-twK" kind="push" id="Yxp-ZT-UMu"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -318,7 +329,34 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RSQ-8x-ogS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="759" y="1249"/>
+            <point key="canvasLocation" x="759" y="1248"/>
+        </scene>
+        <!--Mem Leak-->
+        <scene sceneID="bxo-SU-o3M">
+            <objects>
+                <viewController title="Mem Leak" id="sAG-k4-twK" customClass="MemoryLeakViewController" customModule="KitchenSink" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8QD-mA-Wgl"/>
+                        <viewControllerLayoutGuide type="bottom" id="GFB-Ts-arV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oMI-za-SzQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A view controller that is pushed and popped to see if memory leaks" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8y-QR-UbV">
+                                <rect key="frame" x="16" y="77" width="516" height="90"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Memory Leak" id="XWf-wF-xD3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W2S-CT-FAw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1644" y="2081"/>
         </scene>
         <!--Observable Array View Controller-->
         <scene sceneID="GdG-DD-bNw">

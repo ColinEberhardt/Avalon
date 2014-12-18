@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C292F851A423113009A1255 /* MemoryLeakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C292F841A423113009A1255 /* MemoryLeakViewController.swift */; };
 		3C5477E81A11E2B000C80A3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477E71A11E2B000C80A3C /* AppDelegate.swift */; };
 		3C5477EA1A11E2B000C80A3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477E91A11E2B000C80A3C /* ViewController.swift */; };
 		3C5477ED1A11E2B000C80A3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C5477EB1A11E2B000C80A3C /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C292F841A423113009A1255 /* MemoryLeakViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryLeakViewController.swift; sourceTree = "<group>"; };
 		3C5477E21A11E2B000C80A3C /* KitchenSink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KitchenSink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C5477E61A11E2B000C80A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C5477E71A11E2B000C80A3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				3C5478111A11E30000C80A3C /* KitchenSinkViewModel.swift */,
 				3C865DD91A3EB83900D775C8 /* ObservableArrayViewController.swift */,
 				3C865DDD1A4006FF00D775C8 /* ObservableArrayViewModel.swift */,
+				3C292F841A423113009A1255 /* MemoryLeakViewController.swift */,
 			);
 			path = KitchenSink;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			files = (
 				3C5477EA1A11E2B000C80A3C /* ViewController.swift in Sources */,
 				3C865DDA1A3EB83900D775C8 /* ObservableArrayViewController.swift in Sources */,
+				3C292F851A423113009A1255 /* MemoryLeakViewController.swift in Sources */,
 				3C865DDE1A4006FF00D775C8 /* ObservableArrayViewModel.swift in Sources */,
 				3C5477E81A11E2B000C80A3C /* AppDelegate.swift in Sources */,
 				3C5478121A11E30000C80A3C /* KitchenSinkViewModel.swift in Sources */,
