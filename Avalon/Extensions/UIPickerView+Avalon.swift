@@ -36,7 +36,7 @@ extension UIPickerView {
 extension UIPickerView {
   // an accessor for the source that is both the delegate and datasource of the picker view
   var pickerViewSource: PickerViewSource {
-    return lazyAssociatedProperty(self, &AssociationKey.tableViewSource) {
+    return lazyAssociatedProperty(self, &AssociationKey.itemsController) {
       return PickerViewSource(pickerView: self)
     }
   }

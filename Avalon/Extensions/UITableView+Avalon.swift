@@ -15,10 +15,10 @@ extension UITableView {
   /// A bindable array of objects to render within the table view
   public var items: AnyObject? {
     get {
-      return tableViewSource.items
+      return itemsController.items
     }
     set(newValue) {
-      tableViewSource.items = newValue
+      itemsController.items = newValue
     }
   }
   
@@ -37,10 +37,10 @@ extension UITableView {
 
 // MARK:- Private API
 extension UITableView {
-  // an accessor for the source that implemented both the delegate and datasource
-  var tableViewSource: TableViewSource {
-    return lazyAssociatedProperty(self, &AssociationKey.tableViewSource) {
-      return TableViewSource(tableView: self)
+  // an accessor for the controller that handles updating the segmented control
+  var itemsController: TableViewItemsController {
+    return lazyAssociatedProperty(self, &AssociationKey.itemsController) {
+      return TableViewItemsController(tableView: self)
     }
   }
 }
@@ -83,18 +83,8 @@ extension UITableView {
 }
 
 // a datasource implementation that renders the data provided by the table view's items property
-class TableViewSource: NSObject, UITableViewDataSource, UITableViewDelegate {
+class TableViewItemsController: ItemsController, UITableViewDataSource, UITableViewDelegate {
   
-  var items: AnyObject? {
-    didSet {
-      tableView.reloadData()
-      
-      if let items = items as? ObservableArray {
-        // TODO: remove this handler at an appropriate time
-        items.arrayChangedEvent.addHandler(self, handler: TableViewSource.arrayUpdated)
-      }
-    }
-  }
   
   let tableView: UITableView
   
@@ -110,14 +100,18 @@ class TableViewSource: NSObject, UITableViewDataSource, UITableViewDelegate {
   // MARK: - UITableViewDataSource
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return facadeForArray(items).count
+    if let arrayFacade = arrayFacade {
+      return arrayFacade.count
+    } else {
+      return 0
+    }
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     // TODO: How do we inform the tableview of the cell name?
     let maybeCell: AnyObject? = tableView.dequeueReusableCellWithIdentifier("Cell")
     if let cell = maybeCell as? UITableViewCell {
-      cell.bindingContext = facadeForArray(items).itemAtIndex(indexPath.row)
+      cell.bindingContext = arrayFacade!.itemAtIndex(indexPath.row)
       return cell
     }
     return UITableViewCell()
@@ -126,15 +120,19 @@ class TableViewSource: NSObject, UITableViewDataSource, UITableViewDelegate {
   // MARK: - UITableViewDelegate
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    let selectedItem: AnyObject = facadeForArray(items).itemAtIndex(indexPath.row)
+    let selectedItem: AnyObject = arrayFacade!.itemAtIndex(indexPath.row)
     if let action = tableView.selectionAction {
       action.execute(selectedItem)
     }
   }
   
-  // MARK: - ObservableArray event handling
+  // MARK: - ItemsController overrides
   
-  func arrayUpdated(update: ArrayUpdateType) {
+  override func reloadAllItems() {
+    tableView.reloadData()
+  }
+  
+  override func arrayUpdated(update: ArrayUpdateType) {
     switch update {
     case .ItemAdded(let index, let item):
       tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: index, inSection: 0)], withRowAnimation: .Automatic)

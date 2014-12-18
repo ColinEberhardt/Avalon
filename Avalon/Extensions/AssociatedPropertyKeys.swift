@@ -17,7 +17,7 @@ struct AssociationKey {
   static var mode: UInt8 = 5
   static var action: UInt8 = 6
   static var animating: UInt8 = 8
-  static var tableViewSource: UInt8 = 9
+  static var itemsController: UInt8 = 9
   static var searchCommand: UInt8 = 10
   static var searchBarDelegate: UInt8 = 11
   static var searchAction: UInt8 = 12
