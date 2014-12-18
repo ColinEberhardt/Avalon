@@ -8,35 +8,41 @@
 
 import Foundation
 
-public typealias EventHandler = () -> ()
-
-
+/// An optional base class for view model implementations. This base class
+/// allows you to observe changes in property values without using
+/// KVO directly.
 public class ViewModelBase: NSObject {
   
-  struct Context {
+  private var propertyObservers = [String]()
+  
+  private struct Context {
     static var kvoContext: UInt8 = 1
   }
   
-  // Adds very crude property and event observation
-  // TODO: Make these observers multicast
-
-  private var kvoHandlers = [String:EventHandler]()
   
-  public func addPropertyObserver(propertyName: String, handler: EventHandler) {
-    
+  private let propertyChangedEvent = DataEvent<String>()
+  
+  deinit {
+    for property in propertyObservers {
+      self.removeObserver(self, forKeyPath: property)
+    }
+  }
+  
+  /// Add an observer to the given property
+  public func addPropertyObserver<U: AnyObject>(propertyName: String, _ target: U, handler: (U) -> (String) -> ()) -> Disposable {
     self.addObserver(self, forKeyPath: propertyName,
       options: NSKeyValueObservingOptions.New, context: &Context.kvoContext)
-
-    kvoHandlers[propertyName] = handler
+    propertyObservers.append(propertyName)
+    
+    return propertyChangedEvent.addHandler(target, handler)
   }
+  
   
   override public func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject,
     change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
       
     if context == &Context.kvoContext {
-      if let handler = kvoHandlers[keyPath] {
-        handler()
-      }
+      propertyChangedEvent.raiseEvent(keyPath)
     } else {
       super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
     }

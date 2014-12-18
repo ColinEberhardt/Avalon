@@ -11,6 +11,7 @@
 		3C865DCE1A3B53A300D775C8 /* ObservableArrayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C865DCD1A3B53A300D775C8 /* ObservableArrayTest.swift */; };
 		3C865DD31A3C844600D775C8 /* ObservableArrayNotificationsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C865DD21A3C844600D775C8 /* ObservableArrayNotificationsTest.swift */; };
 		3CA7B4AD1A3594B300C389BA /* EventTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA7B4AC1A3594B300C389BA /* EventTest.swift */; };
+		3CBA41FD1A43864700E03F6C /* ViewModelBaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA41FC1A43864700E03F6C /* ViewModelBaseTest.swift */; };
 		3CE0CFAB1A32EF6100BA9EDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE0CFAA1A32EF6100BA9EDA /* AppDelegate.swift */; };
 		3CE0CFAD1A32EF6100BA9EDA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE0CFAC1A32EF6100BA9EDA /* ViewController.swift */; };
 		3CE0CFB01A32EF6100BA9EDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CE0CFAE1A32EF6100BA9EDA /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		3C865DCD1A3B53A300D775C8 /* ObservableArrayTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableArrayTest.swift; sourceTree = "<group>"; };
 		3C865DD21A3C844600D775C8 /* ObservableArrayNotificationsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableArrayNotificationsTest.swift; sourceTree = "<group>"; };
 		3CA7B4AC1A3594B300C389BA /* EventTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTest.swift; sourceTree = "<group>"; };
+		3CBA41FC1A43864700E03F6C /* ViewModelBaseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelBaseTest.swift; sourceTree = "<group>"; };
 		3CE0CFA51A32EF6100BA9EDA /* UnitTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CE0CFA91A32EF6100BA9EDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CE0CFAA1A32EF6100BA9EDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				3CA7B4AC1A3594B300C389BA /* EventTest.swift */,
 				3C865DCD1A3B53A300D775C8 /* ObservableArrayTest.swift */,
 				3C865DD21A3C844600D775C8 /* ObservableArrayNotificationsTest.swift */,
+				3CBA41FC1A43864700E03F6C /* ViewModelBaseTest.swift */,
 			);
 			path = UnitTestsTests;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				3C865DCE1A3B53A300D775C8 /* ObservableArrayTest.swift in Sources */,
 				3CE0CFD91A32EFF800BA9EDA /* KVCVerificationTest.swift in Sources */,
 				3CE0CFDC1A32EFF800BA9EDA /* UIControlBindingConnectorTest.swift in Sources */,
+				3CBA41FD1A43864700E03F6C /* ViewModelBaseTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

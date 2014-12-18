@@ -47,16 +47,19 @@ class SearchViewController: UIViewController
     viewModel.invalidPostcodeEvent.addHandler(self, SearchViewController.showTextInputError)
     viewModel.placeSelectedEvent.addHandler(self, SearchViewController.navigateToPlaceViewController)
     
-    viewModel.addPropertyObserver("isSearching") {
-      UIApplication.sharedApplication().networkActivityIndicatorVisible =
-        self.viewModel.isSearching
-    }
+    // observe view model property changes
+    viewModel.addPropertyObserver("isSearching", self, SearchViewController.viewModelPropertyChanged)
+  }
+  
+  func viewModelPropertyChanged(propertyName: String) {
+    UIApplication.sharedApplication().networkActivityIndicatorVisible =
+      viewModel.isSearching
   }
   
   func navigateToPlaceViewController(placeEventData: PlaceSelectedEventData) {
     let placeVC = self.storyboard!.instantiateViewControllerWithIdentifier("PlaceViewController") as PlaceViewController
     placeVC.place = placeEventData.place
-    self.showDetailViewController(placeVC, sender: self)
+    showDetailViewController(placeVC, sender: self)
   }
   
   func showTextInputError() {

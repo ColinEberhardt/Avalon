@@ -25,7 +25,7 @@ public enum ArrayUpdateType {
   
   var backingArray: [AnyObject]
  
-  /// A delegate that receives notifications whenever the array is mutated
+  /// An event that is raised when the array is mutated
   public let arrayChangedEvent = DataEvent<ArrayUpdateType>()
   
   public  init() {
