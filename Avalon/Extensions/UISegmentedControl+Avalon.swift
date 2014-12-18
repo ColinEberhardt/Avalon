@@ -48,11 +48,7 @@ class SegmentedControlItemsController: ItemsController {
     segmentedControl.removeAllSegments()
     if let arrayFacade = arrayFacade {
       for var i = 0; i < arrayFacade.count; i++ {
-        if let item = arrayFacade.itemAtIndex(i) as? String {
-          segmentedControl.insertSegmentWithTitle(item, atIndex: i, animated: false)
-        } else {
-          // TODO: Log an error
-        }
+        insertSegment(arrayFacade.itemAtIndex(i), index: i)
       }
     }
   }
@@ -60,15 +56,19 @@ class SegmentedControlItemsController: ItemsController {
   override func arrayUpdated(update: ArrayUpdateType) {
     switch update {
     case .ItemAdded(let index, let item):
-      if let itemString = item as? String {
-        segmentedControl.insertSegmentWithTitle(itemString, atIndex: index, animated: true)
-      } else {
-        // TODO: Log an error
-      }
+      insertSegment(item, index: index)
       break
     case .ItemRemoved(let index, let item):
       segmentedControl.removeSegmentAtIndex(index, animated: true)
       break
+    }
+  }
+  
+  private func insertSegment(item: AnyObject, index: Int) {
+    if let itemString = item as? String {
+      segmentedControl.insertSegmentWithTitle(itemString, atIndex: index, animated: true)
+    } else {
+      ErrorSink.instance.logEvent("ERROR: An array of items that are not strings has been bound to a segmented control. Only arrays of strings are supported.")
     }
   }
 }

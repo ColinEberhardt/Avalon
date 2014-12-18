@@ -13,7 +13,7 @@ class ObservableArrayViewModel: NSObject {
   
   dynamic var items: ObservableArray = ["one", "two", "three"]
   
-  dynamic var item = ""
+  dynamic var item = "new"
   
   dynamic var itemIndex: Int = 0 {
     didSet {

@@ -12,32 +12,32 @@ import Foundation
 extension UIPickerView {
   
   /// An bindable array of strings that represent the picker items
-  public var items: [String] {
+  public var items: AnyObject? {
     get {
-      return pickerViewSource.items
+      return itemsController.items
     }
     set(newValue) {
-      pickerViewSource.items = newValue
+      itemsController.items = newValue
     }
   }
   
   /// The currently selected item index
   public var selectedItemIndex: Int {
     get {
-      return pickerViewSource.selectedItemIndex
+      return itemsController.selectedItemIndex
     }
     set(newValue) {
-      pickerViewSource.selectedItemIndex = newValue
+      itemsController.selectedItemIndex = newValue
     }
   }
 }
 
 // MARK:- Private API 
 extension UIPickerView {
-  // an accessor for the source that is both the delegate and datasource of the picker view
-  var pickerViewSource: PickerViewSource {
+  // an accessor for the controller that handles updating the segmented control
+  var itemsController: PickerViewItemsController {
     return lazyAssociatedProperty(self, &AssociationKey.itemsController) {
-      return PickerViewSource(pickerView: self)
+      return PickerViewItemsController(pickerView: self)
     }
   }
 }
@@ -81,16 +81,7 @@ extension UIPickerView {
 
 
 // a datasource implementation that renders the data provided by the picker view's items property
-class PickerViewSource: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
-  
-  var items: [String] = [String]() {
-    didSet {
-      pickerView.reloadAllComponents()
-      
-      // selectedItemIndex might have been bound first, so select now
-      pickerView.selectRow(selectedItemIndex, inComponent: 0, animated: true)
-    }
-  }
+class PickerViewItemsController: ItemsController, UIPickerViewDataSource, UIPickerViewDelegate {
   
   var selectedItemIndex: Int = 0 {
     didSet {
@@ -101,7 +92,6 @@ class PickerViewSource: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
   // an observer that is invoked when selection changes, this is used
   // to support two-way binding
   var selectionChangedObserver: (AnyObject->())?
-
   
   private let pickerView: UIPickerView
   
@@ -114,20 +104,45 @@ class PickerViewSource: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
     pickerView.dataSource = self
   }
   
+  // MARK:- UIPickerViewDataSource
+  
   func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
     return 1
   }
   
   func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-    return items.count
+    if let arrayFacade = arrayFacade {
+      return arrayFacade.count
+    } else {
+      return 0
+    }
   }
   
   func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-    return items[row]
+    if let title = arrayFacade!.itemAtIndex(row) as? String {
+      return title
+    } else {
+      ErrorSink.instance.logEvent("ERROR: An array of items that are not strings has been bound to a picker view. Only arrays of strings are supported.")
+      return ""
+    }
   }
+  
+  // MARK:- UIPickerViewDelegate
   
   func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     selectedItemIndex = row
     selectionChangedObserver?(selectedItemIndex)
+  }
+  
+  // MARK:- ItemsController overrides
+  
+  override func reloadAllItems() {
+    pickerView.reloadAllComponents()
+  }
+  
+  override func arrayUpdated(update: ArrayUpdateType) {
+    // picker views do not support insertion / removal of rows. The only
+    // options is a complete update
+    pickerView.reloadAllComponents()
   }
 }

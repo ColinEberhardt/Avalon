@@ -73,7 +73,7 @@ extension UIView {
     let connectors: [(AnyClass, String, ((AnyObject) ->()) -> ())] = [
       (UISearchBar.self, "text", { binding in (view as UISearchBar).searchBarDelegate.textChangedObserver = binding }),
       (UISearchBar.self, "selectedScopeButtonIndex", { binding in (view as UISearchBar).searchBarDelegate.scopeButtonIndexChanged = binding }),
-      (UIPickerView.self, "selectedItemIndex", { binding in (view as UIPickerView).pickerViewSource.selectionChangedObserver = binding }),
+      (UIPickerView.self, "selectedItemIndex", { binding in (view as UIPickerView).itemsController.selectionChangedObserver = binding }),
       (UITextView.self, "text", { binding in (view as UITextView).textViewDelegate.textChangedObserver = binding })
     ]
     

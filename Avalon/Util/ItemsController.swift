@@ -14,15 +14,23 @@ import Foundation
 // for updating the UI.
 class ItemsController: NSObject {
   
+  private var handler: Disposable?
+  
   // the items that are bound to this control
   var items: AnyObject? {
     didSet {
+      // remove any previous subscriptions to observable arrays
+      if let oldHandler = handler {
+        oldHandler.dispose()
+        handler = nil
+      }
+      
       arrayFacade = facadeForArray(items)
+      
       reloadAllItems()
       
       if let items = items as? ObservableArray {
-        // TODO: remove this handler at an appropriate time
-        items.arrayChangedEvent.addHandler(self, handler: ItemsController.arrayUpdated)
+        handler = items.arrayChangedEvent.addHandler(self, handler: ItemsController.arrayUpdated)
       }
     }
   }

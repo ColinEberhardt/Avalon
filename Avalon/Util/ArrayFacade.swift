@@ -8,7 +8,10 @@
 
 import Foundation
 
-// MARK: - items adapter classes
+// Controls / views that support collection binding allow either an array of items
+// or an ObservableArray to be suppied as the source of items. Unfortunately there is
+// not a common interface between Array and ObservableArray, hence this adapter
+// is used to provide a common interface
 protocol ArrayFacade {
   var count: Int { get }
   func itemAtIndex(index: Int) -> NSObject
@@ -19,8 +22,10 @@ func facadeForArray(items: AnyObject?) -> ArrayFacade! {
     return SwiftArrayFacade(items: items)
   } else if let items = items as? ObservableArray {
     return ObservableArrayFacade(items: items)
+  } else {
+    ErrorSink.instance.logEvent("ERROR: collection binding (e.g. table view items, segemnted control segments) only works for Arrays or ObservableArrays, the following is not a valid property value \(items)")
+    return nil
   }
-  return nil
 }
 
 class ObservableArrayFacade: ArrayFacade {
