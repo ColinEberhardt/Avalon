@@ -91,7 +91,7 @@ class PickerViewItemsController: ItemsController, UIPickerViewDataSource, UIPick
   
   // an observer that is invoked when selection changes, this is used
   // to support two-way binding
-  var selectionChangedObserver: (AnyObject->())?
+  var selectionChangedObserver: (ValueChangedNotification)?
   
   private let pickerView: UIPickerView
   

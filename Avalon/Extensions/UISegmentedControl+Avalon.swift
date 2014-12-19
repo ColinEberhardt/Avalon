@@ -56,10 +56,16 @@ class SegmentedControlItemsController: ItemsController {
   override func arrayUpdated(update: ArrayUpdateType) {
     switch update {
     case .ItemAdded(let index, let item):
+      // when adding / removing segments, the selected index is offset. Therefore
+      // it needs to be re-applied
+      let selectedSegment = segmentedControl.selectedSegmentIndex
       insertSegment(item, index: index)
+      segmentedControl.selectedSegmentIndex = selectedSegment
       break
     case .ItemRemoved(let index, let item):
+      let selectedSegment = segmentedControl.selectedSegmentIndex
       segmentedControl.removeSegmentAtIndex(index, animated: true)
+      segmentedControl.selectedSegmentIndex = selectedSegment
       break
     }
   }

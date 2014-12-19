@@ -32,6 +32,16 @@ extension UITableView {
       objc_setAssociatedObject(self, &AssociationKey.action, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
     }
   }
+  
+  /// The currently selected item index
+  public var selectedItemIndex: Int {
+    get {
+      return itemsController.selectedItemIndex
+    }
+    set(newValue) {
+      itemsController.selectedItemIndex = newValue
+    }
+  }
 }
 
 
@@ -82,11 +92,29 @@ extension UITableView {
   }
 }
 
+extension NSIndexPath {
+  convenience init(row: Int) {
+    self.init(forRow: row, inSection: 0)
+  }
+}
+
 // a datasource implementation that renders the data provided by the table view's items property
 class TableViewItemsController: ItemsController, UITableViewDataSource, UITableViewDelegate {
   
-  
   let tableView: UITableView
+  
+  var selectedItemIndex: Int = -1 {
+    didSet {
+      tableView.selectRowAtIndexPath(NSIndexPath(row: selectedItemIndex), animated: false, scrollPosition: .None)
+      if oldValue != selectedItemIndex {
+        tableView.deselectRowAtIndexPath(NSIndexPath(row: oldValue), animated: false)
+      }
+    }
+  }
+  
+  // an observer that is invoked when selection changes, this is used
+  // to support two-way binding
+  var selectionChangedObserver: ValueChangedNotification?
   
   init(tableView: UITableView) {
     self.tableView = tableView
@@ -120,10 +148,12 @@ class TableViewItemsController: ItemsController, UITableViewDataSource, UITableV
   // MARK: - UITableViewDelegate
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    selectedItemIndex = indexPath.row
     let selectedItem: AnyObject = arrayFacade!.itemAtIndex(indexPath.row)
     if let action = tableView.selectionAction {
       action.execute(selectedItem)
     }
+    selectionChangedObserver?(selectedItemIndex)
   }
   
   // MARK: - ItemsController overrides
@@ -132,13 +162,18 @@ class TableViewItemsController: ItemsController, UITableViewDataSource, UITableV
     tableView.reloadData()
   }
   
+  
   override func arrayUpdated(update: ArrayUpdateType) {
     switch update {
     case .ItemAdded(let index, let item):
-      tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: index, inSection: 0)], withRowAnimation: .Automatic)
+      tableView.insertRowsAtIndexPaths([NSIndexPath(row: index)], withRowAnimation: .Automatic)
+      // re-apply selection
+      selectedItemIndex = Int(selectedItemIndex) // fool Swift into invoking didSet ;-)
       break
     case .ItemRemoved(let index, let item):
-      tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: index, inSection: 0)], withRowAnimation: .Automatic)
+      tableView.deleteRowsAtIndexPaths([NSIndexPath(row: index)], withRowAnimation: .Automatic)
+      // re-apply selection
+      selectedItemIndex = Int(selectedItemIndex) // fool Swift into invoking didSet ;-)
       break
     }
   }

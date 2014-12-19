@@ -110,11 +110,11 @@ class UISearchBarDelegateImpl: NSObject, UISearchBarDelegate {
   
   // an observer that is invoked when text changes, this is used
   // to support two-way binding
-  var textChangedObserver: (AnyObject->())?
+  var textChangedObserver: ValueChangedNotification?
   
   // an observer that is invoked when the selected scope button changes, this is used
   // to support two-way binding
-  var scopeButtonIndexChanged: (AnyObject->())?
+  var scopeButtonIndexChanged: ValueChangedNotification?
   
   init(searchBar: UISearchBar) {
     self.searchBar = searchBar

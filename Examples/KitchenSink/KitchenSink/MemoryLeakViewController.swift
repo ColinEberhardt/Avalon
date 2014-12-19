@@ -16,6 +16,8 @@ class MemoryLeakViewController: UIViewController {
   var str = "foo"
   
   override func viewDidLoad() {
+    
+    // TODO: Test closure action for retain cycles
 
     let handler = myEvent.addHandler(self, handler: MemoryLeakViewController.doSomething)
    

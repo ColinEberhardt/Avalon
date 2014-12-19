@@ -89,24 +89,10 @@ public class KVOBindingConnector: NSObject, Disposable {
       ErrorSink.instance.logEvent(warnings)
     }*/
     
-    // check whether we are executing on the main thread
-    /*if !NSThread.isMainThread() {
-      // if not, marshall the update to the binding destination onto the UI thread
-      NSOperationQueue.mainQueue().addOperationWithBlock {
-        // unfortunately this will not return any KVO errors
-        AVKeyValueObservingHelper.trySetValue(convertedValue, forKeyPath: self.binding.destinationProperty, forObject: self.destination)
-        self.logError(value)
-        return
-      }
-      return nil
-    } else {
-      return AVKeyValueObservingHelper.trySetValue(convertedValue, forKeyPath: binding.destinationProperty, forObject: destination)
-    }*/
-    
     return executeOnMainThread {
       () -> String? in
       let result = AVKeyValueObservingHelper.trySetValue(convertedValue, forKeyPath: self.binding.destinationProperty, forObject: self.destination)
-      if result == nil {
+      if result != nil {
         self.logError(value)
       }
       return result

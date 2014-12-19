@@ -62,7 +62,7 @@ class UITextViewDelegateImpl: NSObject, UITextViewDelegate {
   
   // an observer that is invoked when text changes, this is used
   // to support two-way binding
-  var textChangedObserver: (AnyObject->())?
+  var textChangedObserver: ValueChangedNotification?
   
   init(textView: UITextView) {
     self.textView = textView

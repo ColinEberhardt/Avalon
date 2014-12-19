@@ -9,7 +9,7 @@
 import Foundation
 import Avalon
 
-class ObservableArrayViewModel: NSObject {
+class ObservableArrayViewModel: ViewModelBase {
   
   dynamic var items: ObservableArray = ["one", "two", "three"]
   
@@ -29,6 +29,8 @@ class ObservableArrayViewModel: NSObject {
   
   dynamic let removeItemAction: Action!
   
+  dynamic let clearSelectionAction: Action!
+  
   dynamic var removeItemActionEnabled: Bool = true
   
   override init() {
@@ -39,6 +41,10 @@ class ObservableArrayViewModel: NSObject {
     addItemAction =  ClosureAction {
       self.items.insert(self.item, atIndex: self.itemIndex)
       self.update()
+    }
+    
+    clearSelectionAction = ClosureAction {
+      self.selectedItemIndex = -1
     }
     
     removeItemAction = ClosureAction {

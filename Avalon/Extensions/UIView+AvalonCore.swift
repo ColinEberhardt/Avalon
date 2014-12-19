@@ -10,6 +10,12 @@ import ObjectiveC
 import Foundation
 import UIKit
 
+// a function that is invoked when the value of some property changes. The function
+// argument provides the new value. This is typically used as a way of implementing TwoWay
+// binding, where controls expose propertes of this type in order to inform the
+// core binding engine that a value has changed.
+typealias ValueChangedNotification = (AnyObject) -> ()
+
 extension UIView {
   
   public var bindingContext: NSObject? {
@@ -70,16 +76,17 @@ extension UIView {
   // handler updating the respective source property via KVC
   func bindDestinationToSourceForUIView(view: UIView, viewModel: NSObject, binding: Binding) {
     
-    let connectors: [(AnyClass, String, ((AnyObject) ->()) -> ())] = [
-      (UISearchBar.self, "text", { binding in (view as UISearchBar).searchBarDelegate.textChangedObserver = binding }),
-      (UISearchBar.self, "selectedScopeButtonIndex", { binding in (view as UISearchBar).searchBarDelegate.scopeButtonIndexChanged = binding }),
-      (UIPickerView.self, "selectedItemIndex", { binding in (view as UIPickerView).itemsController.selectionChangedObserver = binding }),
-      (UITextView.self, "text", { binding in (view as UITextView).textViewDelegate.textChangedObserver = binding })
+    let connectors: [(AnyClass, String, (ValueChangedNotification)->() )] = [
+      (UISearchBar.self, "text", { observer in (view as UISearchBar).searchBarDelegate.textChangedObserver = observer }),
+      (UISearchBar.self, "selectedScopeButtonIndex", { observer in (view as UISearchBar).searchBarDelegate.scopeButtonIndexChanged = observer }),
+      (UIPickerView.self, "selectedItemIndex", { observer in (view as UIPickerView).itemsController.selectionChangedObserver = observer }),
+      (UITextView.self, "text", { observer in (view as UITextView).textViewDelegate.textChangedObserver = observer }),
+      (UITableView.self, "selectedItemIndex", { observer in (view as UITableView).itemsController.selectionChangedObserver = observer }),
     ]
     
     for connector in connectors {
       if view.dynamicType === connector.0 && binding.destinationProperty == connector.1 {
-        connector.2(createValueChangeBinding(binding, viewModel: viewModel))
+        connector.2(createValueChangeObserver(binding, viewModel: viewModel))
         return
       }
     }
@@ -88,9 +95,8 @@ extension UIView {
   }
   
   
-  // creates a function which is invoked via a controls delegate. This function ensures
-  // that the source property of the binding is updated with the new value.
-  func createValueChangeBinding(binding: Binding, viewModel: NSObject) -> (AnyObject) ->() {
+  // Creates a function that updates the binding source
+  func createValueChangeObserver(binding: Binding, viewModel: NSObject) -> ValueChangedNotification {
     return {
       //TODO: add converter support & setter failure
       (value: AnyObject) in
