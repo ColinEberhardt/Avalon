@@ -16,7 +16,7 @@ import Avalon
       .objectForKey(NSLocaleUsesMetricSystem)!.boolValue }
   }
   
-  override func convert(sourceValue: AnyObject?, binding: Binding, viewModel: AnyObject) -> AnyObject? {
+  override func convert(sourceValue: AnyObject?) -> AnyObject? {
     if let weather = sourceValue as? Weather {
       let temp    = useCelcius ? weather.temperatureC : weather.temperatureF
       let symbol  = useCelcius ? "C" : "F"

@@ -15,9 +15,12 @@ import Foundation
   // subclasses NSObject and annotated @objc so that we can generate the
   // class instances from strings
 
-  // TODO: This needs a simpler signature
   // TODO: Handle two-way value conversion
   public func convert(sourceValue: AnyObject?, binding: Binding, viewModel: AnyObject) -> AnyObject? {
+    return self.convert(sourceValue)
+  }
+  
+  public func convert(sourceValue: AnyObject?) -> AnyObject? {
     return nil
   }
 }

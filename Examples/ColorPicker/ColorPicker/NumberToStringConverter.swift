@@ -10,7 +10,7 @@ import Foundation
 import Avalon
 
 @objc(NumberToString) class NumberToString: ValueConverter {
-  override func convert(sourceValue: AnyObject?, binding: Binding, viewModel: AnyObject) -> AnyObject? {
+  override func convert(sourceValue: AnyObject?) -> AnyObject? {
     
     let formatter = NSNumberFormatter()
     formatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
