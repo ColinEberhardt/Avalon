@@ -29,10 +29,12 @@ public class ViewModelBase: NSObject {
   }
   
   /// Add an observer to the given property
-  public func addPropertyObserver<U: AnyObject>(propertyName: String, _ target: U, handler: (U) -> (String) -> ()) -> Disposable {
-    self.addObserver(self, forKeyPath: propertyName,
-      options: NSKeyValueObservingOptions.New, context: &Context.kvoContext)
-    propertyObservers.append(propertyName)
+  public func addPropertyObserver<U: AnyObject>(properties: [String], _ target: U, handler: (U) -> (String) -> ()) -> Disposable {
+    for propertyName in properties {
+      self.addObserver(self, forKeyPath: propertyName,
+        options: NSKeyValueObservingOptions.New, context: &Context.kvoContext)
+    }
+    propertyObservers += properties
     
     return propertyChangedEvent.addHandler(target, handler)
   }

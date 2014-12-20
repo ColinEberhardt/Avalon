@@ -48,7 +48,7 @@ class SearchViewController: UIViewController
     viewModel.placeSelectedEvent.addHandler(self, SearchViewController.navigateToPlaceViewController)
     
     // observe view model property changes
-    viewModel.addPropertyObserver("isSearching", self, SearchViewController.viewModelPropertyChanged)
+    viewModel.addPropertyObserver(["isSearching"], self, SearchViewController.viewModelPropertyChanged)
   }
   
   func viewModelPropertyChanged(propertyName: String) {

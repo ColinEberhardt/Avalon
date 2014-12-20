@@ -26,7 +26,7 @@ class ViewModelBaseTest: XCTestCase {
   func test_propertyChangesAreObservable() {
     // add a handler to propertyOne
     var viewModel = TestViewModel()
-    viewModel.addPropertyObserver("propertyOne", self, handler: ViewModelBaseTest.propertyChanged)
+    viewModel.addPropertyObserver(["propertyOne"], self, handler: ViewModelBaseTest.propertyChanged)
     
     // ensure only changes to this property are observed
     viewModel.propertyOne = "fish"
@@ -40,8 +40,8 @@ class ViewModelBaseTest: XCTestCase {
   func test_observeMultipleProperties() {
     // add a handler to propertyOne
     var viewModel = TestViewModel()
-    viewModel.addPropertyObserver("propertyOne", self, handler: ViewModelBaseTest.propertyChanged)
-    viewModel.addPropertyObserver("propertyTwo", self, handler: ViewModelBaseTest.propertyChanged)
+    viewModel.addPropertyObserver(["propertyOne"], self, handler: ViewModelBaseTest.propertyChanged)
+    viewModel.addPropertyObserver(["propertyTwo"], self, handler: ViewModelBaseTest.propertyChanged)
     
     viewModel.propertyOne = "fish"
     XCTAssertEqual("propertyOne", propertyChangedData)
@@ -53,7 +53,7 @@ class ViewModelBaseTest: XCTestCase {
   func test_propertyChangesObserversCanBeDisposed() {
     // add a handler to propertyOne
     var viewModel = TestViewModel()
-    let handler = viewModel.addPropertyObserver("propertyOne", self, handler: ViewModelBaseTest.propertyChanged)
+    let handler = viewModel.addPropertyObserver(["propertyOne"], self, handler: ViewModelBaseTest.propertyChanged)
     
     viewModel.propertyOne = "fish"
     XCTAssertEqual("propertyOne", propertyChangedData)
@@ -63,7 +63,13 @@ class ViewModelBaseTest: XCTestCase {
     
     viewModel.propertyOne = "dog"
     XCTAssertEqual("", propertyChangedData)
-
+  }
+  
+  func test_multipleSubscribers() {
+    // add a handler to propertyOne
+    var viewModel = TestViewModel()
+    viewModel.addPropertyObserver(["propertyOne"], self, handler: ViewModelBaseTest.propertyChanged)
+    viewModel.addPropertyObserver(["propertyOne"], self, handler: ViewModelBaseTest.propertyChanged)
   }
   
   func propertyChanged(propertyName: String) {
