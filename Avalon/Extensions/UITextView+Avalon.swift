@@ -25,8 +25,16 @@ extension UITextView {
   class TextViewDelegateMultiplexer: AVDelegateMultiplexer, UITextViewDelegate {
   }
   
-  override func replaceDelegateWithMultiplexer() {
+  public override func didMoveToWindow() {
     // replace the delegate with the multiplexer
+    if (!viewInitialized) {
+      delegateMultiplexer.delegate = self.delegate
+      self.delegate = delegateMultiplexer
+      viewInitialized = true
+    }
+  }
+  
+  func replaceDelegateWithMultiplexer() {
     delegateMultiplexer.delegate = self.delegate
     self.delegate = delegateMultiplexer
   }

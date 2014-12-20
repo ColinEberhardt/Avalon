@@ -10,22 +10,6 @@ import Foundation
 
 extension UIView {
   
-  // an abstract function that is overriden to perform the actual switch
-  func replaceDelegateWithMultiplexer() {
-  }
-  
-  // funny things happen if the delegate is switched before the table view renders
-  // for this reason the switch occurs when didMoveToWindow is invoked.
-  func override_didMoveToWindow() {
-    
-    if (!viewInitialized) {
-      replaceDelegateWithMultiplexer()
-      viewInitialized = true
-    }
-    
-    self.override_didMoveToWindow()
-  }
-  
   // an associated boolean property that is set to true when didMoveToWindow occurs
   var viewInitialized: Bool {
     get {

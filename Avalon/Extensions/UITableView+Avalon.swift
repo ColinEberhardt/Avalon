@@ -61,10 +61,13 @@ extension UITableView {
   class TableViewDelegateMultiplexer: AVDelegateMultiplexer, UITableViewDelegate {
   }
   
-  override func replaceDelegateWithMultiplexer() {
+  public override func didMoveToWindow() {
     // replace the delegate with the multiplexer
-    delegateMultiplexer.delegate = self.delegate
-    self.delegate = delegateMultiplexer
+    if (!viewInitialized) {
+      delegateMultiplexer.delegate = self.delegate
+      self.delegate = delegateMultiplexer
+      viewInitialized = true
+    }
   }
   
   // a multiplexer that provides forwarding

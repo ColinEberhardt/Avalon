@@ -22,7 +22,8 @@ import Foundation
     AVSwizzle.swizzleClass(UITextView.self, method: "setDelegate:")
     AVSwizzle.swizzleClass(UITextView.self, method: "delegate")
     
-    
-    AVSwizzle.swizzleClass(UIView.self, method: "didMoveToWindow")
+    // delegate method swizzling in order to multiplex calls
+    AVSwizzle.swizzleClass(UIPickerView.self, method: "setDelegate:")
+    AVSwizzle.swizzleClass(UIPickerView.self, method: "delegate")
   }
 }
