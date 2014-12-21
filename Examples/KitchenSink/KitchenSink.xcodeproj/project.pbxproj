@@ -19,6 +19,10 @@
 		3C865DDA1A3EB83900D775C8 /* ObservableArrayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C865DD91A3EB83900D775C8 /* ObservableArrayViewController.swift */; };
 		3C865DDE1A4006FF00D775C8 /* ObservableArrayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C865DDD1A4006FF00D775C8 /* ObservableArrayViewModel.swift */; };
 		3C8AFE741A39717700E5D1AD /* Avalon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C8AFE731A39717700E5D1AD /* Avalon.png */; };
+		3CE0FD371A477C150084FF8C /* SimpleBindingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE0FD361A477C150084FF8C /* SimpleBindingsViewModel.swift */; };
+		3CE0FD3A1A477C240084FF8C /* SimpleBindingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE0FD391A477C240084FF8C /* SimpleBindingsViewController.swift */; };
+		3CE0FD3C1A47836E0084FF8C /* 10272081.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CE0FD3B1A47836E0084FF8C /* 10272081.jpg */; };
+		3CE0FD3E1A4784430084FF8C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE0FD3D1A4784430084FF8C /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,10 @@
 		3C865DD91A3EB83900D775C8 /* ObservableArrayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableArrayViewController.swift; sourceTree = "<group>"; };
 		3C865DDD1A4006FF00D775C8 /* ObservableArrayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableArrayViewModel.swift; sourceTree = "<group>"; };
 		3C8AFE731A39717700E5D1AD /* Avalon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avalon.png; sourceTree = "<group>"; };
+		3CE0FD361A477C150084FF8C /* SimpleBindingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleBindingsViewModel.swift; sourceTree = "<group>"; };
+		3CE0FD391A477C240084FF8C /* SimpleBindingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleBindingsViewController.swift; sourceTree = "<group>"; };
+		3CE0FD3B1A47836E0084FF8C /* 10272081.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10272081.jpg; sourceTree = "<group>"; };
+		3CE0FD3D1A4784430084FF8C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CE0FD3E1A4784430084FF8C /* MapKit.framework in Frameworks */,
 				3C5478101A11E2C600C80A3C /* Avalon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,6 +88,7 @@
 		3C5477D91A11E2B000C80A3C = {
 			isa = PBXGroup;
 			children = (
+				3CE0FD3D1A4784430084FF8C /* MapKit.framework */,
 				3C5478071A11E2BC00C80A3C /* Avalon.xcodeproj */,
 				3C5477E41A11E2B000C80A3C /* KitchenSink */,
 				3C5477FA1A11E2B000C80A3C /* KitchenSinkTests */,
@@ -98,6 +108,7 @@
 		3C5477E41A11E2B000C80A3C /* KitchenSink */ = {
 			isa = PBXGroup;
 			children = (
+				3CE0FD3B1A47836E0084FF8C /* 10272081.jpg */,
 				3C8AFE731A39717700E5D1AD /* Avalon.png */,
 				3C5477E71A11E2B000C80A3C /* AppDelegate.swift */,
 				3C5477E91A11E2B000C80A3C /* ViewController.swift */,
@@ -109,6 +120,8 @@
 				3C865DD91A3EB83900D775C8 /* ObservableArrayViewController.swift */,
 				3C865DDD1A4006FF00D775C8 /* ObservableArrayViewModel.swift */,
 				3C292F841A423113009A1255 /* MemoryLeakViewController.swift */,
+				3CE0FD361A477C150084FF8C /* SimpleBindingsViewModel.swift */,
+				3CE0FD391A477C240084FF8C /* SimpleBindingsViewController.swift */,
 			);
 			path = KitchenSink;
 			sourceTree = "<group>";
@@ -243,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C5477ED1A11E2B000C80A3C /* Main.storyboard in Resources */,
+				3CE0FD3C1A47836E0084FF8C /* 10272081.jpg in Resources */,
 				3C5477F21A11E2B000C80A3C /* LaunchScreen.xib in Resources */,
 				3C8AFE741A39717700E5D1AD /* Avalon.png in Resources */,
 				3C5477EF1A11E2B000C80A3C /* Images.xcassets in Resources */,
@@ -263,9 +277,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CE0FD371A477C150084FF8C /* SimpleBindingsViewModel.swift in Sources */,
 				3C5477EA1A11E2B000C80A3C /* ViewController.swift in Sources */,
 				3C865DDA1A3EB83900D775C8 /* ObservableArrayViewController.swift in Sources */,
 				3C292F851A423113009A1255 /* MemoryLeakViewController.swift in Sources */,
+				3CE0FD3A1A477C240084FF8C /* SimpleBindingsViewController.swift in Sources */,
 				3C865DDE1A4006FF00D775C8 /* ObservableArrayViewModel.swift in Sources */,
 				3C5477E81A11E2B000C80A3C /* AppDelegate.swift in Sources */,
 				3C5478121A11E30000C80A3C /* KitchenSinkViewModel.swift in Sources */,
