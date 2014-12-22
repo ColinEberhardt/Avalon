@@ -30,6 +30,29 @@ extension UIView {
       }
     }
   }
+
+  /// In order to aid debugging, this function dumps the view hierarchy together
+  /// with any bindings that are present
+  public func dumpBindings() {
+    dumpBindingsForView(self, indent: 0)
+  }
+  
+  func dumpBindingsForView(view: UIView, indent: Int) {
+    for var i=0;i<indent;i++ {
+      print("   ")
+    }
+    println(view)
+    for binding in bindingsForBindableObject(view) {
+      for var i=0;i<indent;i++ {
+        print("   ")
+      }
+      println("  ##  \(binding)")
+    }
+    
+    for subview in view.subviews as [UIView] {
+      dumpBindingsForView(subview, indent: (indent+1))
+    }
+  }
   
   // combines the bindings array with any bindings from the designer
   func bindingsForBindableObject(view: Bindable) -> [Binding] {
@@ -37,7 +60,7 @@ extension UIView {
     if let viewBindings = view.bindings {
       b += viewBindings
     }
-    if let viewBinding = Binding.fromBindable(view) {
+    if let viewBinding = view.bindingFromBindable {
       b += [viewBinding]
     }
     return b

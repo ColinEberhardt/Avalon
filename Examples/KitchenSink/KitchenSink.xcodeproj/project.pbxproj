@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C292F851A423113009A1255 /* MemoryLeakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C292F841A423113009A1255 /* MemoryLeakViewController.swift */; };
 		3C5477E81A11E2B000C80A3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477E71A11E2B000C80A3C /* AppDelegate.swift */; };
 		3C5477EA1A11E2B000C80A3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477E91A11E2B000C80A3C /* ViewController.swift */; };
 		3C5477ED1A11E2B000C80A3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C5477EB1A11E2B000C80A3C /* Main.storyboard */; };
@@ -25,6 +24,8 @@
 		3CE0FD3E1A4784430084FF8C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE0FD3D1A4784430084FF8C /* MapKit.framework */; };
 		3CE0FD401A48054F0084FF8C /* TwoWayBindingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE0FD3F1A48054F0084FF8C /* TwoWayBindingViewController.swift */; };
 		3CE0FD421A4805790084FF8C /* TwoWayBindingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE0FD411A4805790084FF8C /* TwoWayBindingViewModel.swift */; };
+		3CE0FD441A4879610084FF8C /* MasterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE0FD431A4879610084FF8C /* MasterDetailViewController.swift */; };
+		3CE0FD461A4879B00084FF8C /* MasterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE0FD451A4879B00084FF8C /* MasterDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +46,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3C292F841A423113009A1255 /* MemoryLeakViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryLeakViewController.swift; sourceTree = "<group>"; };
 		3C5477E21A11E2B000C80A3C /* KitchenSink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KitchenSink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C5477E61A11E2B000C80A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C5477E71A11E2B000C80A3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +67,8 @@
 		3CE0FD3D1A4784430084FF8C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3CE0FD3F1A48054F0084FF8C /* TwoWayBindingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoWayBindingViewController.swift; sourceTree = "<group>"; };
 		3CE0FD411A4805790084FF8C /* TwoWayBindingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoWayBindingViewModel.swift; sourceTree = "<group>"; };
+		3CE0FD431A4879610084FF8C /* MasterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterDetailViewController.swift; sourceTree = "<group>"; };
+		3CE0FD451A4879B00084FF8C /* MasterDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,11 +125,12 @@
 				3C5478111A11E30000C80A3C /* KitchenSinkViewModel.swift */,
 				3C865DD91A3EB83900D775C8 /* ObservableArrayViewController.swift */,
 				3C865DDD1A4006FF00D775C8 /* ObservableArrayViewModel.swift */,
-				3C292F841A423113009A1255 /* MemoryLeakViewController.swift */,
 				3CE0FD361A477C150084FF8C /* SimpleBindingsViewModel.swift */,
 				3CE0FD391A477C240084FF8C /* SimpleBindingsViewController.swift */,
 				3CE0FD411A4805790084FF8C /* TwoWayBindingViewModel.swift */,
 				3CE0FD3F1A48054F0084FF8C /* TwoWayBindingViewController.swift */,
+				3CE0FD431A4879610084FF8C /* MasterDetailViewController.swift */,
+				3CE0FD451A4879B00084FF8C /* MasterDetailViewModel.swift */,
 			);
 			path = KitchenSink;
 			sourceTree = "<group>";
@@ -286,8 +289,9 @@
 				3CE0FD371A477C150084FF8C /* SimpleBindingsViewModel.swift in Sources */,
 				3C5477EA1A11E2B000C80A3C /* ViewController.swift in Sources */,
 				3C865DDA1A3EB83900D775C8 /* ObservableArrayViewController.swift in Sources */,
-				3C292F851A423113009A1255 /* MemoryLeakViewController.swift in Sources */,
+				3CE0FD461A4879B00084FF8C /* MasterDetailViewModel.swift in Sources */,
 				3CE0FD3A1A477C240084FF8C /* SimpleBindingsViewController.swift in Sources */,
+				3CE0FD441A4879610084FF8C /* MasterDetailViewController.swift in Sources */,
 				3CE0FD421A4805790084FF8C /* TwoWayBindingViewModel.swift in Sources */,
 				3C865DDE1A4006FF00D775C8 /* ObservableArrayViewModel.swift in Sources */,
 				3C5477E81A11E2B000C80A3C /* AppDelegate.swift in Sources */,

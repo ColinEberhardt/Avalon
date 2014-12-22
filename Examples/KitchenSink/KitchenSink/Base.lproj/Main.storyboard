@@ -253,7 +253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3263" y="413"/>
+            <point key="canvasLocation" x="3671" y="525"/>
         </scene>
         <!--Simple Bindings Test-->
         <scene sceneID="DXi-p1-mnd">
@@ -439,7 +439,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wcq-Cc-Wcr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1840" y="-571"/>
+            <point key="canvasLocation" x="1440" y="-723"/>
         </scene>
         <!--Two Way Binding Test-->
         <scene sceneID="ODY-K7-RO7">
@@ -714,7 +714,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3rE-Hx-haf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2093" y="541"/>
+            <point key="canvasLocation" x="2565" y="-699"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="2cO-3H-D5G">
@@ -795,13 +795,13 @@
                                             <segue destination="wND-K4-ZqC" kind="push" id="Ebv-AS-hzW"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="rWQ-SW-QMw">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="Xz5-up-Z0E">
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rWQ-SW-QMw" id="DMn-uJ-WrC">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xz5-up-Z0E" id="sRo-Db-25D">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Memory Leak Test" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXJ-cS-DOl">
-                                                    <rect key="frame" x="19" y="12" width="227" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Master-Detail Example" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpH-Kf-fDc">
+                                                    <rect key="frame" x="19" y="12" width="178" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -809,7 +809,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="sAG-k4-twK" kind="push" id="Yxp-ZT-UMu"/>
+                                            <segue destination="7b3-L9-JSL" kind="show" id="Pwt-wH-mCz"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -826,32 +826,97 @@
             </objects>
             <point key="canvasLocation" x="759" y="1248"/>
         </scene>
-        <!--Mem Leak-->
-        <scene sceneID="bxo-SU-o3M">
+        <!--Master Detail Example-->
+        <scene sceneID="X2S-ZU-z79">
             <objects>
-                <viewController title="Mem Leak" id="sAG-k4-twK" customClass="MemoryLeakViewController" customModule="KitchenSink" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7b3-L9-JSL" customClass="MasterDetailViewController" customModule="KitchenSink" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8QD-mA-Wgl"/>
-                        <viewControllerLayoutGuide type="bottom" id="GFB-Ts-arV"/>
+                        <viewControllerLayoutGuide type="top" id="duH-rl-ncs"/>
+                        <viewControllerLayoutGuide type="bottom" id="XLa-4M-GBC"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="oMI-za-SzQ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="jzQ-kp-7tp">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A view controller that is pushed and popped to see if memory leaks" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8y-QR-UbV">
-                                <rect key="frame" x="16" y="77" width="516" height="90"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xte-H0-iyR">
+                                <rect key="frame" x="0.0" y="80" width="300" height="1000"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="qG7-J1-3iE">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qG7-J1-3iE" id="z0C-K3-Fex">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRS-Ik-1kT">
+                                                    <rect key="frame" x="16" y="12" width="258" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="source" value="surname"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="destination" value="text"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xy8-lB-jxw">
+                                <rect key="frame" x="357" y="118" width="320" height="568"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Surname:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfQ-QS-Pcs">
+                                        <rect key="frame" x="36" y="49" width="96" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Forename:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tm2-86-Edx">
+                                        <rect key="frame" x="36" y="91" width="96" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y3x-de-394">
+                                        <rect key="frame" x="158" y="45" width="139" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="source" value="surname"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="destination" value="text"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="mode" value="TwoWay"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KAW-C3-ZDQ">
+                                        <rect key="frame" x="158" y="87" width="139" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="source" value="forename"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="destination" value="text"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="mode" value="TwoWay"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.9102943497474747" green="0.9102943497474747" blue="0.9102943497474747" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="destination" value="bindingContext"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="source" value="selectedContact"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Memory Leak" id="XWf-wF-xD3"/>
+                    <navigationItem key="navigationItem" title="Master Detail Example" id="Nm6-kR-QrJ"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="contactListTableView" destination="xte-H0-iyR" id="FGg-J2-rZC"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W2S-CT-FAw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KUN-sm-GJi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2172" y="2473"/>
+            <point key="canvasLocation" x="2100" y="2546"/>
         </scene>
         <!--Observable Array View Controller-->
         <scene sceneID="GdG-DD-bNw">
@@ -998,7 +1063,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YbH-No-Hmz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2784" y="1734"/>
+            <point key="canvasLocation" x="3552" y="1950"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pgi-U7-kqF">

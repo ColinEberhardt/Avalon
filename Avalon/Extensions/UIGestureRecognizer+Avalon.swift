@@ -59,6 +59,12 @@ extension UIGestureRecognizer: Bindable {
     }
   }
   
+  public var bindingFromBindable: Binding? {
+    return lazyAssociatedProperty(self, &AssociationKey.bindingFromBindable) {
+      return Binding.fromBindable(self)
+    }
+  }
+  
   /// An action which is executed when the gesture occurs
   public var action: Action? {
     get {

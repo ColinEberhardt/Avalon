@@ -61,7 +61,7 @@ import Foundation
   }
   
   public var description: String {
-    return "<Avalon.Binding sourceProperty = \(sourceProperty); destinationProperty = \(destinationProperty); mode = \(mode); converter = \(converter)"
+    return "<Avalon.Binding sourceProperty = \(sourceProperty); destinationProperty = \(destinationProperty); mode = \(mode); converter = \(converter); disposables = \(disposables.count)>"
   }
   
   // takes the publicly exposed binding components and constructs

@@ -28,4 +28,5 @@ struct AssociationKey {
   static var delegate: UInt8 = 17
   static var viewInitialized: UInt8 = 17
   static var options: UInt8 = 18
+  static var bindingFromBindable: UInt8 = 19
 }

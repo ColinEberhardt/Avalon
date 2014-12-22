@@ -35,6 +35,9 @@ import Foundation
   /// The mode of this binding, defaults to one-way if the string is anything other than 'TwoWay'
   var mode: String { get set }
   
-  /// The array of bindings assocaited with this control
+  /// The array of bindings associated with this control
   var bindings: [Binding]? { get set }
+  
+  /// Constructs a Binding instance from the source, destination, converter and mode properties
+  var bindingFromBindable: Binding? { get }
 }

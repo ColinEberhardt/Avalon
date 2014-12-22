@@ -16,6 +16,7 @@ public class UIControlBindingConnector: NSObject, Disposable {
   private var isSubscribed = true
   private let destination: UIControl, source: NSObject
   private let binding: Binding
+  private let events: UIControlEvents
   private let valueExtractor: () -> AnyObject
   
   public init(source: NSObject, destination: UIControl, valueExtractor: () -> AnyObject, binding: Binding, events: UIControlEvents = .ValueChanged) {
@@ -24,6 +25,7 @@ public class UIControlBindingConnector: NSObject, Disposable {
     self.source = source
     self.valueExtractor = valueExtractor
     self.binding = binding
+    self.events = events
     
     super.init()
     
@@ -43,7 +45,7 @@ public class UIControlBindingConnector: NSObject, Disposable {
   
   public func dispose() {
     if isSubscribed {
-      destination.removeTarget(self, action: "valueChanged", forControlEvents: UIControlEvents.ValueChanged)
+      destination.removeTarget(self, action: "valueChanged", forControlEvents: events)
       isSubscribed = false
     }
   }
