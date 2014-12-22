@@ -23,6 +23,8 @@
 		3CE0FD3A1A477C240084FF8C /* SimpleBindingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE0FD391A477C240084FF8C /* SimpleBindingsViewController.swift */; };
 		3CE0FD3C1A47836E0084FF8C /* 10272081.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CE0FD3B1A47836E0084FF8C /* 10272081.jpg */; };
 		3CE0FD3E1A4784430084FF8C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE0FD3D1A4784430084FF8C /* MapKit.framework */; };
+		3CE0FD401A48054F0084FF8C /* TwoWayBindingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE0FD3F1A48054F0084FF8C /* TwoWayBindingViewController.swift */; };
+		3CE0FD421A4805790084FF8C /* TwoWayBindingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE0FD411A4805790084FF8C /* TwoWayBindingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		3CE0FD391A477C240084FF8C /* SimpleBindingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleBindingsViewController.swift; sourceTree = "<group>"; };
 		3CE0FD3B1A47836E0084FF8C /* 10272081.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10272081.jpg; sourceTree = "<group>"; };
 		3CE0FD3D1A4784430084FF8C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3CE0FD3F1A48054F0084FF8C /* TwoWayBindingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoWayBindingViewController.swift; sourceTree = "<group>"; };
+		3CE0FD411A4805790084FF8C /* TwoWayBindingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoWayBindingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,8 @@
 				3C292F841A423113009A1255 /* MemoryLeakViewController.swift */,
 				3CE0FD361A477C150084FF8C /* SimpleBindingsViewModel.swift */,
 				3CE0FD391A477C240084FF8C /* SimpleBindingsViewController.swift */,
+				3CE0FD411A4805790084FF8C /* TwoWayBindingViewModel.swift */,
+				3CE0FD3F1A48054F0084FF8C /* TwoWayBindingViewController.swift */,
 			);
 			path = KitchenSink;
 			sourceTree = "<group>";
@@ -282,8 +288,10 @@
 				3C865DDA1A3EB83900D775C8 /* ObservableArrayViewController.swift in Sources */,
 				3C292F851A423113009A1255 /* MemoryLeakViewController.swift in Sources */,
 				3CE0FD3A1A477C240084FF8C /* SimpleBindingsViewController.swift in Sources */,
+				3CE0FD421A4805790084FF8C /* TwoWayBindingViewModel.swift in Sources */,
 				3C865DDE1A4006FF00D775C8 /* ObservableArrayViewModel.swift in Sources */,
 				3C5477E81A11E2B000C80A3C /* AppDelegate.swift in Sources */,
+				3CE0FD401A48054F0084FF8C /* TwoWayBindingViewController.swift in Sources */,
 				3C5478121A11E30000C80A3C /* KitchenSinkViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

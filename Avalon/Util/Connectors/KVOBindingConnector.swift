@@ -39,7 +39,7 @@ public class KVOBindingConnector: NSObject, Disposable {
       let subscriptionResult = AVKeyValueObservingHelper.addObserver(self, forKeyPath: binding.sourceProperty, options: NSKeyValueObservingOptions.New, context: &Context.kvoContext, forObject: source)
      
       if subscriptionResult != nil {
-        ErrorSink.instance.logEvent("ERROR: Unable to add an observer to the source \(source) for binding \(binding) due to expception \(subscriptionResult.exception)")
+        ErrorSink.instance.logEvent("ERROR: Unable to add an observer to the source \(source) for binding \(binding) to destination \(destination) due to expception \(subscriptionResult.exception)")
         return nil
       }
       
@@ -49,7 +49,7 @@ public class KVOBindingConnector: NSObject, Disposable {
       // copy initial value - verifying that the source property path is valid
       let wrappedResults: AVValueWrapper =  AVKeyValueObservingHelper.tryGetValueForKeyPath(binding.sourceProperty, forObject: source)
       if let exception = wrappedResults.exception {
-        ErrorSink.instance.logEvent("ERROR: Unable to get value from source \(source) for binding \(binding) due to exception \(exception)")
+        ErrorSink.instance.logEvent("ERROR: Unable to get value from source \(source) for binding \(binding) to destination \(destination) due to exception \(exception)")
         return nil
       } else {
         if let error = setValueOnDestination(wrappedResults.propertyValue) {
