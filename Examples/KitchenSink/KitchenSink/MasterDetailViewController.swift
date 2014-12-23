@@ -19,7 +19,5 @@ class MasterDetailViewController: UIViewController {
     ]
     
     self.view.bindingContext = MasterDetailViewModel()
-    
-    view.dumpBindings()
   }
 }

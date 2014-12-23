@@ -7,43 +7,17 @@
 //
 
 import Foundation
-
-class ContactViewModel: NSObject, StringLiteralConvertible {
-  dynamic var surname: String = ""
-  dynamic var forename: String = ""
-  dynamic var age: Int = 0
-  
-  init(n: String) {
-    func trim(s: String) -> String {
-      return s.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-    }
-    
-    let parts = split(n) {$0 == ","}
-    forename = parts[0]
-    surname = trim(parts[1])
-    age = trim(parts[2]).toInt()!
-  }
-  
-  convenience required init(stringLiteral value: String) {
-    self.init(n: value)
-  }
-  
-  convenience required init(extendedGraphemeClusterLiteral value: String) {
-    self.init(n: value)
-  }
-  
-  convenience required init(unicodeScalarLiteral value: String) {
-    self.init(n: value)
-  }
-}
+import Avalon
 
 class MasterDetailViewModel: NSObject {
   
-  var contacts: [ContactViewModel] = [ContactViewModel]()
+  var contacts: ObservableArray
+  
+  let addNewContactAction: Action!
   
   dynamic var selectedContactIndex: Int = 0 {
     didSet {
-      selectedContact = contacts[selectedContactIndex]
+      selectedContact = contacts[selectedContactIndex] as ContactViewModel
     }
   }
   
@@ -52,16 +26,34 @@ class MasterDetailViewModel: NSObject {
   override init() {
     
     // populate with some dummy data
-    contacts = [
-      "Colin, Eberhardt, 39",
-      "Jeff, Bridges, 42",
-      "Mark, Jones, 66",
-      "Jane, Friar, 56"
+    self.contacts = [
+      ContactViewModel("Colin", "Eberhardt", 39),
+      ContactViewModel("Jeff", "Bridges", 42),
+      ContactViewModel("Mark", "Jones", 66),
+      ContactViewModel("Jane", "Friar", 56)
     ]
     
     
-    selectedContact = contacts[0]
+    selectedContact = contacts[0] as ContactViewModel
       
     super.init()
+    
+    addNewContactAction = ClosureAction {
+      let newContact = ContactViewModel("Forename", "Surname", 0)
+      self.contacts.append(newContact)
+      self.selectedContactIndex = self.contacts.count - 1
+    }
+  }
+}
+
+class ContactViewModel: NSObject {
+  dynamic var surname: String = ""
+  dynamic var forename: String = ""
+  dynamic var age: Int = 0
+  
+  init(_ forename: String, _ surname: String, _ age: Int) {
+    self.surname = surname
+    self.forename = forename
+    self.age = age
   }
 }
