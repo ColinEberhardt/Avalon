@@ -14,10 +14,15 @@ class ObservableArrayNotificationsTest: XCTestCase {
 
   var itemAddedNotification: (String, Int)?
   var itemRemovedNotification: (String, Int)?
+  var itemUpdatedNotification: (String, Int)?
+  var reset = false
+  var notifications = ""
   
   override func setUp() {
     itemAddedNotification = nil
     itemRemovedNotification = nil
+    notifications = ""
+    reset = false
   }
   
   func test_append() {
@@ -60,22 +65,50 @@ class ObservableArrayNotificationsTest: XCTestCase {
     XCTAssertEqual(1, itemAddedNotification!.1)
   }
   
+  func test_subscript() {
+    var observable: ObservableArray = ["one", "two"]
+    observable.arrayChangedEvent.addHandler(self, handler: ObservableArrayNotificationsTest.arrayUpdated)
+    
+    observable.insert("three", atIndex: 1)
+    
+    XCTAssertTrue("three" == itemAddedNotification!.0)
+    XCTAssertEqual(1, itemAddedNotification!.1)
+  }
+  
+  func test_extend() {
+    var observable: ObservableArray = ["one", "two"]
+    observable.arrayChangedEvent.addHandler(self, handler: ObservableArrayNotificationsTest.arrayUpdated)
+    
+    observable.extend(["three", "four"])
+    
+    XCTAssertEqual("three - 2four - 3", notifications)
+  }
+  
+  func test_removeAll() {
+    var observable: ObservableArray = ["one", "two"]
+    observable.arrayChangedEvent.addHandler(self, handler: ObservableArrayNotificationsTest.arrayUpdated)
+    
+    observable.removeAll()
+    
+    XCTAssertTrue(reset)
+  }
+  
   func arrayUpdated(update: ArrayUpdateType) {
     switch update {
     case .ItemAdded(let index, let item):
       itemAddedNotification = (item as String, index)
+      notifications += "\(item as String) - \(index)"
       break
     case .ItemRemoved(let index, let item):
       itemRemovedNotification = (item as String, index)
       break
+    case .ItemUpdated(let index, let item):
+      itemUpdatedNotification = (item as String, index)
+      break
+    case .Reset:
+      reset = true
+      break
     }
   }
   
-  func didAddItem(item: AnyObject, atIndex index: Int, inArray array: ObservableArray) {
-    itemAddedNotification = (item as String, index)
-  }
-  
-  func didRemoveItem(item: AnyObject, atIndex index: Int, inArray array: ObservableArray) {
-    itemRemovedNotification = (item as String, index)
-  }
 }

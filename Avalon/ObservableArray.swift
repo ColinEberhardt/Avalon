@@ -12,6 +12,8 @@ import Foundation
 public enum ArrayUpdateType {
   case ItemAdded(Int, AnyObject)
   case ItemRemoved(Int, AnyObject)
+  case ItemUpdated(Int, AnyObject)
+  case Reset
 }
 
 /// An array implementation that informs its delegate of any mutating
@@ -93,37 +95,30 @@ public enum ArrayUpdateType {
     get {
       return backingArray[i]
     }
+    set(value) {
+      backingArray[i] = value
+      arrayChangedEvent.raiseEvent(.ItemUpdated(i, value))
+    }
+  }
+
+  /// Append the elements of `newElements` to `self`.
+  public func extend(newElements: [AnyObject]) {
+    var index = backingArray.count
+    backingArray.extend(newElements)
+    for newElement in newElements {
+      arrayChangedEvent.raiseEvent(.ItemAdded(index, newElement))
+      index++
+    }
+  }
+  
+  /// Remove all elements.
+  public func removeAll() {
+    backingArray.removeAll(keepCapacity: false)
+    arrayChangedEvent.raiseEvent(.Reset)
   }
   
   /*
 
-/// Construct from an arbitrary sequence with elements of type `T`
-init<S : SequenceType where T == T>(_ s: S)
-
-/// Reserve enough space to store minimumCapacity elements.
-///
-/// PostCondition: `capacity >= minimumCapacity` and the array has
-/// mutable contiguous storage.
-///
-/// Complexity: O(`count`)
-mutating func reserveCapacity(minimumCapacity: Int)
-
-
-
-/// Append the elements of `newElements` to `self`.
-///
-/// Complexity: O(*length of result*)
-///
-mutating func extend<S : SequenceType where T == T>(newElements: S)
-
-
-
-/// Remove all elements.
-///
-/// Postcondition: `capacity == 0` iff `keepCapacity` is `false`.
-///
-/// Complexity: O(\ `countElements(self)`\ ).
-mutating func removeAll(keepCapacity: Bool = default)
 
 /// Interpose `self` between each consecutive pair of `elements`,
 /// and concatenate the elements of the resulting sequence.  For

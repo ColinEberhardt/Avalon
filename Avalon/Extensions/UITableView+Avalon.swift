@@ -178,6 +178,12 @@ class TableViewItemsController: ItemsController, UITableViewDataSource, UITableV
       // re-apply selection
       selectedItemIndex = Int(selectedItemIndex) // fool Swift into invoking didSet ;-)
       break
+    case .ItemUpdated(let index, let item):
+      tableView.reloadRowsAtIndexPaths([NSIndexPath(row: index)], withRowAnimation: .Automatic)
+      break
+    case .Reset:
+      reloadAllItems()
+      break
     }
   }
   

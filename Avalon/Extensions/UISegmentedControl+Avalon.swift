@@ -67,6 +67,21 @@ class SegmentedControlItemsController: ItemsController {
       segmentedControl.removeSegmentAtIndex(index, animated: true)
       segmentedControl.selectedSegmentIndex = selectedSegment
       break
+    case .ItemUpdated(let index, let item):
+      let selectedSegment = segmentedControl.selectedSegmentIndex
+      updatedSegment(item, index: index)
+      break
+    case .Reset:
+      reloadAllItems()
+      break
+    }
+  }
+  
+  private func updatedSegment(item: AnyObject, index: Int) {
+    if let itemString = item as? String {
+      segmentedControl.setTitle(itemString, forSegmentAtIndex: index)
+    } else {
+      ErrorSink.instance.logEvent("ERROR: An array of items that are not strings has been bound to a segmented control. Only arrays of strings are supported.")
     }
   }
   

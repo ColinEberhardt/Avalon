@@ -91,6 +91,37 @@ class ObservableArrayTest: XCTestCase {
     assert()
   }
   
+  func test_subscript() {
+    observableArray = ["one", "two", "three"]
+    array = ["one", "two", "three"]
+    
+    XCTAssertEqual(array[1], observableArray[1] as String)
+    
+    observableArray[1] = "fish"
+    array[1] = "fish"
+    assert()
+  }
+  
+  func test_extend() {
+    observableArray = ["one", "two", "three"]
+    array = ["one", "two", "three"]
+    
+    observableArray.extend(["four", "five"])
+    array.extend(["four", "five"])
+    
+    assert()
+  }
+  
+  func test_removeAll() {
+    observableArray = ["one", "two", "three"]
+    array = ["one", "two", "three"]
+    
+    observableArray.removeAll()
+    array.removeAll()
+    
+    assert()
+  }
+  
   func assert() {
     XCTAssertEqual(array.count, observableArray.count)
     
