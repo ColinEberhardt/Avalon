@@ -29,6 +29,8 @@ class ObservableArrayViewModel: ViewModelBase {
   
   dynamic let removeItemAction: Action!
   
+  dynamic let removeAllItemsAction: Action!
+  
   dynamic let clearSelectionAction: Action!
   
   dynamic var removeItemActionEnabled: Bool = true
@@ -49,6 +51,11 @@ class ObservableArrayViewModel: ViewModelBase {
     
     removeItemAction = ClosureAction {
       self.items.removeAtIndex(self.itemIndex)
+      self.update()
+    }
+    
+    removeAllItemsAction = ClosureAction {
+      self.items.removeAll()
       self.update()
     }
   }
