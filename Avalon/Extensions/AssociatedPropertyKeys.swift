@@ -29,4 +29,6 @@ struct AssociationKey {
   static var viewInitialized: UInt8 = 17
   static var options: UInt8 = 18
   static var bindingFromBindable: UInt8 = 19
+  static var bindingUpdateMode: UInt8 = 20
+  static var resignFirstResponderOnEnter: UInt8 = 20
 }

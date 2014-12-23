@@ -144,10 +144,19 @@ extension UIView {
     for connector in connectors {
       if control.dynamicType === connector.0 {
         
+        // unfortunately we have to special-case the logic for UITextField here. Depending
+        // on the bindingUpdateMode, the target action needs to either subscribe
+        // to EditingChanged or EditingDidEnd events
+        var controlEvents = connector.2
+        if let textField = control as? UITextField {
+          controlEvents = textField.bindingUpdateMode == .OnChange
+              ? .EditingChanged : .EditingDidEnd
+        }
+        
         if binding.destinationProperty != connector.1 {
           ErrorSink.instance.logEvent("ERROR: view \(control) does not support two-way binding, with binding \(binding)")
         } else {
-          let connector = UIControlBindingConnector(source: viewModel, destination: control, valueExtractor: { connector.3(control) }, binding: binding, events: connector.2)
+          let connector = UIControlBindingConnector(source: viewModel, destination: control, valueExtractor: { connector.3(control) }, binding: binding, events: controlEvents)
           binding.addDisposable(connector)
           return
         }
