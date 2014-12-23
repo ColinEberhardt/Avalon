@@ -15,9 +15,12 @@ class MasterDetailViewModel: NSObject {
   
   let addNewContactAction: Action!
   
+  let endEditingEvent = Event()
+  
   dynamic var selectedContactIndex: Int = 0 {
     didSet {
       selectedContact = contacts[selectedContactIndex] as ContactViewModel
+      self.endEditingEvent.raiseEvent()
     }
   }
   
@@ -32,7 +35,6 @@ class MasterDetailViewModel: NSObject {
       ContactViewModel("Mark", "Jones", 66),
       ContactViewModel("Jane", "Friar", 56)
     ]
-    
     
     selectedContact = contacts[0] as ContactViewModel
       

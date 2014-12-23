@@ -10,14 +10,24 @@ import UIKit
 import Avalon
 
 class MasterDetailViewController: UIViewController {
+  
   @IBOutlet weak var contactListTableView: UITableView!
+  
   override func viewDidLoad() {
     
     contactListTableView.bindings = [
       "contacts" >| "items",
       "selectedContactIndex" |<>| "selectedItemIndex"
     ]
+  
+    let viewModel = MasterDetailViewModel()
     
-    self.view.bindingContext = MasterDetailViewModel()
+    self.view.bindingContext = viewModel
+    
+    viewModel.endEditingEvent.addHandler(self, handler: MasterDetailViewController.endEditingHandler)
+  }
+  
+  func endEditingHandler() {
+    view.endEditing(true) 
   }
 }

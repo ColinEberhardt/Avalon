@@ -915,6 +915,12 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="destination" value="action"/>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A master-detail application, demonstrates the use of bindingContext bindings :-)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t60-FV-LYi" userLabel="Demonstrates simple, two-way binding, with the controls in the left and righ columns both bound to the same property.">
+                                <rect key="frame" x="16" y="72" width="736" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
