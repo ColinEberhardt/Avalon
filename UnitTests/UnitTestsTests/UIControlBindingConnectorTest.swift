@@ -39,6 +39,43 @@ class UIControlBindingConnectorTest: XCTestCase {
     XCTAssertFalse(person.isFemale)
   }
   
+  class StringToBool: ValueConverter {
+    override func convert(sourceValue: AnyObject?) -> AnyObject? {
+      if let stringValue = sourceValue as? String {
+        return stringValue == "true"
+      }
+      return false
+    }
+    
+    override func convertBack(sourceValue: AnyObject?) -> AnyObject? {
+      if let boolValue = sourceValue as? Bool {
+        return boolValue ? "true" : "false"
+      }
+      return "false"
+    }
+  }
+  
+  func test_supportsValueConversion() {
+    
+    // create source and destination objects
+    var person = PersonViewModel()
+    person.name = "false"
+    let switchControl = UISwitch()
+    switchControl.on = false
+    
+    // create the binding that defines the property paths
+    let binding = Binding(source: "name", destination: "on", converter: StringToBool())
+    
+    // create the connector
+    let connector = UIControlBindingConnector(source: person, destination: switchControl, valueExtractor: { switchControl.on }, binding: binding)
+    
+    // udate the control state
+    switchControl.on = true
+    connector.valueChanged()
+    
+    XCTAssertEqual(person.name, "true")
+  }
+  
   func failing_test_failsIfIncompatibleType() {
     // unfortunately this cannot be implemented, the KVC setValue method is very forgiving
     // instead we rely on KVCVerification, which tries its best to warn of comatibility issues

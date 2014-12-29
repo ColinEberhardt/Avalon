@@ -41,4 +41,15 @@ class CustomOperatorTest: XCTestCase {
     XCTAssertNil(binding.converter)
     XCTAssertEqual(BindingMode.TwoWay, binding.mode)
   }
+  
+  func test_twoWayBinding_withConverter() {
+    
+    let converter = ValueConverter()
+    let binding = "foo" |< converter >| "bar"
+    
+    XCTAssertEqual("foo", binding.sourceProperty)
+    XCTAssertEqual("bar", binding.destinationProperty)
+    XCTAssertEqual(converter, binding.converter!)
+    XCTAssertEqual(BindingMode.TwoWay, binding.mode)
+  }
 }

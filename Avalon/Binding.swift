@@ -49,6 +49,13 @@ import Foundation
     self.converter = converter
   }
   
+  public init(source: String, destination: String, converter: ValueConverter, mode: BindingMode) {
+    self.destinationProperty = destination
+    self.sourceProperty = source
+    self.converter = converter
+    self.mode = mode
+  }
+  
   func addDisposable(disposable: Disposable) {
     disposables.append(disposable)
   }

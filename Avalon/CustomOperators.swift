@@ -10,6 +10,8 @@ import Foundation
 
 infix operator >| { associativity left }
 
+infix operator |< { associativity left }
+
 infix operator |<>| {}
 
 public func >| (source: String, destination: String) -> Binding {
@@ -21,11 +23,15 @@ public func |<>| (source: String, destination: String) -> Binding {
 }
 
 public func >| (source: String, converter: ValueConverter) -> PartialBinding {
-  return PartialBinding(source: source, converter: converter)
+  return PartialBinding(source: source, converter: converter, mode: .OneWay)
 }
 
 public func >| (partial: PartialBinding, destination: String) -> Binding {
-  return Binding(source: partial.source, destination: destination, converter: partial.converter)
+  return Binding(source: partial.source, destination: destination, converter: partial.converter, mode: partial.mode)
+}
+
+public func |< (source: String, converter: ValueConverter) -> PartialBinding {
+  return PartialBinding(source: source, converter: converter, mode: .TwoWay)
 }
 
 // a structure that is used to support the creation of bindings with converters
@@ -33,4 +39,5 @@ public func >| (partial: PartialBinding, destination: String) -> Binding {
 public struct PartialBinding {
   let source: String
   let converter: ValueConverter
+  let mode: BindingMode
 }
