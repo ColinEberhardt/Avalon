@@ -17,6 +17,8 @@
 		3C5478121A11E30000C80A3C /* KitchenSinkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5478111A11E30000C80A3C /* KitchenSinkViewModel.swift */; };
 		3C7E57D61A49BDD2000E5560 /* BindingModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7E57D51A49BDD2000E5560 /* BindingModeViewController.swift */; };
 		3C7E57D91A49BDF9000E5560 /* BindingModeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7E57D81A49BDF9000E5560 /* BindingModeViewModel.swift */; };
+		3C7E57DB1A49DA58000E5560 /* ValueConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7E57DA1A49DA58000E5560 /* ValueConverterViewController.swift */; };
+		3C7E57DD1A49DB22000E5560 /* ValueConverterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7E57DC1A49DB22000E5560 /* ValueConverterViewModel.swift */; };
 		3C865DDA1A3EB83900D775C8 /* ObservableArrayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C865DD91A3EB83900D775C8 /* ObservableArrayViewController.swift */; };
 		3C865DDE1A4006FF00D775C8 /* ObservableArrayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C865DDD1A4006FF00D775C8 /* ObservableArrayViewModel.swift */; };
 		3C8AFE741A39717700E5D1AD /* Avalon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C8AFE731A39717700E5D1AD /* Avalon.png */; };
@@ -62,6 +64,8 @@
 		3C5478111A11E30000C80A3C /* KitchenSinkViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitchenSinkViewModel.swift; sourceTree = "<group>"; };
 		3C7E57D51A49BDD2000E5560 /* BindingModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindingModeViewController.swift; sourceTree = "<group>"; };
 		3C7E57D81A49BDF9000E5560 /* BindingModeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindingModeViewModel.swift; sourceTree = "<group>"; };
+		3C7E57DA1A49DA58000E5560 /* ValueConverterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueConverterViewController.swift; sourceTree = "<group>"; };
+		3C7E57DC1A49DB22000E5560 /* ValueConverterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueConverterViewModel.swift; sourceTree = "<group>"; };
 		3C865DD91A3EB83900D775C8 /* ObservableArrayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableArrayViewController.swift; sourceTree = "<group>"; };
 		3C865DDD1A4006FF00D775C8 /* ObservableArrayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableArrayViewModel.swift; sourceTree = "<group>"; };
 		3C8AFE731A39717700E5D1AD /* Avalon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avalon.png; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 				3CE0FD451A4879B00084FF8C /* MasterDetailViewModel.swift */,
 				3C7E57D51A49BDD2000E5560 /* BindingModeViewController.swift */,
 				3C7E57D81A49BDF9000E5560 /* BindingModeViewModel.swift */,
+				3C7E57DA1A49DA58000E5560 /* ValueConverterViewController.swift */,
+				3C7E57DC1A49DB22000E5560 /* ValueConverterViewModel.swift */,
 			);
 			path = KitchenSink;
 			sourceTree = "<group>";
@@ -295,6 +301,7 @@
 				3CE0FD371A477C150084FF8C /* SimpleBindingsViewModel.swift in Sources */,
 				3C5477EA1A11E2B000C80A3C /* ViewController.swift in Sources */,
 				3C865DDA1A3EB83900D775C8 /* ObservableArrayViewController.swift in Sources */,
+				3C7E57DB1A49DA58000E5560 /* ValueConverterViewController.swift in Sources */,
 				3CE0FD461A4879B00084FF8C /* MasterDetailViewModel.swift in Sources */,
 				3CE0FD3A1A477C240084FF8C /* SimpleBindingsViewController.swift in Sources */,
 				3C7E57D91A49BDF9000E5560 /* BindingModeViewModel.swift in Sources */,
@@ -305,6 +312,7 @@
 				3C5477E81A11E2B000C80A3C /* AppDelegate.swift in Sources */,
 				3CE0FD401A48054F0084FF8C /* TwoWayBindingViewController.swift in Sources */,
 				3C5478121A11E30000C80A3C /* KitchenSinkViewModel.swift in Sources */,
+				3C7E57DD1A49DB22000E5560 /* ValueConverterViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1155,6 +1155,148 @@
             </objects>
             <point key="canvasLocation" x="3483" y="-341"/>
         </scene>
+        <!--Value Conversion Test-->
+        <scene sceneID="k7D-y8-1jC">
+            <objects>
+                <viewController id="xcu-tS-BzO" customClass="ValueConverterViewController" customModule="KitchenSink" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="t8v-Pl-ERP"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cvp-c5-Eln"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zaB-5T-Ly2">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLK-aF-pEY">
+                                <rect key="frame" x="358" y="135" width="136" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="source" value="numericValue"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="destination" value="text"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="converter" value="AVConverterDecimalStyle"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KWU-d0-JgL">
+                                <rect key="frame" x="209" y="131" width="117" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="source" value="numericValue"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="destination" value="text"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="converter" value="AVConverterDecimalStyle"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="resignFirstResponderOnReturn" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="bindingUpdateModeString" value="OnResignResponder"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="mode" value="TwoWay"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Decimal Style:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01i-3S-NSI">
+                                <rect key="frame" x="43" y="135" width="152" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7mL-gp-443">
+                                <rect key="frame" x="358" y="173" width="136" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="source" value="currencyValue"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="destination" value="text"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="converter" value="AVConverterCurrencyStyle"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="emZ-yf-Flf">
+                                <rect key="frame" x="209" y="169" width="117" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="source" value="currencyValue"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="destination" value="text"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="converter" value="AVConverterCurrencyStyle"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="resignFirstResponderOnReturn" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="bindingUpdateModeString" value="OnResignResponder"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="mode" value="TwoWay"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Currency Style:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXf-tE-kYq">
+                                <rect key="frame" x="43" y="173" width="152" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vg-fg-JcE">
+                                <rect key="frame" x="358" y="211" width="136" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="source" value="percentValue"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="destination" value="text"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="converter" value="AVConverterPercentStyle"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LrU-tz-OJr">
+                                <rect key="frame" x="209" y="207" width="117" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="source" value="percentValue"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="destination" value="text"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="converter" value="AVConverterPercentStyle"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="resignFirstResponderOnReturn" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="bindingUpdateModeString" value="OnResignResponder"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="mode" value="TwoWay"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Percent Style:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QS7-5E-fdZ">
+                                <rect key="frame" x="43" y="211" width="152" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDQ-t0-V4D">
+                                <rect key="frame" x="358" y="249" width="136" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="source" value="scientificValue"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="destination" value="text"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="converter" value="AVConverterScientificStyle"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x5q-O8-yU9">
+                                <rect key="frame" x="209" y="245" width="117" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="source" value="scientificValue"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="destination" value="text"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="converter" value="AVConverterScientificStyle"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="resignFirstResponderOnReturn" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="bindingUpdateModeString" value="OnResignResponder"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="mode" value="TwoWay"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scientific Style:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjB-gK-cjD">
+                                <rect key="frame" x="43" y="249" width="152" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Value Conversion Test" id="4i1-cF-dAg"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZJo-1j-ReJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4700" y="-181"/>
+        </scene>
         <!--Root View Controller-->
         <scene sceneID="2cO-3H-D5G">
             <objects>
@@ -1215,6 +1357,23 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="U5f-UQ-ujh" kind="show" id="tqT-6n-DHF"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="Je8-Bh-i0C">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Je8-Bh-i0C" id="lYo-6u-pzC">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Value Conversion Test" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EsD-vE-IyW">
+                                                    <rect key="frame" x="19" y="12" width="227" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="xcu-tS-BzO" kind="show" id="duu-KQ-KjL"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="v1r-oE-sGr">

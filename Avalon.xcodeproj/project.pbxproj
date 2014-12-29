@@ -32,6 +32,7 @@
 		3C5477CB1A1122AA00C80A3C /* UIView+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C71A1122AA00C80A3C /* UIView+Avalon.swift */; };
 		3C5477CC1A1122AA00C80A3C /* UIView+AvalonCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C81A1122AA00C80A3C /* UIView+AvalonCore.swift */; };
 		3C7E57D41A49B8BB000E5560 /* UITextField+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7E57D01A49AE15000E5560 /* UITextField+Avalon.swift */; };
+		3C7E57E01A4B14CE000E5560 /* NumberFormatterConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7E57DF1A4B14CE000E5560 /* NumberFormatterConverter.swift */; };
 		3C859EF21A1A42D7001BA43F /* ErrorSink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C859EF11A1A42D7001BA43F /* ErrorSink.swift */; };
 		3C865DCB1A3AC47D00D775C8 /* ObservableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C865DCA1A3AC47D00D775C8 /* ObservableArray.swift */; };
 		3C8AFE791A398AFB00E5D1AD /* UIView+DelegateMulticast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8AFE781A398AFB00E5D1AD /* UIView+DelegateMulticast.swift */; };
@@ -42,6 +43,7 @@
 		3CBA41F51A42C86E00E03F6C /* ArrayFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA41F41A42C86E00E03F6C /* ArrayFacade.swift */; };
 		3CBA41F91A436B5900E03F6C /* ItemsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA41F81A436B5900E03F6C /* ItemsController.swift */; };
 		3CBA42051A43904700E03F6C /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA42041A43904700E03F6C /* Threading.swift */; };
+		3CC1CF2F1A51A6ED00820080 /* ValueSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC1CF2E1A51A6ED00820080 /* ValueSetter.swift */; };
 		3CCB555D1A2FC6E100631420 /* AVSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CCB555B1A2FC6E100631420 /* AVSwizzle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3CCB555E1A2FC6E100631420 /* AVSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCB555C1A2FC6E100631420 /* AVSwizzle.m */; };
 		3CDB57431A34485B001DD726 /* AvalonBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDB57421A34485B001DD726 /* AvalonBootstrap.swift */; };
@@ -78,6 +80,7 @@
 		3C5477C71A1122AA00C80A3C /* UIView+Avalon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Avalon.swift"; sourceTree = "<group>"; };
 		3C5477C81A1122AA00C80A3C /* UIView+AvalonCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AvalonCore.swift"; sourceTree = "<group>"; };
 		3C7E57D01A49AE15000E5560 /* UITextField+Avalon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Avalon.swift"; sourceTree = "<group>"; };
+		3C7E57DF1A4B14CE000E5560 /* NumberFormatterConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberFormatterConverter.swift; sourceTree = "<group>"; };
 		3C859EF11A1A42D7001BA43F /* ErrorSink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorSink.swift; sourceTree = "<group>"; };
 		3C865DCA1A3AC47D00D775C8 /* ObservableArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableArray.swift; sourceTree = "<group>"; };
 		3C8AFE781A398AFB00E5D1AD /* UIView+DelegateMulticast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+DelegateMulticast.swift"; sourceTree = "<group>"; };
@@ -88,6 +91,7 @@
 		3CBA41F41A42C86E00E03F6C /* ArrayFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayFacade.swift; sourceTree = "<group>"; };
 		3CBA41F81A436B5900E03F6C /* ItemsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsController.swift; sourceTree = "<group>"; };
 		3CBA42041A43904700E03F6C /* Threading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Threading.swift; sourceTree = "<group>"; };
+		3CC1CF2E1A51A6ED00820080 /* ValueSetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueSetter.swift; sourceTree = "<group>"; };
 		3CCB555B1A2FC6E100631420 /* AVSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVSwizzle.h; sourceTree = "<group>"; };
 		3CCB555C1A2FC6E100631420 /* AVSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVSwizzle.m; sourceTree = "<group>"; };
 		3CDB57421A34485B001DD726 /* AvalonBootstrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvalonBootstrap.swift; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 				3C444F881A34408300F72591 /* KVCVerification.swift */,
 				3C444F891A34408300F72591 /* KVOBindingConnector.swift */,
 				3C444F8A1A34408300F72591 /* UIControlBindingConnector.swift */,
+				3CC1CF2E1A51A6ED00820080 /* ValueSetter.swift */,
 			);
 			path = Connectors;
 			sourceTree = "<group>";
@@ -170,6 +175,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		3C7E57DE1A4B1497000E5560 /* Converters */ = {
+			isa = PBXGroup;
+			children = (
+				3C7E57DF1A4B14CE000E5560 /* NumberFormatterConverter.swift */,
+			);
+			name = Converters;
+			sourceTree = "<group>";
+		};
 		3CEE10251A0F5A3F002C66E3 = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +202,7 @@
 		3CEE10311A0F5A3F002C66E3 /* Avalon */ = {
 			isa = PBXGroup;
 			children = (
+				3C7E57DE1A4B1497000E5560 /* Converters */,
 				3C444F861A34408300F72591 /* Util */,
 				3C408EB11A19268700D8426F /* ObjC */,
 				3C5477C41A1122AA00C80A3C /* Extensions */,
@@ -308,6 +322,7 @@
 				3CBA42051A43904700E03F6C /* Threading.swift in Sources */,
 				3C444F931A34455000F72591 /* AVDelegateMultiplexer.m in Sources */,
 				3C444F8C1A34408300F72591 /* KVOBindingConnector.swift in Sources */,
+				3CC1CF2F1A51A6ED00820080 /* ValueSetter.swift in Sources */,
 				3C5477CA1A1122AA00C80A3C /* UISegmentedControl+Avalon.swift in Sources */,
 				3CBA41F51A42C86E00E03F6C /* ArrayFacade.swift in Sources */,
 				3C5477691A0FDDDF00C80A3C /* Disposable.swift in Sources */,
@@ -323,6 +338,7 @@
 				3CA0D9F81A2EF638009CCB08 /* CustomOperators.swift in Sources */,
 				3C5477661A0FDA4C00C80A3C /* ValueConverter.swift in Sources */,
 				3CB9CE381A279A9700CE6757 /* ViewModelBase.swift in Sources */,
+				3C7E57E01A4B14CE000E5560 /* NumberFormatterConverter.swift in Sources */,
 				3C408EB71A19268700D8426F /* AVKeyValueObservingHelper.m in Sources */,
 				3C5477CC1A1122AA00C80A3C /* UIView+AvalonCore.swift in Sources */,
 				3CDB57431A34485B001DD726 /* AvalonBootstrap.swift in Sources */,

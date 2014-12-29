@@ -46,7 +46,7 @@ class UIControlBindingConnectorTest: XCTestCase {
   }
   
   func test_failsIfInvalidPropertyPath() {
-    AssertLogsError("ERROR: Unable to set value on destination") {
+    AssertLogsError("ERROR: Unable to set value Optional(0) on destination") {
       // create source and destination objects
       var person = PersonViewModel()
       person.name = "Bill"

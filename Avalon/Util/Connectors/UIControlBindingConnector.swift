@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+
 // binds a UIControl so that value changes are propagated back to the source
 // in TwoWay binding scenarios
 public class UIControlBindingConnector: NSObject, Disposable {
@@ -35,12 +36,9 @@ public class UIControlBindingConnector: NSObject, Disposable {
   
   // TODO: Only made public for unit tests. It should be possible to fire this using target-action
   public func valueChanged() {
-    let value: AnyObject = valueExtractor()
-  
-    let maybeFailureMessage = AVKeyValueObservingHelper.trySetValue(value, forKeyPath: binding.sourceProperty, forObject: source)
-    if let failureMessage = maybeFailureMessage {
-      ErrorSink.instance.logEvent("ERROR: Unable to set value on destination \(destination) with binding \(binding)")
-    }
+    var value: AnyObject? = valueExtractor()
+    
+    setValueFromBinding(value: value, binding: binding, source: destination, destination: source, destinationProperty: binding.sourceProperty, binding.converter?.convertBack)
   }
   
   public func dispose() {

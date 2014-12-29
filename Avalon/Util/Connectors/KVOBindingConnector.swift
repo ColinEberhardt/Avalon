@@ -31,8 +31,6 @@ public class KVOBindingConnector: NSObject, Disposable {
     
     super.init()
     
-
-    
     if binding.sourceProperty != "." {
       
       // subscribe for changes
@@ -82,8 +80,6 @@ public class KVOBindingConnector: NSObject, Disposable {
   }
   
   private func setValueOnDestination(value: AnyObject?) -> String? {
-    let convertedValue: AnyObject? = convertValue(value)
-    
     // verify that the destination property accomodates this value
     /*if let warnings = KVCVerification.verifyCanSetVale(convertedValue, propertyPath: binding.destinationProperty, destination: destination) {
       ErrorSink.instance.logEvent(warnings)
@@ -91,23 +87,11 @@ public class KVOBindingConnector: NSObject, Disposable {
     
     return executeOnMainThread {
       () -> String? in
-      let result = AVKeyValueObservingHelper.trySetValue(convertedValue, forKeyPath: self.binding.destinationProperty, forObject: self.destination)
-      if result != nil {
-        self.logError(value)
-      }
-      return result
+      return setValueFromBinding(value: value, binding: self.binding, source: self.source,
+        destination: self.destination, destinationProperty: self.binding.destinationProperty,
+        converter: self.binding.converter?.convert)
     }
   }
-  
-    
-  private func convertValue(value: AnyObject?) -> AnyObject? {
-    if binding.converter != nil {
-      return binding.converter!.convert(value, binding: self.binding, viewModel: self.source)
-    } else {
-      return value
-    }
-  }
-  
   public func dispose() {
     if isSubscribed && binding.sourceProperty != "." {
       source.removeObserver(self, forKeyPath: binding.sourceProperty)

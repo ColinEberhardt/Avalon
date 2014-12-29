@@ -109,7 +109,7 @@ extension UIView {
     
     for connector in connectors {
       if view.dynamicType === connector.0 && binding.destinationProperty == connector.1 {
-        connector.2(createValueChangeObserver(binding, viewModel: viewModel))
+        connector.2(createValueChangeObserver(binding, viewModel: viewModel, view: view))
         return
       }
     }
@@ -119,11 +119,10 @@ extension UIView {
   
   
   // Creates a function that updates the binding source
-  func createValueChangeObserver(binding: Binding, viewModel: NSObject) -> ValueChangedNotification {
+  func createValueChangeObserver(binding: Binding, viewModel: NSObject, view: UIView) -> ValueChangedNotification {
     return {
-      //TODO: add converter support & setter failure
       (value: AnyObject) in
-      AVKeyValueObservingHelper.trySetValue(value, forKeyPath: binding.sourceProperty, forObject: viewModel)
+      setValueFromBinding(value: value, binding: binding, source: view, destination: viewModel, destinationProperty: binding.sourceProperty, binding.converter?.convertBack)
       return
     }
   }

@@ -15,12 +15,21 @@ import Foundation
   // subclasses NSObject and annotated @objc so that we can generate the
   // class instances from strings
 
-  // TODO: Handle two-way value conversion
   public func convert(sourceValue: AnyObject?, binding: Binding, viewModel: AnyObject) -> AnyObject? {
     return self.convert(sourceValue)
   }
   
   public func convert(sourceValue: AnyObject?) -> AnyObject? {
+    ErrorSink.instance.logEvent("ERROR: The 'convert' method of a value converter was not implemented")
+    return nil
+  }
+  
+  public func convertBack(sourceValue: AnyObject?, binding: Binding, viewModel: AnyObject) -> AnyObject? {
+    return self.convertBack(sourceValue)
+  }
+  
+  public func convertBack(sourceValue: AnyObject?) -> AnyObject? {
+    ErrorSink.instance.logEvent("ERROR: The 'convertBack' method of a value converter was not implemented")
     return nil
   }
 }
