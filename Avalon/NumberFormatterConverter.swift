@@ -13,7 +13,7 @@ public class NumberFormatterConverter: ValueConverter {
   
   private let formatter: NSNumberFormatter
   
-  init(formatter: NSNumberFormatter) {
+  public init(formatter: NSNumberFormatter) {
     self.formatter = formatter
   }
   
@@ -30,32 +30,32 @@ public class NumberFormatterConverter: ValueConverter {
   }
 }
 
-@objc(AVConverterDecimalStyle) public class NumberFormatterConverterDecimalStyle: NumberFormatterConverter {
-  init() {
+@objc(AVNumberConverterDecimalStyle) public class NumberFormatterConverterDecimalStyle: NumberFormatterConverter {
+  public init() {
     let formatter = NSNumberFormatter()
     formatter.numberStyle = .DecimalStyle
     super.init(formatter: formatter)
   }
 }
 
-@objc(AVConverterCurrencyStyle) public class NumberFormatterConverterCurrencyStyle: NumberFormatterConverter {
-  init() {
+@objc(AVNumberConverterCurrencyStyle) public class NumberFormatterConverterCurrencyStyle: NumberFormatterConverter {
+  public init() {
     let formatter = NSNumberFormatter()
     formatter.numberStyle = .CurrencyStyle
     super.init(formatter: formatter)
   }
 }
 
-@objc(AVConverterPercentStyle) public class NumberFormatterConverterPercentStyle: NumberFormatterConverter {
-  init() {
+@objc(AVNumberConverterPercentStyle) public class NumberFormatterConverterPercentStyle: NumberFormatterConverter {
+  public init() {
     let formatter = NSNumberFormatter()
     formatter.numberStyle = .PercentStyle
     super.init(formatter: formatter)
   }
 }
 
-@objc(AVConverterScientificStyle) public class NumberFormatterConverterScientificStyle: NumberFormatterConverter {
-  init() {
+@objc(AVNumberConverterScientificStyle) public class NumberFormatterConverterScientificStyle: NumberFormatterConverter {
+  public init() {
     let formatter = NSNumberFormatter()
     formatter.numberStyle = .ScientificStyle
     super.init(formatter: formatter)
