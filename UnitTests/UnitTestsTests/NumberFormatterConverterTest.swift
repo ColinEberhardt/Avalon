@@ -12,55 +12,57 @@ import Avalon
 
 class NumberFormatterConverterTest: XCTestCase {
   
-  func test_decimalStyle() {
-    // create a bound label
+  func createBoundLabel(transformer: NSValueTransformer, _ number: Float = 12.345678) -> UILabel {
     let label = UILabel()
-    label.bindings = [Binding(source: ".", destination: "text", transformer: NumberFormatterConverterDecimalStyle())]
+    label.bindings = [Binding(source: ".", destination: "text", transformer: transformer)]
     
     // add a view model
-    let viewModel = Float(12.345678)
+    let viewModel = number
     label.bindingContext = viewModel
+    return label
+  }
+  
+  func createBoundLabel(transformer: String, _ number: Float = 12.345678) -> UILabel {
+    let label = UILabel()
+    label.bindings = [
+      "." >>| transformer >>| "text"
+    ]
     
-    // state
+    // add a view model
+    let viewModel = number
+    label.bindingContext = viewModel
+    return label
+  }
+  
+  func test_decimalStyle() {
+    let label = createBoundLabel(NumberFormatterConverterDecimalStyle())
     XCTAssertEqual(label.text!, "12.346")
+    
+    let label2 = createBoundLabel("AVConverterDecimalStyle")
+    XCTAssertEqual(label2.text!, "12.346")
   }
   
   func test_currencyStyle() {
-    // create a bound label
-    let label = UILabel()
-    label.bindings = [Binding(source: ".", destination: "text", transformer: NumberFormatterConverterCurrencyStyle())]
-    
-    // add a view model
-    let viewModel = Float(12.345678)
-    label.bindingContext = viewModel
-    
-    // state
+    let label = createBoundLabel(NumberFormatterConverterCurrencyStyle())
     XCTAssertEqual(label.text!, "$12.35")
+    
+    let label2 = createBoundLabel("AVConverterCurrencyStyle")
+    XCTAssertEqual(label2.text!, "$12.35")
   }
   
   func test_percentStyle() {
-    // create a bound label
-    let label = UILabel()
-    label.bindings = [Binding(source: ".", destination: "text", transformer: NumberFormatterConverterPercentStyle())]
-    
-    // add a view model
-    let viewModel = Float(0.76)
-    label.bindingContext = viewModel
-    
-    // state
+    let label = createBoundLabel(NumberFormatterConverterPercentStyle(), 0.76)
     XCTAssertEqual(label.text!, "76%")
+    
+    let label2 = createBoundLabel("AVConverterPercentStyle", 0.76)
+    XCTAssertEqual(label2.text!, "76%")
   }
   
   func test_scientificStyle() {
-    // create a bound label
-    let label = UILabel()
-    label.bindings = [Binding(source: ".", destination: "text", transformer: NumberFormatterConverterScientificStyle())]
-    
-    // add a view model
-    let viewModel = Float(12)
-    label.bindingContext = viewModel
-    
-    // state
+    let label = createBoundLabel(NumberFormatterConverterScientificStyle(), 12)
     XCTAssertEqual(label.text!, "1.2E1")
+    
+    let label2 = createBoundLabel("AVConverterScientificStyle", 12)
+    XCTAssertEqual(label2.text!, "1.2E1")
   }
 }

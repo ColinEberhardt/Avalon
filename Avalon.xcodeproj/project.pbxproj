@@ -38,6 +38,7 @@
 		3CA0D9F81A2EF638009CCB08 /* CustomOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA0D9F71A2EF638009CCB08 /* CustomOperators.swift */; };
 		3CB57AD51A5704CF004CB37C /* NumberFormatterConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7E57DF1A4B14CE000E5560 /* NumberFormatterConverter.swift */; };
 		3CB57AD61A57053E004CB37C /* DateFormatterConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC1CF361A52990900820080 /* DateFormatterConverter.swift */; };
+		3CB57AE61A583652004CB37C /* NSValueTransformer+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB57AE51A583652004CB37C /* NSValueTransformer+Avalon.swift */; };
 		3CB9CE381A279A9700CE6757 /* ViewModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB9CE371A279A9700CE6757 /* ViewModelBase.swift */; };
 		3CB9CE4D1A27C16F00CE6757 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB9CE4C1A27C16F00CE6757 /* Event.swift */; };
 		3CBA41F51A42C86E00E03F6C /* ArrayFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA41F41A42C86E00E03F6C /* ArrayFacade.swift */; };
@@ -85,6 +86,7 @@
 		3C8AFE781A398AFB00E5D1AD /* UIView+DelegateMulticast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+DelegateMulticast.swift"; sourceTree = "<group>"; };
 		3C8AFE7A1A39FEEF00E5D1AD /* UITextView+Avalon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Avalon.swift"; sourceTree = "<group>"; };
 		3CA0D9F71A2EF638009CCB08 /* CustomOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOperators.swift; sourceTree = "<group>"; };
+		3CB57AE51A583652004CB37C /* NSValueTransformer+Avalon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSValueTransformer+Avalon.swift"; sourceTree = "<group>"; };
 		3CB9CE371A279A9700CE6757 /* ViewModelBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelBase.swift; sourceTree = "<group>"; };
 		3CB9CE4C1A27C16F00CE6757 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		3CBA41F41A42C86E00E03F6C /* ArrayFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayFacade.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			children = (
 				3C7E57DF1A4B14CE000E5560 /* NumberFormatterConverter.swift */,
 				3CC1CF361A52990900820080 /* DateFormatterConverter.swift */,
+				3CB57AE51A583652004CB37C /* NSValueTransformer+Avalon.swift */,
 			);
 			name = Converters;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				3C5477CB1A1122AA00C80A3C /* UIView+Avalon.swift in Sources */,
 				3CBA41F91A436B5900E03F6C /* ItemsController.swift in Sources */,
 				3C408ECB1A19283700D8426F /* UIGestureRecognizer+Avalon.swift in Sources */,
+				3CB57AE61A583652004CB37C /* NSValueTransformer+Avalon.swift in Sources */,
 				3CF998C21A1F93B7004DC5F0 /* UISearchBar+Avalon.swift in Sources */,
 				3C5477671A0FDA4C00C80A3C /* BindingMode.swift in Sources */,
 				3C408EB91A19268700D8426F /* AVValueWrapper.m in Sources */,
