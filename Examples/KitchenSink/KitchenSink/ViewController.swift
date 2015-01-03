@@ -28,7 +28,7 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate
 
     button.bindings = [ "incrementCountAction" >| "action" ]
     
-    label.bindings = ["number" >| NumberToString() >| "text"]
+    label.bindings = ["number" >>| "NumberToString" >>| "text"]
     
     segmentedControl.bindings = [Binding(source: "options", destination: "segments"),
       Binding(source: "selectedOption", destination: "selectedSegmentIndex", mode: .TwoWay)]

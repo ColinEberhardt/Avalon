@@ -10,9 +10,14 @@ import UIKit
 import XCTest
 import Avalon
 
+class DummyTransformer: NSValueTransformer {
+  override class func load() {
+    NSValueTransformer.setValueTransformer(DummyTransformer(), forName: "DummyTransformer")
+  }
+}
+
 class CustomOperatorTest: XCTestCase {
   
-
   func test_oneWayBinding() {
     
     let binding = "foo" >| "bar"
@@ -25,12 +30,11 @@ class CustomOperatorTest: XCTestCase {
   
   func test_oneWayBinding_withConverter() {
     
-    let transformer = NSValueTransformer()
-    let binding = "foo" >| transformer >| "bar"
+    let binding = "foo" >>| "DummyTransformer" >>| "bar"
     
     XCTAssertEqual("foo", binding.sourceProperty)
     XCTAssertEqual("bar", binding.destinationProperty)
-    XCTAssertEqual(transformer, binding.transformer!)
+    XCTAssertTrue(binding.transformer!.dynamicType === DummyTransformer.self)
   }
   
   func test_twoWayBinding() {
@@ -44,12 +48,11 @@ class CustomOperatorTest: XCTestCase {
   
   func test_twoWayBinding_withConverter() {
     
-    let transformer = NSValueTransformer()
-    let binding = "foo" |< transformer >| "bar"
+    let binding = "foo" |<< "DummyTransformer" >>| "bar"
     
     XCTAssertEqual("foo", binding.sourceProperty)
     XCTAssertEqual("bar", binding.destinationProperty)
-    XCTAssertEqual(transformer, binding.transformer!)
+    XCTAssertTrue(binding.transformer!.dynamicType === DummyTransformer.self)
     XCTAssertEqual(BindingMode.TwoWay, binding.mode)
   }
 }

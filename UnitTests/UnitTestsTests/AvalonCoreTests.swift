@@ -187,6 +187,9 @@ class AvalonCoreTests: XCTestCase {
   
   
   class AgeToString: NSValueTransformer {
+    override class func load() {
+      NSValueTransformer.setValueTransformer(AgeToString(), forName: "AgeToString")
+    }
     override func transformedValue(sourceValue: AnyObject?) -> AnyObject? {
       let age: Int = sourceValue as Int
       return String(age)
