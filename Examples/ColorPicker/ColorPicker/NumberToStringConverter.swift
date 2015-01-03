@@ -9,8 +9,13 @@
 import Foundation
 import Avalon
 
-@objc(NumberToString) class NumberToString: ValueConverter {
-  override func convert(sourceValue: AnyObject?) -> AnyObject? {
+class NumberToString: NSValueTransformer {
+  
+  override class func load() {
+    NSValueTransformer.setValueTransformer(NumberToString(), forName: "NumberToString")
+  }
+  
+  override func transformedValue(sourceValue: AnyObject?) -> AnyObject? {
     
     let formatter = NSNumberFormatter()
     formatter.numberStyle = NSNumberFormatterStyle.DecimalStyle

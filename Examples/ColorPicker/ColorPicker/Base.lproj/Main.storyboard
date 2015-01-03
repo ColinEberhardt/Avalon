@@ -62,7 +62,7 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="source" value="red"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="destination" value="text"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="converter" value="NumberToString"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="transformer" value="NumberToString"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8L-MW-846">
@@ -71,7 +71,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="converter" value="NumberToString"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="transformer" value="NumberToString"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="destination" value="text"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="source" value="green"/>
                                 </userDefinedRuntimeAttributes>
@@ -82,7 +82,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="converter" value="NumberToString"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="transformer" value="NumberToString"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="destination" value="text"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="source" value="blue"/>
                                 </userDefinedRuntimeAttributes>

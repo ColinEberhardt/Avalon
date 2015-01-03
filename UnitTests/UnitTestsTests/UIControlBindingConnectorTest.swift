@@ -39,15 +39,16 @@ class UIControlBindingConnectorTest: XCTestCase {
     XCTAssertFalse(person.isFemale)
   }
   
-  class StringToBool: ValueConverter {
-    override func convert(sourceValue: AnyObject?) -> AnyObject? {
+  class StringToBool: NSValueTransformer {
+    
+    override func transformedValue(sourceValue: AnyObject?) -> AnyObject? {
       if let stringValue = sourceValue as? String {
         return stringValue == "true"
       }
       return false
     }
     
-    override func convertBack(sourceValue: AnyObject?) -> AnyObject? {
+    override func reverseTransformedValue(sourceValue: AnyObject?) -> AnyObject? {
       if let boolValue = sourceValue as? Bool {
         return boolValue ? "true" : "false"
       }
@@ -64,7 +65,7 @@ class UIControlBindingConnectorTest: XCTestCase {
     switchControl.on = false
     
     // create the binding that defines the property paths
-    let binding = Binding(source: "name", destination: "on", converter: StringToBool())
+    let binding = Binding(source: "name", destination: "on", transformer: StringToBool())
     
     // create the connector
     let connector = UIControlBindingConnector(source: person, destination: switchControl, valueExtractor: { switchControl.on }, binding: binding)

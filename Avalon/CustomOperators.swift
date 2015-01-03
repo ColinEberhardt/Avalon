@@ -22,22 +22,22 @@ public func |<>| (source: String, destination: String) -> Binding {
   return Binding(source: source, destination: destination, mode: .TwoWay)
 }
 
-public func >| (source: String, converter: ValueConverter) -> PartialBinding {
-  return PartialBinding(source: source, converter: converter, mode: .OneWay)
+public func >| (source: String, transformer: NSValueTransformer) -> PartialBinding {
+  return PartialBinding(source: source, transformer: transformer, mode: .OneWay)
 }
 
 public func >| (partial: PartialBinding, destination: String) -> Binding {
-  return Binding(source: partial.source, destination: destination, converter: partial.converter, mode: partial.mode)
+  return Binding(source: partial.source, destination: destination, transformer: partial.transformer, mode: partial.mode)
 }
 
-public func |< (source: String, converter: ValueConverter) -> PartialBinding {
-  return PartialBinding(source: source, converter: converter, mode: .TwoWay)
+public func |< (source: String, transformer: NSValueTransformer) -> PartialBinding {
+  return PartialBinding(source: source, transformer: transformer, mode: .TwoWay)
 }
 
-// a structure that is used to support the creation of bindings with converters
-// e.g. "foo" >| ValueConverter() >| "bar"
+// a structure that is used to support the creation of bindings with transformers
+// e.g. "foo" >| ValueTransformer() >| "bar"
 public struct PartialBinding {
   let source: String
-  let converter: ValueConverter
+  let transformer: NSValueTransformer
   let mode: BindingMode
 }

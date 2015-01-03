@@ -9,9 +9,9 @@
 import Foundation
 import Avalon
 
-@objc(LocationToStringConverter) class LocationToStringConverter: ValueConverter {
-  override func convert(sourceValue: AnyObject?, binding: Binding, viewModel: AnyObject) -> AnyObject? {
-    let placeViewModel = viewModel as PlaceViewModel 
+@objc(LocationToStringConverter) class LocationToStringConverter: NSValueTransformer {
+  override func transformedValue(sourceValue: AnyObject?) -> AnyObject? {
+    let placeViewModel = sourceValue as PlaceViewModel
     let formatter = { String(format: "%.2f", $0) }
     let lat = formatter(placeViewModel.place.latitude)
     let lng = formatter(placeViewModel.place.longitude)

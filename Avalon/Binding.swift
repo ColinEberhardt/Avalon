@@ -22,8 +22,8 @@ import Foundation
   /// will be used by the binding.
   public var sourceProperty = ""
   
-  /// An (optional) converter for this binding.
-  public var converter: ValueConverter?
+  /// An (optional) value transformer for this binding.
+  public var transformer: NSValueTransformer?
   
   /// The mode of this binding
   public var mode = BindingMode.OneWay
@@ -43,17 +43,18 @@ import Foundation
     self.mode = mode
   }
   
-  public init(source: String, destination: String, converter: ValueConverter) {
+  public init(source: String, destination: String, transformer: NSValueTransformer) {
     self.destinationProperty = destination
     self.sourceProperty = source
-    self.converter = converter
+    self.transformer = transformer
   }
   
-  public init(source: String, destination: String, converter: ValueConverter, mode: BindingMode) {
+  public init(source: String, destination: String, transformer: NSValueTransformer, mode: BindingMode) {
     self.destinationProperty = destination
     self.sourceProperty = source
-    self.converter = converter
+    self.transformer = transformer
     self.mode = mode
+    
   }
   
   func addDisposable(disposable: Disposable) {
@@ -68,7 +69,7 @@ import Foundation
   }
   
   public var description: String {
-    return "<Avalon.Binding sourceProperty = \(sourceProperty); destinationProperty = \(destinationProperty); mode = \(mode); converter = \(converter); disposables = \(disposables.count)>"
+    return "<Avalon.Binding sourceProperty = \(sourceProperty); destinationProperty = \(destinationProperty); mode = \(mode); transformer = \(transformer); disposables = \(disposables.count)>"
   }
   
   // takes the publicly exposed binding components and constructs
@@ -79,12 +80,12 @@ import Foundation
       // create a binding
       let binding = Binding(source: bindable.source, destination: bindable.destination)
       
-      // add a converter
-      if bindable.converter != "" {
-        if let converterClass = NSClassFromString(bindable.converter) as? NSObject.Type {
-          binding.converter = converterClass() as? ValueConverter
+      // add a transformer
+      if bindable.transformer != "" {
+        if let converterClass = NSValueTransformer(forName: bindable.transformer) {
+          binding.transformer = converterClass
         } else {
-          ErrorSink.instance.logEvent("ERROR: A converter of class \(bindable.converter) could not be constructed.")
+          ErrorSink.instance.logEvent("ERROR: A transformer of class \(bindable.transformer) could not be constructed.")
         }
       }
       
@@ -93,13 +94,13 @@ import Foundation
       } else if bindable.mode == "OneWay" {
         binding.mode = .OneWay
       } else if bindable.mode != "" {
-        ErrorSink.instance.logEvent("ERROR: binding mode can only have values of OneWay or TwoWay, the value \(bindable.mode) is not permitted.")
+        ErrorSink.instance.logEvent("ERROR: binding mode can only have values of OneWay or TwoWay, the value \(bindable.mode) is not permtransformeritted.")
       }
       
       return binding
     } else {
       if bindable.source != "" || bindable.destination != "" ||
-        bindable.converter != "" || bindable.mode != "" {
+        bindable.transformer != "" || bindable.mode != "" {
         ErrorSink.instance.logEvent("ERROR: bindings must have both a source and destination property.")
       }
       return nil

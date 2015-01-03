@@ -15,7 +15,7 @@ class NumberFormatterConverterTest: XCTestCase {
   func test_decimalStyle() {
     // create a bound label
     let label = UILabel()
-    label.bindings = [Binding(source: ".", destination: "text", converter: NumberFormatterConverterDecimalStyle())]
+    label.bindings = [Binding(source: ".", destination: "text", transformer: NumberFormatterConverterDecimalStyle())]
     
     // add a view model
     let viewModel = Float(12.345678)
@@ -28,7 +28,7 @@ class NumberFormatterConverterTest: XCTestCase {
   func test_currencyStyle() {
     // create a bound label
     let label = UILabel()
-    label.bindings = [Binding(source: ".", destination: "text", converter: NumberFormatterConverterCurrencyStyle())]
+    label.bindings = [Binding(source: ".", destination: "text", transformer: NumberFormatterConverterCurrencyStyle())]
     
     // add a view model
     let viewModel = Float(12.345678)
@@ -41,7 +41,7 @@ class NumberFormatterConverterTest: XCTestCase {
   func test_percentStyle() {
     // create a bound label
     let label = UILabel()
-    label.bindings = [Binding(source: ".", destination: "text", converter: NumberFormatterConverterPercentStyle())]
+    label.bindings = [Binding(source: ".", destination: "text", transformer: NumberFormatterConverterPercentStyle())]
     
     // add a view model
     let viewModel = Float(0.76)
@@ -54,7 +54,7 @@ class NumberFormatterConverterTest: XCTestCase {
   func test_scientificStyle() {
     // create a bound label
     let label = UILabel()
-    label.bindings = [Binding(source: ".", destination: "text", converter: NumberFormatterConverterScientificStyle())]
+    label.bindings = [Binding(source: ".", destination: "text", transformer: NumberFormatterConverterScientificStyle())]
     
     // add a view model
     let viewModel = Float(12)

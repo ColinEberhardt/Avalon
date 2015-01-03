@@ -13,7 +13,7 @@ struct AssociationKey {
   static var binding: UInt8 = 1
   static var source: UInt8 = 2
   static var destination: UInt8 = 3
-  static var converter: UInt8 = 4
+  static var transformer: UInt8 = 4
   static var mode: UInt8 = 5
   static var action: UInt8 = 6
   static var animating: UInt8 = 8

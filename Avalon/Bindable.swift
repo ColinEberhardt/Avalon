@@ -13,7 +13,7 @@ import Foundation
 /// A binding may be defined via the following four properties:
 ///  * source
 ///  * destination
-///  * converter
+///  * transformer
 ///  * mode
 ///
 /// These properties are intended to be used within Storyboards / interface builder, where
@@ -29,8 +29,8 @@ import Foundation
   /// The name of the property on this UI control that will be the destination for the binding.
   var destination: String { get set }
 
-  /// The name of an (optional) converter for this binding.
-  var converter: String { get set }
+  /// The name of an (optional) value transformer for this binding.
+  var transformer: String { get set }
 
   /// The mode of this binding, defaults to one-way if the string is anything other than 'TwoWay'
   var mode: String { get set }
@@ -38,6 +38,6 @@ import Foundation
   /// The array of bindings associated with this control
   var bindings: [Binding]? { get set }
   
-  /// Constructs a Binding instance from the source, destination, converter and mode properties
+  /// Constructs a Binding instance from the source, destination, transformer and mode properties
   var bindingFromBindable: Binding? { get }
 }

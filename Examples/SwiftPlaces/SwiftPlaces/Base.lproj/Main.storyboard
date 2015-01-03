@@ -71,7 +71,7 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="source" value="weather"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="destination" value="text"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="converter" value="WeatherToStringConverter"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="transformer" value="WeatherToStringConverter"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[POSTAL CODE]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXd-Be-cRi">
@@ -92,7 +92,7 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="source" value="."/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="destination" value="text"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="converter" value="LocationToStringConverter"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="transformer" value="LocationToStringConverter"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>

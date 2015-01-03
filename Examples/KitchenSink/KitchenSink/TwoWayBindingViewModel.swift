@@ -9,8 +9,12 @@
 import Foundation
 import Avalon
 
-@objc(ValueToString) class ValueToString: ValueConverter {
-  override func convert(sourceValue: AnyObject?) -> AnyObject? {
+class ValueToString: NSValueTransformer {
+  override class func load() {
+    NSValueTransformer.setValueTransformer(ValueToString(), forName: "ValueToString")
+  }
+  
+  override func transformedValue(sourceValue: AnyObject?) -> AnyObject? {
     return "\(sourceValue!)"
   }
 }

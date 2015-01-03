@@ -38,7 +38,7 @@ public class UIControlBindingConnector: NSObject, Disposable {
   public func valueChanged() {
     var value: AnyObject? = valueExtractor()
     
-    setValueFromBinding(value: value, binding: binding, source: destination, destination: source, destinationProperty: binding.sourceProperty, binding.converter?.convertBack)
+    setValueFromBinding(value: value, binding: binding, source: destination, destination: source, destinationProperty: binding.sourceProperty, binding.transformer?.reverseTransformedValue)
   }
   
   public func dispose() {

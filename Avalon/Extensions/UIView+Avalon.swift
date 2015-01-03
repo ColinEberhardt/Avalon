@@ -33,13 +33,13 @@ extension UIView: Bindable {
     }
   }
   
-  @IBInspectable public var converter: String {
+  @IBInspectable public var transformer: String {
     get {
-      let value: AnyObject! = objc_getAssociatedObject(self, &AssociationKey.converter)
+      let value: AnyObject! = objc_getAssociatedObject(self, &AssociationKey.transformer)
       return value != nil ? value as String : ""
     }
     set(newValue) {
-      objc_setAssociatedObject(self, &AssociationKey.converter, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
+      objc_setAssociatedObject(self, &AssociationKey.transformer, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
     }
   }
   

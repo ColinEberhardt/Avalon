@@ -24,7 +24,6 @@
 		3C5477631A0FDA4C00C80A3C /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775A1A0FDA4C00C80A3C /* Binding.swift */; };
 		3C5477641A0FDA4C00C80A3C /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775B1A0FDA4C00C80A3C /* Bindable.swift */; };
 		3C5477651A0FDA4C00C80A3C /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775C1A0FDA4C00C80A3C /* Action.swift */; };
-		3C5477661A0FDA4C00C80A3C /* ValueConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775D1A0FDA4C00C80A3C /* ValueConverter.swift */; };
 		3C5477671A0FDA4C00C80A3C /* BindingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54775E1A0FDA4C00C80A3C /* BindingMode.swift */; };
 		3C5477691A0FDDDF00C80A3C /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477681A0FDDDF00C80A3C /* Disposable.swift */; };
 		3C5477C91A1122AA00C80A3C /* UIButton+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C51A1122AA00C80A3C /* UIButton+Avalon.swift */; };
@@ -32,19 +31,19 @@
 		3C5477CB1A1122AA00C80A3C /* UIView+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C71A1122AA00C80A3C /* UIView+Avalon.swift */; };
 		3C5477CC1A1122AA00C80A3C /* UIView+AvalonCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477C81A1122AA00C80A3C /* UIView+AvalonCore.swift */; };
 		3C7E57D41A49B8BB000E5560 /* UITextField+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7E57D01A49AE15000E5560 /* UITextField+Avalon.swift */; };
-		3C7E57E01A4B14CE000E5560 /* NumberFormatterConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7E57DF1A4B14CE000E5560 /* NumberFormatterConverter.swift */; };
 		3C859EF21A1A42D7001BA43F /* ErrorSink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C859EF11A1A42D7001BA43F /* ErrorSink.swift */; };
 		3C865DCB1A3AC47D00D775C8 /* ObservableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C865DCA1A3AC47D00D775C8 /* ObservableArray.swift */; };
 		3C8AFE791A398AFB00E5D1AD /* UIView+DelegateMulticast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8AFE781A398AFB00E5D1AD /* UIView+DelegateMulticast.swift */; };
 		3C8AFE7B1A39FEEF00E5D1AD /* UITextView+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8AFE7A1A39FEEF00E5D1AD /* UITextView+Avalon.swift */; };
 		3CA0D9F81A2EF638009CCB08 /* CustomOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA0D9F71A2EF638009CCB08 /* CustomOperators.swift */; };
+		3CB57AD51A5704CF004CB37C /* NumberFormatterConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7E57DF1A4B14CE000E5560 /* NumberFormatterConverter.swift */; };
+		3CB57AD61A57053E004CB37C /* DateFormatterConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC1CF361A52990900820080 /* DateFormatterConverter.swift */; };
 		3CB9CE381A279A9700CE6757 /* ViewModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB9CE371A279A9700CE6757 /* ViewModelBase.swift */; };
 		3CB9CE4D1A27C16F00CE6757 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB9CE4C1A27C16F00CE6757 /* Event.swift */; };
 		3CBA41F51A42C86E00E03F6C /* ArrayFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA41F41A42C86E00E03F6C /* ArrayFacade.swift */; };
 		3CBA41F91A436B5900E03F6C /* ItemsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA41F81A436B5900E03F6C /* ItemsController.swift */; };
 		3CBA42051A43904700E03F6C /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA42041A43904700E03F6C /* Threading.swift */; };
 		3CC1CF2F1A51A6ED00820080 /* ValueSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC1CF2E1A51A6ED00820080 /* ValueSetter.swift */; };
-		3CC1CF371A52990900820080 /* DateFormatterConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC1CF361A52990900820080 /* DateFormatterConverter.swift */; };
 		3CCB555D1A2FC6E100631420 /* AVSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CCB555B1A2FC6E100631420 /* AVSwizzle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3CCB555E1A2FC6E100631420 /* AVSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCB555C1A2FC6E100631420 /* AVSwizzle.m */; };
 		3CDB57431A34485B001DD726 /* AvalonBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDB57421A34485B001DD726 /* AvalonBootstrap.swift */; };
@@ -73,7 +72,6 @@
 		3C54775A1A0FDA4C00C80A3C /* Binding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		3C54775B1A0FDA4C00C80A3C /* Bindable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		3C54775C1A0FDA4C00C80A3C /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
-		3C54775D1A0FDA4C00C80A3C /* ValueConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueConverter.swift; sourceTree = "<group>"; };
 		3C54775E1A0FDA4C00C80A3C /* BindingMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindingMode.swift; sourceTree = "<group>"; };
 		3C5477681A0FDDDF00C80A3C /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		3C5477C51A1122AA00C80A3C /* UIButton+Avalon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Avalon.swift"; sourceTree = "<group>"; };
@@ -214,7 +212,6 @@
 				3C54775A1A0FDA4C00C80A3C /* Binding.swift */,
 				3C54775B1A0FDA4C00C80A3C /* Bindable.swift */,
 				3C54775C1A0FDA4C00C80A3C /* Action.swift */,
-				3C54775D1A0FDA4C00C80A3C /* ValueConverter.swift */,
 				3C54775E1A0FDA4C00C80A3C /* BindingMode.swift */,
 				3CEE10341A0F5A40002C66E3 /* Avalon.h */,
 				3CB9CE371A279A9700CE6757 /* ViewModelBase.swift */,
@@ -335,14 +332,13 @@
 				3C5477641A0FDA4C00C80A3C /* Bindable.swift in Sources */,
 				3CB9CE4D1A27C16F00CE6757 /* Event.swift in Sources */,
 				3C444F8B1A34408300F72591 /* KVCVerification.swift in Sources */,
-				3CC1CF371A52990900820080 /* DateFormatterConverter.swift in Sources */,
 				3CDD6C1B1A1AA469003020AA /* UITableView+Avalon.swift in Sources */,
 				3CCB555E1A2FC6E100631420 /* AVSwizzle.m in Sources */,
 				3C7E57D41A49B8BB000E5560 /* UITextField+Avalon.swift in Sources */,
 				3CA0D9F81A2EF638009CCB08 /* CustomOperators.swift in Sources */,
-				3C5477661A0FDA4C00C80A3C /* ValueConverter.swift in Sources */,
 				3CB9CE381A279A9700CE6757 /* ViewModelBase.swift in Sources */,
-				3C7E57E01A4B14CE000E5560 /* NumberFormatterConverter.swift in Sources */,
+				3CB57AD51A5704CF004CB37C /* NumberFormatterConverter.swift in Sources */,
+				3CB57AD61A57053E004CB37C /* DateFormatterConverter.swift in Sources */,
 				3C408EB71A19268700D8426F /* AVKeyValueObservingHelper.m in Sources */,
 				3C5477CC1A1122AA00C80A3C /* UIView+AvalonCore.swift in Sources */,
 				3CDB57431A34485B001DD726 /* AvalonBootstrap.swift in Sources */,

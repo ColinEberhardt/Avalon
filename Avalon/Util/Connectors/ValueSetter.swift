@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias ConversionFunction = (AnyObject?, Binding, AnyObject) -> AnyObject?
+typealias ConversionFunction = (AnyObject?) -> AnyObject?
 
 // applies a new value taken from the source, to the destination, performing
 // any value conversion that might be required.
@@ -16,7 +16,7 @@ func setValueFromBinding(var #value: AnyObject?, #binding: Binding, #source: NSO
   
   // perform any required value conversion
   if let valueConverter = converter {
-    value = valueConverter(value, binding, source)
+    value = valueConverter(value)
   }
   
   // set the value, handling any errors

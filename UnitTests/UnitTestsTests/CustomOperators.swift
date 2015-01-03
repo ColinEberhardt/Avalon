@@ -19,18 +19,18 @@ class CustomOperatorTest: XCTestCase {
     
     XCTAssertEqual("foo", binding.sourceProperty)
     XCTAssertEqual("bar", binding.destinationProperty)
-    XCTAssertNil(binding.converter)
+    XCTAssertNil(binding.transformer)
     XCTAssertEqual(BindingMode.OneWay, binding.mode)
   }
   
   func test_oneWayBinding_withConverter() {
     
-    let converter = ValueConverter()
-    let binding = "foo" >| converter >| "bar"
+    let transformer = NSValueTransformer()
+    let binding = "foo" >| transformer >| "bar"
     
     XCTAssertEqual("foo", binding.sourceProperty)
     XCTAssertEqual("bar", binding.destinationProperty)
-    XCTAssertEqual(converter, binding.converter!)
+    XCTAssertEqual(transformer, binding.transformer!)
   }
   
   func test_twoWayBinding() {
@@ -38,18 +38,18 @@ class CustomOperatorTest: XCTestCase {
     
     XCTAssertEqual("foo", binding.sourceProperty)
     XCTAssertEqual("bar", binding.destinationProperty)
-    XCTAssertNil(binding.converter)
+    XCTAssertNil(binding.transformer)
     XCTAssertEqual(BindingMode.TwoWay, binding.mode)
   }
   
   func test_twoWayBinding_withConverter() {
     
-    let converter = ValueConverter()
-    let binding = "foo" |< converter >| "bar"
+    let transformer = NSValueTransformer()
+    let binding = "foo" |< transformer >| "bar"
     
     XCTAssertEqual("foo", binding.sourceProperty)
     XCTAssertEqual("bar", binding.destinationProperty)
-    XCTAssertEqual(converter, binding.converter!)
+    XCTAssertEqual(transformer, binding.transformer!)
     XCTAssertEqual(BindingMode.TwoWay, binding.mode)
   }
 }

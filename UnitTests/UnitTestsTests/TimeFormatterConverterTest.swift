@@ -12,9 +12,9 @@ import Avalon
 
 class TimeFormatterConverterTest: XCTestCase {
   
-  func createBoundLabel(converter: ValueConverter) -> UILabel {
+  func createBoundLabel(transformer: NSValueTransformer) -> UILabel {
     let label = UILabel()
-    label.bindings = [Binding(source: ".", destination: "text", converter: converter)]
+    label.bindings = [Binding(source: ".", destination: "text", transformer: transformer)]
     
     // add a view model
     let viewModel = NSDate(timeIntervalSince1970:0.0)

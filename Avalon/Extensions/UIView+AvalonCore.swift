@@ -82,8 +82,8 @@ extension UIView {
   func bindDestinationToSource(view: UIView, viewModel: NSObject, binding: Binding) {
 
     // unfortunately most UIKit controls are not KVO compliant, so we have to use target-action
-    // and a variety of ther techniques in order to handle updates and relay the change back to the model
-
+    // and a variety of other techniques in order to handle updates and relay the change back to the model
+    
     if binding.sourceProperty == "." {
       ErrorSink.instance.logEvent("ERROR: Two way binding does not support the dot syntax, with binding \(binding)")
     } else if let control = view as? UIControl {
@@ -122,7 +122,7 @@ extension UIView {
   func createValueChangeObserver(binding: Binding, viewModel: NSObject, view: UIView) -> ValueChangedNotification {
     return {
       (value: AnyObject) in
-      setValueFromBinding(value: value, binding: binding, source: view, destination: viewModel, destinationProperty: binding.sourceProperty, binding.converter?.convertBack)
+      setValueFromBinding(value: value, binding: binding, source: view, destination: viewModel, destinationProperty: binding.sourceProperty, binding.transformer?.reverseTransformedValue)
       return
     }
   }

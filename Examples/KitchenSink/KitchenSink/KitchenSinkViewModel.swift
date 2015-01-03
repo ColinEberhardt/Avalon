@@ -9,9 +9,13 @@
 import Foundation
 import Avalon
 
-@objc(NumberToString) class NumberToString: ValueConverter {
+class NumberToString: NSValueTransformer {
   
-  override func convert(sourceValue: AnyObject?) -> AnyObject? {
+  override class func load() {
+    NSValueTransformer.setValueTransformer(NumberToString(), forName: "NumberToString")
+  }
+  
+  override func transformedValue(sourceValue: AnyObject?) -> AnyObject? {
     
     let formatter = NSNumberFormatter()
     formatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
@@ -23,8 +27,13 @@ import Avalon
   }
 }
 
-@objc(URLStringToUIImage) class URLStringToUIImage: ValueConverter {
-  override func convert(sourceValue: AnyObject?) -> AnyObject? {
+class URLStringToUIImage: NSValueTransformer {
+  
+  override class func load() {
+    NSValueTransformer.setValueTransformer(URLStringToUIImage(), forName: "URLStringToUIImage")
+  }
+  
+  override func transformedValue(sourceValue: AnyObject?) -> AnyObject? {
     let imageUrl = sourceValue as String
     if let url = NSURL(string: imageUrl) {
       if let data = NSData(contentsOfURL: url) {
@@ -35,30 +44,38 @@ import Avalon
   }
 }
 
-@objc(NamedImageToUIImage) class NamedImageToUIImage: ValueConverter {
-  override func convert(sourceValue: AnyObject?) -> AnyObject? {
+class NamedImageToUIImage: NSValueTransformer {
+  
+  override class func load() {
+    NSValueTransformer.setValueTransformer(NamedImageToUIImage(), forName: "NamedImageToUIImage")
+  }
+  
+  override func transformedValue(sourceValue: AnyObject?) -> AnyObject? {
     let imageName = sourceValue as String
     return UIImage(named: imageName)
   }
 }
 
-@objc(TapsToTitle) class TapsToTitle: ValueConverter {
-  override func convert(sourceValue: AnyObject?) -> AnyObject? {
+class TapsToTitle: NSValueTransformer {
+  
+  override class func load() {
+    NSValueTransformer.setValueTransformer(TapsToTitle(), forName: "TapsToTitle")
+  }
+  
+  
+  override func transformedValue(sourceValue: AnyObject?) -> AnyObject? {
     let taps = sourceValue as Int
     return "Button tapped \(taps) times"
   }
 }
 
-@objc(IndexToSegmentTitle) class IndexToSegmentTitle: ValueConverter {
-  override func convert(sourceValue: AnyObject?, binding: Binding, viewModel: AnyObject) -> AnyObject? {
-    let index = sourceValue as Int
-    let kitchenSink = viewModel as KitchenSinkViewModel
-    return kitchenSink.options[index]
+class DateToString: NSValueTransformer {
+  
+  override class func load() {
+    NSValueTransformer.setValueTransformer(DateToString(), forName: "DateToString")
   }
-}
-
-@objc(DateToString) class DateToString: ValueConverter {
-  override func convert(sourceValue: AnyObject?) -> AnyObject? {
+  
+  override func transformedValue(sourceValue: AnyObject?) -> AnyObject? {
     let date = sourceValue as NSDate
     return date.description
   }

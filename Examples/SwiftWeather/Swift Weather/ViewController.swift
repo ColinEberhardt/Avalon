@@ -9,9 +9,9 @@
 import UIKit
 import Avalon
 
-class BoolInvertConverter: ValueConverter {
+class BoolInvertConverter: NSValueTransformer {
   // TODO: Can value converters be implemented via closures?
-  override func convert(sourceValue: AnyObject?, binding: Binding, viewModel: AnyObject) -> AnyObject? {
+  override func transformedValue(sourceValue: AnyObject?) -> AnyObject? {
     return !(sourceValue as Bool)
   }
 }
@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     
     loadingIndicator.bindings = [Binding(source: "loading", destination: "animating"),
-      Binding(source: "loading", destination: "hidden", converter: BoolInvertConverter())]
+      Binding(source: "loading", destination: "hidden", transformer: BoolInvertConverter())]
     
     self.view.bindingContext = SwiftWeatherViewModel()
   }

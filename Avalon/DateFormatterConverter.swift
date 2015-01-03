@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class DateFormatterConverter: ValueConverter {
+public class DateFormatterConverter: NSValueTransformer {
   
   private let formatter: NSDateFormatter
   
@@ -16,12 +16,12 @@ public class DateFormatterConverter: ValueConverter {
     self.formatter = formatter
   }
   
-  override public func convert(sourceValue: AnyObject?) -> AnyObject? {
+  override public func transformedValue(sourceValue: AnyObject?) -> AnyObject? {
     let dateValue = sourceValue as NSDate
     return formatter.stringFromDate(dateValue)
   }
   
-  override public func convertBack(sourceValue: AnyObject?) -> AnyObject? {
+  override public func reverseTransformedValue(sourceValue: AnyObject?) -> AnyObject? {
     if let stringValue = sourceValue as? String {
       return formatter.dateFromString(stringValue)
     }
@@ -29,7 +29,12 @@ public class DateFormatterConverter: ValueConverter {
   }
 }
 
-@objc(AVDateConverterShortStyle) public class DateFormatterConverterShortStyle: DateFormatterConverter {
+public class DateFormatterConverterShortStyle: DateFormatterConverter {
+  
+  override public class func load() {
+    NSValueTransformer.setValueTransformer(DateFormatterConverterShortStyle(), forName:"AVDateConverterShortStyle")
+  }
+  
   public init() {
     let formatter = NSDateFormatter()
     formatter.dateStyle = .ShortStyle
@@ -37,7 +42,12 @@ public class DateFormatterConverter: ValueConverter {
   }
 }
 
-@objc(AVDateConverterShortStyle) public class DateFormatterConverterMediumStyle: DateFormatterConverter {
+public class DateFormatterConverterMediumStyle: DateFormatterConverter {
+  
+  override public class func load() {
+    NSValueTransformer.setValueTransformer(DateFormatterConverterMediumStyle(), forName:"AVDateConverterMediumStyle")
+  }
+  
   public init() {
     let formatter = NSDateFormatter()
     formatter.dateStyle = .MediumStyle
@@ -45,7 +55,12 @@ public class DateFormatterConverter: ValueConverter {
   }
 }
 
-@objc(AVDateConverterShortStyle) public class DateFormatterConverterLongStyle: DateFormatterConverter {
+public class DateFormatterConverterLongStyle: DateFormatterConverter {
+  
+  override public class func load() {
+    NSValueTransformer.setValueTransformer(DateFormatterConverterLongStyle(), forName:"AVDateConverterLongStyle")
+  }
+  
   public init() {
     let formatter = NSDateFormatter()
     formatter.dateStyle = .LongStyle
@@ -53,7 +68,12 @@ public class DateFormatterConverter: ValueConverter {
   }
 }
 
-@objc(AVDateConverterShortStyle) public class DateFormatterConverterFullStyle: DateFormatterConverter {
+public class DateFormatterConverterFullStyle: DateFormatterConverter {
+  
+  override public class func load() {
+    NSValueTransformer.setValueTransformer(DateFormatterConverterFullStyle(), forName:"AVDateConverterFullStyle")
+  }
+  
   public init() {
     let formatter = NSDateFormatter()
     formatter.dateStyle = .FullStyle
@@ -61,7 +81,12 @@ public class DateFormatterConverter: ValueConverter {
   }
 }
 
-@objc(AVTimeConverterShortStyle) public class TimeFormatterConverterShortStyle: DateFormatterConverter {
+public class TimeFormatterConverterShortStyle: DateFormatterConverter {
+  
+  override public class func load() {
+    NSValueTransformer.setValueTransformer(TimeFormatterConverterShortStyle(), forName:"AVTimeConverterShortStyle")
+  }
+  
   public init() {
     let formatter = NSDateFormatter()
     formatter.timeStyle = .ShortStyle
@@ -69,7 +94,12 @@ public class DateFormatterConverter: ValueConverter {
   }
 }
 
-@objc(AVTimeConverterShortStyle) public class TimeFormatterConverterMediumStyle: DateFormatterConverter {
+public class TimeFormatterConverterMediumStyle: DateFormatterConverter {
+  
+  override public class func load() {
+    NSValueTransformer.setValueTransformer(TimeFormatterConverterMediumStyle(), forName:"AVTimeConverterMediumStyle")
+  }
+  
   public init() {
     let formatter = NSDateFormatter()
     formatter.timeStyle = .MediumStyle
@@ -77,7 +107,12 @@ public class DateFormatterConverter: ValueConverter {
   }
 }
 
-@objc(AVTimeConverterShortStyle) public class TimeFormatterConverterLongStyle: DateFormatterConverter {
+public class TimeFormatterConverterLongStyle: DateFormatterConverter {
+  
+  override public class func load() {
+    NSValueTransformer.setValueTransformer(TimeFormatterConverterLongStyle(), forName:"AVTimeConverterLongStyle")
+  }
+  
   public init() {
     let formatter = NSDateFormatter()
     formatter.timeStyle = .LongStyle
@@ -85,7 +120,12 @@ public class DateFormatterConverter: ValueConverter {
   }
 }
 
-@objc(AVTimeConverterShortStyle) public class TimeFormatterConverterFullStyle: DateFormatterConverter {
+public class TimeFormatterConverterFullStyle: DateFormatterConverter {
+  
+  override public class func load() {
+    NSValueTransformer.setValueTransformer(TimeFormatterConverterFullStyle(), forName:"AVTimeConverterFullStyle")
+  }
+  
   public init() {
     let formatter = NSDateFormatter()
     formatter.timeStyle = .FullStyle

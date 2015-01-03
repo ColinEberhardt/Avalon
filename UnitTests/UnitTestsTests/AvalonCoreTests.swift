@@ -185,18 +185,20 @@ class AvalonCoreTests: XCTestCase {
     controlBinding.valueChanged()
   }
   
-  class AgeToString: ValueConverter {
-    override func convert(sourceValue: AnyObject?, binding: Binding, viewModel: AnyObject) -> AnyObject? {
+  
+  class AgeToString: NSValueTransformer {
+    override func transformedValue(sourceValue: AnyObject?) -> AnyObject? {
       let age: Int = sourceValue as Int
       return String(age)
     }
   }
   
+  
   func test_binding_supportsValueConversion() {
     
     // create a bound label
     let label = UILabel()
-    label.bindings = [Binding(source: "age", destination: "text", converter: AgeToString())]
+    label.bindings = [Binding(source: "age", destination: "text", transformer: AgeToString())]
     
     // add a view model
     let viewModel = PersonViewModel()

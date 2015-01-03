@@ -89,7 +89,7 @@ public class KVOBindingConnector: NSObject, Disposable {
       () -> String? in
       return setValueFromBinding(value: value, binding: self.binding, source: self.source,
         destination: self.destination, destinationProperty: self.binding.destinationProperty,
-        converter: self.binding.converter?.convert)
+        converter: self.binding.transformer?.transformedValue)
     }
   }
   public func dispose() {
