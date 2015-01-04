@@ -1,5 +1,5 @@
 //
-//  DateFormatterConverterTest.swift
+//  DateValueTransformerTest.swift
 //  UnitTests
 //
 //  Created by Colin Eberhardt on 30/12/2014.
@@ -10,7 +10,7 @@ import UIKit
 import XCTest
 import Avalon
 
-class DateFormatterConverterTest: XCTestCase {
+class DateValueTransformerTest: XCTestCase {
   
   func createBoundLabel(transformer: NSValueTransformer) -> UILabel {
     let label = UILabel()
@@ -35,34 +35,34 @@ class DateFormatterConverterTest: XCTestCase {
   }
   
   func test_shortStyle() {
-    let label = createBoundLabel(DateFormatterConverterShortStyle())
+    let label = createBoundLabel(DateValueTransformerShortStyle())
     XCTAssertEqual(label.text!, "1/1/70")
     
-    let label2 = createBoundLabel("AVDateConverterShortStyle")
+    let label2 = createBoundLabel("DateShortStyle")
     XCTAssertEqual(label2.text!, "1/1/70")
   }
   
   func test_mediumStyle() {
-    let label = createBoundLabel(DateFormatterConverterMediumStyle())
+    let label = createBoundLabel(DateValueTransformerMediumStyle())
     XCTAssertEqual(label.text!, "Jan 1, 1970")
     
-    let label2 = createBoundLabel("AVDateConverterMediumStyle")
+    let label2 = createBoundLabel("DateMediumStyle")
     XCTAssertEqual(label2.text!, "Jan 1, 1970")
   }
   
   func test_longStyle() {
-    let label = createBoundLabel(DateFormatterConverterLongStyle())
+    let label = createBoundLabel(DateValueTransformerLongStyle())
     XCTAssertEqual(label.text!, "January 1, 1970")
     
-    let label2 = createBoundLabel("AVDateConverterLongStyle")
+    let label2 = createBoundLabel("DateLongStyle")
     XCTAssertEqual(label2.text!, "January 1, 1970")
   }
   
   func test_fullStyle() {
-    let label = createBoundLabel(DateFormatterConverterFullStyle())
+    let label = createBoundLabel(DateValueTransformerFullStyle())
     XCTAssertEqual(label.text!, "Thursday, January 1, 1970")
     
-    let label2 = createBoundLabel("AVDateConverterFullStyle")
+    let label2 = createBoundLabel("DateFullStyle")
     XCTAssertEqual(label2.text!, "Thursday, January 1, 1970")
   }
 }

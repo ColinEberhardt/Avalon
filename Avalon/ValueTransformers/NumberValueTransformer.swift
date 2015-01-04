@@ -1,5 +1,5 @@
 //
-//  NumberFormatterConverter.swift
+//  NumberValueTransformer.swift
 //  Avalon
 //
 //  Created by Colin Eberhardt on 24/12/2014.
@@ -9,7 +9,7 @@
 import Foundation
 
 
-public class NumberFormatterConverter: NSValueTransformer {
+public class NumberValueTransformer: NSValueTransformer {
   
   private let formatter: NSNumberFormatter
   
@@ -30,9 +30,9 @@ public class NumberFormatterConverter: NSValueTransformer {
   }
 }
 
-public class NumberFormatterConverterDecimalStyle: NumberFormatterConverter {
+public class NumberValueTransformerDecimalStyle: NumberValueTransformer {
   override public class func load() {
-    NSValueTransformer.setValueTransformer(NumberFormatterConverterDecimalStyle(), forName:"AVConverterDecimalStyle")
+    NSValueTransformer.setValueTransformer(NumberValueTransformerDecimalStyle(), forName:"DecimalStyle")
   }
   
   public init() {
@@ -42,9 +42,9 @@ public class NumberFormatterConverterDecimalStyle: NumberFormatterConverter {
   }
 }
 
-public class NumberFormatterConverterCurrencyStyle: NumberFormatterConverter {
+public class NumberValueTransformerCurrencyStyle: NumberValueTransformer {
   override public class func load() {
-    NSValueTransformer.setValueTransformer(NumberFormatterConverterCurrencyStyle(), forName:"AVConverterCurrencyStyle")
+    NSValueTransformer.setValueTransformer(NumberValueTransformerCurrencyStyle(), forName:"CurrencyStyle")
   }
   
   public init() {
@@ -54,9 +54,9 @@ public class NumberFormatterConverterCurrencyStyle: NumberFormatterConverter {
   }
 }
 
-public class NumberFormatterConverterPercentStyle: NumberFormatterConverter {
+public class NumberValueTransformerPercentStyle: NumberValueTransformer {
   override public class func load() {
-    NSValueTransformer.setValueTransformer(NumberFormatterConverterPercentStyle(), forName:"AVConverterPercentStyle")
+    NSValueTransformer.setValueTransformer(NumberValueTransformerPercentStyle(), forName:"PercentStyle")
   }
   
   public init() {
@@ -66,10 +66,10 @@ public class NumberFormatterConverterPercentStyle: NumberFormatterConverter {
   }
 }
 
-public class NumberFormatterConverterScientificStyle: NumberFormatterConverter {
+public class NumberValueTransformerScientificStyle: NumberValueTransformer {
   
   override public class func load() {
-    NSValueTransformer.setValueTransformer(NumberFormatterConverterScientificStyle(), forName:"AVConverterScientificStyle")
+    NSValueTransformer.setValueTransformer(NumberValueTransformerScientificStyle(), forName:"ScientificStyle")
   }
   
   public init() {

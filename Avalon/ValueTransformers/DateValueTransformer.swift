@@ -1,5 +1,5 @@
 //
-//  DateFormatterConverter.swift
+//  DateValueTransformer.swift
 //  Avalon
 //
 //  Created by Colin Eberhardt on 30/12/2014.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class DateFormatterConverter: NSValueTransformer {
+public class DateValueTransformer: NSValueTransformer {
   
   private let formatter: NSDateFormatter
   
@@ -29,10 +29,10 @@ public class DateFormatterConverter: NSValueTransformer {
   }
 }
 
-public class DateFormatterConverterShortStyle: DateFormatterConverter {
+public class DateValueTransformerShortStyle: DateValueTransformer {
   
   override public class func load() {
-    NSValueTransformer.setValueTransformer(DateFormatterConverterShortStyle(), forName:"AVDateConverterShortStyle")
+    NSValueTransformer.setValueTransformer(DateValueTransformerShortStyle(), forName:"DateShortStyle")
   }
   
   public init() {
@@ -42,10 +42,10 @@ public class DateFormatterConverterShortStyle: DateFormatterConverter {
   }
 }
 
-public class DateFormatterConverterMediumStyle: DateFormatterConverter {
+public class DateValueTransformerMediumStyle: DateValueTransformer {
   
   override public class func load() {
-    NSValueTransformer.setValueTransformer(DateFormatterConverterMediumStyle(), forName:"AVDateConverterMediumStyle")
+    NSValueTransformer.setValueTransformer(DateValueTransformerMediumStyle(), forName:"DateMediumStyle")
   }
   
   public init() {
@@ -55,10 +55,10 @@ public class DateFormatterConverterMediumStyle: DateFormatterConverter {
   }
 }
 
-public class DateFormatterConverterLongStyle: DateFormatterConverter {
+public class DateValueTransformerLongStyle: DateValueTransformer {
   
   override public class func load() {
-    NSValueTransformer.setValueTransformer(DateFormatterConverterLongStyle(), forName:"AVDateConverterLongStyle")
+    NSValueTransformer.setValueTransformer(DateValueTransformerLongStyle(), forName:"DateLongStyle")
   }
   
   public init() {
@@ -68,10 +68,10 @@ public class DateFormatterConverterLongStyle: DateFormatterConverter {
   }
 }
 
-public class DateFormatterConverterFullStyle: DateFormatterConverter {
+public class DateValueTransformerFullStyle: DateValueTransformer {
   
   override public class func load() {
-    NSValueTransformer.setValueTransformer(DateFormatterConverterFullStyle(), forName:"AVDateConverterFullStyle")
+    NSValueTransformer.setValueTransformer(DateValueTransformerFullStyle(), forName:"DateFullStyle")
   }
   
   public init() {
@@ -81,10 +81,10 @@ public class DateFormatterConverterFullStyle: DateFormatterConverter {
   }
 }
 
-public class TimeFormatterConverterShortStyle: DateFormatterConverter {
+public class TimeValueTransformerShortStyle: DateValueTransformer {
   
   override public class func load() {
-    NSValueTransformer.setValueTransformer(TimeFormatterConverterShortStyle(), forName:"AVTimeConverterShortStyle")
+    NSValueTransformer.setValueTransformer(TimeValueTransformerShortStyle(), forName:"TimeShortStyle")
   }
   
   public init() {
@@ -94,10 +94,10 @@ public class TimeFormatterConverterShortStyle: DateFormatterConverter {
   }
 }
 
-public class TimeFormatterConverterMediumStyle: DateFormatterConverter {
+public class TimeValueTransformerMediumStyle: DateValueTransformer {
   
   override public class func load() {
-    NSValueTransformer.setValueTransformer(TimeFormatterConverterMediumStyle(), forName:"AVTimeConverterMediumStyle")
+    NSValueTransformer.setValueTransformer(TimeValueTransformerMediumStyle(), forName:"TimeMediumStyle")
   }
   
   public init() {
@@ -107,10 +107,10 @@ public class TimeFormatterConverterMediumStyle: DateFormatterConverter {
   }
 }
 
-public class TimeFormatterConverterLongStyle: DateFormatterConverter {
+public class TimeValueTransformerLongStyle: DateValueTransformer {
   
   override public class func load() {
-    NSValueTransformer.setValueTransformer(TimeFormatterConverterLongStyle(), forName:"AVTimeConverterLongStyle")
+    NSValueTransformer.setValueTransformer(TimeValueTransformerLongStyle(), forName:"TimeLongStyle")
   }
   
   public init() {
@@ -120,10 +120,10 @@ public class TimeFormatterConverterLongStyle: DateFormatterConverter {
   }
 }
 
-public class TimeFormatterConverterFullStyle: DateFormatterConverter {
+public class TimeValueTransformerFullStyle: DateValueTransformer {
   
   override public class func load() {
-    NSValueTransformer.setValueTransformer(TimeFormatterConverterFullStyle(), forName:"AVTimeConverterFullStyle")
+    NSValueTransformer.setValueTransformer(TimeValueTransformerFullStyle(), forName:"TimeFullStyle")
   }
   
   public init() {

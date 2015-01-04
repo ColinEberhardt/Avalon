@@ -1,5 +1,5 @@
 //
-//  TimeFormatterConverterTest.swift
+//  TimeValueTransformerTest.swift
 //  UnitTests
 //
 //  Created by Colin Eberhardt on 30/12/2014.
@@ -10,7 +10,7 @@ import UIKit
 import XCTest
 import Avalon
 
-class TimeFormatterConverterTest: XCTestCase {
+class TimeValueTransformerTest: XCTestCase {
   
   func createBoundLabel(transformer: NSValueTransformer) -> UILabel {
     let label = UILabel()
@@ -35,34 +35,34 @@ class TimeFormatterConverterTest: XCTestCase {
   }
   
   func test_shortStyle() {
-    let label = createBoundLabel(TimeFormatterConverterShortStyle())
+    let label = createBoundLabel(TimeValueTransformerShortStyle())
     XCTAssertEqual(label.text!, "1:00 AM")
     
-    let label2 = createBoundLabel("AVTimeConverterShortStyle")
+    let label2 = createBoundLabel("TimeShortStyle")
     XCTAssertEqual(label2.text!, "1:00 AM")
   }
   
   func test_mediumStyle() {
-    let label = createBoundLabel(TimeFormatterConverterMediumStyle())
+    let label = createBoundLabel(TimeValueTransformerMediumStyle())
     XCTAssertEqual(label.text!, "1:00:00 AM")
     
-    let label2 = createBoundLabel("AVTimeConverterMediumStyle")
+    let label2 = createBoundLabel("TimeMediumStyle")
     XCTAssertEqual(label2.text!, "1:00:00 AM")
   }
   
   func test_longStyle() {
-    let label = createBoundLabel(TimeFormatterConverterLongStyle())
+    let label = createBoundLabel(TimeValueTransformerLongStyle())
     XCTAssertEqual(label.text!, "1:00:00 AM GMT+1")
     
-    let label2 = createBoundLabel("AVTimeConverterLongStyle")
+    let label2 = createBoundLabel("TimeLongStyle")
     XCTAssertEqual(label2.text!, "1:00:00 AM GMT+1")
   }
   
   func test_fullStyle() {
-    let label = createBoundLabel(TimeFormatterConverterFullStyle())
+    let label = createBoundLabel(TimeValueTransformerFullStyle())
     XCTAssertEqual(label.text!, "1:00:00 AM GMT+01:00")
     
-    let label2 = createBoundLabel("AVTimeConverterFullStyle")
+    let label2 = createBoundLabel("TimeFullStyle")
     XCTAssertEqual(label2.text!, "1:00:00 AM GMT+01:00")
   }
 }

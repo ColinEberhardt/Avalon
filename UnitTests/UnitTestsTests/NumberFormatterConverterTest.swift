@@ -1,5 +1,5 @@
 //
-//  NumberFormatterConverterTest.swift
+//  NumberValueTransformerTest.swift
 //  UnitTests
 //
 //  Created by Colin Eberhardt on 30/12/2014.
@@ -10,7 +10,7 @@ import UIKit
 import XCTest
 import Avalon
 
-class NumberFormatterConverterTest: XCTestCase {
+class NumberValueTransformerTest: XCTestCase {
   
   func createBoundLabel(transformer: NSValueTransformer, _ number: Float = 12.345678) -> UILabel {
     let label = UILabel()
@@ -35,34 +35,34 @@ class NumberFormatterConverterTest: XCTestCase {
   }
   
   func test_decimalStyle() {
-    let label = createBoundLabel(NumberFormatterConverterDecimalStyle())
+    let label = createBoundLabel(NumberValueTransformerDecimalStyle())
     XCTAssertEqual(label.text!, "12.346")
     
-    let label2 = createBoundLabel("AVConverterDecimalStyle")
+    let label2 = createBoundLabel("DecimalStyle")
     XCTAssertEqual(label2.text!, "12.346")
   }
   
   func test_currencyStyle() {
-    let label = createBoundLabel(NumberFormatterConverterCurrencyStyle())
+    let label = createBoundLabel(NumberValueTransformerCurrencyStyle())
     XCTAssertEqual(label.text!, "$12.35")
     
-    let label2 = createBoundLabel("AVConverterCurrencyStyle")
+    let label2 = createBoundLabel("CurrencyStyle")
     XCTAssertEqual(label2.text!, "$12.35")
   }
   
   func test_percentStyle() {
-    let label = createBoundLabel(NumberFormatterConverterPercentStyle(), 0.76)
+    let label = createBoundLabel(NumberValueTransformerPercentStyle(), 0.76)
     XCTAssertEqual(label.text!, "76%")
     
-    let label2 = createBoundLabel("AVConverterPercentStyle", 0.76)
+    let label2 = createBoundLabel("PercentStyle", 0.76)
     XCTAssertEqual(label2.text!, "76%")
   }
   
   func test_scientificStyle() {
-    let label = createBoundLabel(NumberFormatterConverterScientificStyle(), 12)
+    let label = createBoundLabel(NumberValueTransformerScientificStyle(), 12)
     XCTAssertEqual(label.text!, "1.2E1")
     
-    let label2 = createBoundLabel("AVConverterScientificStyle", 12)
+    let label2 = createBoundLabel("ScientificStyle", 12)
     XCTAssertEqual(label2.text!, "1.2E1")
   }
 }
