@@ -9,22 +9,23 @@
 import Foundation
 
 extension NSValueTransformer {
-  public class func registerTransformer<U: AnyObject, T: AnyObject>(name: String, closure: U -> T) {
-    NSValueTransformer.setValueTransformer(ClosureValueTransformer(closure), forName: name)
+  
+  /// Creates and registers a value transformer that uses the supplied function to perform
+  /// the value transformation.
+  public class func setValueTransformerForName(name: String, transformFunction: AnyObject? -> AnyObject?) {
+    NSValueTransformer.setValueTransformer(ClosureValueTransformer(transformFunction), forName: name)
   }
 }
 
-class ClosureValueTransformer<U: AnyObject, T: AnyObject>: NSValueTransformer {
+class ClosureValueTransformer: NSValueTransformer {
   
-  let closure: U -> T
+  let closure: AnyObject? -> AnyObject?
   
-  init(closure: U -> T) {
+  init(closure: AnyObject? -> AnyObject?) {
     self.closure = closure
   }
+  
   override func transformedValue(value: AnyObject?) -> AnyObject? {
-    if let valueAsU = value as? U {
-      return self.closure(valueAsU)
-    }
-    return nil
+    return closure(value)
   }
 }

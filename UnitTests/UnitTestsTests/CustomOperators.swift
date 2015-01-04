@@ -55,4 +55,10 @@ class CustomOperatorTest: XCTestCase {
     XCTAssertTrue(binding.transformer!.dynamicType === DummyTransformer.self)
     XCTAssertEqual(BindingMode.TwoWay, binding.mode)
   }
+  
+  func test_twoWayBinding_withUnknownConverter() {
+    AssertLogsError("ERROR: The transformer floob was not found") {
+      let binding = "foo" |<< "floob" >>| "bar"
+    }
+  }
 }

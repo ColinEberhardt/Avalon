@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3C444F831A32F3D600F72591 /* UIButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C444F821A32F3D600F72591 /* UIButtonTests.swift */; };
+		3C7665BA1A5870BC0040A8CA /* NSValueTransformerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7665B91A5870BC0040A8CA /* NSValueTransformerTest.swift */; };
 		3C865DCE1A3B53A300D775C8 /* ObservableArrayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C865DCD1A3B53A300D775C8 /* ObservableArrayTest.swift */; };
 		3C865DD31A3C844600D775C8 /* ObservableArrayNotificationsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C865DD21A3C844600D775C8 /* ObservableArrayNotificationsTest.swift */; };
 		3CA7B4AD1A3594B300C389BA /* EventTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA7B4AC1A3594B300C389BA /* EventTest.swift */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		3C444F821A32F3D600F72591 /* UIButtonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonTests.swift; sourceTree = "<group>"; };
+		3C7665B91A5870BC0040A8CA /* NSValueTransformerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSValueTransformerTest.swift; sourceTree = "<group>"; };
 		3C865DCD1A3B53A300D775C8 /* ObservableArrayTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableArrayTest.swift; sourceTree = "<group>"; };
 		3C865DD21A3C844600D775C8 /* ObservableArrayNotificationsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableArrayNotificationsTest.swift; sourceTree = "<group>"; };
 		3CA7B4AC1A3594B300C389BA /* EventTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTest.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				3CC1CF321A52970400820080 /* NumberFormatterConverterTest.swift */,
 				3CC1CF381A52999E00820080 /* DateFormatterConverterTest.swift */,
 				3CC1CF3B1A529C2000820080 /* TimeFormatterConverterTest.swift */,
+				3C7665B91A5870BC0040A8CA /* NSValueTransformerTest.swift */,
 			);
 			path = UnitTestsTests;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 			files = (
 				3CE0CFDA1A32EFF800BA9EDA /* KVOBindingConnectorTest.swift in Sources */,
 				3CB57AD71A570564004CB37C /* DateFormatterConverterTest.swift in Sources */,
+				3C7665BA1A5870BC0040A8CA /* NSValueTransformerTest.swift in Sources */,
 				3CB57AD91A570572004CB37C /* TimeFormatterConverterTest.swift in Sources */,
 				3C865DD31A3C844600D775C8 /* ObservableArrayNotificationsTest.swift in Sources */,
 				3CB57AD21A570432004CB37C /* NumberFormatterConverterTest.swift in Sources */,

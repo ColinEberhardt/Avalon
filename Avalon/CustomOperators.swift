@@ -30,7 +30,10 @@ public func >>| (source: String, transformer: String) -> PartialBinding {
 
 public func >>| (partial: PartialBinding, destination: String) -> Binding {
   let transformer = NSValueTransformer(forName: partial.transformer)
-  return Binding(source: partial.source, destination: destination, transformer: transformer!, mode: partial.mode)
+  if transformer == nil {
+    ErrorSink.instance.logEvent("ERROR: The transformer \(partial.transformer) was not found, did you register it via NSValueTransformer.setValueTransformerForName or NSVaueTransformer.setValueTransformer ?")
+  }
+  return Binding(source: partial.source, destination: destination, transformer: transformer, mode: partial.mode)
 }
 
 public func |<< (source: String, transformer: String) -> PartialBinding {
@@ -38,7 +41,7 @@ public func |<< (source: String, transformer: String) -> PartialBinding {
 }
 
 // a structure that is used to support the creation of bindings with transformers
-// e.g. "foo" >| ValueTransformer() >| "bar"
+// e.g. "foo" >>| "ValueTransformerName" >>| "bar"
 public struct PartialBinding {
   let source: String
   let transformer: String

@@ -43,13 +43,13 @@ import Foundation
     self.mode = mode
   }
   
-  public init(source: String, destination: String, transformer: NSValueTransformer) {
+  public init(source: String, destination: String, transformer: NSValueTransformer?) {
     self.destinationProperty = destination
     self.sourceProperty = source
     self.transformer = transformer
   }
   
-  public init(source: String, destination: String, transformer: NSValueTransformer, mode: BindingMode) {
+  public init(source: String, destination: String, transformer: NSValueTransformer?, mode: BindingMode) {
     self.destinationProperty = destination
     self.sourceProperty = source
     self.transformer = transformer
