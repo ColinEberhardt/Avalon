@@ -12,8 +12,7 @@ extension UIGestureRecognizer: Bindable {
   
   @IBInspectable public var source: String {
     get {
-      let value: AnyObject! = objc_getAssociatedObject(self, &AssociationKey.source)
-      return value != nil ? value as String : ""
+      return getAssociatedProperty(self, &AssociationKey.source, "")
     }
     set(newValue) {
       objc_setAssociatedObject(self, &AssociationKey.source, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
@@ -22,8 +21,7 @@ extension UIGestureRecognizer: Bindable {
   
   @IBInspectable public var destination: String {
     get {
-      let value: AnyObject! = objc_getAssociatedObject(self, &AssociationKey.destination)
-      return value != nil ? value as String : ""
+      return getAssociatedProperty(self, &AssociationKey.destination, "")
     }
     set(newValue) {
       objc_setAssociatedObject(self, &AssociationKey.destination, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
@@ -32,8 +30,7 @@ extension UIGestureRecognizer: Bindable {
   
   @IBInspectable public var transformer: String {
     get {
-      let value: AnyObject! = objc_getAssociatedObject(self, &AssociationKey.transformer)
-      return value != nil ? value as String : ""
+      return getAssociatedProperty(self, &AssociationKey.transformer, "")
     }
     set(newValue) {
       objc_setAssociatedObject(self, &AssociationKey.transformer, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
@@ -42,8 +39,7 @@ extension UIGestureRecognizer: Bindable {
   
   @IBInspectable public var mode: String {
     get {
-      let value: AnyObject! = objc_getAssociatedObject(self, &AssociationKey.mode)
-      return value != nil ? value as String : ""
+      return getAssociatedProperty(self, &AssociationKey.mode, "")
     }
     set(newValue) {
       objc_setAssociatedObject(self, &AssociationKey.mode, newValue, UInt(OBJC_ASSOCIATION_RETAIN))

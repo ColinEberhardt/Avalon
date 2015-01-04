@@ -1175,7 +1175,7 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="source" value="numericValue"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="destination" value="text"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="transformer" value="AVConverterDecimalStyle"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="transformer" value="DecimalStyle"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KWU-d0-JgL">
@@ -1185,7 +1185,7 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="source" value="numericValue"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="destination" value="text"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="transformer" value="AVConverterDecimalStyle"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="transformer" value="DecimalStyle"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="resignFirstResponderOnReturn" value="YES"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="bindingUpdateModeString" value="OnResignResponder"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="mode" value="TwoWay"/>
@@ -1205,7 +1205,7 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="source" value="currencyValue"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="destination" value="text"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="transformer" value="AVConverterCurrencyStyle"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="transformer" value="CurrencyStyle"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="emZ-yf-Flf">
@@ -1215,7 +1215,7 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="source" value="currencyValue"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="destination" value="text"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="transformer" value="AVConverterCurrencyStyle"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="transformer" value="CurrencyStyle"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="resignFirstResponderOnReturn" value="YES"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="bindingUpdateModeString" value="OnResignResponder"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="mode" value="TwoWay"/>
@@ -1235,7 +1235,7 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="source" value="percentValue"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="destination" value="text"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="transformer" value="AVConverterPercentStyle"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="transformer" value="PercentStyle"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LrU-tz-OJr">
@@ -1245,7 +1245,7 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="source" value="percentValue"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="destination" value="text"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="transformer" value="AVConverterPercentStyle"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="transformer" value="PercentStyle"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="resignFirstResponderOnReturn" value="YES"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="bindingUpdateModeString" value="OnResignResponder"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="mode" value="TwoWay"/>
@@ -1265,7 +1265,7 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="source" value="scientificValue"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="destination" value="text"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="transformer" value="AVConverterScientificStyle"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="transformer" value="ScientificStyle"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x5q-O8-yU9">
@@ -1275,7 +1275,7 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="source" value="scientificValue"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="destination" value="text"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="transformer" value="AVConverterScientificStyle"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="transformer" value="ScientificStyle"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="resignFirstResponderOnReturn" value="YES"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="bindingUpdateModeString" value="OnResignResponder"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="mode" value="TwoWay"/>
@@ -1670,7 +1670,7 @@
                                 <rect key="frame" x="367" y="485" width="178" height="162"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="2tI-JF-kBa">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCell" id="2tI-JF-kBa">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2tI-JF-kBa" id="dyd-ck-EWj">
@@ -1690,6 +1690,9 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="cellName" value="MyCell"/>
+                                </userDefinedRuntimeAttributes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41s-lF-NzQ">
                                 <rect key="frame" x="225" y="410" width="156" height="30"/>

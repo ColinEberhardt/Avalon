@@ -30,3 +30,13 @@ func lazyAssociatedProperty<T: AnyObject>(host: AnyObject, key: UnsafePointer<Vo
   }
   return associatedProperty
 }
+
+// gets the value for an associated property. If the value is currently nil, the supplied default value is returned
+func getAssociatedProperty<T>(object: AnyObject!, key: UnsafePointer<Void>, defaultValue: T) -> T {
+  let value = objc_getAssociatedObject(object, key) as T?
+  if let unwrappedValue = value {
+    return unwrappedValue
+  } else {
+    return defaultValue
+  }
+}

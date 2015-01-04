@@ -12,7 +12,7 @@ import Foundation
 public enum BindingMode: Printable {
   
   /// A one way binding updates the destination property when the source property changes. It does
-  /// *not* updates the source if the destination changes.
+  /// *not* update the source if the destination changes.
   case OneWay
   
   /// A two way binding propagates changes in both directions, from source to destination and

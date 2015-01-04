@@ -35,11 +35,7 @@ extension UITextField {
   /// Indicates when the source property will be updated when using TwoWay binding
   @IBInspectable public var bindingUpdateModeString: String {
     get {
-      let updateMode = objc_getAssociatedObject(self, &AssociationKey.bindingUpdateMode) as? String
-      if let updateMode = updateMode {
-        return updateMode
-      }
-      return "OnChange"
+      return getAssociatedProperty(self, &AssociationKey.bindingUpdateMode, "OnChange")
     }
     set(newValue) {
       objc_setAssociatedObject(self, &AssociationKey.bindingUpdateMode, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
@@ -49,11 +45,7 @@ extension UITextField {
   /// If true, will resign the first responder when the enter key is pressed
   @IBInspectable public var resignFirstResponderOnReturn: Bool {
     get {
-      let resign = objc_getAssociatedObject(self, &AssociationKey.resignFirstResponderOnEnter) as Bool?
-      if let resign = resign {
-        return resign
-      }
-      return false
+      return getAssociatedProperty(self, &AssociationKey.resignFirstResponderOnEnter, false)
     }
     set(newValue) {
       objc_setAssociatedObject(self, &AssociationKey.resignFirstResponderOnEnter, newValue, UInt(OBJC_ASSOCIATION_RETAIN))

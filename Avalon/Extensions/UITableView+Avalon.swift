@@ -42,6 +42,16 @@ extension UITableView {
       itemsController.selectedItemIndex = newValue
     }
   }
+  
+  /// The currently selected item index
+  @IBInspectable public var cellName: String {
+    get {
+      return getAssociatedProperty(self, &AssociationKey.cellName, "Cell")
+    }
+    set(newValue) {
+      objc_setAssociatedObject(self, &AssociationKey.cellName, newValue, UInt(OBJC_ASSOCIATION_RETAIN))
+    }
+  }
 }
 
 
@@ -139,8 +149,7 @@ class TableViewItemsController: ItemsController, UITableViewDataSource, UITableV
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    // TODO: How do we inform the tableview of the cell name?
-    let maybeCell: AnyObject? = tableView.dequeueReusableCellWithIdentifier("Cell")
+    let maybeCell: AnyObject? = tableView.dequeueReusableCellWithIdentifier(tableView.cellName)
     if let cell = maybeCell as? UITableViewCell {
       cell.bindingContext = arrayFacade!.itemAtIndex(indexPath.row)
       return cell
