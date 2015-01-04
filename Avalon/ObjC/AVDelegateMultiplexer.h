@@ -10,7 +10,7 @@
 
 @interface AVDelegateMultiplexer : NSObject
 
-@property (weak) id delegate;
-@property (weak) id proxiedDelegate;
+@property (nonatomic, weak) id delegate;
+@property (nonatomic, weak) id proxiedDelegate;
 
 @end

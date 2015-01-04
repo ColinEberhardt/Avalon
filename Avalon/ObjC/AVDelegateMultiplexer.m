@@ -10,6 +10,33 @@
 
 @implementation AVDelegateMultiplexer
 
+- (void)setDelegate: (id)delegate {
+  if (delegate == self) {
+    NSLog(@"ERROR: The delegate property of AVDelegateMultiplexer cannot be set to 'self'");
+  } else {
+    _delegate = delegate;
+  }
+}
+
+- (id)getDelegate {
+  return _delegate;
+}
+
+- (void)setProxiedDelegate: (id)proxiedDelegate {
+  if (proxiedDelegate == self) {
+    NSLog(@"ERROR: The proxiedDelegate property of AVDelegateMultiplexer cannot be set to 'self'");
+  } else {
+    _proxiedDelegate = proxiedDelegate;
+  }
+}
+
+
+- (id)getProxiedDelegate {
+  return _proxiedDelegate;
+}
+
+
+
 - (BOOL)respondsToSelector:(SEL)aSelector {
   if ([super respondsToSelector:aSelector])
     return YES;
