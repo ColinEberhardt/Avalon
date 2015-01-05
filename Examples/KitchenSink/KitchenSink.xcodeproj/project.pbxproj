@@ -15,6 +15,8 @@
 		3C5477FE1A11E2B000C80A3C /* KitchenSinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5477FD1A11E2B000C80A3C /* KitchenSinkTests.swift */; };
 		3C5478101A11E2C600C80A3C /* Avalon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C54780D1A11E2BC00C80A3C /* Avalon.framework */; };
 		3C5478121A11E30000C80A3C /* KitchenSinkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5478111A11E30000C80A3C /* KitchenSinkViewModel.swift */; };
+		3C7665C51A5A797F0040A8CA /* ContactsEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7665C41A5A797F0040A8CA /* ContactsEditorViewController.swift */; };
+		3C7665C81A5A79A70040A8CA /* ContactsEditotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7665C71A5A79A70040A8CA /* ContactsEditotViewModel.swift */; };
 		3C7E57D61A49BDD2000E5560 /* BindingModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7E57D51A49BDD2000E5560 /* BindingModeViewController.swift */; };
 		3C7E57D91A49BDF9000E5560 /* BindingModeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7E57D81A49BDF9000E5560 /* BindingModeViewModel.swift */; };
 		3C7E57DB1A49DA58000E5560 /* ValueConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7E57DA1A49DA58000E5560 /* ValueConverterViewController.swift */; };
@@ -62,6 +64,8 @@
 		3C5477FD1A11E2B000C80A3C /* KitchenSinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenSinkTests.swift; sourceTree = "<group>"; };
 		3C5478071A11E2BC00C80A3C /* Avalon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Avalon.xcodeproj; path = ../../Avalon.xcodeproj; sourceTree = "<group>"; };
 		3C5478111A11E30000C80A3C /* KitchenSinkViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitchenSinkViewModel.swift; sourceTree = "<group>"; };
+		3C7665C41A5A797F0040A8CA /* ContactsEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsEditorViewController.swift; sourceTree = "<group>"; };
+		3C7665C71A5A79A70040A8CA /* ContactsEditotViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsEditotViewModel.swift; sourceTree = "<group>"; };
 		3C7E57D51A49BDD2000E5560 /* BindingModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindingModeViewController.swift; sourceTree = "<group>"; };
 		3C7E57D81A49BDF9000E5560 /* BindingModeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindingModeViewModel.swift; sourceTree = "<group>"; };
 		3C7E57DA1A49DA58000E5560 /* ValueConverterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueConverterViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +147,8 @@
 				3C7E57D81A49BDF9000E5560 /* BindingModeViewModel.swift */,
 				3C7E57DA1A49DA58000E5560 /* ValueConverterViewController.swift */,
 				3C7E57DC1A49DB22000E5560 /* ValueConverterViewModel.swift */,
+				3C7665C41A5A797F0040A8CA /* ContactsEditorViewController.swift */,
+				3C7665C71A5A79A70040A8CA /* ContactsEditotViewModel.swift */,
 			);
 			path = KitchenSink;
 			sourceTree = "<group>";
@@ -298,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C7665C81A5A79A70040A8CA /* ContactsEditotViewModel.swift in Sources */,
 				3CE0FD371A477C150084FF8C /* SimpleBindingsViewModel.swift in Sources */,
 				3C5477EA1A11E2B000C80A3C /* ViewController.swift in Sources */,
 				3C865DDA1A3EB83900D775C8 /* ObservableArrayViewController.swift in Sources */,
@@ -305,6 +312,7 @@
 				3CE0FD461A4879B00084FF8C /* MasterDetailViewModel.swift in Sources */,
 				3CE0FD3A1A477C240084FF8C /* SimpleBindingsViewController.swift in Sources */,
 				3C7E57D91A49BDF9000E5560 /* BindingModeViewModel.swift in Sources */,
+				3C7665C51A5A797F0040A8CA /* ContactsEditorViewController.swift in Sources */,
 				3C7E57D61A49BDD2000E5560 /* BindingModeViewController.swift in Sources */,
 				3CE0FD441A4879610084FF8C /* MasterDetailViewController.swift in Sources */,
 				3CE0FD421A4805790084FF8C /* TwoWayBindingViewModel.swift in Sources */,
