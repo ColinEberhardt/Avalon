@@ -25,5 +25,11 @@ import Foundation
     // delegate method swizzling in order to multiplex calls
     AVSwizzle.swizzleClass(UIPickerView.self, method: "setDelegate:")
     AVSwizzle.swizzleClass(UIPickerView.self, method: "delegate")
+    
+    // if a view is added to a hierarchy that already has a bindingContext
+    // we need to process any bindings that are related to the newly added view.
+    // to support this, didMoveToSuperview is swizzled in order to detect the addition of 
+    // new views.
+    AVSwizzle.swizzleClass(UIView.self, method: "didMoveToSuperview")
   }
 }

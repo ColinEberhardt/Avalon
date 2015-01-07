@@ -123,6 +123,23 @@ class AvalonCoreTests: XCTestCase {
     XCTAssertEqual(label.text!, "Eggbert")
   }
   
+  func test_bindingContext_inherittedByNewlyAddedViews() {
+    
+    // create a bound label
+    let label = UILabel()
+    label.bindings = [Binding(source: "surname", destination: "text")]
+    
+    // create a view with a binding
+    let parentView = UIView()
+    parentView.bindingContext = PersonViewModel()
+    
+    // add the label and ensure its binding is now actioned
+    parentView.addSubview(label)
+    
+    // verify state
+    XCTAssertEqual(label.text!, "Eggbert")
+  }
+  
   func test_binding_multipleProperties() {
     
     // create a bound label

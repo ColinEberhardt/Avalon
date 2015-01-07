@@ -232,4 +232,16 @@ extension UIView {
       }
     }
   }
+
+  
+  func override_didMoveToSuperview() {
+    // when an view is added to the view hierarchy, determine the inheritted bindingContext
+    // and use this in order to initiate the binding assocaited with this view and its children
+    let viewModel = bindingContextForView(self)
+    if let viewModel = viewModel {
+      initiateBindingsForView(self, viewModel: viewModel, skipBindingContext: true)
+    }
+    
+    self.override_didMoveToSuperview()
+  }
 }

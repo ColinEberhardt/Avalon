@@ -30,6 +30,20 @@ public class NumberValueTransformer: NSValueTransformer {
   }
 }
 
+public class NumberValueTransformerIntStyle: NumberValueTransformer {
+  override public class func load() {
+    NSValueTransformer.setValueTransformer(NumberValueTransformerIntStyle(), forName:"IntStyle")
+  }
+  
+  public init() {
+    let formatter = NSNumberFormatter()
+    formatter.allowsFloats = false
+    formatter.minimumFractionDigits = 0
+    formatter.maximumFractionDigits = 0
+    super.init(formatter: formatter)
+  }
+}
+
 public class NumberValueTransformerDecimalStyle: NumberValueTransformer {
   override public class func load() {
     NSValueTransformer.setValueTransformer(NumberValueTransformerDecimalStyle(), forName:"DecimalStyle")
