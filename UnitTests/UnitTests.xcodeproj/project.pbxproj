@@ -16,6 +16,7 @@
 		3CB57AD71A570564004CB37C /* DateFormatterConverterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC1CF381A52999E00820080 /* DateFormatterConverterTest.swift */; };
 		3CB57AD91A570572004CB37C /* TimeFormatterConverterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC1CF3B1A529C2000820080 /* TimeFormatterConverterTest.swift */; };
 		3CBA41FD1A43864700E03F6C /* ViewModelBaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA41FC1A43864700E03F6C /* ViewModelBaseTest.swift */; };
+		3CDF24151A5E5C4A004553F1 /* LogicValueTransformersTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF24141A5E5C4A004553F1 /* LogicValueTransformersTest.swift */; };
 		3CE0CFAB1A32EF6100BA9EDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE0CFAA1A32EF6100BA9EDA /* AppDelegate.swift */; };
 		3CE0CFAD1A32EF6100BA9EDA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE0CFAC1A32EF6100BA9EDA /* ViewController.swift */; };
 		3CE0CFB01A32EF6100BA9EDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CE0CFAE1A32EF6100BA9EDA /* Main.storyboard */; };
@@ -57,6 +58,7 @@
 		3CC1CF321A52970400820080 /* NumberFormatterConverterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberFormatterConverterTest.swift; sourceTree = "<group>"; };
 		3CC1CF381A52999E00820080 /* DateFormatterConverterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatterConverterTest.swift; sourceTree = "<group>"; };
 		3CC1CF3B1A529C2000820080 /* TimeFormatterConverterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormatterConverterTest.swift; sourceTree = "<group>"; };
+		3CDF24141A5E5C4A004553F1 /* LogicValueTransformersTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogicValueTransformersTest.swift; sourceTree = "<group>"; };
 		3CE0CFA51A32EF6100BA9EDA /* UnitTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CE0CFA91A32EF6100BA9EDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CE0CFAA1A32EF6100BA9EDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				3CC1CF381A52999E00820080 /* DateFormatterConverterTest.swift */,
 				3CC1CF3B1A529C2000820080 /* TimeFormatterConverterTest.swift */,
 				3C7665B91A5870BC0040A8CA /* NSValueTransformerTest.swift */,
+				3CDF24141A5E5C4A004553F1 /* LogicValueTransformersTest.swift */,
 			);
 			path = UnitTestsTests;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				3CB57AD21A570432004CB37C /* NumberFormatterConverterTest.swift in Sources */,
 				3CE0CFDB1A32EFF800BA9EDA /* TestUtils.swift in Sources */,
 				3C444F831A32F3D600F72591 /* UIButtonTests.swift in Sources */,
+				3CDF24151A5E5C4A004553F1 /* LogicValueTransformersTest.swift in Sources */,
 				3CE0CFD71A32EFF800BA9EDA /* AvalonCoreTests.swift in Sources */,
 				3CA7B4AD1A3594B300C389BA /* EventTest.swift in Sources */,
 				3CE0CFD81A32EFF800BA9EDA /* CustomOperators.swift in Sources */,

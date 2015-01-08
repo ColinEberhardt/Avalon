@@ -17,8 +17,12 @@ public class DateValueTransformer: NSValueTransformer {
   }
   
   override public func transformedValue(sourceValue: AnyObject?) -> AnyObject? {
-    let dateValue = sourceValue as NSDate
-    return formatter.stringFromDate(dateValue)
+    if let dateValue = sourceValue as? NSDate {
+      return formatter.stringFromDate(dateValue)
+    } else {
+      ErrorSink.instance.logEvent("ERROR: the value \(sourceValue) supplied to the value transformer (DateValueTransformer or subclass) was not an NSDate instance")
+      return nil
+    }
   }
   
   override public func reverseTransformedValue(sourceValue: AnyObject?) -> AnyObject? {

@@ -51,6 +51,7 @@
 		3CDB57451A349723001DD726 /* AssociatedPropertyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDB57441A349723001DD726 /* AssociatedPropertyHelper.swift */; };
 		3CDD6C141A1A4A21003020AA /* AssociatedPropertyKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDD6C131A1A4A21003020AA /* AssociatedPropertyKeys.swift */; };
 		3CDD6C1B1A1AA469003020AA /* UITableView+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDD6C1A1A1AA469003020AA /* UITableView+Avalon.swift */; };
+		3CDF24131A5E5B97004553F1 /* LogicValueTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF24121A5E5B97004553F1 /* LogicValueTransformers.swift */; };
 		3CEE10351A0F5A40002C66E3 /* Avalon.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CEE10341A0F5A40002C66E3 /* Avalon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3CF998C21A1F93B7004DC5F0 /* UISearchBar+Avalon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF998C11A1F93B7004DC5F0 /* UISearchBar+Avalon.swift */; };
 /* End PBXBuildFile section */
@@ -100,6 +101,7 @@
 		3CDB57441A349723001DD726 /* AssociatedPropertyHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssociatedPropertyHelper.swift; sourceTree = "<group>"; };
 		3CDD6C131A1A4A21003020AA /* AssociatedPropertyKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssociatedPropertyKeys.swift; sourceTree = "<group>"; };
 		3CDD6C1A1A1AA469003020AA /* UITableView+Avalon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Avalon.swift"; sourceTree = "<group>"; };
+		3CDF24121A5E5B97004553F1 /* LogicValueTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogicValueTransformers.swift; sourceTree = "<group>"; };
 		3CEE102F1A0F5A3F002C66E3 /* Avalon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Avalon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CEE10331A0F5A40002C66E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CEE10341A0F5A40002C66E3 /* Avalon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Avalon.h; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				3C7665BD1A59D30A0040A8CA /* DateValueTransformer.swift */,
 				3C7665BE1A59D30A0040A8CA /* NSValueTransformer+Avalon.swift */,
 				3C7665BF1A59D30A0040A8CA /* NumberValueTransformer.swift */,
+				3CDF24121A5E5B97004553F1 /* LogicValueTransformers.swift */,
 			);
 			path = ValueTransformers;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				3C408EB71A19268700D8426F /* AVKeyValueObservingHelper.m in Sources */,
 				3C5477CC1A1122AA00C80A3C /* UIView+AvalonCore.swift in Sources */,
 				3CDB57431A34485B001DD726 /* AvalonBootstrap.swift in Sources */,
+				3CDF24131A5E5B97004553F1 /* LogicValueTransformers.swift in Sources */,
 				3C5477631A0FDA4C00C80A3C /* Binding.swift in Sources */,
 				3C5477CB1A1122AA00C80A3C /* UIView+Avalon.swift in Sources */,
 				3CBA41F91A436B5900E03F6C /* ItemsController.swift in Sources */,

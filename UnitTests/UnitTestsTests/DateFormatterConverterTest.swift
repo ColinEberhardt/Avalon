@@ -65,4 +65,17 @@ class DateValueTransformerTest: XCTestCase {
     let label2 = createBoundLabel("DateFullStyle")
     XCTAssertEqual(label2.text!, "Thursday, January 1, 1970")
   }
+  
+  func test_nonDateValue_logsError() {
+    AssertLogsError("ERROR:") {
+      let label = UILabel()
+      label.bindings = ["." >>| "DateFullStyle" >>| "text"]
+      
+      // add a view model
+      let viewModel = "foo"
+      label.bindingContext = viewModel
+      
+      XCTAssertNil(label.text)
+    }
+  }
 }

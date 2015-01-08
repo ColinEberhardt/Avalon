@@ -18,15 +18,20 @@ public class NumberValueTransformer: NSValueTransformer {
   }
   
   override public func transformedValue(sourceValue: AnyObject?) -> AnyObject? {
-    let numericValue = sourceValue as Double
-    return formatter.stringFromNumber(numericValue)
+    if let numericValue = sourceValue as? Double {
+      return formatter.stringFromNumber(numericValue)
+    } else {
+      ErrorSink.instance.logEvent("ERROR: the value \(sourceValue) supplied to the value transformer (NumberValueTransformer or subclass) was not numeric")
+      return nil
+    }
   }
   
   override public func reverseTransformedValue(sourceValue: AnyObject?) -> AnyObject? {
     if let stringValue = sourceValue as? String {
       return formatter.numberFromString(stringValue)
+    } else {
+      return nil
     }
-    return nil
   }
 }
 

@@ -65,4 +65,39 @@ class NumberValueTransformerTest: XCTestCase {
     let label2 = createBoundLabel("ScientificStyle", 12)
     XCTAssertEqual(label2.text!, "1.2E1")
   }
+  
+  func test_intStyle() {
+    let label = createBoundLabel(NumberValueTransformerIntStyle(), 12.56)
+    XCTAssertEqual(label.text!, "13")
+    
+    let label2 = createBoundLabel("IntStyle", 12)
+    XCTAssertEqual(label2.text!, "12")
+  }
+  
+  func test_nonNumericValue_logsError() {
+    AssertLogsError("ERROR:") {
+      let label = UILabel()
+      label.bindings = ["." >>| "IntStyle" >>| "text"]
+      
+      // add a view model
+      let viewModel = NSDate()
+      label.bindingContext = viewModel
+      
+      XCTAssertNil(label.text)
+    }
+  }
+  
+  func test_acceptsIntValues() {
+    let label = UILabel()
+    label.bindings = ["." >>| "DecimalStyle" >>| "text"]
+    label.bindingContext = Int(23)
+    XCTAssertEqual(label.text!, "23")
+  }
+  
+  func test_acceptsDoubleValues() {
+    let label = UILabel()
+    label.bindings = ["." >>| "DecimalStyle" >>| "text"]
+    label.bindingContext = Double(23.456789)
+    XCTAssertEqual(label.text!, "23.457")
+  }
 }
