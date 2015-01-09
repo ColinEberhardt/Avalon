@@ -153,6 +153,8 @@ class TableViewItemsController: ItemsController, UITableViewDataSource, UITableV
     if let cell = maybeCell as? UITableViewCell {
       cell.bindingContext = arrayFacade!.itemAtIndex(indexPath.row)
       return cell
+    } else {
+      ErrorSink.instance.logEvent("ERROR: Unable to dequeque a cell with the name \(tableView.cellName)")
     }
     return UITableViewCell()
   }

@@ -72,6 +72,9 @@ class NumberValueTransformerTest: XCTestCase {
     
     let label2 = createBoundLabel("IntStyle", 12)
     XCTAssertEqual(label2.text!, "12")
+    
+    let label3 = createBoundLabel(NumberValueTransformerIntStyle(), 123456)
+    XCTAssertEqual(label3.text!, "123,456")
   }
   
   func test_nonNumericValue_logsError() {

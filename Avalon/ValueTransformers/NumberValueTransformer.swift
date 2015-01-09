@@ -45,6 +45,7 @@ public class NumberValueTransformerIntStyle: NumberValueTransformer {
     formatter.allowsFloats = false
     formatter.minimumFractionDigits = 0
     formatter.maximumFractionDigits = 0
+    formatter.usesGroupingSeparator = true
     super.init(formatter: formatter)
   }
 }
