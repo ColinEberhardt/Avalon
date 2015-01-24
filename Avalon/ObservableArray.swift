@@ -25,7 +25,7 @@ public enum ArrayUpdateType {
   // NSArray. Unfortunately there is no magic bridging support for our own types, as a result the
   // ObservableArray cannot be a struct (which sucks).
   
-  var backingArray: [AnyObject]
+  public var backingArray: [AnyObject]
  
   /// An event that is raised when the array is mutated
   public let arrayChangedEvent = DataEvent<ArrayUpdateType>()

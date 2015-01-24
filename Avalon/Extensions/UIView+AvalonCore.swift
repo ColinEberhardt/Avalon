@@ -18,6 +18,8 @@ typealias ValueChangedNotification = (AnyObject) -> ()
 
 extension UIView {
   
+  // MARK:- Public API
+  
   public var bindingContext: NSObject? {
     get {
       return objc_getAssociatedObject(self, &AssociationKey.bindingContext) as? NSObject
@@ -30,12 +32,28 @@ extension UIView {
       }
     }
   }
+  
+  // Obtains the binding context for this view, either as a result of the binding
+  // context having been set directly, or via inheritence from a parent view
+  public func getInheritedBindingContext() -> NSObject? {
+    if let viewModel = self.bindingContext {
+      return viewModel
+    } else {
+      if let superview = self.superview {
+        return superview.getInheritedBindingContext()
+      } else {
+        return nil
+      }
+    }
+  }
 
   /// In order to aid debugging, this function dumps the view hierarchy together
   /// with any bindings that are present
   public func dumpBindings() {
     dumpBindingsForView(self, indent: 0)
   }
+  
+  // MARK:- Private API
   
   func dumpBindingsForView(view: UIView, indent: Int) {
     for var i=0;i<indent;i++ {
@@ -174,18 +192,6 @@ extension UIView {
     }
   }
   
-  func bindingContextForView(view: UIView) -> NSObject? {
-    if let viewModel = view.bindingContext {
-      return viewModel
-    } else {
-      if let superview = view.superview {
-        return bindingContextForView(superview)
-      } else {
-        return nil
-      }
-    }
-  }
-  
   // initiates the bindings associated with the given view, for the supplied view model
   func initiateBindingsForView(view: UIView, viewModel: NSObject, skipBindingContext: Bool) {
     
@@ -208,7 +214,7 @@ extension UIView {
       
       // bindings for the 'bindingContext' property should be evaluate aginst the
       // context for the parent element
-      let parentViewModel = bindingContextForView(view.superview!)
+      let parentViewModel = view.superview!.getInheritedBindingContext()
       bindSourceToDestination(view, viewModel: parentViewModel!, binding: contextBinding!)
       
     } else {
@@ -235,9 +241,9 @@ extension UIView {
 
   
   func override_didMoveToSuperview() {
-    // when an view is added to the view hierarchy, determine the inheritted bindingContext
-    // and use this in order to initiate the binding assocaited with this view and its children
-    let viewModel = bindingContextForView(self)
+    // when an view is added to the view hierarchy, determine the inherited bindingContext
+    // and use this in order to initiate the binding associated with this view and its children
+    let viewModel = self.getInheritedBindingContext();
     if let viewModel = viewModel {
       initiateBindingsForView(self, viewModel: viewModel, skipBindingContext: true)
     }

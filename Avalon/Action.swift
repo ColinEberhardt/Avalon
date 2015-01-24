@@ -42,7 +42,7 @@ public class ClosureDataAction: DataAction {
   }
   
   public func execute(data: AnyObject) {
-    // TODO: use generics to perform the rquired cast?
+    // TODO: use generics to perform the required cast?
     action(data)
   }
 }
