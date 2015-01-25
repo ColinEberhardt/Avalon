@@ -20,7 +20,7 @@ func setValueFromBinding(var #value: AnyObject?, #binding: Binding, #source: NSO
   }
   
   // set the value, handling any errors
-  let maybeFailureMessage = AVKeyValueObservingHelper.trySetValue(value, forKeyPath: destinationProperty, forObject: destination)
+  let maybeFailureMessage = destination.trySetValue(value, forKeyPath: destinationProperty)
   if let failureMessage = maybeFailureMessage {
     ErrorSink.instance.logEvent("ERROR: Unable to set value \(value) on destination \(destination) with binding \(binding)")
   }
